@@ -2,36 +2,6 @@ body{
 	margin: 0;
 	background: rgb(239, 239, 239);
 }
-.container {
-	background: rgb(0,154,211);
-	padding: 10px;
-	height: 50px;
-	width: 100%;
-}
-
-.logo {
-	height: 35px;
-}
-
-.pull-left > a{
-	color: white;
-	text-decoration: none;
-	margin-left: 15px;
-	font-size: 20px;
-}
-
-.pull-left {
-	margin-left: 0px;
-}
-.pull-right {
-	color: white;
-	font-size: 20px;
-	text-decoration: none;
-}
-
-#menu, #login {
-	list-style: none;
-}
 
 .content {
 	width: 80%;
@@ -53,7 +23,6 @@ body{
 .nav-tabs>li.active>a {
 	background-color: rgb(92, 187, 230);
 	color: white;
-
 }
 
 .question {

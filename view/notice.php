@@ -4,21 +4,28 @@
 	<title>Notice</title>
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="icon/SelabFavicon.png" type="image/png">
+	<link rel="stylesheet" href="../public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="../public/css/header.css" type="text/css">
 </head>
 <body>
-	<header role = "banner">
-		<div class="container">
-			<nav role="navigation">
-				<div id="logo" class="pull-left"><a href="/"><img src="selab_logo_S.png" /></a></div>
-				<ul id="menu" class="inline-list pull-left">
-					<li class="pull-left"><a href="/notice" >NOTICE</a></li>
-					<li class="pull-left"><a href="/members" >QUESTION</a></li>
-				</ul>
-					<div role="login" class="pull-right"></div>
-				<a id="login" href="/login" class='pull-right'>LOGIN</a>
-			</nav>
+	<header role = "banner" class="banner-color">
+		<nav role="navigation" >
+			<div id="logo" class="pull-left"><a href="/"><img class="logo" src="selab_logo_S.png" /></a></div>
+			<ul id="menu" class="inline-list pull-left">
+				<li class="pull-left"><a href="/notice" class="menu-item" >NOTICE</a></li>
+				<li class="pull-left"><a href="/members" class="menu-item">QUESTION</a></li>
+				<li class="pull-left"><a href="/free" class="menu-item">FREE BOARD</a></li>
+			</ul>
+			<div role="login" class="pull-right">
+				<a id="login" href="/login">LOGIN</a>
+			</div>
+		</nav>
+		<div class = "jumbotron banner-color">
+			<h1 class="align-center">Home</h1>
+			<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
 		</div>
-	</header><!-- /header -->
+	</header>
+
 	<div>
 		<div class="notice">
 			<div class="title">
