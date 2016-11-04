@@ -135,13 +135,13 @@ input[type="password"]{
     width: 60px; height: 60px;
     padding: 0; margin: 0;
     border: 0;
-    background: url("login_button.png") center no-repeat white;
+    background: url("../img/login_button.png") center no-repeat white;
     border-radius: 0 3px 3px 0;
     text-indent: -99999px;
 }
 
 #submit_button:hover{
-    background: url("login_button_hover.png") center no-repeat #ffbbbe;
+    background: url("../img/login_button_hover.png") center no-repeat #ffbbbe;
 }
 
 /* animation  */
