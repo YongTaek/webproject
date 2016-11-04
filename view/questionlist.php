@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
-	<link rel="stylesheet" type="text/css" href="questionlist.css">
+	<link rel="stylesheet" type="text/css" href="../public/css/questionlist.css">
 	<meta charset="utf-8">
 	<title>질문 게시판</title>
 </head>
