@@ -54,7 +54,7 @@ nav ul a{
 	padding: 0 5px;
 	margin: 0 10px;
 }
-nav ul a:before
+nav ul a:not(.active):before
 {
     position: absolute;
     width: 100%;
@@ -66,11 +66,17 @@ nav ul a:before
     opacity: 0.3;
     transition: all 0.3s;
 }
-nav ul a:hover:before
+nav ul a:not(.active):hover:before
 {
     height: 100%;
 }
 .active:before{
+	position: absolute;
+	width: 100%;
+	left: 0px;
+	bottom: 0px;
 	background: #FFF;
+	content: '';
+	height: 100%;
 	opacity: 0.3;
 }

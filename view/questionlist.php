@@ -16,11 +16,12 @@
 			</div>
 			<ul id="menu" class="inline-list pull-left">
 				<li class="pull-left"><a href="/notice" class="menu-item" >NOTICE</a></li>
-				<li class="pull-left active"><a href="/members" class="active menu-item">QUESTION</a></li>
+				<li class="pull-left"><a href="/members" class="active menu-item">QUESTION</a></li>
 				<li class="pull-left"><a href="/free" class="menu-item">FREE BOARD</a></li>
 			</ul>
-			<div role="login" class="pull-right"></div>
-			<a id="login" href="/login" class='pull-right'>LOGIN</a>
+			<div role="login" class="pull-right">
+				<a id="login" href="/view/login.php" class='pull-right'>LOGIN</a>
+			</div>
 		</nav>
 	</header><!-- /header -->
 	<div class = "jumbotron banner-color">
@@ -40,19 +41,19 @@
 				<div class= "question-num-summary">
 					<div class= "question-number">
 						<div class= "mini-count">
-							<span>0</span>
+							<span>0</span> <!-- 문제 번호 -->
 						</div>
 						<div>indexs</div>
 					</div>
 					<div class= "votes-number">
 						<div class= "mini-count">
-							<span>0</span>
+							<span>0</span> <!-- 추천 수  -->
 						</div>
 						<div>votes</div>
 					</div>
 					<div class= "answer-number">
 						<div class= "mini-count">
-							<span>0</span>
+							<span>0</span> <!-- 답변 -->
 						</div>
 						<div>answers</div>
 					</div>
@@ -60,9 +61,9 @@
 				</div>
 				<div class="question-list-left">
 					<h3 class="title">
-						<a href="/">title</a>
+						<a href="/">title</a> <!-- 제목 -->
 					</h3>
-					<div class= "tags">
+					<div class= "tags"> <!-- 태그 -->
 						<a href="" class= "tag">tag1</a>
 						<a href="" class= "tag">tag2</a>
 					</div>
@@ -70,11 +71,12 @@
 				<div class="question-list-right">
 					<a class="star-off" href="#"></a>
 					<div>
-						<h5 class="date">1일전</h5>
-						<h5 class="name">by. 익명</h5>
+						<h5 class="date">1일전</h5> <!-- 날짜 -->
+						<h5 class="name">by. 익명</h5> <!--작성자 -->
 					</div>
 				</div>
 			</div>
 		</div>
-	</body>
-	</html>
+	</div>
+</body>
+</html>
