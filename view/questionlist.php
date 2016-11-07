@@ -68,7 +68,7 @@
 					</div>
 				</div>
 				<div class="question-list-right">
-					<a class="star-off" href="#"></a>						
+					<a class="star-off" href="#"></a>
 					<div>
 						<h5 class="date">1일전</h5>
 						<h5 class="name">by. 익명</h5>
