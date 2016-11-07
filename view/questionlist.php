@@ -16,7 +16,7 @@
 				</div>
 				<ul id="menu" class="inline-list pull-left">
 					<li class="pull-left"><a href="/notice" class="menu-item" >NOTICE</a></li>
-					<li class="pull-left"><a href="/members" class="menu-item">QUESTION</a></li>
+					<li class="pull-left"><a href="/members" class="active menu-item">QUESTION</a></li>
 					<li class="pull-left"><a href="/free" class="menu-item">FREE BOARD</a></li>
 				</ul>
 				<div role="login" class="pull-right">

@@ -5,10 +5,6 @@ body{
 hr{
 	border-color: #ccc;
 }
-nav{height: 50px;
-	background-color: rgb(0,154,211);
-}
-
 a.h2{
 	color: black;
 }
@@ -27,8 +23,12 @@ span.title{
 span.date{
 	background-color: white;
 	display: inline-block;
-	width: 18%;
+	width: 24%;
 	text-align: center;
+}
+.col-lg-6{
+	padding-left: 25px;
+	padding-right: 25px;
 }
 .col-lg-6 > ul{
 	padding: 0;
