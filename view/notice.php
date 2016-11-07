@@ -18,7 +18,7 @@
 				<li class="pull-left"><a href="/view/" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
-				<a id="login" href="/login">LOGIN</a>
+				<a id="login" href="/view/login.php">LOGIN</a>
 			</div>
 		</nav>
 		<div class = "jumbotron banner-color">
@@ -44,17 +44,18 @@
 			</div>
 		</div>
 		<!-- comment iterative-->
-		<?php ?>
 		<div class="comment">
 				<hr>
+				<?php ?>
 				<div>
 					<span>content</span>
 					<span>author</span>
 					<span>date</span>
 				</div>
 				<hr>
+				<?php ?>
+
 		</div>
-		<?php ?>
 		<div>
 		</div>
 	</div>

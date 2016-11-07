@@ -1,4 +1,3 @@
-
 .star-off {
 	background-image: url("../img/sprites.svg"), none;
 	background-size: initial;
@@ -26,6 +25,8 @@
 }
 .content {
 	margin-left: 50px;
+	margin-top: 20px;
+	font-size: 20px;
 }
 .comment {
 	margin-left: 100px;
