@@ -17,14 +17,17 @@ hr {
 .align-center{
 	text-align: center;
 }
-
 .pull-left > a{
 	color: white;
 	text-decoration: none;
+	display: block;
 	margin-left: 15px;
 	font-size: 20px;
+	position: relative;
 }
-
+ul.pull-left{
+	margin-top: 5px;
+}
 .pull-left {
 	margin-left: 0px;
 }
@@ -36,10 +39,38 @@ hr {
 #menu, #login {
 	list-style: none;
 }
+#login:hover{
+	display: block;
+	opacity: 0.8;
+}
 nav {
 	padding: 10px;
 	height: 50px;
 }
 .logo {
 	height: 35px;
+}
+nav ul a{
+	padding: 0 5px;
+	margin: 0 10px;
+}
+nav ul a:before
+{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0px;
+    bottom: 0px;
+    content: '';
+    background: #FFF;
+    opacity: 0.3;
+    transition: all 0.3s;
+}
+nav ul a:hover:before
+{
+    height: 100%;
+}
+.active:before{
+	background: #FFF;
+	opacity: 0.3;
 }
