@@ -34,8 +34,11 @@
 				<hr/>
 				<ul>
 					<li class= "list">
-						<span class="title">제목</span>
-						<span class="date">날짜</span>
+					<!-- $id is contents id of notice -->
+					<!--title is the content title -->
+						<a href="/notice.php/?id=<?= $id ?>"><span class="title">title</span></a>
+						<!-- date is when the content writes -->
+						<span class="date">date</span>
 					</li>
 				</ul>
 			</div>
@@ -44,7 +47,10 @@
 				<hr/>
 				<ul>
 					<li class= "list">
-						<span class="title">제목</span>
+						<!-- $id is contents id of notice -->
+						<!--title is the content title -->
+						<a href="/notice.php/?id=<?= $id ?>"><span class="title">제목</span></a>
+						<!-- date is when the content writes -->
 						<span class="date">날짜</span>
 					</li>
 				</ul>
