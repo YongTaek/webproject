@@ -123,6 +123,14 @@ body{
 	margin-left: 20px;
 }
 
+.vote-number-active {
+	border: 1px solid rgb(92, 187, 230);
+	padding: 10px;
+	padding-bottom: 4px;
+	/* background-color: rgb(92, 187, 230); */
+	color: rgb(92, 187, 230); 
+}
+
 .mini-count{
 	margin: auto;
 	text-align: center;

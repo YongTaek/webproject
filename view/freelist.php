@@ -12,7 +12,7 @@
 	<header role ="banner">
 		<nav role="navigation" class="banner-color">
 			<div id="logo" class="pull-left">
-				<a href="/"><img class="logo" src="/public/img/selab_logo_S.png" /></a>
+				<a href="/view/main.php"><img class="logo" src="/public/img/selab_logo_S.png" /></a>
 			</div>
 			<ul id="menu" class="inline-list pull-left">
 				<li class="pull-left"><a href="/view/noticelist.php" class="menu-item" >NOTICE</a></li>
@@ -25,7 +25,7 @@
 		</nav>
 	</header><!-- /header -->
 	<div class = "jumbotron banner-color">
-		<h1 class="align-center">Questions</h1>
+		<h1 class="align-center">FREE BOARD</h1>
 		<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
 	</div>
 	<div class= "content">
