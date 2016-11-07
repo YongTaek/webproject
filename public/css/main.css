@@ -2,3 +2,34 @@ body{
 	background-color: #f2f2f2;
 	margin: 0;
 }
+hr{
+	border-color: #ccc;
+}
+nav{height: 50px;
+	background-color: rgb(0,154,211);
+}
+
+a.h2{
+	color: black;
+}
+a.h2:hover{
+	text-decoration: none;
+}
+ul{
+	list-style: none;
+}
+span.title{
+	background-color: white;
+	display: inline-block;
+	width:75%;
+	padding-left: 10px;
+}
+span.date{
+	background-color: white;
+	display: inline-block;
+	width: 18%;
+	text-align: center;
+}
+.col-lg-6 > ul{
+	padding: 0;
+}

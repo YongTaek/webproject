@@ -3,9 +3,31 @@ body{
 	background: rgb(239, 239, 239);
 }
 
+.banner-color{
+	background-color: rgb(0,154,211);
+}
+.banner-color > h1{
+	color: white;
+}
+.banner-color > p{
+	color: white;
+}
+.align-center{
+	text-align: center;
+}
+
 .content {
 	width: 80%;
 	margin: auto;
+}
+
+.qlist-wapper{
+	background-color: white;
+}
+
+.nav li:hover a {
+	background-color: rgb(92, 187, 230);
+	/* color: #00adee; */
 }
 
 .question-tab > a{
@@ -27,12 +49,70 @@ body{
 
 .question {
 	background: white;
+	overflow: hidden;
 }
 
+.question-num-summary {
+	float: left;
+	margin: 10px;
+	margin-right: 15px;
+}
+
+.question-list-left {
+	float: left;
+}
 .question-num-summary > div{
 	display: inline-block;
+	margin-top: 5px;
+
+}
+.question-list-right {
+	float: right;
+}
+.question-list-right > div > *{
+	display: inline-block;
 }
 
-.question-summary > div:first-child > *{
+.star-off {
+	background: url('../public/img/sprites.svg');
+	background-position: 0 -120px;
+	height: 30px;
+	width: 48px;
+    display: inline-block;
+    float: right;
+    margin-top: 5px;
+}
+
+.question-list-right > div{
 	display: inline-block;
+}
+
+.vote-number {
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+.mini-count{
+	margin: auto;
+	text-align: center;
+}
+
+.title {
+	margin: 0;
+	margin-top: 5px;
+}
+.tags {
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+.tag {
+	color: white;
+	background-color: rgb(0,154,211);
+	padding: 3px;
+	font-size: 12px;
+}
+
+.tag:hover {
+	color: white;
+	text-decoration: none;
 }
