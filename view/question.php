@@ -27,7 +27,6 @@
 			<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
 		</div>
 	</header>
-
 	<div class="container">
 		<div class="question">
 			<h1 id="question_title">Title</h1>
@@ -39,20 +38,19 @@
 				<a class="star-off"></a>
 			</div>
 			<div class="content">
-				<div>asdf</div>
-				<div>asdf</div>
 			</div>
 		</div>
 		<div class="answer">
-			<h2>num + Answer</h2>
+			<h2><?=$num ?> Answer</h2>
 			<hr>
 			<div class="vote">
 				<a class="vote-up-off"></a>
-				<span class="vote-count"></span>
+				<span class="vote-count"><?=$test ?></span>
 				<a class="vote-down-off"></a>
 				<a class="star-off"></a>
 			</div>
-			<div></div>
+			<div class="content">
+			</div>
 		</div>
 		<div>
 			<h2>Your Answer</h2>
