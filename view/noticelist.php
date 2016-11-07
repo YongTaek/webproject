@@ -12,7 +12,7 @@
 	<header role ="banner">
 		<nav role="navigation" class="banner-color">
 			<div id="logo" class="pull-left">
-				<a href="/"><img class="logo" src="selab_logo_S.png" /></a>
+				<a href="/"><img class="logo" src="/public/img/selab_logo_S.png" /></a>
 			</div>
 			<ul id="menu" class="inline-list pull-left">
 				<li class="pull-left"><a href="/view/noticelist.php" class="active menu-item" >NOTICE</a></li>
