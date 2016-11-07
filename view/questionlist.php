@@ -3,7 +3,7 @@
 <head>
 	<link rel="stylesheet" href="../public/css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="../public/css/questionlist.css">
-	<link rel="stylesheet" href="../public/css/header.css" type="text/css">
+	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
 
 	<meta charset="utf-8">
 	<title>질문 게시판</title>
@@ -16,7 +16,7 @@
 			</div>
 			<ul id="menu" class="inline-list pull-left">
 				<li class="pull-left"><a href="/notice" class="menu-item" >NOTICE</a></li>
-				<li class="pull-left active"><a href="/members" class="menu-item">QUESTION</a></li>
+				<li class="pull-left active"><a href="/members" class="active menu-item">QUESTION</a></li>
 				<li class="pull-left"><a href="/free" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
@@ -69,7 +69,7 @@
 					</div>
 				</div>
 				<div class="question-list-right">
-					<a class="star-off" href="#"></a>						
+					<a class="star-off" href="#"></a>
 					<div>
 						<h5 class="date">1일전</h5> <!-- 날짜 -->
 						<h5 class="name">by. 익명</h5> <!--작성자 -->

@@ -11,15 +11,16 @@
 </head>
 <body>
 	<header role = "banner" class="banner-color">
-		<nav role="navigation" >
+		<nav role="navigation">
 			<div id="logo" class="pull-left"><a href="/"><img class="logo" src="selab_logo_S.png" /></a></div>
 			<ul id="menu" class="inline-list pull-left">
 				<li class="pull-left"><a href="/notice" class="menu-item" >NOTICE</a></li>
-				<li class="pull-left"><a href="/members" class="menu-item">QUESTION</a></li>
+				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item">QUESTION</a></li>
 				<li class="pull-left"><a href="/free" class="menu-item">FREE BOARD</a></li>
 			</ul>
-				<div role="login" class="pull-right"></div>
-			<a id="login" href="/login" class='pull-right'>LOGIN</a>
+				<div role="login" class="pull-right">
+					<a id="login" href="/login" class='pull-right'>LOGIN</a>
+				</div>
 		</nav>
 		<div class = "jumbotron banner-color">
 			<h1 class="align-center">Home</h1>
