@@ -56,8 +56,10 @@
 				<?php ?>
 		</div>
 		<div class="comment">
-			<label>Comment:</label>
-			<input id="comment-write" type="text" name="comment" />
+			<form>
+				<label>Comment:</label>
+				<input id="comment-write" type="text" name="comment" />
+			</form>
 		</div>
 	</div>
 
