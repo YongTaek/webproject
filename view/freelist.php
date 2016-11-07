@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 	<link rel="stylesheet" href="../public/css/bootstrap.min.css" type="text/css">
-	<link rel="stylesheet" type="text/css" href="../public/css/questionlist.css">
+	<link rel="stylesheet" type="text/css" href="../public/css/freelist.css">
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
 
 	<meta charset="utf-8">
-	<title>질문 게시판</title>
+	<title>자유 게시판</title>
 </head>
 <body>
 	<header role ="banner">
@@ -16,8 +16,8 @@
 			</div>
 			<ul id="menu" class="inline-list pull-left">
 				<li class="pull-left"><a href="/view/noticelist.php" class="menu-item" >NOTICE</a></li>
-				<li class="pull-left"><a href="/view/questionlist.php" class="active menu-item">QUESTION</a></li>
-				<li class="pull-left"><a href="/view/freelist.php" class="menu-item">FREE BOARD</a></li>
+				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item">QUESTION</a></li>
+				<li class="pull-left"><a href="/view/freelist.php" class="active menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
 			<a id="login" href="/view/login.php" class='pull-right'>LOGIN</a>
@@ -30,7 +30,7 @@
 	</div>
 	<div class= "content">
 		<div class="subheader">
-			<h2>ALL QUESTION</h2>
+			<h2>ALL FREE</h2>
 			<ul class="nav nav-tabs">
 				<li class="question-tab active"><a herf = "/recent">recent</a></li>
 				<li class="question-tab"><a href = "/recommend">recommend</a></li>
@@ -51,22 +51,18 @@
 						</div>
 						<div>votes</div>
 					</div>
-					<div class= "answer-number">
+					<div class= "comment-number">
 						<div class= "mini-count">
-							<span>0</span> <!-- 답변 -->
+							<span>0</span> <!-- 댓글 -->
 						</div>
-						<div>answers</div>
+						<div>comments</div>
 					</div>
 
 				</div>
 				<div class="question-list-left">
 					<h3 class="title">
-						<a href="/view/question.php">title</a> <!-- 제목 -->
+						<a href="/view/notice.php">title</a> <!-- 제목 -->
 					</h3>
-					<div class= "tags"> <!-- 태그 -->
-						<a href="" class= "tag">tag1</a>
-						<a href="" class= "tag">tag2</a>
-					</div>
 				</div>
 				<div class="question-list-right">
 					<a class="star-off" href="#"></a>
