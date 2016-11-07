@@ -16,11 +16,12 @@
 			</div>
 			<ul id="menu" class="inline-list pull-left">
 				<li class="pull-left"><a href="/notice" class="menu-item" >NOTICE</a></li>
-				<li class="pull-left active"><a href="/members" class="active menu-item">QUESTION</a></li>
+				<li class="pull-left"><a href="/members" class="active menu-item">QUESTION</a></li>
 				<li class="pull-left"><a href="/free" class="menu-item">FREE BOARD</a></li>
 			</ul>
-			<div role="login" class="pull-right"></div>
-			<a id="login" href="/login" class='pull-right'>LOGIN</a>
+			<div role="login" class="pull-right">
+				<a id="login" href="/login" class='pull-right'>LOGIN</a>
+			</div>
 		</nav>
 	</header><!-- /header -->
 	<div class = "jumbotron banner-color">

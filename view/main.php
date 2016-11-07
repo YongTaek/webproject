@@ -19,7 +19,7 @@
 				<li class="pull-left"><a href="/free" class="menu-item">FREE BOARD</a></li>
 			</ul>
 				<div role="login" class="pull-right">
-					<a id="login" href="/login" class='pull-right'>LOGIN</a>
+					<a id="login" href="/view/login.php" class='pull-right'>LOGIN</a>
 				</div>
 		</nav>
 		<div class = "jumbotron banner-color">
