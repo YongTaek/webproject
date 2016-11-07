@@ -3,7 +3,7 @@
 <head>
 	<link rel="stylesheet" href="../public/css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="../public/css/questionlist.css">
-	<link rel="stylesheet" href="../public/css/header.css" type="text/css">
+	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
 
 	<meta charset="utf-8">
 	<title>질문 게시판</title>
@@ -68,7 +68,7 @@
 					</div>
 				</div>
 				<div class="question-list-right">
-					<a class="star-off" href="#"></a>						
+					<a class="star-off" href="#"></a>
 					<div>
 						<h5 class="date">1일전</h5>
 						<h5 class="name">by. 익명</h5>
