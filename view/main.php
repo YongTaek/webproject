@@ -6,7 +6,7 @@
 	<link rel="shortcut icon" href="icon/SelabFavicon.png" type="image/png">
 	<link rel="stylesheet" href="../public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="../public/css/main.css" type="text/css">
-	<link rel="stylesheet" href="../public/css/header.css" type="text/css">
+	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
 
 </head>
 <body>
