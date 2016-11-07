@@ -1,4 +1,37 @@
-body{
-	background-color: #f2f2f2;
-	margin: 0;
+
+.star-off {
+	background-image: url("../img/sprites.svg"), none;
+	background-size: initial;
+	overflow: hidden;
+	background-repeat: no-repeat;
+}
+.star-off {
+	background-position: 0 -120px;
+	text-decoration: none;
+	height: 30px;
+	width: 46px;
+	display: inline-block;
+}
+#title_id {
+	display: inline-block;
+	font-weight: bold;
+}
+.notice {
+	min-height: 200px;
+}
+.container {
+	background-color: white;
+	border: solid #ccc;
+	border-radius: 10px;
+}
+.content {
+	margin-left: 50px;
+}
+.comment {
+	margin-left: 100px;
+	margin-right: 100px;
+}
+.notice_info {
+	display: inline-block;
+	margin-left: 10px;
 }
