@@ -22,6 +22,7 @@
 	background-color: white;
 	border: solid #ccc;
 	border-radius: 10px;
+	padding-bottom: 20px;
 }
 .content {
 	margin-left: 50px;
@@ -35,4 +36,7 @@
 .notice_info {
 	display: inline-block;
 	margin-left: 10px;
+}
+#comment-write {
+	width: 100%;
 }
