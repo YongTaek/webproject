@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
-	<link rel="stylesheet" type="text/css" href="questionlist.css">
+	<link rel="stylesheet" href="../public/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../public/css/questionlist.css">
+	<link rel="stylesheet" href="../public/css/header.css" type="text/css">
+
 	<meta charset="utf-8">
 	<title>질문 게시판</title>
 </head>
 <body>
 	<header role ="banner">
-		<div class="container">
-			<nav role="navigation">
-				<div id="logo" class="pull-left"><a href="/"><img class="logo" src="selab_logo_S.png" /></a></div>
+			<nav role="navigation" class="banner-color">
+				<div id="logo" class="pull-left">
+					<a href="/"><img class="logo" src="selab_logo_S.png" /></a>
+				</div>
 				<ul id="menu" class="inline-list pull-left">
 					<li class="pull-left"><a href="/notice" class="menu-item" >NOTICE</a></li>
 					<li class="pull-left"><a href="/members" class="menu-item">QUESTION</a></li>
 					<li class="pull-left"><a href="/free" class="menu-item">FREE BOARD</a></li>
 				</ul>
-					<div role="login" class="pull-right"></div>
-				<a id="login" href="/login" class='pull-right'>LOGIN</a>
+				<div role="login" class="pull-right">
+					<a id="login" href="/login">LOGIN</a>
+				</div>
 			</nav>
-		</div>
-	</header><!-- /header -->
+	</header>
 	<div class= "content">
 		<div class="subheader">
 			<h2>ALL QUESTION</h2>

@@ -6,19 +6,9 @@ hr{
 	border-color: #ccc;
 }
 nav{height: 50px;
-	background-color: rgb(0,154,211);}
-.banner-color{
 	background-color: rgb(0,154,211);
 }
-.banner-color > h1{
-	color: white;
-}
-.banner-color > p{
-	color: white;
-}
-.align-center{
-	text-align: center;
-}
+
 a.h2{
 	color: black;
 }
