@@ -13,13 +13,10 @@
 		</header>
 		<content>
 			<form method="post" action="login.php">
-
 				<input id="idform" class="textfield" type="text" name="id" placeholder= "Username"/>
 				<div class="login_icon" id="usericon"></div>
-
 				<input class="textfield" type="password" name="password" placeholder = "Password"/>
 				<div class="login_icon" id="passwdicon"></div>
-
 				<input id="submit_button" type="submit" value="login"/>
 				<input type="hidden" name="source" value="/index.php">
 			</form>
