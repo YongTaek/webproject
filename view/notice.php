@@ -11,7 +11,7 @@
 <body>
 	<header role = "banner" class="banner-color">
 		<nav role="navigation" >
-			<div id="logo" class="pull-left"><a href="/"><img class="logo" src="selab_logo_S.png" /></a></div>
+			<div id="logo" class="pull-left"><a href="/"><img class="logo" src="../img/selab_logo_S.png" /></a></div>
 			<ul id="menu" class="inline-list pull-left">
 				<li class="pull-left"><a href="/view/notice.php" class="menu-item" >NOTICE</a></li>
 				<li class="pull-left"><a href="/view/question.php" class="menu-item">QUESTION</a></li>
