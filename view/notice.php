@@ -50,13 +50,14 @@
 				<div>
 					<span>content</span>
 					<span>author</span>
-					<span>date</span>
+					<span class="">date</span>
 				</div>
 				<hr>
 				<?php ?>
-
 		</div>
-		<div>
+		<div class="comment">
+			<label>Comment:</label>
+			<input id="comment-write" type="text" name="comment" />
 		</div>
 	</div>
 
