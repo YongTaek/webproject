@@ -16,7 +16,7 @@
 					<li class="pull-left active"><a href="/members" class="menu-item">QUESTION</a></li>
 					<li class="pull-left"><a href="/free" class="menu-item">FREE BOARD</a></li>
 				</ul>
-					<div role="login" class="pull-right"></div>
+				<div role="login" class="pull-right"></div>
 				<a id="login" href="/login" class='pull-right'>LOGIN</a>
 			</nav>
 		</div>
@@ -35,7 +35,7 @@
 		</div>
 		<div class= "qlist-wapper">
 			<div class= "question">
-				<div class= "inline-list question-num-summary">
+				<div class= "question-num-summary">
 					<div class= "question-number">
 						<div class= "mini-count">
 							<span>0</span>
@@ -54,28 +54,25 @@
 						</div>
 						<div>answers</div>
 					</div>
-					<div class="question-list-left">
-						<h3 class="title">
-							<a href="/">title</a>
-						</h3>
-						<div class= "tags">
+					
+				</div>
+				<div class="question-list-left">
+					<h3 class="title">
+						<a href="/">title</a>
+					</h3>
+					<div class= "tags">
 						<a href="" class= "tag">tag1</a>
 						<a href="" class= "tag">tag2</a>
 					</div>
 				</div>
-				<div class= "question-summary">
-					<div class="question-list-right">
-						<a class="star-off" href="#">favorite</a>						
-						<div>
-							<h5 class="date">1일전</h5>
-							<h5 class="name">by. 익명</h5>
-						</div>
+				<div class="question-list-right">
+					<a class="star-off" href="#"></a>						
+					<div>
+						<h5 class="date">1일전</h5>
+						<h5 class="name">by. 익명</h5>
 					</div>
-					
-					
 				</div>
 			</div>
 		</div>
-	</div>
-</body>
-</html>
+	</body>
+	</html>
