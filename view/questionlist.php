@@ -13,7 +13,7 @@
 				<div id="logo" class="pull-left"><a href="/"><img class="logo" src="selab_logo_S.png" /></a></div>
 				<ul id="menu" class="inline-list pull-left">
 					<li class="pull-left"><a href="/notice" class="menu-item" >NOTICE</a></li>
-					<li class="pull-left"><a href="/members" class="menu-item">QUESTION</a></li>
+					<li class="pull-left active"><a href="/members" class="menu-item">QUESTION</a></li>
 					<li class="pull-left"><a href="/free" class="menu-item">FREE BOARD</a></li>
 				</ul>
 					<div role="login" class="pull-right"></div>
@@ -21,6 +21,10 @@
 			</nav>
 		</div>
 	</header><!-- /header -->
+	<div class = "jumbotron banner-color">
+		<h1 class="align-center">Home</h1>
+		<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
+	</div>
 	<div class= "content">
 		<div class="subheader">
 			<h2>ALL QUESTION</h2>
@@ -31,7 +35,7 @@
 		</div>
 		<div class= "qlist-wapper">
 			<div class= "question">
-				<div class= "inline-list pull-left question-num-summary">
+				<div class= "inline-list question-num-summary">
 					<div class= "question-number">
 						<div class= "mini-count">
 							<span>0</span>
@@ -50,21 +54,25 @@
 						</div>
 						<div>answers</div>
 					</div>
-				</div>
-				<div class= "question-summary">
-					<div>
+					<div class="question-list-left">
 						<h3 class="title">
 							<a href="/">title</a>
 						</h3>
-					<div>
-					<div class= "tags">
+						<div class= "tags">
 						<a href="" class= "tag">tag1</a>
 						<a href="" class= "tag">tag2</a>
 					</div>
-					<div>
-						<h5 class="date">1일전</h5>
-						<h5 class="name">by. 익명</h5>
+				</div>
+				<div class= "question-summary">
+					<div class="question-list-right">
+						<a class="star-off" href="#">favorite</a>						
+						<div>
+							<h5 class="date">1일전</h5>
+							<h5 class="name">by. 익명</h5>
+						</div>
 					</div>
+					
+					
 				</div>
 			</div>
 		</div>

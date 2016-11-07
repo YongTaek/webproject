@@ -20,6 +20,10 @@ body{
 	font-size: 20px;
 }
 
+.pull-left.active > a{
+	
+}
+
 .pull-left {
 	margin-left: 0px;
 }
@@ -31,6 +35,19 @@ body{
 
 #menu, #login {
 	list-style: none;
+}
+
+.banner-color{
+	background-color: rgb(0,154,211);
+}
+.banner-color > h1{
+	color: white;
+}
+.banner-color > p{
+	color: white;
+}
+.align-center{
+	text-align: center;
 }
 
 .content {
@@ -58,12 +75,24 @@ body{
 
 .question {
 	background: white;
+	overflow: hidden;
 }
 
 .question-num-summary > div{
 	display: inline-block;
 }
 
-.question-summary > div:first-child > *{
+.question-num-summary > div > div{
+	margin-top: 10px;
+	/* margin-right: 5px;
+	margin-left: 5px; */
+}
+.question-summary {
+	float: right;
+}
+.question-list-right > div > *{
 	display: inline-block;
+}
+.favorite {
+	background-position: 0 -120px;
 }
