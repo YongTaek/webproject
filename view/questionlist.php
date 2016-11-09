@@ -12,7 +12,7 @@
 	<header role ="banner">
 		<nav role="navigation" class="banner-color">
 			<div id="logo" class="pull-left">
-				<a href="/"><img class="logo" src="/public/img/selab_logo_S.png" /></a>
+				<a href="/view/main.php"><img class="logo" src="/public/img/selab_logo_S.png" /></a>
 			</div>
 			<ul id="menu" class="inline-list pull-left">
 				<li class="pull-left"><a href="/view/noticelist.php" class="menu-item" >NOTICE</a></li>
@@ -20,15 +20,16 @@
 				<li class="pull-left"><a href="/view/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right"></div>
-			<a id="login" href="/login" class='pull-right'>LOGIN</a>
+			<a id="login" href="/view/login.php" class='pull-right'>LOGIN</a>
 		</nav>
 	</header><!-- /header -->
 	<div class = "jumbotron banner-color">
-		<h1 class="align-center">Home</h1>
+		<h1 class="align-center">QUESTIONS</h1>
 		<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
 	</div>
 	<div class= "content">
 		<div class="subheader">
+			<a type="button" class="createBtn btn btn-primary" href="/questions/create">Ask Question</a>
 			<h2>ALL QUESTION</h2>
 			<ul class="nav nav-tabs">
 				<li class="question-tab active"><a herf = "/recent">recent</a></li>
@@ -44,7 +45,7 @@
 						</div>
 						<div>indexs</div>
 					</div>
-					<div class= "votes-number">
+					<div class= "vote-number-active">
 						<div class= "mini-count">
 							<span>0</span>
 						</div>

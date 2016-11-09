@@ -12,15 +12,15 @@
 	<header role ="banner">
 		<nav role="navigation" class="banner-color">
 			<div id="logo" class="pull-left">
-				<a href="/view/main.php"><img class="logo" src="/public/img/selab_logo_S.png" /></a>
+				<a href="/php/main.php"><img class="logo" src="/public/img/selab_logo_S.png" /></a>
 			</div>
 			<ul id="menu" class="inline-list pull-left">
-				<li class="pull-left"><a href="/view/noticelist.php" class="active menu-item" >NOTICE</a></li>
-				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item">QUESTION</a></li>
-				<li class="pull-left"><a href="/view/freelist.php" class="menu-item">FREE BOARD</a></li>
+				<li class="pull-left"><a href="/php/noticelist.php" class="active menu-item" >NOTICE</a></li>
+				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item">QUESTION</a></li>
+				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
-			<a id="login" href="/view/login.php" class='pull-right'>LOGIN</a>
+			<a id="login" href="/php/login.php" class='pull-right'>LOGIN</a>
 			</div>
 		</nav>
 	</header><!-- /header -->
@@ -38,29 +38,39 @@
 			</ul>
 		</div>
 		<div class= "qlist-wapper">
+
+			<?php
+				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+				$rows = $db->query("SELECT n.id, title, time, name FROM notice n JOIN user u ON n.u_id = u.id");
+				foreach ($rows as $row) {
+			?>
+
 			<div class= "question">
 				<div class= "question-num-summary">
 					<div class= "question-number">
 						<div class= "mini-count">
-							<span>0</span> <!-- 문제 번호 -->
+							<span><?= $row["id"] ?></span> <!-- 문제 번호 -->
 						</div>
 						<div>indexs</div>
 					</div>
 				</div>
 				<div class="question-list-left">
 					<h3 class="title">
-						<a href="/view/notice.php">title</a> <!-- 제목 -->
+						<a href= <?= "/php/notice.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
 					</h3>
 					
 				</div>
 				<div class="question-list-right">
 					<a class="star-off" href="#"></a>
 					<div>
-						<h5 class="date">1일전</h5> <!-- 날짜 -->
-						<h5 class="name">by. 익명</h5> <!--작성자 -->
+						<h5 class="date"><?= $row["time"] ?></h5> <!-- 날짜 -->
+						<h5 class="name">by. <?= $row["name"] ?></h5> <!--작성자 -->
 					</div>
 				</div>
 			</div>
+
+			<?php } ?>
+
 		</div>
 	</div>
 </body>

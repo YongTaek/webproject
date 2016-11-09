@@ -2,6 +2,7 @@ body{
 	margin: 0;
 	background: rgb(239, 239, 239);
 }
+
 .container {
 	background: rgb(0,154,211);
 	padding: 10px;
@@ -135,4 +136,10 @@ body{
 
 .title > a {
 	font-size: 30px;
+}
+
+.createBtn {
+	margin: 0 auto;
+    display: block;
+    width: 120px;
 }

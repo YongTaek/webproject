@@ -133,3 +133,9 @@ body{
 .title > a {
 	font-size: 30px;
 }
+
+.createBtn {
+	margin: 0 auto;
+    display: block;
+    width: 120px;
+}
