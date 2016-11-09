@@ -20,7 +20,7 @@
 				<li class="pull-left"><a href="/view/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right"></div>
-			<a id="login" href="/login" class='pull-right'>LOGIN</a>
+			<a id="login" href="/view/login.php" class='pull-right'>LOGIN</a>
 		</nav>
 	</header><!-- /header -->
 	<div class = "jumbotron banner-color">
@@ -29,6 +29,7 @@
 	</div>
 	<div class= "content">
 		<div class="subheader">
+			<a type="button" class="createBtn btn btn-primary" href="/questions/create">Ask Question</a>
 			<h2>ALL QUESTION</h2>
 			<ul class="nav nav-tabs">
 				<li class="question-tab active"><a herf = "/recent">recent</a></li>

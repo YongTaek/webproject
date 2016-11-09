@@ -30,6 +30,7 @@
 	</div>
 	<div class= "content">
 		<div class="subheader">
+			<a type="button" class="createBtn btn btn-primary" href="/free/create">Ask Question</a>
 			<h2>ALL FREE</h2>
 			<ul class="nav nav-tabs">
 				<li class="question-tab active"><a herf = "/recent">recent</a></li>
