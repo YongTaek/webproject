@@ -4,10 +4,12 @@
 	<title>Question</title>
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="icon/SelabFavicon.png" type="image/png">
+  <script type="text/javascript" src="../public/js/jquery-3.1.1.min.js"></script>
 	<link rel="stylesheet" href="../public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
 	<link rel="stylesheet" href="../public/css/question.css" type="text/css">
-
+	<link rel="stylesheet" type="text/css" href="../public/css/wmd.css" />
+<!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> -->
 </head>
 <body>
 	<header role = "banner" class="banner-color">
@@ -44,6 +46,7 @@
 				</div>
 				<!-- question 내용 -->
 				<div class="content">
+
 				</div>
 			</div>
 		</div>
@@ -67,9 +70,17 @@
 	</div>
 		<div>
 			<h2>Your Answer</h2>
-			<div>
+			<div id="post-editor" class="post-editor js-post-editor">
+				<div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"></div>
+            <textarea id="wmd-input" class="wmd-input processed" name="post-text" cols="92" rows="15" tabindex="101" data-min-length="">
+            </textarea>
+        </div>
+				<div id="wmd-preview" class="wmd-panel"></div>
+				<div id="wmd-output" class="wmd-panel"></div>
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript" src="../public/js/wmd.js"></script>
 </body>
 </html>
