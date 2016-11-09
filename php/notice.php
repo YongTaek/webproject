@@ -27,33 +27,42 @@
 		</div>
 	</header>
 
+	<?php
+    $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+    $rows = $db->query("SELECT n.id, name, title, content, time FROM notice n JOIN user u ON n.u_id = u.id");
+    foreach ($rows as $row) {
+  ?>
+
 	<div class="container">
 		<div class="notice">
 			<div class="title">
 				<a class="star-off" href="#" ></a>
 				<h1 id="title_id">
-					<span>제목</span>
+					<span><?= $row["title"] ?></span>
 				</h1>
 				<div class="notice_info">
-					<span>author</span>
-					<span>date</span>
+					<span><?= $row["name"] ?></span>
+					<span><?= $row["time"] ?></span>
 				</div>
 			</div>
 			<div class="content">
-				<p>Content</p>
+				<p><?= $row["content"] ?></p>
 			</div>
 		</div>
 		<!-- comment iterative-->
 		<div class="comment">
 				<hr>
-				<?php ?>
+				<?php
+					$comments = $db->query("SELECT content, name, time FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'notice' AND reference_id = ".$row["id"]);
+					foreach ($comments as $comment) {
+				?>
 				<div>
-					<span>content</span>
-					<span>author</span>
-					<span class="">date</span>
+					<span><?= $comment["content"] ?></span>
+					<span><?= $comment["name"] ?></span>
+					<span class=""><?= $comment["time"] ?></span>
 				</div>
 				<hr>
-				<?php ?>
+				<?php } ?>
 		</div>
 		<div class="comment">
 			<form>
@@ -65,6 +74,6 @@
 			</form>
 		</div>
 	</div>
-
+	<?php } ?>
 </body>
 </html>

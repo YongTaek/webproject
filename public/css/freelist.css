@@ -2,6 +2,7 @@ body{
 	margin: 0;
 	background: rgb(239, 239, 239);
 }
+
 .container {
 	background: rgb(0,154,211);
 	padding: 10px;
@@ -119,19 +120,8 @@ body{
 }
 
 .vote-number {
-	margin-right: 15px;
-	margin-left: 15px;
-}
-
-.vote-number-active {
-	border: 1px solid rgb(92, 187, 230);
-	padding-right: 10px;
-	padding-left: 10px;
-	padding-bottom: 2px;
-	padding-top:  4px;
-	/* background-color: rgb(92, 187, 230); 
-	color: white; */
-	color: rgb(92, 187, 230); 
+	margin-right: 20px;
+	margin-left: 20px;
 }
 
 .mini-count{
@@ -141,24 +131,11 @@ body{
 
 .title {
 	margin: 0;
-	margin-top: 5px;
-}
-.tags {
-	margin-top: 5px;
-	margin-bottom: 10px;
-}
-.tag {
-	color: white;
-	background-color: rgb(0,154,211);
-	padding: 3px;
-	font-size: 12px;
-	border-radius: 2px 2px 2px 2px;
-
+	margin-top: 20px;
 }
 
-.tag:hover {
-	color: white;
-	text-decoration: none;
+.title > a {
+	font-size: 30px;
 }
 
 .createBtn {
