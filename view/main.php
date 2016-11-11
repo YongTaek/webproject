@@ -43,7 +43,7 @@
 				</ul>
 			</div>
 			<div class = "col-lg-6">
-				<a class="h2" href="#"><h2>QnA</h2></a>
+				<a class="h2" href="#"><h2>Question</h2></a>
 				<hr/>
 				<ul>
 					<li class= "list">
