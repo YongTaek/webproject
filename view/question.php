@@ -4,7 +4,7 @@
 	<title>Question</title>
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="icon/SelabFavicon.png" type="image/png">
-  <script type="text/javascript" src="../public/js/jquery-3.1.1.min.js"></script>
+  	<script type="text/javascript" src="../public/js/jquery-3.1.1.min.js"></script>
 	<link rel="stylesheet" href="../public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
 	<link rel="stylesheet" href="../public/css/question.css" type="text/css">
@@ -21,11 +21,15 @@
 				<li class="pull-left"><a href="/view/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
-				<a id="login" href="/view/login.php">LOGIN</a>
+				<a id="login" href="/view/login.php" class='pull-right'>LOGIN</a>
+				<div class="pull-right vr"></div>
+				<a id="mypage" href="/view/myPage.php" class='pull-right'>천유정 (학생)</a>
 			</div>
+			<img src="/public/img/search.png" class="pull-right search-icon">
+			<input type="text" class="pull-right search" name="search">
 		</nav>
 		<div class = "jumbotron banner-color">
-			<h1 class="align-center">Notice</h1>
+			<h1 class="align-center">Q & A</h1>
 			<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
 		</div>
 	</header>
@@ -82,5 +86,6 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="../public/js/wmd.js"></script>
+	<script src="../public/js/star_on_off.js" type="text/javascript"></script>
 </body>
 </html>

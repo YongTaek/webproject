@@ -18,9 +18,14 @@
 				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item">QUESTION</a></li>
 				<li class="pull-left"><a href="/view/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
-				<div role="login" class="pull-right">
-					<a id="login" href="/view/login.php" class='pull-right'>LOGIN</a>
-				</div>
+			<div role="login" class="pull-right">
+				<a id="login" href="/view/login.php" class='pull-right'>LOGIN</a>
+				<div class="pull-right vr"></div>
+				<a id="mypage" href="/view/myPage.php" class='pull-right'>천유정 (학생)</a>
+			</div>
+			<img src="/public/img/search.png" class="pull-right search-icon">
+			<input type="text" class="pull-right search" name="search">
+			
 		</nav>
 		<div class = "jumbotron banner-color">
 			<h1 class="align-center">Home</h1>
