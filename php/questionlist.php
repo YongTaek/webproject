@@ -1,10 +1,14 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<link rel="stylesheet" href="../public/css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="../public/css/questionlist.css">
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
-
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
 	<meta charset="utf-8">
 	<title>질문 게시판</title>
 </head>
@@ -12,15 +16,15 @@
 	<header role ="banner">
 		<nav role="navigation" class="banner-color">
 			<div id="logo" class="pull-left">
-				<a href="/view/main.php"><img class="logo" src="/public/img/selab_logo_S.png" /></a>
+				<a href="/php/main.php"><img class="logo" src="/public/img/selab_logo_S.png" /></a>
 			</div>
 			<ul id="menu" class="inline-list pull-left">
-				<li class="pull-left"><a href="/view/noticelist.php" class="menu-item" >NOTICE</a></li>
-				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item">QUESTION</a></li>
-				<li class="pull-left"><a href="/view/freelist.php" class="menu-item">FREE BOARD</a></li>
+				<li class="pull-left"><a href="/php/noticelist.php" class="menu-item" >NOTICE</a></li>
+				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item active">QUESTION</a></li>
+				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right"></div>
-			<a id="login" href="/view/login.php" class='pull-right'>LOGIN</a>
+			<a id="login" href="/php/dologin.php" class='pull-right'>LOGIN</a>
 		</nav>
 	</header><!-- /header -->
 	<div class = "jumbotron banner-color">
@@ -91,5 +95,6 @@
 				}
 			?>
 		</div>
+		<script src="../public/js/star_on_off.js" type="text/javascript"></script>
 	</body>
 	</html>
