@@ -4,7 +4,7 @@
 	<link rel="stylesheet" href="../public/css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="../public/css/freelist.css">
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
 	<meta charset="utf-8">
 	<title>자유 게시판</title>
 </head>
@@ -30,7 +30,7 @@
 	</div>
 	<div class= "content">
 		<div class="subheader">
-			<a type="button" class="createBtn btn btn-primary" href="/free/create">Ask Question</a>
+			<a type="button" class="createBtn btn btn-primary" href="/free/create">Post Free</a>
 			<h2>ALL FREE</h2>
 			<ul class="nav nav-tabs">
 				<li class="question-tab active"><a herf = "/recent">recent</a></li>
@@ -46,23 +46,16 @@
 						</div>
 						<div>indexs</div>
 					</div>
-					<div class= "votes-number">
-						<div class= "mini-count">
-							<span>0</span> <!-- 추천 수  -->
-						</div>
-						<div>votes</div>
-					</div>
 					<div class= "comment-number">
 						<div class= "mini-count">
 							<span>0</span> <!-- 댓글 -->
 						</div>
 						<div>comments</div>
 					</div>
-
 				</div>
 				<div class="question-list-left">
 					<h3 class="title">
-						<a href="/view/notice.php">title</a> <!-- 제목 -->
+						<a href="/view/free.php">title</a> <!-- 제목 -->
 					</h3>
 				</div>
 				<div class="question-list-right">
@@ -75,5 +68,6 @@
 			</div>
 		</div>
 	</div>
+	<script src="../public/js/star_on_off.js" type="text/javascript"></script>
 </body>
 </html>

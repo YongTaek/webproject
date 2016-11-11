@@ -4,7 +4,8 @@
 	<link rel="stylesheet" href="../public/css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="../public/css/questionlist.css">
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
-
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
 	<meta charset="utf-8">
 	<title>질문 게시판</title>
 </head>
@@ -16,7 +17,7 @@
 			</div>
 			<ul id="menu" class="inline-list pull-left">
 				<li class="pull-left"><a href="/view/noticelist.php" class="menu-item" >NOTICE</a></li>
-				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item">QUESTION</a></li>
+				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item active">QUESTION</a></li>
 				<li class="pull-left"><a href="/view/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right"></div>
@@ -61,7 +62,7 @@
 				</div>
 				<div class="question-list-left">
 					<h3 class="title">
-						<a href="/">title</a>
+						<a href="/view/question.php">title</a>
 					</h3>
 					<div class= "tags">
 						<a href="" class= "tag">tag1</a>
@@ -77,5 +78,6 @@
 				</div>
 			</div>
 		</div>
+		<script src="../public/js/star_on_off.js" type="text/javascript"></script>
 	</body>
-	</html>
+</html>

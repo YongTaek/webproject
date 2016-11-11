@@ -12,11 +12,11 @@
 <body>
 	<header role = "banner" class="banner-color">
 		<nav role="navigation" >
-			<div id="logo" class="pull-left"><a href="/"><img class="logo" src="../public/img/selab_logo_S.png" /></a></div>
+			<div id="logo" class="pull-left"><a href="/view/main.php"><img class="logo" src="../public/img/selab_logo_S.png" /></a></div>
 			<ul id="menu" class="inline-list pull-left">
 				<li class="pull-left"><a href="/view/noticelist.php" class="menu-item" >NOTICE</a></li>
 				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item active">QUESTION</a></li>
-				<li class="pull-left"><a href="/view/" class="menu-item">FREE BOARD</a></li>
+				<li class="pull-left"><a href="/view/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
 				<a id="login" href="/view/login.php">LOGIN</a>
