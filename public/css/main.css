@@ -33,3 +33,7 @@ span.date{
 .col-lg-6 > ul{
 	padding: 0;
 }
+.list a{
+	text-decoration: none;
+	color: black;
+}

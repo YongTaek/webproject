@@ -13,12 +13,12 @@
 		<nav role="navigation" >
 			<div id="logo" class="pull-left"><a href="/"><img class="logo" src="../public/img/selab_logo_S.png" /></a></div>
 			<ul id="menu" class="inline-list pull-left">
-				<li class="pull-left"><a href="/view/notice.php" class="menu-item" >NOTICE</a></li>
-				<li class="pull-left"><a href="/view/question.php" class="menu-item">QUESTION</a></li>
-				<li class="pull-left"><a href="/view/" class="menu-item">FREE BOARD</a></li>
+				<li class="pull-left"><a href="/php/notice.php" class="menu-item" >NOTICE</a></li>
+				<li class="pull-left"><a href="/php/question.php" class="menu-item">QUESTION</a></li>
+				<li class="pull-left"><a href="/php/" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
-				<a id="login" href="/view/login.php">LOGIN</a>
+				<a id="login" href="/php/login.php">LOGIN</a>
 			</div>
 		</nav>
 		<div class = "jumbotron banner-color">
@@ -28,9 +28,10 @@
 	</header>
 
 	<?php
-    $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-    $rows = $db->query("SELECT n.id, name, title, content, time FROM notice n JOIN user u ON n.u_id = u.id");
-    foreach ($rows as $row) {
+		if (isset($_GET["id"])) {
+			$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+			$rows = $db->query("SELECT n.id, name, title, content, time FROM notice n JOIN user u ON n.u_id = u.id WHERE n.id = ".$_GET["id"]);
+			foreach ($rows as $row) {
   ?>
 
 	<div class="container">
@@ -74,6 +75,9 @@
 			</form>
 		</div>
 	</div>
-	<?php } ?>
+	<?php
+			}
+		}
+	?>
 </body>
 </html>
