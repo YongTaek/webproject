@@ -1,53 +1,50 @@
-<?php
-	session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<link rel="stylesheet" href="../public/css/bootstrap.min.css" type="text/css">
-	<link rel="stylesheet" type="text/css" href="../public/css/noticelist.css">
+	<link rel="stylesheet" type="text/css" href="../public/css/freelist.css">
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+
 	<meta charset="utf-8">
-	<title>공지 게시판</title>
+	<title>자유 게시판</title>
 </head>
 <body>
 	<header role ="banner">
 		<nav role="navigation" class="banner-color">
 			<div id="logo" class="pull-left">
-				<a href="/php/main.php"><img class="logo" src="/public/img/selab_logo_S.png" /></a>
+				<a href="/view/main.php"><img class="logo" src="/public/img/selab_logo_S.png" /></a>
 			</div>
 			<ul id="menu" class="inline-list pull-left">
-				<li class="pull-left"><a href="/php/noticelist.php" class="active menu-item" >NOTICE</a></li>
-				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item">QUESTION</a></li>
-				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
+				<li class="pull-left"><a href="/view/noticelist.php" class="menu-item" >NOTICE</a></li>
+				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item">QUESTION</a></li>
+				<li class="pull-left"><a href="/view/freelist.php" class="active menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
-			<a id="login" href="/php/dologin.php" class='pull-right'>LOGIN</a>
+			<a id="login" href="/view/login.php" class='pull-right'>LOGIN</a>
 			</div>
 		</nav>
 	</header><!-- /header -->
 	<div class = "jumbotron banner-color">
-		<h1 class="align-center">NOTICE</h1>
+		<h1 class="align-center">FREE BOARD</h1>
 		<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
 	</div>
 	<div class= "content">
 		<div class="subheader">
-			<a type="button" class="createBtn btn btn-primary" href="/notice/create">Register Notice</a>
-			<h2>ALL NOTICE</h2>
+			<a type="button" class="createBtn btn btn-primary" href="/free/create">Ask Question</a>
+			<h2>ALL FREE</h2>
 			<ul class="nav nav-tabs">
 				<li class="question-tab active"><a herf = "/recent">recent</a></li>
 				<li class="question-tab"><a href = "/recommend">recommend</a></li>
 			</ul>
 		</div>
 		<div class= "qlist-wapper">
-
-			<?php
-				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-				$rows = $db->query("SELECT n.id, title, time, name FROM notice n JOIN user u ON n.u_id = u.id");
-				foreach ($rows as $row) {
-			?>
-
+		<?php
+			$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+			$b_rows = $db->query("SELECT b.id, b.title, time, u.name FROM board b JOIN user u on b.u_id = u.id");
+			$c_rows = $db->query("SELECT c.u_id, c.content, c.time FROM board b JOIN comment c on b.u_id = c.u_id WHERE c.type = 'board'");
+			$count = $c_rows->rowCount();
+			foreach ($b_rows as $row) { 
+		?>
 			<div class= "question">
 				<div class= "question-num-summary">
 					<div class= "question-number">
@@ -56,12 +53,18 @@
 						</div>
 						<div>indexs</div>
 					</div>
+					<div class= "comment-number">
+						<div class= "mini-count">
+							<span><?= $count ?></span> <!-- 댓글 -->
+						</div>
+						<div>comments</div>
+					</div>
+
 				</div>
 				<div class="question-list-left">
 					<h3 class="title">
-						<a href= <?= "/php/notice.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
+						<a href="/view/notice.php"><?= $row["title"] ?></a> <!-- 제목 -->
 					</h3>
-					
 				</div>
 				<div class="question-list-right">
 					<a class="star-off" href="#"></a>
@@ -71,11 +74,10 @@
 					</div>
 				</div>
 			</div>
-
-			<?php } ?>
-
+			<?php }
+			?>
 		</div>
+
 	</div>
-	<script src="../public/js/star_on_off.js" type="text/javascript"></script>
 </body>
 </html>
