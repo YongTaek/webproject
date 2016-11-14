@@ -13,24 +13,27 @@ body
 
 #wmd-editor
 {
-	background-color: Aquamarine;
+	/*background-color: Aquamarine;*/
 }
 
 #wmd-button-bar
 {
 	width: 100%;
+	/*background-color: Silver;*/
 }
 
 #wmd-input
 {
 	height: 500px;
 	width: 100%;
+	/*background-color: Gainsboro;*/
 	border: 1px solid DarkGray;
 }
 
 #wmd-preview
 {
-	background-color: LightSkyBlue;
+	min-height: 100px;
+	/*background-color: LightSkyBlue;*/
 }
 
 #wmd-output

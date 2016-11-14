@@ -9,7 +9,9 @@
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
 	<link rel="stylesheet" href="../public/css/question.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="../public/css/wmd.css" />
-<!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> -->
+	<script type="text/javascript" src="../public/js/showdown.js"></script>
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </head>
 <body>
 	<header role = "banner" class="banner-color">
@@ -18,7 +20,7 @@
 			<ul id="menu" class="inline-list pull-left">
 				<li class="pull-left"><a href="/view/noticelist.php" class="menu-item" >NOTICE</a></li>
 				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item active">QUESTION</a></li>
-				<li class="pull-left"><a href="/view/" class="menu-item">FREE BOARD</a></li>
+				<li class="pull-left"><a href="/view/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
 				<a id="login" href="/view/login.php">LOGIN</a>
@@ -45,8 +47,7 @@
 					<a class="star-off"></a>
 				</div>
 				<!-- question 내용 -->
-				<div class="content">
-
+				<div>
 				</div>
 			</div>
 		</div>
@@ -54,33 +55,37 @@
 		<div class="answer">
 			<h2><?=$num ?> Answer</h2>
 			<hr>
-		<div class="overflow">
-			<div class="vote">
-				<a class="vote-up-off"></a>
-				<!-- answer 추천 수 -->
-				<span class="vote-count"><?=$test ?></span>
-				<a class="vote-down-off"></a>
-				<a class="star-off"></a>
+			<div class="overflow">
+				<div class="vote">
+					<a class="vote-up-off"></a>
+					<!-- answer 추천 수 -->
+					<span class="vote-count"><?=$test ?></span>
+					<a class="vote-down-off"></a>
+					<a class="star-off"></a>
+				</div>
+				<div class="content">
+					asf
+				</div>
 			</div>
-			<div class="content">
-				asf
-			</div>
+			<hr>
 		</div>
-		<hr>
-	</div>
-		<div>
+		<div class="write-answer">
 			<h2>Your Answer</h2>
-			<div id="post-editor" class="post-editor js-post-editor">
-				<div class="wmd-container">
-            <div id="wmd-button-bar" class="wmd-button-bar"></div>
-            <textarea id="wmd-input" class="wmd-input processed" name="post-text" cols="92" rows="15" tabindex="101" data-min-length="">
-            </textarea>
-        </div>
-				<div id="wmd-preview" class="wmd-panel"></div>
-				<div id="wmd-output" class="wmd-panel"></div>
-			</div>
+			<form action="question.php">
+				<div id="wmd-editor">
+        			<div id="wmd-button-bar"></div>
+        			<textarea id="wmd-input"></textarea>
+    		</div>
+				<hr>
+				<div id="wmd-preview" class="wmd-preview"></div>
+				<hr>
+			<input class="btn btn-primary" type="submit" value="submit" />
+			</form>
+		</div>
+
 		</div>
 	</div>
 	<script type="text/javascript" src="../public/js/wmd.js"></script>
+
 </body>
 </html>
