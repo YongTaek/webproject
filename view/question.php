@@ -39,6 +39,10 @@
 		<div class="question">
 			<!-- qeustion title -->
 			<h1 id="question_title">Title</h1>
+			<div class="question_btn">
+				<input type="button" class="btn question_modify" name="question_modify" value="수정">
+				<input type="button" class="btn question_delete" name="question_delete" value="삭제">
+			</div>
 			<hr>
 			<div>
 				<div class="vote">
@@ -56,7 +60,11 @@
 		</div>
 		<!-- question에 대한 answer -->
 		<div class="answer">
-			<h2><?=$num ?> Answer</h2>
+			<h2 id="answer_title"><?=$num ?> Answer</h2>
+			<div class="answer_btn">
+				<input type="button" class="btn answer_modify" name="answer_modify" value="수정">
+				<input type="button" class="btn answer_delete" name="answer_delete" value="삭제">
+			</div>
 			<hr>
 		<div class="overflow">
 			<div class="vote">

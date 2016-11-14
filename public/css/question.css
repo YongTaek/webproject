@@ -37,6 +37,7 @@
 }
 #question_title {
   font-weight: normal;
+  display: inline-block;
 }
 h2 {
   font-weight: 400;
@@ -44,3 +45,38 @@ h2 {
 .overflow {
   overflow: hidden;
 }
+
+.question_btn {
+  display: inline-block;
+  float: right;
+  margin-top: 30px;
+}
+
+.question_btn > * {
+  background-color: white;
+  color: gray;
+}
+
+.question_btn *:hover {
+  color: rgb(0, 154, 211);
+}
+
+.answer_btn {
+  display: inline-block;
+  float: right;
+  margin-top: 30px;
+}
+
+#answer_title {
+  display: inline-block;
+}
+
+.answer_btn > * {
+  background-color: white;
+  color: gray;
+}
+
+.answer_btn *:hover {
+  color: rgb(0, 154, 211);
+}
+
