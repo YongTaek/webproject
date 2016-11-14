@@ -27,6 +27,11 @@
 .star-off {
   background-position: 0 -120px;
 }
+
+.star-on {
+  background-position: -40px -120px;
+}
+
 .question, .answer {
   overflow: hidden;
 }

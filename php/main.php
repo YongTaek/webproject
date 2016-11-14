@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,18 +17,13 @@
 		<nav role="navigation">
 			<div id="logo" class="pull-left"><a href="/"><img class="logo" src="/public/img/selab_logo_S.png"/></a></div>
 			<ul id="menu" class="inline-list pull-left">
-				<li class="pull-left"><a href="/view/noticelist.php" class="menu-item" >NOTICE</a></li>
-				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item">QUESTION</a></li>
-				<li class="pull-left"><a href="/view/freelist.php" class="menu-item">FREE BOARD</a></li>
+				<li class="pull-left"><a href="/php/noticelist.php" class="menu-item" >NOTICE</a></li>
+				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item">QUESTION</a></li>
+				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
-			<div role="login" class="pull-right">
-				<a id="login" href="/view/login.php" class='pull-right'>LOGIN</a>
-				<div class="pull-right vr"></div>
-				<a id="mypage" href="/view/myPage.php" class='pull-right'>천유정 (학생)</a>
-			</div>
-			<img src="/public/img/search.png" class="pull-right search-icon">
-			<input type="text" class="pull-right search" name="search">
-			
+				<div role="login" class="pull-right">
+					<a id="login" href="/php/dologin.php" class='pull-right'>LOGIN</a>
+				</div>
 		</nav>
 		<div class = "jumbotron banner-color">
 			<h1 class="align-center">Home</h1>
@@ -38,26 +36,38 @@
 				<a class="h2" href="#"><h2>Notice</h2></a>
 				<hr/>
 				<ul>
+					<?php
+						$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+						$rows = $db->query("SELECT id, title, DATE_FORMAT(time, '%Y-%m-%d') FROM notice");
+						foreach ($rows as $row) {
+					?>
 					<li class= "list">
 					<!-- $id is contents id of notice -->
 					<!--title is the content title -->
-						<a href="/notice.php/?id=<?= $id ?>"><span class="title">title</span></a>
+						<a href= <?= "/php/notice.php/?id=$row['id']" ?> ><span class="title"><?= $row["title"] ?></span></a>
 						<!-- date is when the content writes -->
-						<span class="date">date</span>
+						<span class="date"><?= $row["time"] ?></span>
 					</li>
+					<?php } ?>
 				</ul>
 			</div>
 			<div class = "col-lg-6">
 				<a class="h2" href="#"><h2>Question</h2></a>
 				<hr/>
 				<ul>
+					<?php
+						$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+						$rows = $db->query("SELECT id, title, DATE_FORMAT(time, '%Y-%m-%d') FROM question");
+						foreach ($rows as $row) {
+					?>
 					<li class= "list">
 						<!-- $id is contents id of notice -->
 						<!--title is the content title -->
-						<a href="/notice.php/?id=<?= $id ?>"><span class="title">제목</span></a>
+						<a href= <?= "/php/question.php/?id=$row['id']" ?> ><span class="title"><?= $row["title"] ?></span></a>
 						<!-- date is when the content writes -->
-						<span class="date">날짜</span>
+						<span class="date"><?= $row["time"] ?></span>
 					</li>
+					<?php } ?>
 				</ul>
 			</div>
 		</div>

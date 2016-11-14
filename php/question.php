@@ -1,25 +1,30 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Question</title>
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="icon/SelabFavicon.png" type="image/png">
+  <script type="text/javascript" src="../public/js/jquery-3.1.1.min.js"></script>
 	<link rel="stylesheet" href="../public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
 	<link rel="stylesheet" href="../public/css/question.css" type="text/css">
-
+	<link rel="stylesheet" type="text/css" href="../public/css/wmd.css" />
+<!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> -->
 </head>
 <body>
 	<header role = "banner" class="banner-color">
 		<nav role="navigation" >
-			<div id="logo" class="pull-left"><a href="/"><img class="logo" src="../public/img/selab_logo_S.png" /></a></div>
+			<div id="logo" class="pull-left"><a href="/php/main.php"><img class="logo" src="../public/img/selab_logo_S.png" /></a></div>
 			<ul id="menu" class="inline-list pull-left">
-				<li class="pull-left"><a href="/view/noticelist.php" class="menu-item" >NOTICE</a></li>
-				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item active">QUESTION</a></li>
-				<li class="pull-left"><a href="/view/" class="menu-item">FREE BOARD</a></li>
+				<li class="pull-left"><a href="/php/noticelist.php" class="menu-item" >NOTICE</a></li>
+				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item active">QUESTION</a></li>
+				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
-				<a id="login" href="/view/login.php">LOGIN</a>
+				<a id="login" href="/php/dologin.php">LOGIN</a>
 			</div>
 		</nav>
 		<div class = "jumbotron banner-color">
@@ -88,7 +93,14 @@
 	</div>
 		<div>
 			<h2>Your Answer</h2>
-			<div>
+			<div id="post-editor" class="post-editor js-post-editor">
+				<div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"></div>
+            <textarea id="wmd-input" class="wmd-input processed" name="post-text" cols="92" rows="15" tabindex="101" data-min-length="">
+            </textarea>
+        </div>
+				<div id="wmd-preview" class="wmd-panel"></div>
+				<div id="wmd-output" class="wmd-panel"></div>
 			</div>
 		</div>
 		<?php
@@ -96,5 +108,6 @@
 			}
 		?>
 	</div>
+	<script type="text/javascript" src="../public/js/wmd.js"></script>
 </body>
 </html>

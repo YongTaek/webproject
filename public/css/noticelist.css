@@ -91,9 +91,8 @@ body{
 
 .question-list-left {
 	float: left;
-	
-
 }
+
 .question-num-summary > div{
 	display: inline-block;
 	margin-top: 5px;
@@ -109,6 +108,16 @@ body{
 .star-off {
 	background: url('../img/sprites.svg');
 	background-position: 0 -120px;
+	height: 30px;
+	width: 48px;
+    display: inline-block;
+    float: right;
+    margin-top: 5px;
+}
+
+.star-on {
+	background: url('../img/sprites.svg');
+	background-position: -40px -120px;
 	height: 30px;
 	width: 48px;
     display: inline-block;

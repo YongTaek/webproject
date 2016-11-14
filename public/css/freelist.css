@@ -115,13 +115,18 @@ body{
     margin-top: 5px;
 }
 
-.question-list-right > div{
-	display: inline-block;
+.star-on {
+	background: url('../img/sprites.svg');
+	background-position: -40px -120px;
+	height: 30px;
+	width: 48px;
+    display: inline-block;
+    float: right;
+    margin-top: 5px;
 }
 
-.vote-number {
-	margin-right: 20px;
-	margin-left: 20px;
+.question-list-right > div{
+	display: inline-block;
 }
 
 .mini-count{
