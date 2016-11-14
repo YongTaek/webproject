@@ -39,6 +39,9 @@
 			<ul class="nav nav-tabs">
 				<li class="question-tab active"><a herf = "/recent">recent</a></li>
 				<li class="question-tab"><a href = "/recommend">recommend</a></li>
+				<li class="question-tab"><a herf = "/myFree">My Free</a></li>
+				<li class="question-tab"><a herf = "/myfavorite">Favorite</a></li>
+
 			</ul>
 		</div>
 		<div class= "qlist-wapper">

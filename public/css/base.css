@@ -87,9 +87,11 @@ nav ul a.active:before{
 	border-radius: 5px;
 	margin-top: 1px;
 	margin-right: 10px;
-	height: 25px;
+	height: 100%;
 	width: 200px;
 	padding: 5px;
+	color: white;
+
 }
 
 .search-icon {

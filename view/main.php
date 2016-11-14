@@ -12,7 +12,7 @@
 <body>
 	<header role = "banner" class="banner-color">
 		<nav role="navigation">
-			<div id="logo" class="pull-left"><a href="/"><img class="logo" src="/public/img/selab_logo_S.png"/></a></div>
+			<div id="logo" class="pull-left"><a href="/view/main.php"><img class="logo" src="/public/img/selab_logo_S.png"/></a></div>
 			<ul id="menu" class="inline-list pull-left">
 				<li class="pull-left"><a href="/view/noticelist.php" class="menu-item" >NOTICE</a></li>
 				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item">QUESTION</a></li>
@@ -35,7 +35,7 @@
 	<div class="main">
 		<div class="container">
 			<div class = "col-lg-6">
-				<a class="h2" href="#"><h2>Notice</h2></a>
+				<a class="h2" href="/view/noticelist.php"><h2>Notice</h2></a>
 				<hr/>
 				<ul>
 					<li class= "list">
@@ -48,7 +48,7 @@
 				</ul>
 			</div>
 			<div class = "col-lg-6">
-				<a class="h2" href="#"><h2>Question</h2></a>
+				<a class="h2" href="/view/questionlist.php"><h2>Question</h2></a>
 				<hr/>
 				<ul>
 					<li class= "list">
