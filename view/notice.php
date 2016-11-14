@@ -58,6 +58,7 @@
 				<hr>
 				<?php ?>
 				<div>
+					<span><?=$num ?></spn>
 					<span>content</span>
 					<span>author</span>
 					<span class="">date</span>

@@ -70,12 +70,12 @@ nav ul a:not(.active):hover:before
 {
     height: 100%;
 }
-.active:before{
+nav ul a.active:before{
 	position: absolute;
 	width: 100%;
 	left: 0px;
 	bottom: 0px;
-	background: #FFF;
+	background: #fff;
 	content: '';
 	height: 100%;
 	opacity: 0.3;
