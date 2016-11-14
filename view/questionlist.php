@@ -50,13 +50,13 @@
 						</div>
 						<div>indexs</div>
 					</div>
-					<div class= "vote-number-active">
+					<div class= "vote-number">
 						<div class= "mini-count">
 							<span>0</span>
 						</div>
 						<div>votes</div>
 					</div>
-					<div class= "answer-number">
+					<div class= "answer-number-active">
 						<div class= "mini-count">
 							<span>0</span>
 						</div>
