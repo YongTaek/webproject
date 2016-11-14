@@ -24,7 +24,7 @@
 				<div class="pull-right vr"></div>
 				<a id="mypage" href="/view/myPage.php" class='pull-right'>천유정 (학생)</a>
 			</div>
-			<img src="/public/img/search.png" class="pull-right search-icon">
+			<a href="/view/question/search"><img src="/public/img/search.png" class="pull-right search-icon"></a>
 			<input type="text" class="pull-right search" name="search">
 		</nav>
 	</header><!-- /header -->
@@ -37,8 +37,10 @@
 			<a type="button" class="createBtn btn btn-primary" href="/questions/create">Ask Question</a>
 			<h2>ALL QUESTION</h2>
 			<ul class="nav nav-tabs">
-				<li class="question-tab active"><a herf = "/view/questionlist.php">recent</a></li>
+				<li class="question-tab active"><a href = "/view/questionlist.php">recent</a></li>
 				<li class="question-tab"><a href = "/recommend">recommend</a></li>
+				<li class="question-tab"><a href = "/myquestion">My QnA</a></li>
+				<li class="question-tab"><a href = "/myfavorite">Favorite</a></li>
 			</ul>
 		</div>
 		<div class= "qlist-wapper">
@@ -50,13 +52,13 @@
 						</div>
 						<div>indexs</div>
 					</div>
-					<div class= "vote-number-active">
+					<div class= "vote-number">
 						<div class= "mini-count">
 							<span>0</span>
 						</div>
 						<div>votes</div>
 					</div>
-					<div class= "answer-number">
+					<div class= "answer-number-active">
 						<div class= "mini-count">
 							<span>0</span>
 						</div>

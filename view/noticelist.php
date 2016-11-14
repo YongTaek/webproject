@@ -24,7 +24,7 @@
 				<div class="pull-right vr"></div>
 				<a id="mypage" href="/view/myPage.php" class='pull-right'>천유정 (학생)</a>
 			</div>
-			<img src="/public/img/search.png" class="pull-right search-icon">
+			<a href="/view/notice/search"><img src="/public/img/search.png" class="pull-right search-icon"></a>
 			<input type="text" class="pull-right search" name="search">
 		</nav>
 	</header><!-- /header -->
@@ -37,8 +37,9 @@
 			<a type="button" class="createBtn btn btn-primary" href="create-notice.php">Register Notice</a>
 			<h2>ALL NOTICE</h2>
 			<ul class="nav nav-tabs">
-				<li class="question-tab active"><a herf = "/recent">recent</a></li>
+				<li class="question-tab active"><a href = "/recent">recent</a></li>
 				<li class="question-tab"><a href = "/recommend">recommend</a></li>
+				<li class="question-tab"><a href = "/myfavorite">Favorite</a></li>
 			</ul>
 		</div>
 		<div class= "qlist-wapper">

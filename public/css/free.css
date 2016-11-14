@@ -57,3 +57,34 @@
 	color: white;
 	background-color: rgb(92, 187, 230);
 }
+
+.free_btn {
+	display: inline-block;
+	float: right;
+	margin-left: 50px;
+	margin-top: 25px;
+	margin-right: 60px;
+}
+
+.free_btn > * {
+	background-color: white;
+	color: gray;
+}
+
+.free_btn *:hover {
+	color: rgb(0, 154, 211);
+}
+
+.comment_btn {
+	display: inline-block;
+	float: right;
+}
+
+.comment_btn > * {
+	background-color: white;
+	color: gray;
+}
+
+.comment_btn *:hover {
+	color: rgb(0, 154, 211);
+}

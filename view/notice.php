@@ -14,8 +14,8 @@
 		<nav role="navigation" >
 			<div id="logo" class="pull-left"><a href="/view/main.php"><img class="logo" src="../public/img/selab_logo_S.png" /></a></div>
 			<ul id="menu" class="inline-list pull-left">
-				<li class="pull-left"><a href="/view/notice.php" class="menu-item" >NOTICE</a></li>
-				<li class="pull-left"><a href="/view/question.php" class="menu-item">QUESTION</a></li>
+				<li class="pull-left"><a href="/view/noticelist.php" class="menu-item active" >NOTICE</a></li>
+				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item">QUESTION</a></li>
 				<li class="pull-left"><a href="/view/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
@@ -24,7 +24,7 @@
 
 				<a id="mypage" href="/view/myPage.php" class='pull-right'>천유정 (학생)</a>
 			</div>
-			<img src="/public/img/search.png" class="pull-right search-icon">
+			<a href="/view/notice/search"><img src="/public/img/search.png" class="pull-right search-icon"></a>
 			<input type="text" class="pull-right search" name="search">
 		</nav>
 		<div class = "jumbotron banner-color">
@@ -44,6 +44,10 @@
 					<span>author</span>
 					<span>date</span>
 				</div>
+				<div class="notice_btn">
+					<input type="button" class="btn notice_modify" name="notice_modify" value="수정">
+					<input type="button" class="btn notice_delete" name="notice_delete" value="삭제">
+				</div>
 			</div>
 			<div class="content">
 				<p>Content</p>
@@ -58,6 +62,10 @@
 					<span>content</span>
 					<span>author</span>
 					<span class="">date</span>
+					<div class="comment_btn">
+						<input type="button" class="btn comment_modify" name="comment_modify" value="수정">
+						<input type="button" class="btn comment_delete" name="comment_delete" value="삭제">
+					</div>
 				</div>
 				<hr>
 				<?php ?>
@@ -69,6 +77,7 @@
 					<input id="comment-write" type="text" name="comment" />
 					<input class="btn" id="submit" type="submit" value="등록"/>
 				</div>
+				
 			</form>
 		</div>
 	</div>

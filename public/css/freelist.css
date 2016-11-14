@@ -68,6 +68,10 @@ body{
 	color: white;
 }
 
+.question-tab {
+	margin-right: 8px;
+}
+
 .question-tab.active{
 	background-color: rgb(239, 239, 239);
 	margin-right: 8px;
@@ -136,7 +140,7 @@ body{
 
 .title {
 	margin: 0;
-	margin-top: 20px;
+	margin-top: 18px;
 }
 
 .title > a {
