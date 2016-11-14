@@ -8,27 +8,38 @@
 	<link rel="stylesheet" href="../public/css/main.css" type="text/css">
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
 	<link rel="stylesheet" href="../public/css/jquery.tag-editor.css">
+	<link rel="stylesheet" href="../public/css/notice.css" type="text/css">
 	<title></title>
 </head>
 <body>
 	<header role = "banner" class="banner-color">
 		<nav role="navigation">
-			<div id="logo" class="pull-left"><a href="/"><img class="logo" src="selab_logo_S.png" /></a></div>
+			<div id="logo" class="pull-left"><a href="/"><img class="logo" src="/public/img/selab_logo_S.png"/></a></div>
 			<ul id="menu" class="inline-list pull-left">
-				<li class="pull-left"><a href="/notice" class="menu-item" >NOTICE</a></li>
-				<li class="pull-left"><a href="/view/questionlist.php" class="active menu-item">QUESTION</a></li>
-				<li class="pull-left"><a href="/free" class="menu-item">FREE BOARD</a></li>
+				<li class="pull-left"><a href="/view/noticelist.php" class="menu-item" >NOTICE</a></li>
+				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item">QUESTION</a></li>
+				<li class="pull-left"><a href="/view/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
 				<a id="login" href="/view/login.php" class='pull-right'>LOGIN</a>
+				<div class="pull-right vr"></div>
+				<a id="mypage" href="/view/myPage.php" class='pull-right'>천유정 (학생)</a>
 			</div>
+			<img src="/public/img/search.png" class="pull-right search-icon">
+			<input type="text" class="pull-right search" name="search">
+			
 		</nav>
 		<div class = "jumbotron banner-color">
-			<h1 class="align-center">Question</h1>
-			<p class="lead align-center"> Ask Question </p>
+			<h1 class="align-center">Home</h1>
+			<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
 		</div>
 	</header>
 	<div class='container'>
+		<!-- action php  -->
+		<form class='write' action='php' method="post">
+			<label>Title</label>
+			<input id = 'title' name='title' type="text" maxlength="128">
+		</form>
 		<div style="margin:0 0 1.2em"><textarea id="tag"></textarea></div>
 	</div>
 	<!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
