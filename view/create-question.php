@@ -50,10 +50,8 @@
 					<textarea id='wmd-input'></textarea>
 				</div>
 			</div>
-			<div style="margin:0 0 1.2em"><textarea id="tag"></textarea></div>
-			<input class='btn btn-primary' type='submit'>
 		</form>
-		
+		<div style="margin:0 0 1.2em"><textarea id="tag"></textarea></div>
 	</div>
 	<!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
 	<script src="../public/js/jquery-3.1.1.min.js"></script>
