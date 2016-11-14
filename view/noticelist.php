@@ -37,9 +37,9 @@
 			<a type="button" class="createBtn btn btn-primary" href="/notice/create">Register Notice</a>
 			<h2>ALL NOTICE</h2>
 			<ul class="nav nav-tabs">
-				<li class="question-tab active"><a herf = "/recent">recent</a></li>
+				<li class="question-tab active"><a href = "/recent">recent</a></li>
 				<li class="question-tab"><a href = "/recommend">recommend</a></li>
-				<li class="question-tab"><a herf = "/myfavorite">Favorite</a></li>
+				<li class="question-tab"><a href = "/myfavorite">Favorite</a></li>
 			</ul>
 		</div>
 		<div class= "qlist-wapper">

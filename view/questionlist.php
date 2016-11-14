@@ -37,10 +37,10 @@
 			<a type="button" class="createBtn btn btn-primary" href="/questions/create">Ask Question</a>
 			<h2>ALL QUESTION</h2>
 			<ul class="nav nav-tabs">
-				<li class="question-tab active"><a herf = "/view/questionlist.php">recent</a></li>
+				<li class="question-tab active"><a href = "/view/questionlist.php">recent</a></li>
 				<li class="question-tab"><a href = "/recommend">recommend</a></li>
-				<li class="question-tab"><a herf = "/myquestion">My QnA</a></li>
-				<li class="question-tab"><a herf = "/myfavorite">Favorite</a></li>
+				<li class="question-tab"><a href = "/myquestion">My QnA</a></li>
+				<li class="question-tab"><a href = "/myfavorite">Favorite</a></li>
 			</ul>
 		</div>
 		<div class= "qlist-wapper">
