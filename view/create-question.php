@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="../public/css/jquery.tag-editor.css">
 	<link rel="stylesheet" href="../public/css/notice.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="../public/css/wmd.css" />
-	<link rel="stylesheet" type="text/css" href="../public/css/question_editor.css" />
+	<link rel="stylesheet" type="text/css" href="../public/css/create-question.css" />
 	<script type="text/javascript" src="../public/js/showdown.js"></script>
 	<title></title>
 </head>
@@ -44,28 +44,35 @@
 				<label>Title</label>
 				<input id = 'title' name='title' type="text" maxlength="128">
 			</div>
-			<div class='wmd-container'>
+			<div class='question-container wmd-container'>
 				<div id='wmd-editor'>
 					<div id='wmd-button-bar'></div>
-					<textarea id='wmd-input'></textarea>
+					<textarea id='wmd-input' name='question-content'></textarea>
 				</div>
+				<hr>
+				<div id="wmd-preview" class="wmd-preview"></div>
+				<hr>
 			</div>
-		</form>
-		<div style="margin:0 0 1.2em"><textarea id="tag"></textarea></div>
-	</div>
-	<!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
-	<script src="../public/js/jquery-3.1.1.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-	<script src="../public/js/jquery.caret.min.js"></script>
-	<script src="../public/js/jquery.tag-editor.min.js"></script>
-	<script>
-		$(function() {
-			$('#tag').tagEditor({
-				autocomplete: { delay: 0,position: { collision: 'flip' }, source: ['ActionScript', 'AppleScript', 'Asp', 'BASIC', 'C', 'C++', 'CSS', 'Clojure', 'COBOL', 'ColdFusion', 'Erlang', 'Fortran', 'Groovy', 'Haskell', 'HTML', 'Java', 'JavaScript', 'Lisp', 'Perl', 'PHP', 'Python', 'Ruby', 'Scala', 'Scheme'] },
-				placeholder: 'Programming languages ...'
+			<div style="margin:0 0 1.2em">
+				<label>Tags</label>
+				<textarea id="tag" name="tags"></textarea></div>
+				<input class='btn btn-primary' type='submit'>
+			</form>
+
+		</div>
+		<!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
+		<script src="../public/js/jquery-3.1.1.min.js"></script>
+		<script src="../public/js/jquery-ui-1.12.1.min.js"></script>
+		<script src="../public/js/jquery.caret.min.js"></script>
+		<script src="../public/js/jquery.tag-editor.min.js"></script>
+		<script>
+			$(function() {
+				$('#tag').tagEditor({
+					autocomplete: { delay: 0,position: { collision: 'flip' }, source: ['ActionScript', 'AppleScript', 'Asp', 'BASIC', 'C', 'C++', 'CSS', 'Clojure', 'COBOL', 'ColdFusion', 'Erlang', 'Fortran', 'Groovy', 'Haskell', 'HTML', 'Java', 'JavaScript', 'Lisp', 'Perl', 'PHP', 'Python', 'Ruby', 'Scala', 'Scheme'] },
+					placeholder: 'Programming languages ...'
+				});
 			});
-		});
-	</script>
-	<script type="text/javascript" src="../public/js/wmd.js"></script>
-</body>
-</html>
+		</script>
+		<script type="text/javascript" src="../public/js/wmd.js"></script>
+	</body>
+	</html>
