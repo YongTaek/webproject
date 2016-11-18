@@ -32,7 +32,6 @@
 						<li><a href="user-setting.php">Setting</a></li>
 					</ul>
 				<?php } else { ?>
-					<div class="pull-right vr"></div>
 					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
 		</nav>
