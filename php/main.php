@@ -23,7 +23,7 @@
 			<div role="login" class="pull-right">
 				<div class="pull-right vr"></div>
 				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
-					<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= if ($_SESSION["auth"] == "professor") "교수" elseif ($_SESSION["auth"] == "assistant") "조교" else "학생" ?>)</a>
+					<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
 				<?php } else { ?>
 					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
