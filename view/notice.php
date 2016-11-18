@@ -20,10 +20,9 @@
 			</ul>
 			<div role="login" class="pull-right">
 				<a id="login" href="/view/login.php" class='pull-right'>LOGIN</a>
-				<div class="pull-right vr"></div>
-
-				<a id="mypage" href="/view/myPage.php" class='pull-right'>천유정 (학생)</a>
+				<div class="pull-right vr">
 			</div>
+			<a id="mypage" href="/view/myPage.php" class='pull-right'>천유정 (학생)</a>
 			<a href="/view/notice/search"><img src="/public/img/search.png" class="pull-right search-icon"></a>
 			<input type="text" class="pull-right search" name="search">
 		</nav>
