@@ -2,8 +2,8 @@
   session_start();
 
   if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
-    $cur_pass = $_POST["current_password"];
-    $new_pass = $_POST["new_password"];
+    $cur_pass = $_POST["id"];
+    $new_pass = $_POST["password"];
 
     $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
     $rows = $db->query("SELECT * FROM user WHERE id = ".$_SESSION["id"]);

@@ -15,13 +15,13 @@
 			<h1>Change Password</h1>
 		</header>
 		<content>
-			<form method="post" action="changepw.php">
-				<input id="idform" class="textfield" type="password" name="current_password" placeholder= "Current Password"/>
+			<form method="post" action="change_password.php">
+				<input id="idform" class="textfield" type="text" name="id" placeholder= "Current Password"/>
 				<div class="login_icon" id="usericon"></div>
-				<input class="textfield" type="password" name="new_password" placeholder = "New Password"/>
+				<input class="textfield" type="password" name="password" placeholder = "New Password"/>
 				<div class="login_icon" id="passwdicon"></div>
 				<input id="submit_button" type="submit" value="change_password"/>
-				<input type="hidden" name="source" value="/main.php">
+				<input type="hidden" name="source" value="/php/main.php">
 			</form>
 		</content>
 	</div>
