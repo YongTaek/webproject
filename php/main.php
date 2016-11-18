@@ -22,7 +22,7 @@
 			</ul>
 			<div role="login" class="pull-right">
 				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
-					<a id="login" href="login.php" class='pull-right'>LOGOUT</a>
+					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
 					<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
 					<ul class="hidden" id="setting">
