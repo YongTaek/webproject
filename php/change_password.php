@@ -11,7 +11,10 @@
     if ($rows->rowCount() > 0) {
       $row = $rows->fetch();
       if (password_verify($cur_pass, $row["passwd"])) {
-        $new_pass = password_hash($new_pass, PASSWORD_DEFAULT, 10);
+        $options = [
+          'cost' => 10,
+        ];
+        $new_pass = password_hash($new_pass, PASSWORD_DEFAULT, $options);
         try {
           $db->query("UPDATE user SET passwd = '$new_pass' WHERE id = ".$_SESSION["id"]);
         } catch (PDOException $ex) {
