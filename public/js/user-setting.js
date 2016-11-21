@@ -1,3 +1,3 @@
-$('#mypage').click(function () {
-  $("#setting").removeClass("hidden");
+$('#mypage').hover(function () {
+  $('#setting').removeClass('hidden');
 })

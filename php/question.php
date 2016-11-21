@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
 	<link rel="stylesheet" href="../public/css/question.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="../public/css/wmd.css" />
-<!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> -->
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </head>
 <body>
 	<header role = "banner" class="banner-color">

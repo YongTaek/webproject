@@ -211,7 +211,7 @@ var _StripLinkDefinitions = function(text) {
 			} else if (m5) {
 				g_titles.set(m1, m5.replace(/"/g,"&quot;"));
 			}
-			
+
 			// Completely remove the definition from the text
 			return "";
 		}
@@ -281,7 +281,7 @@ var _HashHTMLBlocks = function(text) {
 	text = text.replace(/^(<(p|div|h[1-6]|blockquote|pre|table|dl|ol|ul|script|noscript|form|fieldset|iframe|math)\b[^\r]*?.*<\/\2>[ \t]*(?=\n+)\n)/gm,hashElement);
 
 	// Special case just for <hr />. It was easier to make a special case than
-	// to make the other regex more complicated.  
+	// to make the other regex more complicated.
 
 	/*
 		text = text.replace(/
@@ -290,7 +290,7 @@ var _HashHTMLBlocks = function(text) {
 		(						// save in $1
 			(<(hr)				// start tag = $2
 			\b					// word break
-			([^<>])*?			// 
+			([^<>])*?			//
 			\/?>)				// the matching end tag
 			[ \t]*
 			(?=\n{2,})			// followed by a blank line
@@ -345,13 +345,13 @@ var hashElement = function(wholeMatch,m1) {
 
 	// Undo double lines
 	blockText = blockText.replace(/^\n+/,"");
-	
+
 	// strip trailing blank lines
 	blockText = blockText.replace(/\n+$/g,"");
-	
+
 	// Replace the element text with a marker ("~KxK" where x is its key)
 	blockText = "\n\n~K" + (g_html_blocks.push(blockText)-1) + "K\n\n";
-	
+
 	return blockText;
 };
 
@@ -417,9 +417,9 @@ var _EscapeSpecialCharsWithinTagAttributes = function(text) {
 // don't conflict with their use in Markdown for code, italics and strong.
 //
 
-	// Build a regex to find HTML tags and comments.  See Friedl's 
+	// Build a regex to find HTML tags and comments.  See Friedl's
     // "Mastering Regular Expressions", 2nd Ed., pp. 200-201.
-    
+
     // SE: changed the comment part of the regex
 
     var regex = /(<[a-z\/!$]("[^"]*"|'[^']*'|[^'">])*>|<!(--(?:|(?:[^>-]|-[^>])(?:[^-]|-[^-])*)--)>)/gi;
@@ -490,7 +490,7 @@ var _DoAnchors = function(text) {
                     |
                     [^()]
                 )*?
-            )>?				
+            )>?
 			[ \t]*
 			(						// $5
 				(['"])				// quote char = $6
@@ -502,7 +502,7 @@ var _DoAnchors = function(text) {
 		)
 		/g,writeAnchorTag);
 	*/
-    
+
 	text = text.replace(/(\[((?:\[[^\]]*\]|[^\[\]])*)\]\([ \t]*()<?((?:\([^)]*\)|[^()])*?)>?[ \t]*((['"])(.*?)\6[ \t]*)?\))/g,writeAnchorTag);
 
 	//
@@ -532,14 +532,14 @@ var writeAnchorTag = function(wholeMatch,m1,m2,m3,m4,m5,m6,m7) {
 	var link_id	 = m3.toLowerCase();
 	var url		= m4;
 	var title	= m7;
-	
+
 	if (url == "") {
 		if (link_id == "") {
 			// lower-case and turn embedded newlines into spaces
 			link_id = link_text.toLowerCase().replace(/ ?\n/g," ");
 		}
 		url = "#"+link_id;
-		
+
 		if (g_urls.get(link_id) != undefined) {
 			url = g_urls.get(link_id);
 			if (g_titles.get(link_id) != undefined) {
@@ -554,19 +554,19 @@ var writeAnchorTag = function(wholeMatch,m1,m2,m3,m4,m5,m6,m7) {
 				return whole_match;
 			}
 		}
-	}	
-	
+	}
+
 	url = escapeCharacters(url,"*_");
 	var result = "<a href=\"" + url + "\"";
-	
+
 	if (title != "") {
 		title = title.replace(/"/g,"&quot;");
 		title = escapeCharacters(title,"*_");
 		result +=  " title=\"" + title + "\"";
 	}
-	
+
 	result += ">" + link_text + "</a>";
-	
+
 	return result;
 }
 
@@ -637,14 +637,14 @@ var writeImageTag = function(wholeMatch,m1,m2,m3,m4,m5,m6,m7) {
 	var title	= m7;
 
 	if (!title) title = "";
-	
+
 	if (url == "") {
 		if (link_id == "") {
 			// lower-case and turn embedded newlines into spaces
 			link_id = alt_text.toLowerCase().replace(/ ?\n/g," ");
 		}
 		url = "#"+link_id;
-		
+
 		if (g_urls.get(link_id) != undefined) {
 			url = g_urls.get(link_id);
 			if (g_titles.get(link_id) != undefined) {
@@ -654,8 +654,8 @@ var writeImageTag = function(wholeMatch,m1,m2,m3,m4,m5,m6,m7) {
 		else {
 			return whole_match;
 		}
-	}	
-	
+	}
+
 	alt_text = alt_text.replace(/"/g,"&quot;");
 	url = escapeCharacters(url,"*_");
 	var result = "<img src=\"" + url + "\" alt=\"" + alt_text + "\"";
@@ -668,9 +668,9 @@ var writeImageTag = function(wholeMatch,m1,m2,m3,m4,m5,m6,m7) {
 		title = escapeCharacters(title,"*_");
 		result +=  " title=\"" + title + "\"";
 	//}
-	
+
 	result += " />";
-	
+
 	return result;
 }
 
@@ -680,7 +680,7 @@ var _DoHeaders = function(text) {
 	// Setext-style headers:
 	//	Header 1
 	//	========
-	//  
+	//
 	//	Header 2
 	//	--------
 	//
@@ -761,7 +761,7 @@ var _DoLists = function(text) {
 			var list_type = (m2.search(/[*+-]/g)>-1) ? "ul" : "ol";
 
 			var result = _ProcessListItems(list, list_type);
-	
+
 			// Trim any trailing whitespace, to put the closing `</$list_type>`
 			// up on the preceding line, to get it past the current stupid
 			// HTML block parser. This is a hack to work around the terrible
@@ -778,7 +778,7 @@ var _DoLists = function(text) {
 
 			var list_type = (m3.search(/[*+-]/g)>-1) ? "ul" : "ol";
 			var result = _ProcessListItems(list, list_type);
-			result = runup + "<"+list_type+">\n" + result + "</"+list_type+">\n";	
+			result = runup + "<"+list_type+">\n" + result + "</"+list_type+">\n";
 			return result;
 		});
 	}
@@ -847,7 +847,7 @@ _ProcessListItems = function(list_str, list_type) {
 			(?= (~0 | \2 ({MARKER}) [ \t]+))
 		/gm, function(){...});
 	*/
-    
+
     var marker = _listItemMarkers[list_type];
     var re = new RegExp("(^[ \\t]*)(" + marker + ")[ \\t]+([^\\r]+?(\\n+))(?=(~0|\\1(" + marker + ")[ \\t]+))", "gm");
     var last_item_had_a_double_newline = false;
@@ -883,7 +883,7 @@ _ProcessListItems = function(list_str, list_type) {
 var _DoCodeBlocks = function(text) {
 //
 //  Process Markdown `<pre><code>` blocks.
-//  
+//
 
 	/*
 		text = text.replace(text,
@@ -900,18 +900,18 @@ var _DoCodeBlocks = function(text) {
 
 	// attacklab: sentinel workarounds for lack of \A and \Z, safari\khtml bug
 	text += "~0";
-	
+
 	text = text.replace(/(?:\n\n|^)((?:(?:[ ]{4}|\t).*\n+)+)(\n*[ ]{0,3}[^ \t\n]|(?=~0))/g,
 		function(wholeMatch,m1,m2) {
 			var codeblock = m1;
 			var nextChar = m2;
-		
+
 			codeblock = _EncodeCode( _Outdent(codeblock));
 			codeblock = _Detab(codeblock);
 			codeblock = codeblock.replace(/^\n+/g,""); // trim leading newlines
 			codeblock = codeblock.replace(/\n+$/g,""); // trim trailing whitespace
 
-			codeblock = "<pre><code>" + codeblock + "\n</code></pre>";
+			codeblock = "<pre class=\"prettyprint\"><code>" + codeblock + "\n</code></pre>";
 
 			return "\n\n" + codeblock + "\n\n" + nextChar;
 		}
@@ -932,26 +932,26 @@ var hashBlock = function(text) {
 var _DoCodeSpans = function(text) {
 //
 //   *  Backtick quotes are used for <code></code> spans.
-// 
+//
 //   *  You can use multiple backticks as the delimiters if you want to
 //	 include literal backticks in the code span. So, this input:
-//	 
+//
 //		 Just type ``foo `bar` baz`` at the prompt.
-//	 
+//
 //	   Will translate to:
-//	 
+//
 //		 <p>Just type <code>foo `bar` baz</code> at the prompt.</p>
-//	 
+//
 //	There's no arbitrary limit to the number of backticks you
 //	can use as delimters. If you need three consecutive backticks
 //	in your code, use four for delimiters, etc.
 //
 //  *  You can use spaces to get literal backticks at the edges:
-//	 
+//
 //		 ... type `` `bar` `` ...
-//	 
+//
 //	   Turns to:
-//	 
+//
 //		 ... type <code>`bar`</code> ...
 //
 
@@ -1054,7 +1054,7 @@ var _DoBlockQuotes = function(text) {
 
 			bq = bq.replace(/^[ \t]+$/gm,"");		// trim whitespace-only lines
 			bq = _RunBlockGamut(bq);				// recurse
-			
+
 			bq = bq.replace(/(^|\n)/g,"$1  ");
 			// These leading spaces screw with <pre> content, so we need to fix that:
 			bq = bq.replace(
@@ -1066,7 +1066,7 @@ var _DoBlockQuotes = function(text) {
 					pre = pre.replace(/~0/g,"");
 					return pre;
 				});
-			
+
 			return hashBlock("<blockquote>\n" + bq + "\n</blockquote>");
 		});
 	return text;
@@ -1125,14 +1125,14 @@ var _FormParagraphs = function(text, doNotUnhash) {
 
 var _EncodeAmpsAndAngles = function(text) {
 // Smart processing for ampersands and angle brackets that need to be encoded.
-	
+
 	// Ampersand-encoding based entirely on Nat Irons's Amputator MT plugin:
 	//   http://bumppo.net/projects/amputator/
 	text = text.replace(/&(?!#?[xX]?(?:[0-9a-fA-F]+|\w+);)/g,"&amp;");
-	
+
 	// Encode naked <'s
 	text = text.replace(/<(?![a-z\/?\$!])/gi,"&lt;");
-	
+
 	return text;
 }
 

@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="../public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="../public/css/main.css" type="text/css">
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
+	<script src="../public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 </head>
 <body>
 	<header role = "banner" class="banner-color">
@@ -21,9 +22,13 @@
 				<a id="login" href="login.php" class='pull-right'>LOGIN</a>
 				<div class="pull-right vr"></div>
 				<a id="mypage" href="#" class='pull-right'>천유정 (학생)</a>
-				<ul class="hidden" id="setting">
-					<li><a href="user-setting.php">Setting</a></li>
-				</ul>
+				<div id="setting">
+					<ul class="hidden">
+						<li>
+							<a href="user-setting.php">Setting</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 			<img src="/public/img/search.png" class="pull-right search-icon">
 			<input type="text" class="pull-right search" name="search">
