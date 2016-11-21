@@ -38,7 +38,7 @@
     <?php
       $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
       $id = $_GET["id"];
-      $u_id = $_SESSTION["id"];
+      $u_id = $_SESSION["id"];
       $rows = $db->query("SELECT title, content FROM notice WHERE u_id = $u_id AND id = $id");
       $row = $rows->fetch();
     ?>
