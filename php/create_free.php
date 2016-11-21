@@ -11,7 +11,7 @@
   try {
     $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $db->query("INSERT INTO notice(u_id, title, content, time) VALUES($id, '$title', '$content', '$time')");
+    $db->query("INSERT INTO board(u_id, title, content, time) VALUES($id, '$title', '$content', '$time')");
   } catch (PDOException $e) {
     echo $e->getMessage();
   }

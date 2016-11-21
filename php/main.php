@@ -10,20 +10,30 @@
 	<link rel="stylesheet" href="../public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="../public/css/main.css" type="text/css">
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
-
 </head>
 <body>
 	<header role = "banner" class="banner-color">
 		<nav role="navigation">
-			<div id="logo" class="pull-left"><a href="/"><img class="logo" src="/public/img/selab_logo_S.png"/></a></div>
+			<div id="logo" class="pull-left"><a href="/php/main.php"><img class="logo" src="/public/img/selab_logo_S.png"/></a></div>
 			<ul id="menu" class="inline-list pull-left">
 				<li class="pull-left"><a href="/php/noticelist.php" class="menu-item" >NOTICE</a></li>
 				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item">QUESTION</a></li>
 				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
-				<div role="login" class="pull-right">
-					<a id="login" href="/php/dologin.php" class='pull-right'>LOGIN</a>
-				</div>
+			<div role="login" class="pull-right">
+				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
+					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
+					<div class="pull-right vr"></div>
+					<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
+					<ul class="hidden" id="setting">
+						<li><a href="user-setting.php">Setting</a></li>
+					</ul>
+				<?php } else { ?>
+					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
+				<?php } ?>
+			</div>
+			<img src="/public/img/search.png" class="pull-right search-icon">
+			<input type="text" class="pull-right search" name="search">
 		</nav>
 		<div class = "jumbotron banner-color">
 			<h1 class="align-center">Home</h1>
@@ -33,7 +43,7 @@
 	<div class="main">
 		<div class="container">
 			<div class = "col-lg-6">
-				<a class="h2" href="#"><h2>Notice</h2></a>
+				<a class="h2" href="/php/noticelist.php"><h2>Notice</h2></a>
 				<hr/>
 				<ul>
 					<?php
@@ -72,6 +82,6 @@
 			</div>
 		</div>
 	</div>
-
+	<script type="text/javascript" src="../public/js/user-setting.js"></script>
 </body>
 </html>
