@@ -28,6 +28,7 @@
 
   </script>
  --></head>
+
 <body>
 	<header role = "banner" class="banner-color">
 		<nav role="navigation">
@@ -41,9 +42,13 @@
 				<a id="login" href="login.php" class='pull-right'>LOGIN</a>
 				<div class="pull-right vr"></div>
 				<a id="mypage" href="#" class='pull-right'>천유정 (학생)</a>
-				<ul class="hidden" id="setting">
-					<li><a href="user-setting.php">Setting</a></li>
-				</ul>
+				<div id="setting">
+					<ul class="hidden">
+						<li>
+							<a href="user-setting.php">Setting</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 			<img src="/public/img/search.png" class="pull-right search-icon">
 			<input type="text" class="pull-right search" name="search">

@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
 	<link rel="stylesheet" href="../public/css/question.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="../public/css/wmd.css" />
-<!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> -->
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </head>
 <body>
 	<header role = "banner" class="banner-color">
@@ -24,7 +24,16 @@
 				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
-				<a id="login" href="/php/dologin.php">LOGIN</a>
+				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
+					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
+					<div class="pull-right vr"></div>
+					<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
+					<ul class="hidden" id="setting">
+						<li><a href="user-setting.php">Setting</a></li>
+					</ul>
+				<?php } else { ?>
+					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
+				<?php } ?>
 			</div>
 		</nav>
 		<div class = "jumbotron banner-color">

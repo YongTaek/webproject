@@ -5,10 +5,9 @@
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="icon/SelabFavicon.png" type="image/png">
 	<link rel="stylesheet" href="../public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+	<script src="../public/css/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
 	<link rel="stylesheet" href="../public/css/notice.css" type="text/css">
-</head>
 <body>
 	<header role = "banner" class="banner-color">
 		<nav role="navigation" >
@@ -20,7 +19,8 @@
 			</ul>
 			<div role="login" class="pull-right">
 				<a id="login" href="/view/login.php" class='pull-right'>LOGIN</a>
-				<div class="pull-right vr">
+				<div class="pull-right vr"></div>
+				<a id="mypage" href="/view/myPage.php" class='pull-right'>천유정 (학생)</a>
 			</div>
 			<a id="mypage" href="/view/myPage.php" class='pull-right'>천유정 (학생)</a>
 			<a href="/view/notice/search"><img src="/public/img/search.png" class="pull-right search-icon"></a>
@@ -76,7 +76,7 @@
 					<input id="comment-write" type="text" name="comment" />
 					<input class="btn" id="submit" type="submit" value="등록"/>
 				</div>
-				
+
 			</form>
 		</div>
 	</div>
