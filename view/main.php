@@ -12,22 +12,8 @@
 	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
-	<script src="../public/js/push.js"></script>
-	<!-- <script>
-	    // Enable pusher logging - don't include this in production
-	    Pusher.logToConsole = true;
-
-	    var pusher = new Pusher('dc9f3fc01f0f63f45083', {
-	      encrypted: true
-	    });
-
-	    var channel = pusher.subscribe('test_channel');
-	    channel.bind('my_event', function(data) {
-	      alert(data.message);
-	    });
-
-  </script>
- --></head>
+	<script src="/public/js/push.js"></script>
+</head>
 
 <body>
 	<header role = "banner" class="banner-color">
@@ -58,12 +44,6 @@
 			<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
 		</div>
 	</header>
-
-	<div id="push-container">
-		<a id = "display-cancel"></a>
-		<div id = "push"></div>
-	</div>
-
 	<div class="main">
 		<div class="container">
 			<div class = "col-lg-6">
