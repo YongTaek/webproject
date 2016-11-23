@@ -27,13 +27,12 @@
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
 					<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
-					<ul class="hidden" id="setting">
-						<li><a href="user-setting.php">Setting</a></li>
-					</ul>
 				<?php } else { ?>
 					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
 			</div>
+			<a href="/view/notice/search"><img src="/public/img/search.png" class="pull-right search-icon"></a>
+			<input type="text" class="pull-right search" name="search">
 		</nav>
 	</header><!-- /header -->
 	<div class = "jumbotron banner-color">

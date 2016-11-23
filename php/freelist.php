@@ -15,12 +15,12 @@
 	<header role ="banner">
 		<nav role="navigation" class="banner-color">
 			<div id="logo" class="pull-left">
-				<a href="/view/main.php"><img class="logo" src="/public/img/selab_logo_S.png" /></a>
+				<a href="/php/main.php"><img class="logo" src="/public/img/selab_logo_S.png" /></a>
 			</div>
 			<ul id="menu" class="inline-list pull-left">
-				<li class="pull-left"><a href="/view/noticelist.php" class="menu-item" >NOTICE</a></li>
-				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item">QUESTION</a></li>
-				<li class="pull-left"><a href="/view/freelist.php" class="active menu-item">FREE BOARD</a></li>
+				<li class="pull-left"><a href="/php/noticelist.php" class="menu-item" >NOTICE</a></li>
+				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item">QUESTION</a></li>
+				<li class="pull-left"><a href="/php/freelist.php" class="active menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
 				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
@@ -28,7 +28,6 @@
 					<div class="pull-right vr"></div>
 					<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
 				<?php } else { ?>
-					<div class="pull-right vr"></div>
 					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
 			</div>
