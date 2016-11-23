@@ -76,7 +76,7 @@
 				</div>
 				<div class="question-list-left">
 					<h3 class="title">
-						<a href="/view/notice.php"><?= $row["title"] ?></a> <!-- 제목 -->
+						<a href="/php/free.php?id=<?= $row["id"] ?>"><?= $row["title"] ?></a> <!-- 제목 -->
 					</h3>
 				</div>
 				<div class="question-list-right">

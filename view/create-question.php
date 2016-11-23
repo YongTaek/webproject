@@ -37,8 +37,8 @@
 
 		</nav>
 		<div class = "jumbotron banner-color">
-			<h1 class="align-center">Home</h1>
-			<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
+			<h1 class="align-center">Question</h1>
+			<p class="lead align-center">Ask Question!</p>
 		</div>
 	</header>
 	<div class='container'>
