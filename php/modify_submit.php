@@ -1,7 +1,7 @@
 <?php
   session_start();
   $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-  $id = $_GET["id"];
+  $id = $_POST["id"];
   $u_id = $_SESSION["id"];
   $title = $_POST["title"];
   $content = $_POST["content"];
