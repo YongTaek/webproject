@@ -42,7 +42,7 @@
   <?php
     if (isset($_GET["id"])) {
       $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-      $rows = $db->query("SELECT b.id, name, title, content, time FROM board b JOIN user u ON n.u_id = u.id WHERE n.id = ".$_GET["id"]);
+      $rows = $db->query("SELECT b.id, name, title, content, time FROM board b JOIN user u ON b.u_id = u.id WHERE b.id = ".$_GET["id"]);
       foreach ($rows as $row) {
   ?>
 
