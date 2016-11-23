@@ -7,7 +7,6 @@
 	<link rel="stylesheet" href="../public/css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="../public/css/questionlist.css">
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
 	<meta charset="utf-8">
 	<title>질문 게시판</title>
@@ -23,17 +22,17 @@
 				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item active">QUESTION</a></li>
 				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
-			<div role="login" class="pull-right"></div>
+			<div role="login" class="pull-right">
 				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
 					<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
-					<ul class="hidden" id="setting">
-						<li><a href="user-setting.php">Setting</a></li>
-					</ul>
 				<?php } else { ?>
 					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
+			</div>
+			<a href="/view/question/search"><img src="/public/img/search.png" class="pull-right search-icon"></a>
+			<input type="text" class="pull-right search" name="search">
 		</nav>
 	</header><!-- /header -->
 	<div class = "jumbotron banner-color">
@@ -45,8 +44,10 @@
 			<a type="button" class="createBtn btn btn-primary" href="/questions/create">Ask Question</a>
 			<h2>ALL QUESTION</h2>
 			<ul class="nav nav-tabs">
-				<li class="question-tab active"><a herf = "/recent">recent</a></li>
+				<li class="question-tab active"><a href = "/php/questionlist.php">recent</a></li>
 				<li class="question-tab"><a href = "/recommend">recommend</a></li>
+				<li class="question-tab"><a href = "/myquestion">My QnA</a></li>
+				<li class="question-tab"><a href = "/myfavorite">Favorite</a></li>
 			</ul>
 		</div>
 		<div class= "qlist-wapper">
@@ -63,13 +64,13 @@
 						</div>
 						<div>indexs</div>
 					</div>
-					<div class= "vote-number-active">
+					<div class= "vote-number">
 						<div class= "mini-count">
 							<span><?= $row["score"] ?></span>
 						</div>
 						<div>votes</div>
 					</div>
-					<div class= "answer-number">
+					<div class= "answer-number-active">
 						<div class= "mini-count">
 							<span><?= ($db->query("SELECT id FROM answer WHERE q_id = ".$row["id"]))->rowCount() ?></span>
 						</div>
@@ -106,4 +107,4 @@
 		</div>
 		<script src="../public/js/star_on_off.js" type="text/javascript"></script>
 	</body>
-	</html>
+</html>

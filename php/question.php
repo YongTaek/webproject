@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
 	<link rel="stylesheet" href="../public/css/question.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="../public/css/wmd.css" />
+	<script type="text/javascript" src="../public/js/showdown.js"></script>
 	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </head>
 <body>
@@ -35,6 +36,8 @@
 					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
 			</div>
+			<a href="/view/question/search"><img src="/public/img/search.png" class="pull-right search-icon"></a>
+			<input type="text" class="pull-right search" name="search">
 		</nav>
 		<div class = "jumbotron banner-color">
 			<h1 class="align-center">Notice</h1>
@@ -80,7 +83,11 @@
 		?>
 
 		<div class="answer">
-			<h2><?= $count ?> Answer</h2>
+			<h2 id="answer_title"><?= $count ?> Answer</h2>
+			<div class="answer_btn">
+				<a class="btn answer_modify" name="answer_modify" href="">수정</a>
+				<a class="btn answer_delete" name="answer_delete" href="">삭제</a>
+			</div>
 			<hr>
 		<div class="overflow">
 			<div class="vote">
@@ -100,17 +107,18 @@
 		?>
 		<hr>
 	</div>
-		<div>
+		<div class="write-answer">
 			<h2>Your Answer</h2>
-			<div id="post-editor" class="post-editor js-post-editor">
-				<div class="wmd-container">
-            <div id="wmd-button-bar" class="wmd-button-bar"></div>
-            <textarea id="wmd-input" class="wmd-input processed" name="post-text" cols="92" rows="15" tabindex="101" data-min-length="">
-            </textarea>
-        </div>
-				<div id="wmd-preview" class="wmd-panel"></div>
-				<div id="wmd-output" class="wmd-panel"></div>
-			</div>
+			<form action="question.php">
+				<div id="wmd-editor">
+        			<div id="wmd-button-bar"></div>
+        			<textarea id="wmd-input"></textarea>
+    		</div>
+				<hr>
+				<div id="wmd-preview" class="wmd-preview"></div>
+				<hr>
+			<input class="btn btn-primary" type="submit" value="submit" />
+			</form>
 		</div>
 		<?php
 				}
@@ -118,5 +126,6 @@
 		?>
 	</div>
 	<script type="text/javascript" src="../public/js/wmd.js"></script>
+	<script src="../public/js/star_on_off.js" type="text/javascript"></script>
 </body>
 </html>

@@ -8,6 +8,12 @@
 	<script src="../public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
 	<link rel="stylesheet" href="../public/css/notice.css" type="text/css">
+	<link rel="stylesheet" href="../public/css/pusher.css" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
+	<script src="../public/js/push.js"></script>
 <body>
 	<header role = "banner" class="banner-color">
 		<nav role="navigation" >

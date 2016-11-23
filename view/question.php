@@ -11,6 +11,12 @@
 	<link rel="stylesheet" type="text/css" href="../public/css/wmd.css" />
 	<script type="text/javascript" src="/public/js/showdown.js"></script>
 	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<link rel="stylesheet" href="../public/css/pusher.css" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
+	<script src="../public/js/push.js"></script>
 </head>
 <body>
 	<header role = "banner" class="banner-color">
