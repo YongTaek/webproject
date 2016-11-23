@@ -40,11 +40,12 @@
       $id = $_GET["id"];
       $u_id = $_SESSION["id"];
       $rows = $db->query("SELECT title, content FROM notice WHERE u_id = $u_id AND id = $id");
-      $row = $rows->fetch();
+      if ($rows->rowCount() > 0) {
+        $row = $rows->fetch();
     ?>
     <div class="container">
       <div class="write-answer">
-        <form action="notice.php">
+        <form action="modify_submit.php" method="POST">
           <h2>Title</h2>
           <div class="title">
             <input name="title" type="text" value="<?= $row["title"] ?>">
@@ -52,7 +53,7 @@
           <h2>Content</h2>
           <div class="content" id="wmd-editor">
             <div id="wmd-button-bar"></div>
-            <textarea id="wmd-input" value="<?= $row["content"] ?>"></textarea>
+            <textarea id="wmd-input" name="content"><?= $row["content"] ?></textarea>
           </div>
           <hr>
           <div id="wmd-preview" class="wmd-preview"></div>
@@ -61,6 +62,7 @@
         </form>
       </div>
     </div>
+    <?php } ?>
     <script type="text/javascript" src="../public/js/wmd.js"></script>
   </body>
 </html>
