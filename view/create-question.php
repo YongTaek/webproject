@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="../public/css/main.css" type="text/css">
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
 	<link rel="stylesheet" href="../public/css/jquery.tag-editor.css">
-	<link rel="stylesheet" href="../public/css/notice.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../public/css/create-post.css" />
 	<link rel="stylesheet" type="text/css" href="../public/css/wmd.css" />
 	<link rel="stylesheet" type="text/css" href="../public/css/create-question.css" />
 	<script type="text/javascript" src="../public/js/showdown.js"></script>
@@ -61,7 +61,10 @@
 			<div style="margin:0 0 1.2em">
 				<label>Tags</label>
 				<textarea id="tag" name="tags"></textarea></div>
-				<input class='btn btn-primary' type='submit'>
+				<div class='buttons'>
+					<input class='btn btn-primary' type='submit' value="submit">
+					<button class='btn btn-primary'>cancel</button>
+				</div>
 			</form>
 
 		</div>
