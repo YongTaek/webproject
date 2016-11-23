@@ -6,29 +6,9 @@
 	<link rel="shortcut icon" href="icon/SelabFavicon.png" type="image/png">
 	<link rel="stylesheet" href="../public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="../public/css/main.css" type="text/css">
-	<link rel="stylesheet" href="../public/css/pusher.css" type="text/css">
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
-	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
-	<script src="../public/js/push.js"></script>
-	<!-- <script>
-	    // Enable pusher logging - don't include this in production
-	    Pusher.logToConsole = true;
-
-	    var pusher = new Pusher('dc9f3fc01f0f63f45083', {
-	      encrypted: true
-	    });
-
-	    var channel = pusher.subscribe('test_channel');
-	    channel.bind('my_event', function(data) {
-	      alert(data.message);
-	    });
-
-  </script>
- --></head>
-
+	<script src="../public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+</head>
 <body>
 	<header role = "banner" class="banner-color">
 		<nav role="navigation">
@@ -58,12 +38,6 @@
 			<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
 		</div>
 	</header>
-
-	<div id="push-container">
-		<a id = "display-cancel"></a>
-		<div id = "push"></div>
-	</div>
-
 	<div class="main">
 		<div class="container">
 			<div class = "col-lg-6">
