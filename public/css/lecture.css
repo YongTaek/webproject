@@ -1,0 +1,10 @@
+.lecture {
+  height: 160px;
+}
+#submit {
+  height: 100%;
+  vertical-align: bottom;
+}
+#input {
+  font: initial;
+}

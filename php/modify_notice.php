@@ -58,7 +58,7 @@
           <hr>
           <div id="wmd-preview" class="wmd-preview"></div>
           <hr>
-        <input class="btn btn-primary" type="submit" value="submit" />
+        <input class="btn btn-primary" type="submit" value="submit"/>
         <input type="hidden" name="id" value="<?= $id ?>">
         </form>
       </div>

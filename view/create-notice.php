@@ -37,7 +37,6 @@
   			<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
   		</div>
   	</header>
-
     <div class="container">
       <div class="write-answer">
         <form action="notice.php">
