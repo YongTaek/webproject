@@ -4,9 +4,14 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../public/css/bootstrap.min.css" type="text/css">
   	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+  	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="../public/css/wmd.css" />
     <link rel="stylesheet" type="text/css" href="../public/css/create-post.css" />
+    <link rel="stylesheet" href="../public/css/pusher.css" type="text/css">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="//js.pusher.com/3.2/pusher.min.js"></script>
+    <script src="../public/js/push.js"></script>
   	<script type="text/javascript" src="../public/js/showdown.js"></script>
     <title>글쓰기</title>
   </head>
@@ -28,7 +33,7 @@
   			<input type="text" class="pull-right search" name="search">
   		</nav>
   		<div class = "jumbotron banner-color">
-  			<h1 class="align-center">Create Notice</h1>
+  			<h1 class="align-center">Create Post</h1>
   			<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
   		</div>
   	</header>
