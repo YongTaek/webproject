@@ -58,8 +58,8 @@
 					<span><?= $row["time"] ?></span>
 				</div>
 				<div class="notice_btn">
-					<a class="notice_modify" href="/php/modify_notice.php?id=<?= $row["id"] ?>"></a>
-					<a class="notice_delete" href="/php/delete_notice.php?id=<?= $row["id"] ?>"></a>
+					<a class="btn notice_modify" href="/php/modify_notice.php?id=<?= $row["id"] ?>">수정</a>
+					<a class="btn notice_delete" href="/php/delete_notice.php?id=<?= $row["id"] ?>">삭제</a>
 				</div>
 			</div>
 			<div class="content">
@@ -78,8 +78,8 @@
 					<span><?= $comment["name"] ?></span>
 					<span class=""><?= $comment["time"] ?></span>
 					<div class="comment_btn">
-						<a class="comment_modify" href="/php/modify_comment.php"></a>
-						<a class="comment_delete" href="/php/delete_comment.php"></a>
+						<a class="btn comment_modify" href="/php/modify_comment.php">수정</a>
+						<a class="btn comment_delete" href="/php/delete_comment.php">삭제</a>
 					</div>
 				</div>
 				<hr>

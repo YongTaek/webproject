@@ -5,11 +5,11 @@
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="icon/SelabFavicon.png" type="image/png">
   	<script type="text/javascript" src="../public/js/jquery-3.1.1.min.js"></script>
-	<link rel="stylesheet" href="../public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
-	<link rel="stylesheet" href="../public/css/question.css" type="text/css">
+	<link rel="stylesheet" href="/public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
+	<link rel="stylesheet" href="/public/css/question.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="../public/css/wmd.css" />
-	<script type="text/javascript" src="../public/js/showdown.js"></script>
+	<script type="text/javascript" src="/public/js/showdown.js"></script>
 	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 	<link rel="stylesheet" href="../public/css/pusher.css" type="text/css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
@@ -107,10 +107,8 @@ int main() {
 			<input class="btn btn-primary" type="submit" value="submit" />
 			</form>
 		</div>
-
-		</div>
 	</div>
 	<script type="text/javascript" src="../public/js/wmd.js"></script>
-	<script src="../public/js/star_on_off.js" type="text/javascript"></script>
+	<script src="/public/js/star_on_off.js" type="text/javascript"></script>
 </body>
 </html>

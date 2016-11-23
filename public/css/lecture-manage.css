@@ -1,0 +1,39 @@
+.title {
+  width: 78%;
+  border-right: 1px solid #dfdfdf;
+}
+.index {
+  width: 10%;
+  border-right: 1px solid #dfdfdf;
+}
+.button {
+  background-color: rgb(255,70,70);
+  color: white;
+  margin-left: -19px;
+  width: 12%;
+}
+.button:hover {
+  color: white;
+}
+.list-wrapper *{
+  display: inline-block;
+}
+.title * {
+  width: 100%;
+}
+#list {
+  list-style: none;
+  padding-left: 0;
+  background-color: white;
+}
+.list-item *{
+  height: 50px;
+  line-height: 50px;
+  font-size: 30px;
+  text-align: center;
+}
+.createBtn {
+  margin: 0 auto 20px auto;
+  display: block;
+  width: 120px;
+}
