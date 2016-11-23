@@ -40,7 +40,8 @@
       $id = $_GET["id"];
       $u_id = $_SESSION["id"];
       $rows = $db->query("SELECT title, content FROM notice WHERE u_id = $u_id AND id = $id");
-      $row = $rows->fetch();
+      if ($rows->rowCount() > 0) {
+        $row = $rows->fetch();
     ?>
     <div class="container">
       <div class="write-answer">
@@ -61,6 +62,7 @@
         </form>
       </div>
     </div>
+    <?php } ?>
     <script type="text/javascript" src="../public/js/wmd.js"></script>
   </body>
 </html>
