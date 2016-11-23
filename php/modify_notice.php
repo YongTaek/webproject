@@ -45,7 +45,7 @@
     ?>
     <div class="container">
       <div class="write-answer">
-        <form action="notice.php" method="POST">
+        <form action="modify_submit.php" method="POST">
           <h2>Title</h2>
           <div class="title">
             <input name="title" type="text" value="<?= $row["title"] ?>">
