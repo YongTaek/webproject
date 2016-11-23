@@ -28,7 +28,7 @@
   			<input type="text" class="pull-right search" name="search">
   		</nav>
   		<div class = "jumbotron banner-color">
-  			<h1 class="align-center">Create Notice</h1>
+  			<h1 class="align-center">Create Post</h1>
   			<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
   		</div>
   	</header>
