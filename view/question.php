@@ -41,8 +41,8 @@
 			<!-- qeustion title -->
 			<h1 id="question_title">Title</h1>
 			<div class="question_btn">
-				<input type="button" class="btn question_modify" name="question_modify" value="수정">
-				<input type="button" class="btn question_delete" name="question_delete" value="삭제">
+				<a class="btn question_modify" name="question_modify" href="">수정</a>
+				<a class="btn question_delete" name="question_delete" href="">삭제</a>
 			</div>
 			<hr>
 			<div>
@@ -70,8 +70,8 @@ int main() {
 		<div class="answer">
 			<h2 id="answer_title"><?=$num ?> Answer</h2>
 			<div class="answer_btn">
-				<input type="button" class="btn answer_modify" name="answer_modify" value="수정">
-				<input type="button" class="btn answer_delete" name="answer_delete" value="삭제">
+				<a class="btn answer_modify" name="answer_modify" href="">수정</a>
+				<a class="btn answer_delete" name="answer_delete" href="">삭제</a>
 			</div>
 			<hr>
 			<div class="overflow">

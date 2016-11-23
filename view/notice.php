@@ -43,8 +43,8 @@
 					<span>date</span>
 				</div>
 				<div class="notice_btn">
-					<input type="button" class="btn notice_modify" name="notice_modify" value="수정">
-					<input type="button" class="btn notice_delete" name="notice_delete" value="삭제">
+					<a class="btn notice_modify" name="notice_modify" href="">수정</a>
+					<a class="btn notice_delete" name="notice_delete" href="">삭제</a>
 				</div>
 			</div>
 			<div class="content">
@@ -61,8 +61,8 @@
 					<span>author</span>
 					<span class="">date</span>
 					<div class="comment_btn">
-						<input type="button" class="btn comment_modify" name="comment_modify" value="수정">
-						<input type="button" class="btn comment_delete" name="comment_delete" value="삭제">
+						<a class="btn comment_modify" name="comment_modify" href="">수정</a>
+						<a class="btn comment_delete" name="comment_delete" href="">삭제</a>
 					</div>
 				</div>
 				<hr>

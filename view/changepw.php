@@ -13,7 +13,7 @@
 		</header>
 		<content>
 			<form method="post" action="changepw.php">
-				<input id="idform" class="textfield" type="text" name="id" placeholder= "Current Password"/>
+				<input id="idform" class="textfield currentform" type="password" name="id" placeholder= "Current Password"/>
 				<div class="login_icon" id="usericon"></div>
 				<input class="textfield" type="password" name="password" placeholder = "New Password"/>
 				<div class="login_icon" id="passwdicon"></div>

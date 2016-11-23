@@ -47,13 +47,10 @@ header h1{
     line-height: 50px;
     width: 400px;
     height: 50px;
-
     position: absolute;
-
     top: 0;
     left: 50%;
     margin-left: -200px;
-
     border-radius: 0 0 3px 3px ;
     background-color: #ff6a69;	/*white;*/
     color: white;/* #ff6a69; */
@@ -83,12 +80,8 @@ content form{
     font-weight: 100;
 }
 
-input[type="text"]{
+.currentform {
     top: 0px;
-}
-
-input[type="password"]{
-    bottom: 25px;
 }
 
 .textfield:focus, .textfield:hover{
