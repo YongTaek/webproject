@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -68,6 +71,7 @@
         </form>
       </div>
     </div>
+    <?php }?>
     <script type="text/javascript" src="../public/js/wmd.js"></script>
   </body>
 </html>
