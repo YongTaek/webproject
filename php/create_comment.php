@@ -12,7 +12,7 @@
   try {
     $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $db->query("INSERT INTO comment(u_id, reference_id, content, time, type) VALUES($u_id, $r_id, $content, $time, $type)");
+    $db->query("INSERT INTO comment(u_id, reference_id, content, time, type) VALUES($u_id, $r_id, '$content', '$time', '$type')");
   } catch (PDOException $e) {
     echo $e->getMessage();
   }
