@@ -3,12 +3,6 @@
 
   date_default_timezone_set('Asia/Seoul');
 
-  var_dump($_SESSION);
-  var_dump($_GET);
-  var_dump($_POST);
-
-  exit();
-
   $id = $_SESSION["id"];
   $title = $_POST["title"];
   $content = $_POST["content"];
