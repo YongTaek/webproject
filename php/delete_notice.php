@@ -4,6 +4,6 @@
   $id = $_GET["id"];
   $u_id = $_SESSION["id"];
   $db->query("DELETE FROM notice WHERE id = $id AND u_id = $u_id");
-  header("Location: notice.php");
+  header("Location: noticelist.php");
   ?>
   

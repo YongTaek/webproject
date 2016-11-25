@@ -3,6 +3,12 @@
 
   date_default_timezone_set('Asia/Seoul');
 
+  var_dump($_SESSION);
+  var_dump($_GET);
+  var_dump($_POST);
+
+  exit();
+
   $id = $_SESSION["id"];
   $title = $_POST["title"];
   $content = $_POST["content"];
@@ -12,8 +18,11 @@
     $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->query("INSERT INTO notice(u_id, title, content, time) VALUES($id, '$title', '$content', '$time')");
-    $num = $db->query("SELECT id FROM notice WHERE u_id=$id AND title=$title AND AND content=$content AND time=$time");
-    header("Location: notice.php?id=<?= num ?>");
+    $rows = $db->query("SELECT id FROM notice WHERE u_id=$id AND title='$title' AND content='$content' AND time='$time'");
+    if ($rows->rowCount() > 0) {
+        $row = $rows->fetch();
+        header("Location: notice.php?id=".$row["id"]);
+    }
   } catch (PDOException $e) {
     echo $e->getMessage();
   }
