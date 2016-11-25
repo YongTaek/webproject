@@ -12,6 +12,11 @@
     $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->query("INSERT INTO board(u_id, title, content, time) VALUES($id, '$title', '$content', '$time')");
+    $rows = $db->query("SELECT id FROM board WHERE u_id=$id AND title='$title' AND content='$content' AND time='$time'");
+    if ($rows->rowCount() > 0) {
+      $row = $rows->fetch();
+      header("Location: free.php?id=".$row["id"]);
+    }
   } catch (PDOException $e) {
     echo $e->getMessage();
   }
