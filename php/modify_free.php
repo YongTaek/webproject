@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -37,18 +40,25 @@
   			<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
   		</div>
   	</header>
-
+    <?php
+      $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+      $id = $_GET["id"];
+      $u_id = $_SESSION["id"];
+      $rows = $db->query("SELECT title, content FROM board WHERE u_id = $u_id AND id = $id");
+      if ($rows->rowCount() > 0) {
+        $row = $rows->fetch();
+    ?>
     <div class="container">
       <div class="write-answer">
-        <form action="notice.php">
+        <form action="submit_freemodify.php" method="POST">
           <h2>Title</h2>
           <div class="title">
-            <input name="title" type="text">
+            <input name="title" type="text" value="<?= $row["title"] ?>">
           </div>
           <h2>Content</h2>
           <div class="content" id="wmd-editor">
             <div id="wmd-button-bar"></div>
-            <textarea id="wmd-input"></textarea>
+            <textarea id="wmd-input" name="content"><?= $row["content"] ?></textarea>
           </div>
           <hr>
           <div id="wmd-preview" class="wmd-preview"></div>
@@ -56,10 +66,12 @@
           <div class='buttons'>
             <input class='btn btn-primary' type='submit' value="submit">
             <button class='btn btn-primary'>cancel</button>
+            <intput type="hidden" name="id" value="<? $id ?>">
           </div>
         </form>
       </div>
     </div>
+    <?php }?>
     <script type="text/javascript" src="../public/js/wmd.js"></script>
   </body>
 </html>

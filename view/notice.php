@@ -10,9 +10,12 @@
 	<link rel="stylesheet" href="../public/css/notice.css" type="text/css">
 	<link rel="stylesheet" href="../public/css/pusher.css" type="text/css">
 	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="/public/css/Nwagon.css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="../public/js/push.js"></script>
+	<script src="/public/js/Nwagon.js"></script>
+	<script src="/public/js/notice-chart.js"></script>
 <body>
 	<header role = "banner" class="banner-color">
 		<nav role="navigation" >
@@ -54,6 +57,27 @@
 			</div>
 			<div class="content">
 				<p>Content</p>
+			</div>
+			<form class="vote" action="notice_vote_submit" accept-charset="utf-8">
+				
+				<div class="vote-name">펑펑펑</div>
+				<div class="vote-period">2016-11-23 ~ 2016-12-2</div>
+				<div class="divider"></div>
+				<div class="vote-item-single">
+					<ul>
+						<li><input type="radio" name="item" checked = "checked"/>펑펑</li>
+						<li><input type="radio" name="item"/>펑펑펑</li>
+					</ul>
+				</div>
+				<div class="vote-item-multi">
+					<ul>
+						<li><input type="checkbox" name="item"/>펑펑</li>
+						<li><input type="checkbox" name="item"/>펑펑펑</li>
+					</ul>
+				</div>			
+				
+			</form>
+			<div id="chart">
 			</div>
 		</div>
 		<!-- comment iterative-->

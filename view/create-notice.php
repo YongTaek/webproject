@@ -38,21 +38,26 @@
   		</div>
   	</header>
     <div class="container">
-      <form action="notice.php">
-        <h2>Title</h2>
-        <div class="title">
-          <input name="title" type="text">
-        </div>
-        <h2>Content</h2>
-        <div class="content" id="wmd-editor">
-          <div id="wmd-button-bar"></div>
-          <textarea id="wmd-input"></textarea>
-        </div>
-        <hr>
-        <div id="wmd-preview" class="wmd-preview"></div>
-        <hr>
-        <input class="btn btn-primary" type="submit" value="submit" />
-      </form>
+      <div class="write-answer">
+        <form action="notice.php">
+          <h2>Title</h2>
+          <div class="title">
+            <input name="title" type="text">
+          </div>
+          <h2>Content</h2>
+          <div class="content" id="wmd-editor">
+            <div id="wmd-button-bar"></div>
+            <textarea id="wmd-input"></textarea>
+          </div>
+          <hr>
+          <div id="wmd-preview" class="wmd-preview"></div>
+          <hr>
+          <div class='buttons'>
+            <input class='btn btn-primary' type='submit' value="submit">
+            <button class='btn btn-primary'>cancel</button>
+          </div>
+        </form>
+      </div>
     </div>
     <script type="text/javascript" src="../public/js/wmd.js"></script>
   </body>

@@ -30,6 +30,8 @@
   height: 50px;
   line-height: 50px;
   font-size: 30px;
+}
+.list-item .index, .list-item a.button{
   text-align: center;
 }
 .createBtn {

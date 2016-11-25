@@ -40,7 +40,7 @@
 
     <div class="container">
       <div class="write-answer">
-        <form action="notice.php">
+        <form action="create_free.php" method="POST">
           <h2>Title</h2>
           <div class="title">
             <input name="title" type="text">
@@ -48,7 +48,7 @@
           <h2>Content</h2>
           <div class="content" id="wmd-editor">
             <div id="wmd-button-bar"></div>
-            <textarea id="wmd-input"></textarea>
+            <textarea id="wmd-input" name="content"></textarea>
           </div>
           <hr>
           <div id="wmd-preview" class="wmd-preview"></div>

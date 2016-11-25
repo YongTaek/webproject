@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="../public/css/main.css" type="text/css">
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
 	<link rel="stylesheet" href="../public/css/jquery.tag-editor.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/create-post.css" />
 	<link rel="stylesheet" type="text/css" href="../public/css/wmd.css" />
 	<link rel="stylesheet" type="text/css" href="../public/css/create-post.css" />
 	<script type="text/javascript" src="../public/js/showdown.js"></script>
@@ -58,11 +59,14 @@
 			<hr>
 			<div>
 				<label>Tags</label>
-				<textarea id="tag" name="tags"></textarea>
-			</div>
-			<input class='btn btn-primary' type='submit'>
-		</form>
-	</div>
+				<textarea id="tag" name="tags"></textarea></div>
+				<div class='buttons'>
+					<input class='btn btn-primary' type='submit' value="submit">
+					<button class='btn btn-primary'>cancel</button>
+				</div>
+			</form>
+
+		</div>
 		<!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
 		<script src="../public/js/jquery-3.1.1.min.js"></script>
 		<script src="../public/js/jquery-ui-1.12.1.min.js"></script>
