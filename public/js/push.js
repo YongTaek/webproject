@@ -28,8 +28,8 @@ channel.bind('my_event', function(data) {
 
 	//toastr.info(data.message,'질문 등록');
 	// toastr.warning(data.message, '질문 경고');
-	 toastr.success(data.message, '질문 등록 성공');
-	// toastr.error(data.message, '질문 실패');
+	 //toastr.success(data.message, '질문 등록 성공');
+	toastr.error(data.message, '질문 실패');
 	// 골라서 쓰기
 });
 

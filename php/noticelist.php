@@ -4,10 +4,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="../public/css/bootstrap.min.css" type="text/css">
-	<link rel="stylesheet" type="text/css" href="../public/css/noticelist.css">
-	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
-	<script src="../public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="/public/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="/public/css/noticelist.css">
+	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
+	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<meta charset="utf-8">
 	<title>공지 게시판</title>
 </head>
@@ -85,6 +85,6 @@
 
 		</div>
 	</div>
-	<script src="../public/js/star_on_off.js" type="text/javascript"></script>
+	<script src="/public/js/star_on_off.js" type="text/javascript"></script>
 </body>
 </html>
