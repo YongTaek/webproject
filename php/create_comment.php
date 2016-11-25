@@ -5,7 +5,7 @@
 
   $r_id = $_POST["id"];
   $u_id = $_SESSION["id"];
-  $content = $_POST["content"];
+  $content = $_POST["comment"];
   $time = date("Y-m-d H:i:s");
   $type = $_POST["type"];
 
