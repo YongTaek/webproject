@@ -53,7 +53,10 @@
           <hr>
           <div id="wmd-preview" class="wmd-preview"></div>
           <hr>
-        <input class="btn btn-primary" type="submit" value="submit" />
+          <div class='buttons'>
+            <input class='btn btn-primary' type='submit' value="submit">
+            <button class='btn btn-primary'>cancel</button>
+          </div>
         </form>
       </div>
     </div>

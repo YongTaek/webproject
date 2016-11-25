@@ -37,7 +37,6 @@
   			<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
   		</div>
   	</header>
-
     <div class="container">
       <div class="write-answer">
         <form action="notice.php">
@@ -53,7 +52,10 @@
           <hr>
           <div id="wmd-preview" class="wmd-preview"></div>
           <hr>
-        <input class="btn btn-primary" type="submit" value="submit" />
+          <div class='buttons'>
+            <input class='btn btn-primary' type='submit' value="submit">
+            <button class='btn btn-primary'>cancel</button>
+          </div>
         </form>
       </div>
     </div>
