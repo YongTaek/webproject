@@ -81,7 +81,6 @@
 			if ($count > 0) {
 				foreach ($answers as $answer) {
 		?>
-
 		<div class="answer">
 			<h2 id="answer_title"><?= $count ?> Answer</h2>
 			<div class="answer_btn">
@@ -89,24 +88,24 @@
 				<a class="btn answer_delete" name="answer_delete" href="">삭제</a>
 			</div>
 			<hr>
-		<div class="overflow">
-			<div class="vote">
-				<a class="vote-up-off"></a>
-				<!-- answer 추천 수 -->
-				<span class="vote-count"><?= $answer["score"] ?></span>
-				<a class="vote-down-off"></a>
-				<a class="star-off"></a>
+			<div class="overflow">
+				<div class="vote">
+					<a class="vote-up-off"></a>
+					<!-- answer 추천 수 -->
+					<span class="vote-count"><?= $answer["score"] ?></span>
+					<a class="vote-down-off"></a>
+					<a class="star-off"></a>
+				</div>
+				<div class="content">
+					<?= $row["content"] ?>
+				</div>
 			</div>
-			<div class="content">
-				<?= $row["content"] ?>
-			</div>
+			<hr>
 		</div>
 		<?php
 				}
 			}
 		?>
-		<hr>
-	</div>
 		<div class="write-answer">
 			<h2>Your Answer</h2>
 			<form action="question.php">
