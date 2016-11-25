@@ -4,9 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="../public/css/changepw.css"/>
-	<script src="../public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
-	<script src="../public/js/changepw.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="/public/css/changepw.css"/>
+	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+	<script src="/public/js/changepw.js" type="text/javascript"></script>
 	<title>Software Engineering Lab - Login</title>
 </head>
 <body>

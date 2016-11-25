@@ -7,14 +7,14 @@
 	<meta charset="utf-8">
 	<title>Question</title>
 	<link rel="shortcut icon" href="icon/SelabFavicon.png" type="image/png">
-	<link rel="stylesheet" href="../public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" href="../public/css/main.css" type="text/css">
-	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
-	<link rel="stylesheet" href="../public/css/jquery.tag-editor.css">
-	<link rel="stylesheet" href="../public/css/notice.css" type="text/css">
-	<link rel="stylesheet" type="text/css" href="../public/css/wmd.css" />
-	<link rel="stylesheet" type="text/css" href="../public/css/create-question.css" />
-	<script type="text/javascript" src="../public/js/showdown.js"></script>
+	<link rel="stylesheet" href="/public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="/public/css/main.css" type="text/css">
+	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
+	<link rel="stylesheet" href="/public/css/jquery.tag-editor.css">
+	<link rel="stylesheet" href="/public/css/notice.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="/public/css/wmd.css" />
+	<link rel="stylesheet" type="text/css" href="/public/css/create-question.css" />
+	<script type="text/javascript" src="/public/js/showdown.js"></script>
 	<title></title>
 </head>
 <body>
@@ -83,6 +83,6 @@
 				});
 			});
 		</script>
-		<script type="text/javascript" src="../public/js/wmd.js"></script>
+		<script type="text/javascript" src="/public/js/wmd.js"></script>
 	</body>
 	</html>
