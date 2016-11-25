@@ -59,8 +59,8 @@
           <span><?= $row["time"] ?></span>
         </div>
         <div class="free_btn">
-          <a class="btn free_modify" name="free_modify" href="">수정</a>
-          <a class="btn free_delete" name="free_delete" href="">삭제</a>
+          <a class="btn free_modify" name="free_modify" href="submit_freemodify">수정</a>
+          <a class="btn free_delete" name="free_delete" href="delete_free">삭제</a>
         </div>
       </div>
       <div class="content">
