@@ -4,9 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="../public/css/login.css"/>
-	<script src="../common/scripts/jquery-1.10.2.js" type="text/javascript"></script>
-	<script src="../public/js/login.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="/public/css/login.css"/>
+	<script src="/common/scripts/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="/public/js/login.js" type="text/javascript"></script>
 	<title>Software Engineering Lab - Login</title>
 </head>
 <body>

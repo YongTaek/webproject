@@ -2,18 +2,18 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../public/css/bootstrap.min.css" type="text/css">
-  	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css" type="text/css">
+  	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" type="text/css" href="../public/css/wmd.css" />
-    <link rel="stylesheet" type="text/css" href="../public/css/create-post.css" />
-  	<script type="text/javascript" src="../public/js/showdown.js"></script>
+    <link rel="stylesheet" type="text/css" href="/public/css/wmd.css" />
+    <link rel="stylesheet" type="text/css" href="/public/css/create-post.css" />
+  	<script type="text/javascript" src="/public/js/showdown.js"></script>
     <title>글쓰기</title>
   </head>
   <body>
     <header role = "banner" class="banner-color">
   		<nav role="navigation" >
-  			<div id="logo" class="pull-left"><a href="/view/main.php"><img class="logo" src="../public/img/selab_logo_S.png" /></a></div>
+  			<div id="logo" class="pull-left"><a href="/view/main.php"><img class="logo" src="/public/img/selab_logo_S.png" /></a></div>
   			<ul id="menu" class="inline-list pull-left">
   				<li class="pull-left"><a href="/view/noticelist.php" class="menu-item active" >NOTICE</a></li>
   				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item">QUESTION</a></li>
@@ -52,6 +52,6 @@
         </form>
       </div>
     </div>
-    <script type="text/javascript" src="../public/js/wmd.js"></script>
+    <script type="text/javascript" src="/public/js/wmd.js"></script>
   </body>
 </html>

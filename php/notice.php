@@ -7,15 +7,15 @@
 	<title>Notice</title>
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="icon/SelabFavicon.png" type="image/png">
-	<link rel="stylesheet" href="../public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<script src="../public/css/jquery-3.1.1.min.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
-	<link rel="stylesheet" href="../public/css/notice.css" type="text/css">
+	<link rel="stylesheet" href="/public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="/public/css/jquery-3.1.1.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
+	<link rel="stylesheet" href="/public/css/notice.css" type="text/css">
 </head>
 <body>
 	<header role = "banner" class="banner-color">
 		<nav role="navigation" >
-			<div id="logo" class="pull-left"><a href="/php/main.php"><img class="logo" src="../public/img/selab_logo_S.png" /></a></div>
+			<div id="logo" class="pull-left"><a href="/php/main.php"><img class="logo" src="/public/img/selab_logo_S.png" /></a></div>
 			<ul id="menu" class="inline-list pull-left">
 				<li class="pull-left"><a href="/php/noticelist.php" class="menu-item active" >NOTICE</a></li>
 				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item">QUESTION</a></li>
@@ -99,6 +99,6 @@
 			}
 		}
 	?>
-	<script src="../public/js/star_on_off.js" type="text/javascript"></script>
+	<script src="/public/js/star_on_off.js" type="text/javascript"></script>
 </body>
 </html>
