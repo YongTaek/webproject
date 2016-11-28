@@ -55,7 +55,7 @@
 			$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
 			$b_rows = $db->query("SELECT b.id, b.title, time, u.name FROM board b JOIN user u on b.u_id = u.id");
 			foreach ($b_rows as $row) { 
-				$c_rows = $db->query("SELECT c.u_id, c.content, c.time FROM board b JOIN comment c on b.u_id = c.u_id WHERE c.type = 'board' AND c.reference_id = ".$row["id"]);
+				$c_rows = $db->query("SELECT distinct c.u_id, c.content, c.time FROM board b JOIN comment c on b.u_id = c.u_id WHERE c.type = 'board' AND c.reference_id = ".$row["id"]);
 				$count = $c_rows->rowCount();
 		?>
 			<div class= "question">
