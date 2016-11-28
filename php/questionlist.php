@@ -84,7 +84,7 @@
 					</h3>
 					<div class= "tags">
 						<?php
-							$tags = $db->query("SELECT id, name FROM tag WHERE q_id = ".$row["id"]);
+							$tags = $db->query("SELECT distinct name FROM tag_question tq JOIN tag t WHERE t_id = id AND q_id = ".$row["id"]);
 							foreach ($tags as $tag) {
 						?>
 						<a href="" class= "tag"><?= $tag["name"] ?></a>
