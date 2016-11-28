@@ -59,8 +59,8 @@
 			<!-- qeustion title -->
 			<h1 id="question_title"><?= $row["title"] ?></h1>
 			<div class="question_btn">
-				<a class="btn question_modify" name="question_modify" href="">수정</a>
-				<a class="btn question_delete" name="question_delete" href="">삭제</a>
+				<a class="btn question_modify" name="question_modify" href="modify_question.php?id=<?= $row["id"] ?>">수정</a>
+				<a class="btn question_delete" name="question_delete" href="delete_question.php?id=<?= $row["id"] ?>">삭제</a>
 			</div>
 			<hr>
 			<div>
@@ -89,8 +89,8 @@
 					<span><?= $comment["name"] ?></span>
 					<span class=""><?= $comment["time"] ?></span>
 					<div class="comment_btn">
-						<a class="btn comment_modify" name="comment_modify" href="modify_question.php?id=<?= $row["id"] ?>">수정</a>
-						<a class="btn comment_delete" name="comment_delete" href="delete_question.php?id=<?= $row["id"] ?>"">삭제</a>
+						<a class="btn comment_modify" name="comment_modify" href="">수정</a>
+						<a class="btn comment_delete" name="comment_delete" href="">삭제</a>
 					</div>
 			</div>
 			<hr>
