@@ -59,8 +59,8 @@
 			<!-- qeustion title -->
 			<h1 id="question_title"><?= $row["title"] ?></h1>
 			<div class="question_btn">
-				<a class="btn question_modify" name="question_modify" href="">수정</a>
-				<a class="btn question_delete" name="question_delete" href="">삭제</a>
+				<a class="btn question_modify" name="question_modify" href="modify_question.php?id=<?= $row["id"] ?>">수정</a>
+				<a class="btn question_delete" name="question_delete" href="delete_question.php?id=<?= $row["id"] ?>">삭제</a>
 			</div>
 			<hr>
 			<div>
@@ -81,7 +81,7 @@
 		<div class="comment">
 			<hr>
 			<?php
-				$comments = $db->query("SELECT content, name, time FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'question' AND reference_id = ".$row["id"]);
+				$comments = $db->query("SELECT content, name, time FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'question' AND reference_id = ".$_GET["id"]);
 				foreach ($comments as $comment) {
 			?>
 			<div>
@@ -104,12 +104,12 @@
 					<input class="btn" id="submit" type="submit" value="등록"/>
 				</div>
 				<input type="hidden" name="id" value="<?= $_GET["id"] ?>" />
-				<input type="hidden" name="type" value="notice">
+				<input type="hidden" name="type" value="question">
 			</form>
 		</div>
 		<!-- question에 대한 answer -->
 		<?php
-			$answers = $db->query("SELECT score, content FROM answer WHERE q_id = ".$_GET["id"]);
+			$answers = $db->query("SELECT a.id, name, score, content FROM answer a JOIN user u WHERE u.id = a.u_id AND q_id = ".$_GET["id"]);
 			$count = $answers->rowCount();
 
 			if ($count > 0) {
@@ -131,7 +131,7 @@
 					<a class="star-off"></a>
 				</div>
 				<div class="content">
-					<?= $row["content"] ?>
+					<?= $answer["content"] ?>
 				</div>
 			</div>
 			<hr>
@@ -140,7 +140,7 @@
 		<div class="comment">
 			<hr>
 			<?php
-				$comments = $db->query("SELECT content, name, time FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'question' AND reference_id = ".$row["id"]);
+				$comments = $db->query("SELECT content, name, time FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'answer' AND reference_id = ".$answer["id"]);
 				foreach ($comments as $comment) {
 			?>
 			<div>
@@ -153,7 +153,7 @@
 					</div>
 			</div>
 			<hr>
-			<?php ?>
+			<?php } ?>
 		</div>
 		<div class="comment">
 			<form action="create_comment.php" method="POST">
@@ -163,7 +163,7 @@
 					<input class="btn" id="submit" type="submit" value="등록"/>
 				</div>
 				<input type="hidden" name="id" value="<?= $_GET["id"] ?>" />
-				<input type="hidden" name="type" value="notice">
+				<input type="hidden" name="type" value="answer">
 			</form>
 		</div>
 		<?php
