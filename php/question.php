@@ -162,7 +162,7 @@
 					<input id="comment-write" type="text" name="comment" />
 					<input class="btn" id="submit" type="submit" value="등록"/>
 				</div>
-				<input type="hidden" name="id" value="<?= $_GET["id"] ?>" />
+				<input type="hidden" name="id" value="<?= $answer["id"] ?>" />
 				<input type="hidden" name="type" value="answer">
 			</form>
 		</div>
