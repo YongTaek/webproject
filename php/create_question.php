@@ -23,7 +23,7 @@
       }
       $db->query("INSERT INTO tag_question(t_id, q_id) values($tagId,$questionId)");
     }
-    header("Location: question.php?id=$id"]);
+    header("Location: question.php?id=$questionId"]);
   } catch (PDOException $e) {
     echo $tag;
     echo $e->getMessage();
