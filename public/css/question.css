@@ -34,10 +34,22 @@
 
 .question, .answer {
   overflow: hidden;
+  width: 95%;
+  margin: auto;
+}
+
+.comment {
+  width: 95%;
+  margin: auto;
 }
 #question_title {
   font-weight: normal;
   display: inline-block;
+}
+
+.question_info {
+  display: inline-block;
+  margin-left: 5px;
 }
 h2 {
   font-weight: 400;
@@ -71,9 +83,15 @@ h2 {
   display: inline-block;
 }
 
+.answer_info {
+  display: inline-block;
+  margin-left: 5px;
+}
+
 .answer_btn > * {
   background-color: white;
   color: gray;
+
 }
 
 .answer_btn *:hover {
@@ -81,6 +99,35 @@ h2 {
 }
 
 .write-answer {
-  margin-bottom: 300px;
+  margin: auto;
+  margin-bottom: 50px;
+  width: 95%;
 }
 
+.comment > div > *{
+  display: inline-block;
+}
+
+.comment_btn {
+  float: right;
+}
+
+.comment_btn > *{
+  background-color: white;
+  color: gray;
+}
+
+#comment-write {
+  width: 95%;
+  margin: 0px;
+}
+
+.commentBtn {
+  background-color: #337ab7;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid #337ab7;
+  width: 5%;
+  margin: 0px;
+  float: right;
+}

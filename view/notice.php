@@ -16,6 +16,7 @@
 	<script src="../public/js/push.js"></script>
 	<script src="/public/js/Nwagon.js"></script>
 	<script src="/public/js/notice-chart.js"></script>
+</head>
 <body>
 	<header role = "banner" class="banner-color">
 		<nav role="navigation" >
