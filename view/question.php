@@ -45,6 +45,10 @@
 		<div class="question">
 			<!-- qeustion title -->
 			<h1 id="question_title">Title</h1>
+			<div class="question_info">
+				<span>author</span>
+				<span>date</span>
+			</div>
 			<div class="question_btn">
 				<a class="btn question_modify" name="question_modify" href="">수정</a>
 				<a class="btn question_delete" name="question_delete" href="">삭제</a>
@@ -62,104 +66,106 @@
 				<pre class="prettyprint">
 					<code>
 						int main() {
-							int a;
-							return 0;
-						}
-					</code>
-				</pre>
-				<div>
-				</div>
+						int a;
+						return 0;
+					}
+				</code>
+			</pre>
+		</div>
+	</div>
+	<!-- comment iterative -->
+	<div class="comment">
+		<hr>
+		<?php ?>
+		<div>
+			<span><?=$num ?></span>
+			<span>content</span>
+			<span>author</span>
+			<span class="">date</span>
+			<div class="comment_btn">
+				<a class="btn comment_modify" name="comment_modify" href="">수정</a>
+				<a class="btn comment_delete" name="comment_delete" href="">삭제</a>
 			</div>
 		</div>
-		<!-- comment iterative -->
-		<div class="comment">
-			<hr>
-			<?php ?>
+		<hr>
+		<?php ?>
+	</div>
+	<div class="comment">
+		<form>
+			<label>Comment:</label>
 			<div>
-				<span><?=$num ?></span>
-				<span>content</span>
-				<span>author</span>
-				<span class="">date</span>
-				<div class="comment_btn">
-					<a class="btn comment_modify" name="comment_modify" href="">수정</a>
-					<a class="btn comment_delete" name="comment_delete" href="">삭제</a>
-				</div>
+				<input id="comment-write" type="text" name="comment" />
+				<input class="commentBtn" id="submit" type="submit" value="등록"/>
+			</div>
+		</form>
+	</div>
+	<!-- question에 대한 answer -->
+	<div class="answer">
+		<h2 id="answer_title"><?=$num ?> Answer</h2>
+		<div class="answer_info">
+			<span>author</span>
+			<span>date</span>
+		</div>
+		<div class="answer_btn">
+			<a class="btn answer_modify" name="answer_modify" href="">수정</a>
+			<a class="btn answer_delete" name="answer_delete" href="">삭제</a>
+		</div>
+		<hr>
+		<div class="overflow">
+			<div class="vote">
+				<a class="vote-up-off"></a>
+				<!-- answer 추천 수 -->
+				<span class="vote-count"><?=$test ?></span>
+				<a class="vote-down-off"></a>
+				<a class="star-off"></a>
+			</div>
+			<div class="content">
+				asf
+			</div>
+		</div>
+		<hr>
+	</div>
+	<?php ?>
+	<div class="comment">
+		<span><?=$num ?></span>
+		<span>content</span>
+		<span>author</span>
+		<span class="">date</span>
+		<div class="comment_btn">
+			<a class="btn comment_modify" name="comment_modify" href="">수정</a>
+			<a class="btn comment_delete" name="comment_delete" href="">삭제</a>
+		</div>
+
+	</div>
+	
+	<?php ?>
+
+	<div class="comment">
+		<hr>
+		<form>
+			<label>Comment:</label>
+			<div>
+				<input id="comment-write" type="text" name="comment" />
+				<input class="commentBtn" id="submit" type="submit" value="등록"/>
+			</div>
+
+		</form>
+	</div>
+	<div class="write-answer">
+		<h2>Your Answer</h2>
+		<form action="question.php">
+			<div id="wmd-editor">
+				<div id="wmd-button-bar"></div>
+				<textarea id="wmd-input"></textarea>
 			</div>
 			<hr>
-			<?php ?>
-		</div>
-		<div class="comment">
-			<form>
-				<label>Comment:</label>
-				<div>
-					<input id="comment-write" type="text" name="comment" />
-					<input class="btn" id="submit" type="submit" value="등록"/>
-				</div>
-			</form>
-		</div>
-			<!-- question에 대한 answer -->
-			<div class="answer">
-				<h2 id="answer_title"><?=$num ?> Answer</h2>
-				<div class="answer_btn">
-					<a class="btn answer_modify" name="answer_modify" href="">수정</a>
-					<a class="btn answer_delete" name="answer_delete" href="">삭제</a>
-				</div>
-				<hr>
-				<div class="overflow">
-					<div class="vote">
-						<a class="vote-up-off"></a>
-						<!-- answer 추천 수 -->
-						<span class="vote-count"><?=$test ?></span>
-						<a class="vote-down-off"></a>
-						<a class="star-off"></a>
-					</div>
-					<div class="content">
-						asf
-					</div>
-				</div>
-				<hr>
-			</div>
-			<div class="comment">
-				<hr>
-				<?php ?>
-				<div>
-					<span><?=$num ?></span>
-						<span>content</span>
-						<span>author</span>
-						<span class="">date</span>
-						<div class="comment_btn">
-							<a class="btn comment_modify" name="comment_modify" href="">수정</a>
-							<a class="btn comment_delete" name="comment_delete" href="">삭제</a>
-						</div>
-					</div>
-					<hr>
-					<?php ?>
-				</div>
-				<div class="comment">
-					<form>
-						<label>Comment:</label>
-						<div>
-							<input id="comment-write" type="text" name="comment" />
-							<input class="btn" id="submit" type="submit" value="등록"/>
-						</div>
-
-					</form>
-				</div>
-				<div class="write-answer">
-					<h2>Your Answer</h2>
-					<form action="question.php">
-						<div id="wmd-editor">
-							<div id="wmd-button-bar"></div>
-							<textarea id="wmd-input"></textarea>
-						</div>
-						<hr>
-						<div id="wmd-preview" class="wmd-preview"></div>
-						<hr>
-						<input class="btn btn-primary" type="submit" value="submit" />
-					</form>
-				</div>
-			</div>
-			<script type="text/javascript" src="../public/js/wmd.js"></script>
-			<script src="/public/js/star_on_off.js" type="text/javascript"></script>
-		</body>
-		</html>
+			<div id="wmd-preview" class="wmd-preview"></div>
+			<hr>
+			<input class="btn btn-primary" type="submit" value="submit" />
+		</form>
+	</div>
+</div>
+<script type="text/javascript" src="../public/js/wmd.js"></script>
+<script src="/public/js/star_on_off.js" type="text/javascript"></script>
+</body>
+</html>
