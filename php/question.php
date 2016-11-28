@@ -153,7 +153,7 @@
 					</div>
 			</div>
 			<hr>
-			<?php ?>
+			<?php } ?>
 		</div>
 		<div class="comment">
 			<form action="create_comment.php" method="POST">
