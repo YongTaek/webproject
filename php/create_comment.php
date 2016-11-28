@@ -15,8 +15,10 @@
     $db->query("INSERT INTO comment(u_id, reference_id, content, time, type) VALUES($u_id, $r_id, '$content', '$time', '$type')");
     if ($type == "board")
       header("Location: free.php?id=$r_id");
+    elseif ($type == "question")
+      header("Location: question.php?id=$r_id");
     else
-      header("Location: $type.php?id=$r_id");
+      header("Location: notice.php?id=$r_id");
   } catch (PDOException $e) {
     echo $e->getMessage();
   }
