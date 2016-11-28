@@ -13,7 +13,10 @@
     $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->query("INSERT INTO comment(u_id, reference_id, content, time, type) VALUES($u_id, $r_id, '$content', '$time', '$type')");
-    header("Location: notice.php?id=$r_id");
+    if ($type == "board")
+      header("Location: free.php?id=$r_id");
+    else
+      header("Location: $type.php?id=$r_id");
   } catch (PDOException $e) {
     echo $e->getMessage();
   }
