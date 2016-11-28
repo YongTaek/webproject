@@ -134,7 +134,6 @@
 					<?= $answer["content"] ?>
 				</div>
 			</div>
-			<hr>
 		</div>
 		<!-- comment iterative -->
 		<div class="comment">
