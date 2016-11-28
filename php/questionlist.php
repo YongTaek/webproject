@@ -41,7 +41,7 @@
 	</div>
 	<div class= "content">
 		<div class="subheader">
-			<a type="button" class="createBtn btn btn-primary" href="/questions/create">Ask Question</a>
+			<a type="button" class="createBtn btn btn-primary" href="/php/create_question.php">Ask Question</a>
 			<h2>ALL QUESTION</h2>
 			<ul class="nav nav-tabs">
 				<li class="question-tab active"><a href = "/php/questionlist.php">recent</a></li>
