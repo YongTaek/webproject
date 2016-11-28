@@ -59,8 +59,8 @@
           <span><?= $row["time"] ?></span>
         </div>
         <div class="free_btn">
-          <a class="btn free_modify" name="free_modify" href="modify_free.php?id=<?= $row["id"] ?>">수정</a>
-          <a class="btn free_delete" name="free_delete" href="delete_free.php?id=<?= $row["id"] ?>">삭제</a>
+          <a class="btn free_modify" href="modify_free.php?id=<?= $row["id"] ?>">수정</a>
+          <a class="btn free_delete" href="delete_free.php?id=<?= $row["id"] ?>">삭제</a>
         </div>
       </div>
       <div class="content">
@@ -87,12 +87,14 @@
         <?php } ?>
     </div>
     <div class="comment">
-      <form>
+      <form action="create_comment.php" method="POST">
         <label>Comment:</label>
         <div>
           <input id="comment-write" type="text" name="comment" />
           <input class="btn" id="submit" type="submit" value="등록"/>
         </div>
+        <input type="hidden" name="id" value="<?= $row["id"] ?>" />
+        <input type="hidden" name="type" value="board">
       </form>
     </div>
   </div>
