@@ -28,7 +28,6 @@
 		</select>
 		<h2>Items   <img class="plusBtn" src="/public/img/plus_icon.png" id="plus"/>
 		<img class="minusBtn" src="/public/img/minus_icon.png" id="minus"/></h2>
-		
 		<ul>
 			<li class = "item"><input type="text" name="item" value=""></li>
 		</ul>
