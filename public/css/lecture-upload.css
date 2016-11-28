@@ -1,3 +1,6 @@
-form input[type=input]{
+form input[type=input] {
 	width: 100%;
+}
+.tab {
+	margin: 30px 20px;
 }
