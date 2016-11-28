@@ -16,14 +16,14 @@
     $db->query("INSERT INTO question(u_id, title, content, time) VALUES($id, '$title', '$content', '$time')");
     $questionId = $db->query("SELECT id from question where title='$title' and content='$content' and time='$time'");
     $q = $questionId->fetch();
-    foreach ($tags as $tag) {
+    foreach ($tags as $tag) { 
       $tagId = $db->query("SELECT id from tag where name='$tag'");
       if(!isset($tagId['id'])) {
         $db->query("INSERT INTO tag(name) values('$tag')");
         $tagId = $db->query("SELECT id from tag where name='$tag'");
         $t = $tagId->fetch();
       }
-      $db->query("INSERT INTO tag_question(t_id, q_id) values($t["id"],$q["id"])");
+      $db->query("INSERT INTO tag_question(t_id, q_id) values(".$t["id"].",".$q["id"]).")");
     }
     header("Location: question.php?id=$q["id"]");
   } catch (PDOException $e) {
