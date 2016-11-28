@@ -58,9 +58,9 @@
 		<div class="question">
 			<!-- qeustion title -->
 			<h1 id="question_title"><?= $row["title"] ?></h1>
-			<div class="question_btn">
-				<a class="btn question_modify" name="question_modify" href="modify_question.php?id=<?= $row["id"] ?>">수정</a>
-				<a class="btn question_delete" name="question_delete" href="delete_question.php?id=<?= $row["id"] ?>">삭제</a>
+			<div class="question_btn">-
+				<a class="btn question_modify" name="question_modify" href="modify_question.php?id=<?= $_GET["id"] ?>">수정</a>
+				<a class="btn question_delete" name="question_delete" href="delete_question.php?id=<?= $_GET["id"] ?>">삭제</a>
 			</div>
 			<hr>
 			<div>
@@ -134,7 +134,6 @@
 					<?= $answer["content"] ?>
 				</div>
 			</div>
-			<hr>
 		</div>
 		<!-- comment iterative -->
 		<div class="comment">
@@ -162,7 +161,7 @@
 					<input id="comment-write" type="text" name="comment" />
 					<input class="btn" id="submit" type="submit" value="등록"/>
 				</div>
-				<input type="hidden" name="id" value="<?= $_GET["id"] ?>" />
+				<input type="hidden" name="id" value="<?= $answer["id"] ?>" />
 				<input type="hidden" name="type" value="answer">
 			</form>
 		</div>

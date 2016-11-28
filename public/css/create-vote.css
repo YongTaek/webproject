@@ -1,0 +1,17 @@
+#vote {
+	margin-left : 20px;
+	display: none;
+}
+
+.voteBtn {
+	display: inline-block;
+}
+
+img.voteBtn {
+	margin-left: 10px;
+	vertical-align: baseline;
+	width: 24px;
+	height: 24px;
+}
+
+
