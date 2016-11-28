@@ -76,28 +76,27 @@
 			<hr>
 			<?php ?>
 			<div>
-				<span><?=$num ?></spn>
-					<span>content</span>
-					<span>author</span>
-					<span class="">date</span>
-					<div class="comment_btn">
-						<a class="btn comment_modify" name="comment_modify" href="">수정</a>
-						<a class="btn comment_delete" name="comment_delete" href="">삭제</a>
-					</div>
+				<span><?=$num ?></span>
+				<span>content</span>
+				<span>author</span>
+				<span class="">date</span>
+				<div class="comment_btn">
+					<a class="btn comment_modify" name="comment_modify" href="">수정</a>
+					<a class="btn comment_delete" name="comment_delete" href="">삭제</a>
 				</div>
-				<hr>
-				<?php ?>
 			</div>
-			<div class="comment">
-				<form>
-					<label>Comment:</label>
-					<div>
-						<input id="comment-write" type="text" name="comment" />
-						<input class="btn" id="submit" type="submit" value="등록"/>
-					</div>
-
-				</form>
-			</div>
+			<hr>
+			<?php ?>
+		</div>
+		<div class="comment">
+			<form>
+				<label>Comment:</label>
+				<div>
+					<input id="comment-write" type="text" name="comment" />
+					<input class="btn" id="submit" type="submit" value="등록"/>
+				</div>
+			</form>
+		</div>
 			<!-- question에 대한 answer -->
 			<div class="answer">
 				<h2 id="answer_title"><?=$num ?> Answer</h2>
@@ -124,7 +123,7 @@
 				<hr>
 				<?php ?>
 				<div>
-					<span><?=$num ?></spn>
+					<span><?=$num ?></span>
 						<span>content</span>
 						<span>author</span>
 						<span class="">date</span>
