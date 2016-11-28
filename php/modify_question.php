@@ -49,12 +49,18 @@
 	</header>
 	<div class='container'>
 		<!-- action php  -->
-		<?php
+	<?php
       $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
       $id = $_GET["id"];
       $u_id = $_SESSION["id"];
       $rows = $db->query("SELECT title, content FROM question WHERE u_id = $u_id AND id = $id");
+      $tags = $db->query("SELECT DISTINCT name FROM tag JOIN tag_question on q_id = $id AND t_id=id")
       $row = $rows->fetch();
+      $name = "[";
+      foreach ($tags as $tag) {
+      	$name += "'".$tag."',";
+      }
+      $name += "]";
     ?>
 		<form class='write' action='php' method="post">
 			<div id='title-container'>
@@ -85,6 +91,7 @@
 		<script>
 			$(function() {
 				$('#tag').tagEditor({
+					initialTags: [<?= $name ?>];
 					autocomplete: { delay: 0,position: { collision: 'flip' }, source: ['ActionScript', 'AppleScript', 'Asp', 'BASIC', 'C', 'C++', 'CSS', 'Clojure', 'COBOL', 'ColdFusion', 'Erlang', 'Fortran', 'Groovy', 'Haskell', 'HTML', 'Java', 'JavaScript', 'Lisp', 'Perl', 'PHP', 'Python', 'Ruby', 'Scala', 'Scheme'] },
 					placeholder: 'Programming languages ...'
 				});

@@ -130,3 +130,30 @@
 	list-style-type: none;
 }
 
+.vote-item > li > input {
+	margin-right: 10px;
+}
+
+
+.votebtn {
+	background-color: white;
+	border: 1px solid #337ab7;
+	border-radius: 5px;
+	padding: 8px;
+	text-decoration: none;
+	color: #337ab7;
+	line-height: initial;
+}
+
+.votebtn:hover {
+	text-decoration: none;
+}
+
+.formargin {
+	margin-left: 250px;
+}
+
+#chart {
+	display: none;
+}
+
