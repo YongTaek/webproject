@@ -18,7 +18,8 @@
     $q = $questionId->fetch();
     foreach ($tags as $tag) { 
       $tagId = $db->query("SELECT id from tag where name='$tag'");
-      if(!isset($tagId['id'])) {
+      $t = $tagId->fetch();
+      if(!isset($t["id"])) {
         $db->query("INSERT INTO tag(name) values('$tag')");
         $tagId = $db->query("SELECT id from tag where name='$tag'");
         $t = $tagId->fetch();
