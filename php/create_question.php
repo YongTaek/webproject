@@ -8,7 +8,7 @@
   $tag = $_POST["tags"];
   $time = date("Y-m-d H:i:s");
   print $tag;
-  $tags = explode(",", $tag)
+  $tags = explode(",", $tag);
   print $tags;
   try {
     $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
