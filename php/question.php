@@ -109,7 +109,7 @@
 		</div>
 		<!-- question에 대한 answer -->
 		<?php
-			$answers = $db->query("SELECT id, name, score, content FROM answer a JOIN user u WHERE u.id = a.u_id AND q_id = ".$_GET["id"]);
+			$answers = $db->query("SELECT a.id, name, score, content FROM answer a JOIN user u WHERE u.id = a.u_id AND q_id = ".$_GET["id"]);
 			$count = $answers->rowCount();
 
 			if ($count > 0) {
