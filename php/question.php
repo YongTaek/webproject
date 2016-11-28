@@ -59,7 +59,7 @@
 			<!-- qeustion title -->
 			<h1 id="question_title"><?= $row["title"] ?></h1>
 			<div class="question_btn">
-				<a class="btn question_modify" name="question_modify" href="modify_question.php?id=".$row["id"]>수정</a>
+				<a class="btn question_modify" name="question_modify" href="modify_question.php?id=<?= $row["id"] ?>">수정</a>
 				<a class="btn question_delete" name="question_delete" href="delete_question.php?id=<?= $row["id"] ?>">삭제</a>
 			</div>
 			<hr>
