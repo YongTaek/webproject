@@ -25,7 +25,7 @@
       }
       $db->query("INSERT INTO tag_question(t_id, q_id) values($t["id"],$q["id"])");
     }
-    header("Location: question.php?id=$questionId['id']");
+    header("Location: question.php?id=$q["id"]");
   } catch (PDOException $e) {
     echo $tag;
     echo $e->getMessage();
