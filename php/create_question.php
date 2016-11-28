@@ -5,7 +5,7 @@
   $id = $_SESSION["id"];
   $title = $_POST["title"];
   $content = $_POST["content"];
-  $tag = $_POST["tag"];
+  $tag = $_POST["tags"];
   $time = date("Y-m-d H:i:s");
 
   $tags = explode($tag, ",");

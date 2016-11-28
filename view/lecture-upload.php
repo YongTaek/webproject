@@ -8,7 +8,9 @@
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
 	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="../public/css/create-question.css" />
+	<link rel="stylesheet" type="text/css" href="../public/css/create-post.css" />
+	<link rel="stylesheet" type="text/css" href="../public/css/lecture-upload.css" />
+
 	<link rel="stylesheet" href="../public/css/notice.css" type="text/css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
@@ -46,24 +48,25 @@
 	</header>
 	<div class="main">
 		<div class="container">
-		<form class='write' action='php' method="post">
-			<div id='title-container'>
-				<label>Title</label>
-				<input id = 'title' name='title' type="text" maxlength="128">
+		<form action='/php/upload.php' enctype="multipart/form-data" method="post">
+			<h2>Title</h2>
+			<div class="title">
+				<input name="title" type="text">
 			</div>
-			<div class='question-container wmd-container'>
-				<div id='wmd-editor'>
-					<div id='wmd-button-bar'></div>
-					<textarea id='wmd-input' name='question-content'></textarea>
+			<div>
+			<p> * 강의자료 URL이나 파일을 입력해주세요 *</p>
+			<h2>File</h2>
+			<div class="file">
+			<input type="file" name="upload">
+			</div>
+			<h2>URL</h2>
+			<div class="url">
+			<input type="input" name="url">
+			</div>
+				<div class='buttons'>
+					<input class='btn btn-primary' type='submit' value="submit">
+					<button class='btn btn-primary'>cancel</button>
 				</div>
-				<hr>
-				<div id="wmd-preview" class="wmd-preview"></div>
-				<hr>
-			</div>
-			<div style="margin:0 0 1.2em">
-				<label>Tags</label>
-				<textarea id="tag" name="tags"></textarea></div>
-				<input class='btn btn-primary' type='submit'>
 			</form>
 		</div>
 
