@@ -21,7 +21,7 @@
         $db->query("INSERT INTO tag(name) values('$tag')");
         $tagId = $db->query("SELECT id from tag where name='$tag'");
       }
-      $db->query("INSERT INTO tag_question(t_id, q_id) values($tagId,$questionId['id'])");
+      $db->query("INSERT INTO tag_question(t_id, q_id) values($tagId['id'],$questionId['id'])");
     }
     header("Location: question.php?id=$questionId['id']");
   } catch (PDOException $e) {
