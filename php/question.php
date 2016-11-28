@@ -81,7 +81,7 @@
 		<div class="comment">
 			<hr>
 			<?php
-				$comments = $db->query("SELECT content, name, time FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'question' AND reference_id = ".$row["id"]);
+				$comments = $db->query("SELECT content, name, time FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'question' AND reference_id = ".$_GET["id"]);
 				foreach ($comments as $comment) {
 			?>
 			<div>
@@ -131,7 +131,7 @@
 					<a class="star-off"></a>
 				</div>
 				<div class="content">
-					<?= $row["content"] ?>
+					<?= $answer["content"] ?>
 				</div>
 			</div>
 			<hr>
@@ -140,7 +140,7 @@
 		<div class="comment">
 			<hr>
 			<?php
-				$comments = $db->query("SELECT content, name, time FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'question' AND reference_id = ".$row["id"]);
+				$comments = $db->query("SELECT content, name, time FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'answer' AND reference_id = ".$answer["id"]);
 				foreach ($comments as $comment) {
 			?>
 			<div>
