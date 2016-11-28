@@ -8,6 +8,6 @@
   $content = $_POST["content"];
   $db->query("UPDATE board SET title = '$title' WHERE id = $id AND u_id = $u_id");
   $db->query("UPDATE board SET content = '$content' WHERE id = $id AND u_id = $u_id");
-  header("Location: board.php?id=$id");
+  header("Location: free.php?id=$id");
   ?>
   
