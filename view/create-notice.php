@@ -38,7 +38,6 @@
   		</div>
   	</header>
     <div class="container">
-      <div class="write-answer">
         <form action="notice.php">
           <h2>Title</h2>
           <div class="title">
@@ -58,7 +57,6 @@
           </div>
         </form>
       </div>
-    </div>
     <script type="text/javascript" src="../public/js/wmd.js"></script>
   </body>
 </html>

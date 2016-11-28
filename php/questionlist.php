@@ -41,7 +41,7 @@
 	</div>
 	<div class= "content">
 		<div class="subheader">
-			<a type="button" class="createBtn btn btn-primary" href="/questions/create">Ask Question</a>
+			<a type="button" class="createBtn btn btn-primary" href="/php/create_question.php">Ask Question</a>
 			<h2>ALL QUESTION</h2>
 			<ul class="nav nav-tabs">
 				<li class="question-tab active"><a href = "/php/questionlist.php">recent</a></li>
@@ -84,7 +84,7 @@
 					</h3>
 					<div class= "tags">
 						<?php
-							$tags = $db->query("SELECT id, name FROM tag WHERE q_id = ".$row["id"]);
+							$tags = $db->query("SELECT distinct name FROM tag_question tq JOIN tag t WHERE t_id = id AND q_id = ".$row["id"]);
 							foreach ($tags as $tag) {
 						?>
 						<a href="" class= "tag"><?= $tag["name"] ?></a>
