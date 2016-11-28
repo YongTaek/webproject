@@ -8,8 +8,9 @@
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
 	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="../public/css/create-question.css" />
 	<link rel="stylesheet" type="text/css" href="../public/css/create-post.css" />
+	<link rel="stylesheet" type="text/css" href="../public/css/lecture-upload.css" />
+
 	<link rel="stylesheet" href="../public/css/notice.css" type="text/css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
@@ -53,9 +54,15 @@
 				<input name="title" type="text">
 			</div>
 			<div>
+			<p> * 강의자료 URL이나 파일을 입력해주세요 *</p>
 			<h2>File</h2>
 			<div class="file">
 			<input type="file" name="upload">
+			</div>
+			<h2>URL</h2>
+			<div class="url">
+			<input type="input" name="url">
+			</div>
 				<div class='buttons'>
 					<input class='btn btn-primary' type='submit' value="submit">
 					<button class='btn btn-primary'>cancel</button>
