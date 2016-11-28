@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="../public/css/bootstrap.min.css" type="text/css">
