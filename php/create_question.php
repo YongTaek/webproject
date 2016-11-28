@@ -8,7 +8,7 @@
   $tag = $_POST["tags"];
   $time = date("Y-m-d H:i:s");
   print $tag;
-  $tags = explode($tag, ",");
+  $tags = explode(",", $tag)
   print $tags;
   try {
     $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
@@ -23,6 +23,7 @@
       }
       $db->query("INSERT INTO tag_question(t_id, q_id) values($tagId,$questionId)");
     }
+    header("Location: question.php?id=".$row["id"]);
   } catch (PDOException $e) {
     echo $tag;
     echo $e->getMessage();
