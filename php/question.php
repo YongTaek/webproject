@@ -104,7 +104,7 @@
 					<input class="btn" id="submit" type="submit" value="등록"/>
 				</div>
 				<input type="hidden" name="id" value="<?= $_GET["id"] ?>" />
-				<input type="hidden" name="type" value="notice">
+				<input type="hidden" name="type" value="question">
 			</form>
 		</div>
 		<!-- question에 대한 answer -->
@@ -163,7 +163,7 @@
 					<input class="btn" id="submit" type="submit" value="등록"/>
 				</div>
 				<input type="hidden" name="id" value="<?= $_GET["id"] ?>" />
-				<input type="hidden" name="type" value="notice">
+				<input type="hidden" name="type" value="answer">
 			</form>
 		</div>
 		<?php
