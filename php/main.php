@@ -48,7 +48,7 @@
 				<ul>
 					<?php
 						$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-						$rows = $db->query("SELECT id, title, DATE_FORMAT(time, '%Y-%m-%d') FROM notice");
+						$rows = $db->query("SELECT id, title, DATE_FORMAT(time, '%Y-%m-%d') FROM notice ORDER BY DATE_FORMAT(time, '%Y-%m-%d') DESC");
 						foreach ($rows as $row) {
 					?>
 					<li class= "list">
@@ -62,12 +62,12 @@
 				</ul>
 			</div>
 			<div class = "col-lg-6">
-				<a class="h2" href="#"><h2>Question</h2></a>
+				<a class="h2" href="/php/questionlist.php"><h2>Question</h2></a>
 				<hr/>
 				<ul>
 					<?php
 						$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-						$rows = $db->query("SELECT id, title, DATE_FORMAT(time, '%Y-%m-%d') FROM question");
+						$rows = $db->query("SELECT id, title, DATE_FORMAT(time, '%Y-%m-%d') FROM question ORDER BY DATE_FORMAT(time, '%Y-%m-%d') DESC");
 						foreach ($rows as $row) {
 					?>
 					<li class= "list">
