@@ -49,6 +49,19 @@
   position: absolute;
   top: 0;
   right: 0;
+  display: none;
+}
+
+#side {
+  background: url('/public/img/side.png') no-repeat;
+  background-size: 40px;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: 10%;
+  right: 0;
+  z-index: 99;
 }
 html {
   height: 100%;
