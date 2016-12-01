@@ -44,10 +44,34 @@
 			<a type="button" class="createBtn btn btn-primary" href="/php/create-question.php">Ask Question</a>
 			<h2>ALL QUESTION</h2>
 			<ul class="nav nav-tabs">
+				<?php
+					if (isset($_GET["type"])) {
+						if ($_GET["type"] == "recommend") { ?>
+				<li class="question-tab"><a href = "/php/questionlist.php">recent</a></li>
+				<li class="question-tab active"><a href = "/php/questionlist.php?type=recommend">recommend</a></li>
+				<li class="question-tab"><a href = "/php/questionlist.php?type=my">My QnA</a></li>
+				<li class="question-tab"><a href = "/php/questionlist.php?type=favorite">Favorite</a></li>
+						<?php } elseif ($_GET["type"] == "my") { ?>
+				<li class="question-tab"><a href = "/php/questionlist.php">recent</a></li>
+				<li class="question-tab"><a href = "/php/questionlist.php?type=recommend">recommend</a></li>
+				<li class="question-tab active"><a href = "/php/questionlist.php?type=my">My QnA</a></li>
+				<li class="question-tab"><a href = "/php/questionlist.php?type=favorite">Favorite</a></li>
+						<?php } elseif ($_GET["type"] == "favorite") { ?>
+				<li class="question-tab"><a href = "/php/questionlist.php">recent</a></li>
+				<li class="question-tab"><a href = "/php/questionlist.php?type=recommend">recommend</a></li>
+				<li class="question-tab"><a href = "/php/questionlist.php?type=my">My QnA</a></li>
+				<li class="question-tab active"><a href = "/php/questionlist.php?type=favorite">Favorite</a></li>
+						<?php } else { ?>
 				<li class="question-tab active"><a href = "/php/questionlist.php">recent</a></li>
 				<li class="question-tab"><a href = "/php/questionlist.php?type=recommend">recommend</a></li>
 				<li class="question-tab"><a href = "/php/questionlist.php?type=my">My QnA</a></li>
 				<li class="question-tab"><a href = "/php/questionlist.php?type=favorite">Favorite</a></li>
+						<?php } } else { ?>
+				<li class="question-tab active"><a href = "/php/questionlist.php">recent</a></li>
+				<li class="question-tab"><a href = "/php/questionlist.php?type=recommend">recommend</a></li>
+				<li class="question-tab"><a href = "/php/questionlist.php?type=my">My QnA</a></li>
+				<li class="question-tab"><a href = "/php/questionlist.php?type=favorite">Favorite</a></li>
+					<?php } ?>
 			</ul>
 		</div>
 		<div class= "qlist-wapper">
