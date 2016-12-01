@@ -44,16 +44,32 @@
 			<a type="button" class="createBtn btn btn-primary" href="create-freepost.php">Ask Question</a>
 			<h2>ALL FREE</h2>
 			<ul class="nav nav-tabs">
-				<li class="question-tab active"><a href = "/recent">recent</a></li>
-				<li class="question-tab"><a href = "/recommend">recommend</a></li>
-				<li class="question-tab"><a href = "/myFree">My Free</a></li>
-				<li class="question-tab"><a href = "/myfavorite">Favorite</a></li>
+				<?php
+					if (isset($_GET["type"])) {
+						if ($_GET["type"] == "my") { ?>
+				<li class="question-tab"><a href = "/php/freelist.php">recent</a></li>
+				<li class="question-tab active"><a href = "/php/freelist.php?type=my">My Free</a></li>
+						<?php } else { ?>
+				<li class="question-tab active"><a href = "/php/freelist.php">recent</a></li>
+				<li class="question-tab"><a href = "/php/freelist.php?type=my">My Free</a></li>
+						<?php } } else { ?>
+				<li class="question-tab active"><a href = "/php/freelist.php">recent</a></li>
+				<li class="question-tab"><a href = "/php/freelist.php?type=my">My Free</a></li>
+					<?php } ?>
 			</ul>
 		</div>
 		<div class= "qlist-wapper">
 		<?php
 			$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-			$b_rows = $db->query("SELECT b.id, b.title, time, u.name FROM board b JOIN user u on b.u_id = u.id");
+			if (isset($_GET["type"])) {
+				if ($_GET["type"] == "my") {
+					$b_rows = $db->query("SELECT b.id, b.title, time, u.name FROM board b JOIN user u on b.u_id = u.id WHERE b.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
+				} else {
+					$b_rows = $db->query("SELECT b.id, b.title, time, u.name FROM board b JOIN user u on b.u_id = u.id ORDER BY time DESC");
+				}
+			} else {
+				$b_rows = $db->query("SELECT b.id, b.title, time, u.name FROM board b JOIN user u on b.u_id = u.id ORDER BY time DESC");
+			}
 			foreach ($b_rows as $row) { 
 				$c_rows = $db->query("SELECT distinct c.u_id, c.content, c.time FROM board b JOIN comment c on b.u_id = c.u_id WHERE c.type = 'board' AND c.reference_id = ".$row["id"]);
 				$count = $c_rows->rowCount();
