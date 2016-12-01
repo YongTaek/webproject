@@ -41,10 +41,10 @@
 		<div class="subheader">
 			<a type="button" class="createBtn btn btn-primary" href="create-notice.php">Register Notice</a>
 			<h2>ALL NOTICE</h2>
-			<ul class="nav nav-tabs">
-				<li class="question-tab active"><a href = "/recent">recent</a></li>
-				<li class="question-tab"><a href = "/recommend">recommend</a></li>
-				<li class="question-tab"><a href = "/myfavorite">Favorite</a></li>
+			<ul class="nav nav-tabs"> <!-- query에 따라 active 맞춰주기! to background-->
+				<li class="question-tab active"><a href = "#?recent">recent</a></li>
+				<li class="question-tab"><a href = "#?recommend">recommend</a></li>
+				<li class="question-tab"><a href = "#?myfavorite">Favorite</a></li>
 			</ul>
 		</div>
 		<div class= "qlist-wapper">
@@ -61,18 +61,21 @@
 					<h3 class="title">
 						<a href="/view/notice.php">title</a> <!-- 제목 -->
 					</h3>
-
 				</div>
 				<div class="question-list-right">
-					<a class="star-off" href="#"></a>
+					<div class="on-off">
+						<a class="star-off" href="#"></a>
+						<a class="pin-off" href="#"></a>
+					</div>
 					<div>
 						<h5 class="date">1일전</h5> <!-- 날짜 -->
 						<h5 class="name">by. 익명</h5> <!--작성자 -->
 					</div>
 				</div>
+				
 			</div>
 		</div>
 	</div>
 	<script src="../public/js/star_on_off.js" type="text/javascript"></script>
-	</body>
+</body>
 </html>

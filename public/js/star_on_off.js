@@ -9,6 +9,14 @@ $(".star-off").on('click', function () {
 
 })
 
+$(".pin-off").on('click', function(){
+
+	if($(this).hasClass("pin-on")){
+		$(this).removeClass("pin-on");
+	} else{
+		$(this).addClass("pin-on");
+	}
+})
 
 
 
