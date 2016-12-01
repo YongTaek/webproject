@@ -53,7 +53,7 @@
 
 			<?php
 				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-				$rows = $db->query("SELECT n.id, title, time, name FROM notice n JOIN user u ON n.u_id = u.id");
+				$rows = $db->query("SELECT n.id, title, time, name FROM notice n JOIN user u ON n.u_id = u.id ORDER BY time DESC");
 				foreach ($rows as $row) {
 			?>
 
