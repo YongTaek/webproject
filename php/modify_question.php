@@ -70,7 +70,7 @@
 			<div class='question-container wmd-container'>
 				<div id='wmd-editor'>
 					<div id='wmd-button-bar'></div>
-					<textarea id='wmd-input' name='question-content' value="<?= $row["content"] ?>"></textarea>
+					<textarea id='wmd-input' name='question-content'><?= $row["content"] ?></textarea>
 				</div>
 				<hr>
 				<div id="wmd-preview" class="wmd-preview"></div>
@@ -91,7 +91,7 @@
 		<script>
 			$(function() {
 				$('#tag').tagEditor({
-					// initialTags: [<?= $name ?>];
+					initialTags: [<?= $name ?>];
 					autocomplete: { delay: 0,position: { collision: 'flip' }, source: ['ActionScript', 'AppleScript', 'Asp', 'BASIC', 'C', 'C++', 'CSS', 'Clojure', 'COBOL', 'ColdFusion', 'Erlang', 'Fortran', 'Groovy', 'Haskell', 'HTML', 'Java', 'JavaScript', 'Lisp', 'Perl', 'PHP', 'Python', 'Ruby', 'Scala', 'Scheme'] },
 					placeholder: 'Programming languages ...'
 				});
