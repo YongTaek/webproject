@@ -81,9 +81,9 @@
 					if ($_GET["type"] == "recommend") {
 						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id WHERE pinned = 1 ORDER BY time DESC");
 					} elseif ($_GET["type"] == "my") {
-						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q ON q.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
+						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id WHERE q.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
 					} elseif ($_GET["type"] == "favorite") {
-						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN favorite f ON q.id = f.q_id WHERE f.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
+						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id JOIN favorite f ON q.id = f.q_id WHERE f.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
 					} else {
 						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id ORDER BY time DESC");
 					}
