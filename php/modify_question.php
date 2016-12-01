@@ -63,7 +63,7 @@
       	$name = $name."\"".$tag["name"]."\",";
       }
     ?>
-		<form action='php' method="post">
+		<form action='submit_question_modify.php' method="post">
 			<h2>Title</h2>
 			<div class="title">
 				<input name="title" type="text" value="<?= $row["title"] ?>">
