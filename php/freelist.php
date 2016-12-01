@@ -61,7 +61,15 @@
 		<div class= "qlist-wapper">
 		<?php
 			$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-			$b_rows = $db->query("SELECT b.id, b.title, time, u.name FROM board b JOIN user u on b.u_id = u.id ORDER BY time DESC");
+			if (isset($_GET["type"])) {
+				if ($_GET["type"] == "my") {
+					$b_rows = $db->query("SELECT b.id, b.title, time, u.name FROM board b JOIN user u on b.u_id = u.id WHERE b.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
+				} else {
+					$b_rows = $db->query("SELECT b.id, b.title, time, u.name FROM board b JOIN user u on b.u_id = u.id ORDER BY time DESC");
+				}
+			} else {
+				$b_rows = $db->query("SELECT b.id, b.title, time, u.name FROM board b JOIN user u on b.u_id = u.id ORDER BY time DESC");
+			}
 			foreach ($b_rows as $row) { 
 				$c_rows = $db->query("SELECT distinct c.u_id, c.content, c.time FROM board b JOIN comment c on b.u_id = c.u_id WHERE c.type = 'board' AND c.reference_id = ".$row["id"]);
 				$count = $c_rows->rowCount();
