@@ -79,7 +79,7 @@
 				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
 				if (isset($_GET["type"])) {
 					if ($_GET["type"] == "recommend") {
-						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id WHERE pinned = 1 ORDER BY time DESC");
+						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id WHERE pinned = 1 ORDER BY score DESC");
 					} elseif ($_GET["type"] == "my") {
 						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id WHERE q.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
 					} elseif ($_GET["type"] == "favorite") {
