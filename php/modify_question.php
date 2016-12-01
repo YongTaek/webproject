@@ -54,7 +54,7 @@
       $id = $_GET["id"];
       $u_id = $_SESSION["id"];
       $rows = $db->query("SELECT title, content FROM question WHERE u_id = $u_id AND id = $id");
-      $tags = $db->query("SELECT DISTINCT name FROM tag JOIN tag_question on q_id = $id AND t_id=id")
+      $tags = $db->query("SELECT DISTINCT name FROM tag JOIN tag_question on q_id = $id AND t_id=id");
       $row = $rows->fetch();
       $name = "[";
       foreach ($tags as $tag) {
@@ -70,7 +70,7 @@
 			<div class='question-container wmd-container'>
 				<div id='wmd-editor'>
 					<div id='wmd-button-bar'></div>
-					<textarea id='wmd-input' name='question-content' value="<?= $row["content"] ?>"></textarea>
+					<textarea id='wmd-input' name='question-content'><?= $row["content"] ?></textarea>
 				</div>
 				<hr>
 				<div id="wmd-preview" class="wmd-preview"></div>
