@@ -26,7 +26,6 @@ $(document).ready(function(){
         console.log(e.responseText());
       }
     };
-    console.log('test');
     $("#form").ajaxForm(options).submit();
   });
 
