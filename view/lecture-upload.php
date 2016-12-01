@@ -13,6 +13,7 @@
 
 	<link rel="stylesheet" href="../public/css/notice.css" type="text/css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script src="/public/js/lecture-upload.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="/public/js/push.js"></script>
 </head>
@@ -48,29 +49,30 @@
 	</header>
 	<div class="main">
 		<div class="container">
-		<form action='/php/upload.php' enctype="multipart/form-data" method="post">
-			<h2>Title</h2>
-			<div class="title">
-				<input name="title" type="text">
-			</div>
-			<div>
-			<p> * 강의자료 URL이나 파일을 입력해주세요 *</p>
-			<h2>File</h2>
-			<div class="file">
-			<input type="file" name="upload">
-			</div>
-			<h2>URL</h2>
-			<div class="url">
-			<input type="input" name="url">
-			</div>
-				<div class='buttons'>
-					<input class='btn btn-primary' type='submit' value="submit">
-					<button class='btn btn-primary'>cancel</button>
+			<form action='/php/upload.php' enctype="multipart/form-data" method="post">
+				<h2>Title</h2>
+				<div class="title">
+					<input name="title" type="text">
 				</div>
-			</form>
+				<div>
+					<ul class="nav nav-tabs">
+						<li class="question-tab active file"><a>File</a></li>
+						<li class="question-tab url"><a>URL</a></li>
+					</ul>
+					<div class="tab file">
+						<input type="file" id ="upload">
+					</div>
+					<div class="tab url">
+						<input type="input" name="url">
+					</div>
+					<div class='buttons'>
+						<input class='btn btn-primary' type='submit' value="submit">
+						<button class='btn btn-primary'>cancel</button>
+					</div>
+				</form>
+			</div>
+
 		</div>
 
-	</div>
-
-</body>
-</html>
+	</body>
+	</html>
