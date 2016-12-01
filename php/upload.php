@@ -1,5 +1,6 @@
 <?php
 session_start();
+header('Content-type: text/plain');
 $authority = $_SESSION['auth'];
 if ($authority !== 'professor') {
 	$result = array("error" => "true");
@@ -21,15 +22,15 @@ if(!isset($result)) {
 		$result = array("error" => "true");
 	}
 	if(isset($result)) {
-		echo json_encode($result);
+		print json_encode($result);
 	} else {
 		$name = $_POST["name"];
 		$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
 		$db->query("INSERT INTO lecture(name, url) values ('$name', '$dbUrl')");
 		$result = array("error" => "false");
-		echo json_encode($result);
+		print json_encode($result);
 	}
 } else {
-		echo json_encode($result);
+		print json_encode($result);
 }
 ?>
