@@ -1,5 +1,5 @@
 <?php
-  session_start();
+	session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -7,14 +7,19 @@
 	<meta charset="utf-8">
 	<title>Question</title>
 	<link rel="shortcut icon" href="icon/SelabFavicon.png" type="image/png">
-	<link rel="stylesheet" href="/public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" href="/public/css/main.css" type="text/css">
-	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
-	<link rel="stylesheet" href="/public/css/jquery.tag-editor.css">
-	<link rel="stylesheet" href="/public/css/notice.css" type="text/css">
-	<link rel="stylesheet" type="text/css" href="/public/css/wmd.css" />
-	<link rel="stylesheet" type="text/css" href="/public/css/create-question.css" />
-	<script type="text/javascript" src="/public/js/showdown.js"></script>
+	<link rel="stylesheet" href="../public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="../public/css/main.css" type="text/css">
+	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
+	<link rel="stylesheet" href="../public/css/jquery.tag-editor.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/create-post.css" />
+	<link rel="stylesheet" type="text/css" href="../public/css/wmd.css" />
+	<link rel="stylesheet" type="text/css" href="../public/css/create-post.css" />
+	<script type="text/javascript" src="../public/js/showdown.js"></script>
+	<link rel="stylesheet" href="../public/css/pusher.css" type="text/css">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
+	<script src="../public/js/push.js"></script>
 	<title></title>
 </head>
 <body>
@@ -31,25 +36,22 @@
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
 					<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
-					<ul class="hidden" id="setting">
-						<li><a href="user-setting.php">Setting</a></li>
-					</ul>
 				<?php } else { ?>
 					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
 			</div>
 			<img src="/public/img/search.png" class="pull-right search-icon">
 			<input type="text" class="pull-right search" name="search">
-			
+
 		</nav>
 		<div class = "jumbotron banner-color">
-			<h1 class="align-center">Home</h1>
-			<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
+			<h1 class="align-center">Question</h1>
+			<p class="lead align-center">Ask Question!</p>
 		</div>
 	</header>
 	<div class='container'>
 		<!-- action php  -->
-	<?php
+		<?php
       $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
       $id = $_GET["id"];
       $u_id = $_SESSION["id"];
@@ -62,24 +64,26 @@
       }
       $name += "]";
     ?>
-		<form class='write' action='php' method="post">
-			<div id='title-container'>
-				<label>Title</label>
-				<input id = 'title' name='title' type="text" maxlength="128" value="<?= $row["title"] ?>">
+		<form action='php' method="post">
+			<h2>Title</h2>
+			<div class="title">
+				<input name="title" type="text" value="<?= $row["title"] ?>">
 			</div>
-			<div class='question-container wmd-container'>
-				<div id='wmd-editor'>
-					<div id='wmd-button-bar'></div>
-					<textarea id='wmd-input' name='question-content'><?= $row["content"] ?></textarea>
-				</div>
-				<hr>
-				<div id="wmd-preview" class="wmd-preview"></div>
-				<hr>
+			<h2>Content</h2>
+			<div class="content" id="wmd-editor">
+				<div id="wmd-button-bar"></div>
+				<textarea id="wmd-input" name="content"><?= $row["content"] ?></textarea>
 			</div>
-			<div style="margin:0 0 1.2em">
+			<hr>
+			<div id="wmd-preview" class="wmd-preview"></div>
+			<hr>
+			<div>
 				<label>Tags</label>
 				<textarea id="tag" name="tags"></textarea></div>
-				<input class='btn btn-primary' type='submit'>
+				<div class='buttons'>
+					<input class='btn btn-primary' type='submit' value="submit">
+					<button class='btn btn-primary'>cancel</button>
+				</div>
 			</form>
 
 		</div>
@@ -97,6 +101,6 @@
 				});
 			});
 		</script>
-		<script type="text/javascript" src="/public/js/wmd.js"></script>
+		<script type="text/javascript" src="../public/js/wmd.js"></script>
 	</body>
 	</html>
