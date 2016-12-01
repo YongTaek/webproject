@@ -44,16 +44,14 @@
 			<a type="button" class="createBtn btn btn-primary" href="create-notice.php">Register Notice</a>
 			<h2>ALL NOTICE</h2>
 			<ul class="nav nav-tabs">
-				<li class="question-tab active"><a href = "/recent">recent</a></li>
-				<li class="question-tab"><a href = "/recommend">recommend</a></li>
-				<li class="question-tab"><a href = "/myfavorite">Favorite</a></li>
+				<li class="question-tab active"><a href = "/php/noticelist.php">recent</a></li>
 			</ul>
 		</div>
 		<div class= "qlist-wapper">
 
 			<?php
 				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-				$rows = $db->query("SELECT n.id, title, time, name FROM notice n JOIN user u ON n.u_id = u.id");
+				$rows = $db->query("SELECT n.id, title, time, name FROM notice n JOIN user u ON n.u_id = u.id ORDER BY time DESC");
 				foreach ($rows as $row) {
 			?>
 

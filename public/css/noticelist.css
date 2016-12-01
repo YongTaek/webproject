@@ -109,12 +109,35 @@ body{
 	display: inline-block;
 }
 
+.on-off {
+	float: right;
+	display: block;
+}
+
+.pin-off {
+	background-image: url("../img/pin-icon-off.png");
+	height: 24px;
+	width: 24px;
+	display: block;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.pin-on {
+	background-image: url("../img/pin-icon-on.png");
+	height: 24px;
+	width: 24px;
+	display: block;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
 .star-off {
 	background: url('../img/sprites.svg');
 	background-position: 0 -120px;
 	height: 30px;
 	width: 48px;
-    display: inline-block;
+    display: block;
     float: right;
     margin-top: 5px;
 }
@@ -124,7 +147,7 @@ body{
 	background-position: -40px -120px;
 	height: 30px;
 	width: 48px;
-    display: inline-block;
+    display: block;
     float: right;
     margin-top: 5px;
 }
