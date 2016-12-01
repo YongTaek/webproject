@@ -58,11 +58,10 @@
       $rows = $db->query("SELECT title, content FROM question WHERE u_id = $u_id AND id = $id");
       $tags = $db->query("SELECT DISTINCT name FROM tag JOIN tag_question on q_id = $id AND t_id=id");
       $row = $rows->fetch();
-      $name = "[";
+      $name = "";
       foreach ($tags as $tag) {
-      	$name += "'".$tag."',";
+      	$name = $name."\"".$tag["name"]."\",";
       }
-      $name += "]";
     ?>
 		<form action='php' method="post">
 			<h2>Title</h2>
