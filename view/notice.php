@@ -63,7 +63,7 @@
 				<p>Content</p>
 			</div>
 			<form class="vote" action="notice_vote_submit" accept-charset="utf-8">
-				
+
 				<div class="vote-name">펑펑펑</div>
 				<div class="vote-period">2016-11-23 ~ 2016-12-2</div>
 				<div class="divider"></div>
@@ -78,11 +78,12 @@
 						<li><input type="checkbox" name="item"/>펑펑</li>
 						<li><input type="checkbox" name="item"/>펑펑펑</li>
 					</ul>
-				</div>			
+				</div>
 				<input class="votebtn formargin" type="button" name="submitVoteBtn" value="투표">
 				<a class="votebtn" id="vote-result">결과 보기</a>
 				<div id="chart">
 				</form>
+
 
 			</div>
 		</div>
@@ -114,6 +115,7 @@
 				</form>
 			</div>
 		</div>
-		<script src="../public/js/star_on_off.js" type="text/javascript"></script>
-	</body>
-	</html>
+	</div>
+	<script src="../public/js/star_on_off.js" type="text/javascript"></script>
+</body>
+</html>
