@@ -4,19 +4,27 @@ $(document).ready(function(){
     $(".tab.url").css("display","none");
     var i,tablinks;
     $(".question-tab").click(function(){
-        tablinks = document.getElementsByClassName("question-tab");
-        for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
+        tablinks = $(".question-tab");
+        tabcontent.css("display","none");
+        tablinks.removeClass("active");
         $(this).addClass("active");
         if($(this).hasClass('url')){
             $(".url").css("display","block");
+            $(".url input").val('');
         }
         else{
             $(".file").css("display","block");
+            $(".file input").val('');
         }
     });
+});
+$("#sub-mit").click(function () {
+    var options = {
+        dataType:"text",
+        success: function(responseText){
+            alert("업로드 성공!!");
+        },error: function(e){e.responseText();}
+    };
+
+    $("#form").ajaxForm(options).submit();
 });

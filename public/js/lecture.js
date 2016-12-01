@@ -6,8 +6,10 @@ function slidebar() {
     var effect = 'slide';
     var options = { direction: "right"};
     var duration = 500;
-    changeDrawerClass(event);
-    $('#sidebar').toggle("slide", { direction : "right" }, 500);
+    $('#sidebar').toggle("slide", { direction : "right" }, 500, function () {
+      changeDrawerClass(event);
+
+    });
   })
 }
 
