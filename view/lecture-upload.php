@@ -67,7 +67,7 @@
 						<input type="input" name="url">
 					</div>
 					<div class='buttons'>
-						<input id ='sub-mit' class='btn btn-primary' type='submit' value="submit">
+						<input id ='sub-mit' class='btn btn-primary' type='button' value="submit">
 						<button class='btn btn-primary'>cancel</button>
 					</div>
 				</form>
