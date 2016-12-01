@@ -8,12 +8,13 @@
   	$t = $_POST["tags"];
   	$tags = explode(",", $t);
   	sort($tags);
-  	$origin_tag = $db->query("SELECT DISTINCT name FROM tag JOIN tag_question on q_id = $id AND t_id=id ORDER BY name");
+  	$origin_tag = $db->query("SELECT name FROM tag JOIN tag_question on q_id = $id AND t_id=id ORDER BY name");
   	$i=0;
+  	try{
   	foreach ($origin_tag as $tag) {
   		if($tag["name"] == $tags[$i]);
   		else{
-  			$find = $db->query("SELECT name id FROM tag WHERE name = $tag["name"]");
+  			$find = $db->query("SELECT name, id FROM tag WHERE name = $tag["name"]");
   			$num = $find->rowCount();
   			$find = $found->fetch();
   			if($num > 0){
@@ -28,8 +29,11 @@
   		}
   		$i++;
   	}
- 
   	$db->query("UPDATE question SET title = '$title' WHERE id = $id AND u_id = $u_id");
   	$db->query("UPDATE question SET content = '$content' WHERE id = $id AND u_id = $u_id");
   	header("Location: question.php?id=$id");
+  	} catch(PDOException $e){
+  		echo $tag;
+  		echo $e->getMessage();
+  	}
 ?>
