@@ -2,9 +2,9 @@
 session_start();
 header('Content-type: text/plain');
 $authority = $_SESSION['auth'];
-if ($authority !== 'professor') {
+// if ($authority !== 'professor') {
 	$result = array("error" => "true");
-}
+// }
 if(!isset($result)) {
 	if(isset($_FILES['upload']['name']) && isset($_POST['url'])) {
 		$result = array("error" => "true");
