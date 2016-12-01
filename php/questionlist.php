@@ -45,15 +45,27 @@
 			<h2>ALL QUESTION</h2>
 			<ul class="nav nav-tabs">
 				<li class="question-tab active"><a href = "/php/questionlist.php">recent</a></li>
-				<li class="question-tab"><a href = "/recommend">recommend</a></li>
-				<li class="question-tab"><a href = "/myquestion">My QnA</a></li>
-				<li class="question-tab"><a href = "/myfavorite">Favorite</a></li>
+				<li class="question-tab"><a href = "/php/questionlist.php?type=recommend">recommend</a></li>
+				<li class="question-tab"><a href = "/php/questionlist.php?type=my">My QnA</a></li>
+				<li class="question-tab"><a href = "/php/questionlist.php?type=favorite">Favorite</a></li>
 			</ul>
 		</div>
 		<div class= "qlist-wapper">
 			<?php
 				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-				$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id");
+				if (isset($_GET["type"])) {
+					if ($_GET["type"] == "recommend") {
+						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id WHERE pinned = 1 ORDER BY time DESC");
+					} elseif ($_GET["type"] == "my") {
+						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q ON q.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
+					} elseif ($_GET["type"] == "favorite") {
+						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN favorite f ON q.id = f.q_id WHERE f.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
+					} else {
+						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id ORDER BY time DESC");
+					}
+				} else {
+					$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id ORDER BY time DESC");
+				}
 				foreach ($rows as $row) {
 			?>
 			<div class= "question">
