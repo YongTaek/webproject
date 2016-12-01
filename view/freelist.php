@@ -42,10 +42,10 @@
 			<a type="button" class="createBtn btn btn-primary" href="create-freepost.php">Post Free</a>
 			<h2>ALL FREE</h2>
 			<ul class="nav nav-tabs">
-				<li class="question-tab active"><a href = "/recent">recent</a></li>
-				<li class="question-tab"><a href = "/recommend">recommend</a></li>
-				<li class="question-tab"><a href = "/myFree">My Free</a></li>
-				<li class="question-tab"><a href = "/myfavorite">Favorite</a></li>
+				<li class="question-tab active"><a href = "#?recent">recent</a></li>
+				<li class="question-tab"><a href = "#?recommend">recommend</a></li>
+				<li class="question-tab"><a href = "#?myFree">My Free</a></li>
+				<li class="question-tab"><a href = "#?myfavorite">Favorite</a></li>
 			</ul>
 		</div>
 		<div class= "qlist-wapper">
@@ -70,10 +70,13 @@
 					</h3>
 				</div>
 				<div class="question-list-right">
-					<a class="star-off" href="#"></a>
 					<div>
 						<h5 class="date">1일전</h5> <!-- 날짜 -->
 						<h5 class="name">by. 익명</h5> <!--작성자 -->
+					</div>
+					<div class="on-off">
+						<a class="star-off" href="#"></a>
+						<a class="pin-off" href="#"></a>
 					</div>
 				</div>
 			</div>

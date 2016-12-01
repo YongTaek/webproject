@@ -1,15 +1,26 @@
-.star-off {
-	background-image: url("../img/sprites.svg"), none;
-	background-size: initial;
+.pin-off {
+	background-image: url("../img/pin-icon-off.png");
+	height: 24px;
+	width: 24px;
+	display: inline-block ;
 	overflow: hidden;
-	background-repeat: no-repeat;
+	margin-left: 5px;
 }
+
+.pin-on {
+	background-image: url("../img/pin-icon-on.png");	
+}
+
 .star-off {
 	background-position: 0 -120px;
 	text-decoration: none;
 	height: 30px;
 	width: 46px;
 	display: inline-block;
+	background-image: url("../img/sprites.svg"), none;
+	background-size: initial;
+	overflow: hidden;
+	background-repeat: no-repeat;
 }
 
 .star-on {
@@ -34,9 +45,14 @@
 	padding-bottom: 20px;
 }
 .content {
-	margin-left: 50px;
-	margin-top: 20px;
+	
 	font-size: 20px;
+}
+
+.content > p {
+	/* margin-top: 20px; */
+	display: inline-block;
+	margin-left: 15px;
 }
 .comment {
 	margin-left: 70px;

@@ -43,7 +43,8 @@
 	<div class="container">
 		<div class="notice">
 			<div class="title">
-				<a class="star-off" href="#" ></a>
+				<a class="pin-off" href="#" ></a>
+
 				<h1 id="title_id">
 					<span>제목</span>
 				</h1>
@@ -56,6 +57,8 @@
 					<a class="btn notice_delete" name="notice_delete" href="">삭제</a>
 				</div>
 			</div>
+			
+
 			<div class="content">
 				<p>Content</p>
 			</div>
@@ -79,16 +82,16 @@
 				<input class="votebtn formargin" type="button" name="submitVoteBtn" value="투표">
 				<a class="votebtn" id="vote-result">결과 보기</a>
 				<div id="chart">
-			</form>
-			
+				</form>
+
 			</div>
 		</div>
 		<!-- comment iterative-->
 		<div class="comment">
-				<hr>
-				<?php ?>
-				<div>
-					<span><?=$num ?></spn>
+			<hr>
+			<?php ?>
+			<div>
+				<span><?=$num ?></spn>
 					<span>content</span>
 					<span>author</span>
 					<span class="">date</span>
@@ -99,18 +102,18 @@
 				</div>
 				<hr>
 				<?php ?>
-		</div>
-		<div class="comment">
-			<form>
-				<label>Comment:</label>
-				<div>
-					<input id="comment-write" type="text" name="comment" />
-					<input class="btn" id="submit" type="submit" value="등록"/>
-				</div>
+			</div>
+			<div class="comment">
+				<form>
+					<label>Comment:</label>
+					<div>
+						<input id="comment-write" type="text" name="comment" />
+						<input class="btn" id="submit" type="submit" value="등록"/>
+					</div>
 
-			</form>
+				</form>
+			</div>
 		</div>
-	</div>
-	<script src="../public/js/star_on_off.js" type="text/javascript"></script>
-</body>
-</html>
+		<script src="../public/js/star_on_off.js" type="text/javascript"></script>
+	</body>
+	</html>
