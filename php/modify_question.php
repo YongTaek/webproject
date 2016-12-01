@@ -58,13 +58,12 @@
       $rows = $db->query("SELECT title, content FROM question WHERE u_id = $u_id AND id = $id");
       $tags = $db->query("SELECT DISTINCT name FROM tag JOIN tag_question on q_id = $id AND t_id=id");
       $row = $rows->fetch();
-      $name = "[";
+      $name = "";
       foreach ($tags as $tag) {
-      	$name += "'".$tag."',";
+      	$name = $name."\"".$tag["name"]."\",";
       }
-      $name += "]";
     ?>
-		<form action='php' method="post">
+		<form action='submit_question_modify.php' method="post">
 			<h2>Title</h2>
 			<div class="title">
 				<input name="title" type="text" value="<?= $row["title"] ?>">
@@ -84,6 +83,7 @@
 					<input class='btn btn-primary' type='submit' value="submit">
 					<button class='btn btn-primary'>cancel</button>
 				</div>
+				<input type="hidden" name="id" value="<?= $id ?>">
 			</form>
 
 		</div>

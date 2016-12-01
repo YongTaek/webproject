@@ -44,6 +44,8 @@
 	<div class="container">
 		<div class="question">
 			<!-- qeustion title -->
+			<!-- <a class="pin-off" href="#" ></a> -->
+
 			<h1 id="question_title">Title</h1>
 			<div class="question_info">
 				<span>author</span>
@@ -56,11 +58,14 @@
 			<hr>
 			<div>
 				<div class="vote">
+					<a class="pin-off"></a>
 					<a class="vote-up-off"></a>
 					<!-- 추천 수 -->
 					<span class="vote-count"></span>
 					<a class="vote-down-off"></a>
+
 					<a class="star-off"></a>
+
 				</div>
 				<!-- question 내용 -->
 				<pre class="prettyprint">

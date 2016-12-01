@@ -55,6 +55,7 @@
 				</div>
 			</div>
 			<div class="content">
+				<a class="pin-off" href="#"></a>
 				<p>Content</p>
 			</div>
 		</div>
