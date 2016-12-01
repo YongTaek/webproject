@@ -44,9 +44,7 @@
 			<a type="button" class="createBtn btn btn-primary" href="create-notice.php">Register Notice</a>
 			<h2>ALL NOTICE</h2>
 			<ul class="nav nav-tabs">
-				<li class="question-tab active"><a href = "/recent">recent</a></li>
-				<li class="question-tab"><a href = "/recommend">recommend</a></li>
-				<li class="question-tab"><a href = "/myfavorite">Favorite</a></li>
+				<li class="question-tab active"><a href = "/php/noticelist.php">recent</a></li>
 			</ul>
 		</div>
 		<div class= "qlist-wapper">
