@@ -2,6 +2,10 @@
 if (isset($_GET["id"])) {
   $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
   $rows = $db->query("SELECT l.id, l.name, l.url from lecture l where l.id = ".$_GET["id"]);
+	$rows = $rows -> fetch();
+	print_r($rows['id']);
+	print $_GET["id"];
+	$lectureId = $rows['id'];
 }
 ?>
 <!DOCTYPE html>
@@ -19,7 +23,6 @@ if (isset($_GET["id"])) {
 	<script src="/public/js/lecture.js" type="text/javascript"></script>
 </head>
 <body>
-	<?= print_r($rows) ?>
 	<a href="#" class="closedrawer" id="side"></a>
 	<embed src = "../files/Notes03(file_io)_3.pdf"/* file path */></embed>
 	<div id="comment">
