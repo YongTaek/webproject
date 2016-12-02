@@ -7,12 +7,11 @@ header("Content-Type:application/json");
 // }
 // print $result;
 if(!isset($result)) {
-	print $_FILES['upload']['name'];
-	if(isset($_FILES['upload']['name']) && isset($_POST['url'])) {
+	if(isset($_FILES['upload']['name']) && $_POST['url'] !== "") {
 		$result = array("error" => "true");
 	} else if(isset($_FILES['upload']['name'])) {
 		$uploaddir = "../files/";
-		$fileUrl = $uploaddir . utf8_encode(basename($_FILES['upload']['name']));
+		$fileUrl = $uploaddir . basename($_FILES['upload']['name']);
 		if(move_uploaded_file($_FILES['upload']['tmp_name'],$fileUrl)){
 			$dbUrl = $fileUrl;
 		} else{

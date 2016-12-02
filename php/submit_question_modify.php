@@ -8,24 +8,22 @@
   	$t = $_POST["tags"];
   	$tags = explode(",", $t);
   	sort($tags);
-  	$origin_tag = $db->query("SELECT name FROM tag JOIN tag_question on q_id = $id AND t_id=id ORDER BY name");
+  	$origin_tag = $db->query("SELECT name, id FROM tag JOIN tag_question on t_id = id WHERE q_id = $id ORDER BY name");
   	$i=0;
   	try{
   	foreach ($origin_tag as $tag) {
   		if($tag["name"] == $tags[$i]);
-  		else{
-  			$find = $db->query("SELECT name, id FROM tag WHERE name = $tag["name"]");
-  			$num = $find->rowCount();
-  			$find = $found->fetch();
-  			if($num > 0){
-  				$db->query("UPDATE tag_question SET t_id = $found["id"] WHERE q_id = $id AND t_id = $found["id"]");
-  			}
-  			else{
-  				$db->query("INSERT INTO tag(name) values('$tag["name"]')");
-  				$t_find = $db->query("SELECT id FROM tag WHERE name = '$tag["name"]'");
-  				$t_find = $t_found->fetch();
-  				$db->query("INSERT INTO tag_question(t_id, q_id) values($t_found["id"],$id)");
-  			}
+  		else{ // 태그가 수정됐을경우
+        $tags_tid = $db->query("SELECT id FROM tag WHERE name = ".$tag["name"]); // 수정한 태그의 원래 태그 id
+        $t_tid = $tags_tid->fetch();
+        $find = $db->query("SELECT name, id from tag join tag_question on id = t_id WHERE name =".$tags[$id]);
+        $num = $find->fetch();
+        if($num > 0){
+          $db->query("UPDATE tag_question set t_id = ".$find["id"]."WHERE t_id =".$tag["id"]." AND q_id = $id");
+        }
+        else{
+
+        }
   		}
   		$i++;
   	}
