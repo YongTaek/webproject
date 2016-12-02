@@ -27,7 +27,7 @@
 				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
-				<?php if (logged_in) { ?>
+				<?php if ($logged_in) { ?>
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
 					<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
@@ -45,7 +45,7 @@
 	</div>
 	<div class= "content">
 		<div class="subheader">
-			<?php if (logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant")) { ?>
+			<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant")) { ?>
 			<a type="button" class="createBtn btn btn-primary" href="create-notice.php">Register Notice</a>
 			<?php } ?>
 			<h2>ALL NOTICE</h2>
