@@ -83,6 +83,7 @@
 				</div>
 			</div>
 		</div>
+		<?php } ?>
 		<!-- comment iterative -->
 		<div class="comment">
 			<hr>
@@ -196,7 +197,6 @@
 			</form>
 		</div>
 		<?php
-			}
 				}
 			}
 		?>
