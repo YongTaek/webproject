@@ -53,7 +53,7 @@
 			<form id = "form" action='/php/upload.php' enctype="multipart/form-data" method="post">
 				<h2>Title</h2>
 				<div class="title">
-					<input name="title" type="text">
+					<input name="title" id="title" type="text">
 				</div>
 				<div>
 					<ul class="nav nav-tabs">
@@ -67,7 +67,7 @@
 						<input type="input" name="url">
 					</div>
 					<div class='buttons'>
-						<input id ='sub-mit' class='btn btn-primary' type='button' value="submit">
+						<input id ='sub-mit' class='btn btn-primary' type='submit' value="submit">
 						<button class='btn btn-primary'>cancel</button>
 					</div>
 				</form>
