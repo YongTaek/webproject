@@ -14,12 +14,12 @@
   	foreach ($origin_tag as $tag) {
   		if($tag["name"] == $tags[$i]);
   		else{ // 태그가 수정됐을경우
-        $tags_tid = $db->query("SELECT id FROM tag WHERE name = $tag["name"]"); // 수정한 태그의 원래 태그 id
+        $tags_tid = $db->query("SELECT id FROM tag WHERE name = ".$tag["name"]); // 수정한 태그의 원래 태그 id
         $t_tid = $tags_tid->fetch();
-        $find = $db->query("SELECT name, id from tag join tag_question on id = t_id WHERE name = $tags[$id]");
+        $find = $db->query("SELECT name, id from tag join tag_question on id = t_id WHERE name =".$tags[$id]);
         $num = $find->fetch();
         if($num > 0){
-          $db->query("UPDATE tag_question set t_id = $find["id"] WHERE t_id = $tag["id"] AND q_id = $id");
+          $db->query("UPDATE tag_question set t_id = ".$find["id"]."WHERE t_id =".$tag["id"]." AND q_id = $id");
         }
         else{
 
