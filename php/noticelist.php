@@ -1,5 +1,10 @@
 <?php
 	session_start();
+	if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
+		$logged_in = true;
+	} else {
+		$logged_in = false;
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +28,7 @@
 				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
-				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
+				<?php if (logged_in) { ?>
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
 					<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
@@ -41,7 +46,9 @@
 	</div>
 	<div class= "content">
 		<div class="subheader">
+			<?php if (logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant")) { ?>
 			<a type="button" class="createBtn btn btn-primary" href="create-notice.php">Register Notice</a>
+			<?php } ?>
 			<h2>ALL NOTICE</h2>
 			<ul class="nav nav-tabs">
 				<li class="question-tab active"><a href = "/php/noticelist.php">recent</a></li>
