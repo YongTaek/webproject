@@ -1,9 +1,5 @@
 <?php
 	session_start();
-	$logged_in = false;
-	if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
-		$logged_in = true;
-	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,7 +22,7 @@
 				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
-				<?php if ($logged_in) { ?>
+				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
 					<a id="login" href="/php/logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
 					<a id="mypage" href="/php/myPage.php" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
@@ -61,12 +57,10 @@
 					<span><?= $row["name"] ?></span>
 					<span><?= $row["time"] ?></span>
 				</div>
-				<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant")) { ?>
 				<div class="notice_btn">
 					<a class="btn notice_modify" href="/php/modify_notice.php?id=<?= $row["id"] ?>">수정</a>
 					<a class="btn notice_delete" href="/php/delete_notice.php?id=<?= $row["id"] ?>">삭제</a>
 				</div>
-				<?php } ?>
 			</div>
 			<div class="content">
 				<p><?= $row["content"] ?></p>
@@ -76,19 +70,17 @@
 		<div class="comment">
 				<hr>
 				<?php
-					$comments = $db->query("SELECT content, name, time, u.id FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'notice' AND reference_id = ".$row["id"]);
+					$comments = $db->query("SELECT content, name, time FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'notice' AND reference_id = ".$row["id"]);
 					foreach ($comments as $comment) {
 				?>
 				<div>
 					<span><?= $comment["content"] ?></span>
 					<span><?= $comment["name"] ?></span>
 					<span class=""><?= $comment["time"] ?></span>
-					<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
 					<div class="comment_btn">
 						<a class="btn comment_modify" href="/php/modify_comment.php">수정</a>
 						<a class="btn comment_delete" href="/php/delete_comment.php">삭제</a>
 					</div>
-					<?php } ?>
 				</div>
 				<hr>
 				<?php } ?>

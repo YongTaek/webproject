@@ -17,6 +17,7 @@ $(document).ready(function(){
       $(".file input").val('');
     }
   });
+
   $("#sub-mit").click(submitData);
 });
 
