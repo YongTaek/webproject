@@ -55,17 +55,19 @@
 		<?php
 			if (isset($_GET["id"])) {
 				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-				$rows = $db->query("SELECT title, score, content FROM question WHERE id = ".$_GET["id"]);
+				$rows = $db->query("SELECT title, score, content, u.id FROM question q JOIN user u WHERE q.id = ".$_GET["id"]);
 				foreach ($rows as $row) {
 		?>
 
 		<div class="question">
 			<!-- qeustion title -->
 			<h1 id="question_title"><?= $row["title"] ?></h1>
+			<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $row["id"])) ?>
 			<div class="question_btn">
 				<a class="btn question_modify" name="question_modify" href="modify_question.php?id=<?= $_GET["id"] ?>">수정</a>
 				<a class="btn question_delete" name="question_delete" href="delete_question.php?id=<?= $_GET["id"] ?>">삭제</a>
 			</div>
+			<?php } ?>
 			<hr>
 			<div>
 				<div class="vote">
@@ -92,7 +94,7 @@
 					<span><?= $comment["content"] ?></span>
 					<span><?= $comment["name"] ?></span>
 					<span class=""><?= $comment["time"] ?></span>
-					<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $row["id"] )) { ?>
+					<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"] )) { ?>
 					<div class="comment_btn">
 						<a class="btn comment_modify" name="comment_modify" href="">수정</a>
 						<a class="btn comment_delete" name="comment_delete" href="">삭제</a>
