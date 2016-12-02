@@ -1,10 +1,4 @@
-<?php
-if (isset($_GET["id"])) {
-  $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-  $rows = $db->query("SELECT l.name, l.url from lecture l where l.id = ".$_GET["id"]);
-}
-?>
-<div class="sidebar">
+<div id="sidebar">
   <div class="threads">
     <div class="thread">
       feejejek

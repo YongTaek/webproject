@@ -1,9 +1,5 @@
 <?php
   session_start();
-  $logged_in = false;
-  if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
-    $logged_in = true;
-  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,7 +22,7 @@
         <li class="pull-left"><a href="/php/freelist.php" class="menu-item active">FREE BOARD</a></li>
       </ul>
       <div role="login" class="pull-right">
-        <?php if ($logged_in) { ?>
+        <?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
           <a id="login" href="/php/logout.php" class='pull-right'>LOGOUT</a>
           <div class="pull-right vr"></div>
           <a id="mypage" href="/php/myPage.php" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
@@ -46,7 +42,7 @@
   <?php
     if (isset($_GET["id"])) {
       $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-      $rows = $db->query("SELECT b.id, name, title, content, time, u.id FROM board b JOIN user u ON b.u_id = u.id WHERE b.id = ".$_GET["id"]);
+      $rows = $db->query("SELECT b.id, name, title, content, time FROM board b JOIN user u ON b.u_id = u.id WHERE b.id = ".$_GET["id"]);
       foreach ($rows as $row) {
   ?>
 
@@ -62,12 +58,10 @@
           <span><?= $row["name"] ?></span>
           <span><?= $row["time"] ?></span>
         </div>
-        <?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $row["u.id"])) { ?>
         <div class="free_btn">
-          <a class="btn free_modify" href="modify_free.php?id=<?= $_GET["id"] ?>">수정</a>
-          <a class="btn free_delete" href="delete_free.php?id=<?= $_GET["id"] ?>">삭제</a>
+          <a class="btn free_modify" href="modify_free.php?id=<?= $row["id"] ?>">수정</a>
+          <a class="btn free_delete" href="delete_free.php?id=<?= $row["id"] ?>">삭제</a>
         </div>
-        <?php } ?>
       </div>
       <div class="content">
         <p><?= $row["content"] ?></p>
@@ -77,19 +71,17 @@
     <div class="comment">
         <hr>
         <?php
-          $comments = $db->query("SELECT content, name, time, u.id FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'board' AND reference_id = ".$_GET["id"]);
+          $comments = $db->query("SELECT content, name, time FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'board' AND reference_id = ".$row["id"]);
           foreach ($comments as $comment) {
         ?>
         <div>
           <span><?= $comment["content"] ?></span>
           <span><?= $comment["name"] ?></span>
           <span class=""><?= $comment["time"] ?></span>
-          <?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
           <div class="comment_btn">
             <a class="btn comment_modify" name="comment_modify" href="">수정</a>
             <a class="btn comment_delete" name="comment_delete" href="">삭제</a>
           </div>
-          <?php } ?>
         </div>
         <hr>
         <?php } ?>
