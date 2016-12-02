@@ -61,7 +61,7 @@
 						<li class="question-tab url"><a>URL</a></li>
 					</ul>
 					<div class="tab file">
-						<input type="file" id ="upload">
+						<input type="file" id ="upload" name="upload">
 					</div>
 					<div class="tab url">
 						<input type="input" name="url">
