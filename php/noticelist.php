@@ -1,9 +1,8 @@
 <?php
 	session_start();
+	$logged_in = false;
 	if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
 		$logged_in = true;
-	} else {
-		$logged_in = false;
 	}
 ?>
 <!DOCTYPE html>
