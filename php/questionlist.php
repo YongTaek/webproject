@@ -1,5 +1,9 @@
 <?php
 	session_start();
+	$logged_in = false;
+	if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
+		$logged_in = true;
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +27,7 @@
 				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
-				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
+				<?php if ($logged_in) { ?>
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
 					<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
@@ -41,7 +45,9 @@
 	</div>
 	<div class= "content">
 		<div class="subheader">
+			<?php if ($logged_in) { ?>
 			<a type="button" class="createBtn btn btn-primary" href="/php/create-question.php">Ask Question</a>
+			<?php } ?>
 			<h2>ALL QUESTION</h2>
 			<ul class="nav nav-tabs">
 				<?php
@@ -133,7 +139,13 @@
 					<a class="star-off" href="#"></a>
 					<div>
 						<h5 class="date"><?= $row["time"] ?></h5>
-						<h5 class="name">by. <?= $row["name"] ?></h5>
+						<?php
+							if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant"))
+								$name = $row["name"];
+							else
+								$name = "anonymous";
+						?>
+						<h5 class="name">by. <?= $name ?></h5>
 					</div>
 				</div>
 			</div>
