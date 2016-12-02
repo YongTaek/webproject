@@ -27,9 +27,11 @@ function submitData() {
     success: function(responseText, statusText){
       console.log(responseText);
       var result = JSON.parse(responseText);
+      // window.location.href = "/view/lecture-manage.php";
       alert(result.error);
     },error: function(e){
       console.log(e.responseText);
+      alert("파일 업로드에 실패했습니다! :(");
     }
   });
 }
