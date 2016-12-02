@@ -17,29 +17,18 @@ $(document).ready(function(){
       $(".file input").val('');
     }
   });
-  $("#sub-mit").click(function () {
-    var options = {
-      dataType:"text",
-      success: function(responseText, statusText){
-        var result = JSON.parse(responseText);
-        alert(result.error);
-        alert("업로드 성공!!");
-      },error: function(e){
-        console.log(e.responseText);
-      }
-    };
-    $("#form").ajaxForm({
-      dataType: 'text',
-      success: function(responseText, statusText){
-        console.log(responseText);
-        console.log(statusText);
-        var result = JSON.parse(responseText);
-        alert(result.error);
-        alert("업로드 성공!!");
-      },error: function(e){
-        console.log(e.responseText);
-      }
-      });
-  });
-
+  $("#sub-mit").click(submitData);
 });
+
+function submitData() {
+  $("#form").ajaxForm({
+    dataType: 'text',
+    success: function(responseText, statusText){
+      console.log(responseText);
+      var result = JSON.parse(responseText);
+      alert(result.error);
+    },error: function(e){
+      console.log(e.responseText);
+    }
+  });
+}
