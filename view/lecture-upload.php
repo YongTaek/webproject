@@ -66,11 +66,12 @@
 					<div class="tab url">
 						<input type="input" name="url">
 					</div>
-					<div class='buttons'>
-						<input id ='sub-mit' class='btn btn-primary' type='button' value="submit">
-						<button class='btn btn-primary'>cancel</button>
-					</div>
 				</form>
+				<div class='buttons'>
+					<input id ='sub-mit' form = "form" class='btn btn-primary' type='submit' value="submit">
+					<!-- <button class='btn btn-primary'>cancel</button> -->
+					<a class="btn btn-primary" href="/view/lecture-manage.php">cancel</a>
+				</div>
 			</div>
 		</div>
 	</body>

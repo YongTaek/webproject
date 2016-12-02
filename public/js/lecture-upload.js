@@ -18,15 +18,12 @@ $(document).ready(function(){
     }
   });
   $("#sub-mit").click(function () {
-    var options = {
-      dataType:"text",
-      success: function(responseText){
-        alert("업로드 성공!!");
-      },error: function(e){
-        console.log(e.responseText());
+    $("#form").ajaxForm({
+      dataType: 'text',
+      success: function(reponse){
+        console.log(reponse);
       }
-    };
-    $("#form").ajaxForm(options).submit();
-  });
+    });
+    });
 
-});
+  });
