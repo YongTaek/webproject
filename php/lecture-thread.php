@@ -1,4 +1,4 @@
-<div class="sidebar">
+<div id="sidebar">
   <div class="threads">
     <div class="thread">
       feejejek
