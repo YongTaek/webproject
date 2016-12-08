@@ -7,11 +7,9 @@ function ready () {
       type : "POST",
       data : params,
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-      dataType : 'html',
+      dataType : 'json',
       success : function (result, status) {
-        console.log(status);
         console.log(result);
-        alert("agag");
       }
     }).done(function (data) {
       alert('asdf');
