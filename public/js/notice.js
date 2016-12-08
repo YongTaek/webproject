@@ -43,6 +43,6 @@ function addComment(data) {
   div.append(timeSpan);
   div.append(ownerDiv);
 
-  $("#comment").append(div);
+  $(".comment-list").last().append(div);
 }
 $(document).ready(ready);
