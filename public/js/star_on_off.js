@@ -3,7 +3,7 @@ $(".star-off").on('click', function () {
 
 	if (window.location.pathname == "/php/questionlist.php")
   	$.get("favorite.php", 
-  		{ id: $(this).parentNode.parentNode.parentNode.getElementsByClassName("mini-count")[0].childNodes[1].textContent,
+  		{ id: $(this).parentElement.parentElement.parentElement.getElementsByClassName("mini-count")[0].childNodes[1].textContent,
   			type: "favorite" })
   	.done(function (data) {
   		if (!data.error) {
@@ -28,7 +28,7 @@ $(".star-on").on('click', function () {
 
 	if (window.location.pathname == "/php/questionlist.php")
   	$.get("favorite.php", 
-  		{ id: $(this).parentNode.parentNode.parentNode.getElementsByClassName("mini-count")[0].childNodes[1].textContent,
+  		{ id: $(this).parentElement.parentElement.parentElement.getElementsByClassName("mini-count")[0].childNodes[1].textContent,
   			type: "unfavorite" })
   	.done(function (data) {
   		if (!data.error) {
