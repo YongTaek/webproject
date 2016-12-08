@@ -4,7 +4,6 @@ if (isset($_GET["id"])) {
   $rows = $db->query("SELECT l.id, l.name, l.url from lecture l where l.id = ".$_GET["id"]);
 	$rows = $rows -> fetch();
 	print_r($rows['id']);
-	print $_GET["id"];
 	$lectureId = $rows['id'];
 }
 ?>
