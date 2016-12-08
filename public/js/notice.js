@@ -32,8 +32,11 @@ function addComment(data) {
   var timeSpan = document.createElement("time");
   timeSpan.innerHTML = data.time;
   var ownerDiv = document.createElement('div');
+  ownerDiv.className = "comment_btn";
   var modifyA = document.createElement('a');
+  modifyA.className= "btn comment_modify";
   var removeA = document.createElement('a');
+  removeA.className= "btn comment_delete";
   modifyA.innerHTML = '수정';
   removeA.innerHTML = '삭제';
   ownerDiv.append(modifyA);
@@ -43,6 +46,7 @@ function addComment(data) {
   div.append(timeSpan);
   div.append(ownerDiv);
 
-  $("#comment-list").last().append(div);
+  $("#comment-list").append(div);
+  $("#comment-list").append(document.createElement("hr"));
 }
 $(document).ready(ready);
