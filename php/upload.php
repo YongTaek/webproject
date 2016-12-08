@@ -23,6 +23,7 @@ if(!isset($result)) {
 		$result = array("error" => "true");
 	}
 	if(isset($result)) {
+		print 'asdf';
 		print json_encode($result);
 	} else {
 		$name = $_POST["title"];
