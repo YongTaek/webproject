@@ -1,4 +1,10 @@
-
+function LectureReady(){
+  $("#submit").click(function (event){
+    $.ajax({
+      
+    })
+  })
+}
 function slidebar() {
   var comment = $("#comment");
 
