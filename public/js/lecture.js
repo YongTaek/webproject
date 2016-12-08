@@ -1,5 +1,16 @@
-
-function slidebar() {
+function lectureReady(){
+  $("#submit").click(function (event){
+    $.ajax({
+      url: "../php/create_comment.php",
+      type : "POST",
+      context: $("#input").value
+    }).done(function (data) {
+      if(!data['error']){
+        alert("등록 에러! X(");
+      };
+    });
+  });
+  
   var comment = $("#comment");
 
   $('#side').click(function (event) {
@@ -8,10 +19,10 @@ function slidebar() {
     var duration = 500;
     $('#sidebar').toggle("slide", { direction : "right" }, 500, function () {
       changeDrawerClass(event);
-
     });
   })
-}
+
+};
 
 function changeDrawerClass(event) {
   if($(event.target).hasClass('opendrawer')) {
@@ -22,6 +33,8 @@ function changeDrawerClass(event) {
     $(event.target).removeClass('closedrawer');
   }
 }
+
+$(document).ready(lectureReady);
 
 Pusher.logToConsole = true;
 
@@ -56,6 +69,3 @@ channel.bind('new_comment', function(data) {
 	toastr.error(data.message, '질문 실패');
 	// 골라서 쓰기
 });
-
-
-$(document).ready(slidebar);

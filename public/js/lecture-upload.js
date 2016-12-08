@@ -28,7 +28,7 @@ function submitData() {
       console.log(responseText);
       var result = JSON.parse(responseText);
       // window.location.href = "/view/lecture-manage.php";
-      alert(result.error);
+      alert("파일을 업로드했습니다! :)");
     },error: function(e){
       console.log(e.responseText);
       alert("파일 업로드에 실패했습니다! :(");
