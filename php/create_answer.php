@@ -1,9 +1,9 @@
 <?php
-	session_start();
+  session_start();
   date_default_timezone_set('Asia/Seoul');
 
- 	$u_id = $_SESSION["id"];
- 	$id = $_POST["id"];
+  $u_id = $_SESSION["id"];
+  $id = $_POST["id"];
   $content = $_POST["answer"];
   $time = date("Y-m-d H:i:s");
   $num = $db->query("SELECT id FROM answer WHERE q_id = $id AND u_id = $u_id");
@@ -16,13 +16,10 @@
       header("Location: question.php?id=$id");
     }
     else{
-
+      echo "<script>alert(\"이미 썼자나ㅡㅡ\");</script>";
     }
   } catch(PDOException $e){
-   	echo $e->getMessage();
+    echo $e->getMessage();
     }
-  }
-  else{
-    echo "<script>alert(\"이미 썼자나ㅡㅡ\");</script>";
-  }
+
 ?>
