@@ -3,12 +3,12 @@ function ready () {
   $("#submit").click(function (event){
 
     var params = $("#form").serialize();
-    console.log("asdf");
     $.ajax({
       url: "../php/create_comment.php",
       type : "POST",
       data : params,
-      contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType : 'html'
     }).done(function (data) {
       alert('asdf');
       if(!data['error']){
