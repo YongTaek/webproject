@@ -1,4 +1,3 @@
-
 function ready () {
   $("#submit").click(function (event){
 
@@ -12,8 +11,10 @@ function ready () {
       success : function (result, status) {
         console.log(status);
         console.log(result);
+        alert("agag");
       }
     }).done(function (data) {
+      alert('asdf');
       if(!data['error']){
         alert("등록 에러! X(");
       } else {
