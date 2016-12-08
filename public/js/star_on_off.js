@@ -1,6 +1,5 @@
 
-function favorite() {
-	var event = $(this);
+function favorite(event) {
 
 	if (window.location.pathname == "/php/questionlist.php")
   	$.get("favorite.php", 
@@ -28,8 +27,7 @@ function favorite() {
   	});
 }
 
-function unfavorite() {
-	var event = $(this);
+function unfavorite(event) {
 
 	if (window.location.pathname == "/php/questionlist.php")
   	$.get("favorite.php", 
@@ -57,9 +55,9 @@ function unfavorite() {
   	});
 }
 
-$(".star-off").on('click', favorite);
+$(".star-off").on('click', function () { favorite($(this)) });
 
-$(".star-on").on('click', unfavorite);
+$(".star-on").on('click', function () { unfavorite($(this)) });
 
 $(".pin-off").on('click', function(){
 
