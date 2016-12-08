@@ -3,6 +3,7 @@ function ready () {
   $("#submit").click(function (event){
 
     var params = $("#form").serialize();
+    console.log("asdf");
     $.ajax({
       url: "../php/create_comment.php",
       type : "POST",
