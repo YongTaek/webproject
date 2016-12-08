@@ -7,7 +7,7 @@ function ready () {
     $.ajax({
       url: form.attr("action"),
       type : "POST",
-      data : params,
+      data : JSON.stringify(params),
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
       dataType: 'html',
       success : function (result) {
