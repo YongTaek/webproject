@@ -3,7 +3,7 @@ function favorite(event) {
 
 	if (window.location.pathname == "/php/questionlist.php")
   	$.get("favorite.php", 
-  		{ id: $(this)[0].parentElement.parentElement.parentElement.getElementsByClassName("mini-count")[0].childNodes[1].textContent,
+  		{ id: event[0].parentElement.parentElement.parentElement.getElementsByClassName("mini-count")[0].childNodes[1].textContent,
   			type: "favorite" })
   	.done(function (data) {
   		if (!data.error) {
@@ -31,7 +31,7 @@ function unfavorite(event) {
 
 	if (window.location.pathname == "/php/questionlist.php")
   	$.get("favorite.php", 
-  		{ id: $(this)[0].parentElement.parentElement.parentElement.getElementsByClassName("mini-count")[0].childNodes[1].textContent,
+  		{ id: event[0].parentElement.parentElement.parentElement.getElementsByClassName("mini-count")[0].childNodes[1].textContent,
   			type: "unfavorite" })
   	.done(function (data) {
   		if (!data.error) {
