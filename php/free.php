@@ -15,6 +15,11 @@
   <script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
   <link rel="stylesheet" href="/public/css/base.css" type="text/css">
   <link rel="stylesheet" href="/public/css/free.css" type="text/css">
+  <link rel="stylesheet" href="/public/css/pusher.css" type="text/css">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script src="//js.pusher.com/3.2/pusher.min.js"></script>
+  <script src="/public/js/push.js"></script>
 </head>
 <body>
   <header role = "banner" class="banner-color">
@@ -70,6 +75,7 @@
         <?php } ?>
       </div>
       <div class="content">
+        <a class="pin-off" href="#"></a>
         <p><?= $row["content"] ?></p>
       </div>
     </div>

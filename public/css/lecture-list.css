@@ -1,6 +1,5 @@
 .title {
-  width: 78%;
-  border-right: 1px solid #dfdfdf;
+  width: 88%;
 }
 .index {
   width: 10%;
@@ -39,3 +38,22 @@
   display: block;
   width: 120px;
 }
+
+.table {
+  background: white;
+  margin:auto;
+  width: 85%;
+}
+
+th{
+  margin: auto;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+tr{
+  font-size: 18px;
+}
+/* .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: #BEEAFF;
+} */

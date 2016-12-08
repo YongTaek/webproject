@@ -10,9 +10,8 @@
   	sort($tags);
   	$origin_tag = $db->query("SELECT name, id FROM tag JOIN tag_question on t_id = id WHERE q_id = $id ORDER BY name");
   	$i=0;
-    
     try{
-        foreach ($origin_tag as $tag) {
+        foreach ($origin_tag as $tag){
             if($tag["name"] == $tags[$i]);
             else{
                 $db->query("DELETE FROM tag_question WHERE q_id = $id");
