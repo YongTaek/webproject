@@ -102,7 +102,7 @@
 			<label>Comment:</label>
 			<div>
 				<input id="comment-write" type="text" name="comment" />
-				<input class="commentBtn" id="submit" type="submit" value="등록"/>
+				<input class="commentBtn" id="submit" type="button" value="등록"/>
 			</div>
 		</form>
 	</div>
@@ -153,7 +153,7 @@
 			<label>Comment:</label>
 			<div>
 				<input id="comment-write" type="text" name="comment" />
-				<input class="commentBtn" id="submit" type="submit" value="등록"/>
+				<input class="commentBtn" id="submit" type="button" value="등록"/>
 			</div>
 
 		</form>

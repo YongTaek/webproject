@@ -1,13 +1,19 @@
-
 function ready () {
   $("#submit").click(function (event){
 
-    var params = $("#form").serialize();
+    var form = $("#form");
+    var params = form.serialize();
+
     $.ajax({
-      url: "../php/create_comment.php",
+      url: form.attr("action"),
       type : "POST",
-      data : params
+      data : params,
+      dataType : 'json',
+      success : function (result) {
+        console.log(result);
+      }
     }).done(function (data) {
+      alert(data);
       if(!data['error']){
         alert("등록 에러! X(");
       } else {
@@ -15,7 +21,6 @@ function ready () {
       }
     });
   });
-
 }
 function addComment(data) {
   var div = document.createElement('div');

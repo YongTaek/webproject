@@ -6,7 +6,7 @@
 	}
 ?>
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
 	<title>Question</title>
 	<meta charset="utf-8">
@@ -127,7 +127,7 @@
 				<label>Comment:</label>
 				<div>
 					<input id="comment-write" type="text" name="comment" />
-					<input class="btn" id="submit" type="submit" value="등록"/>
+					<input class="btn submit" id="submit" type="button" value="등록"/>
 				</div>
 				<input type="hidden" name="id" value="<?= $_GET["id"] ?>" />
 				<input type="hidden" name="type" value="question">
@@ -154,7 +154,7 @@
 			<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $answer["id"])) { ?>
 			<div class="answer_btn">
 				<a class="btn answer_modify" name="answer_modify" href="">수정</a>
-				<a class="btn answer_delete" name="answer_delete" href="delete_answer.php">삭제</a>
+				<a class="btn answer_delete" name="answer_delete" href="delete_answer.php?id=<?= $_GET["id"] ?>">삭제</a>
 			</div>
 			<?php } ?>
 			<hr>
@@ -202,7 +202,7 @@
 				<label>Comment:</label>
 				<div>
 					<input id="comment-write" type="text" name="comment" />
-					<input class="btn" id="submit" type="submit" value="등록"/>
+					<input class="btn submit" id="submit" type="button" value="등록"/>
 				</div>
 				<input type="hidden" name="id" value="<?= $answer[0] ?>" />
 				<input type="hidden" name="type" value="answer">
