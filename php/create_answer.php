@@ -1,7 +1,8 @@
 <?php
   session_start();
   date_default_timezone_set('Asia/Seoul');
-
+  
+  $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
   $u_id = $_SESSION["id"];
   $id = $_POST["id"];
   $content = $_POST["answer"];
