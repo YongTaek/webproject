@@ -6,7 +6,7 @@
 	}
 ?>
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
 	<title>Question</title>
 	<meta charset="utf-8">
@@ -154,7 +154,7 @@
 			<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $answer["id"])) { ?>
 			<div class="answer_btn">
 				<a class="btn answer_modify" name="answer_modify" href="">수정</a>
-				<a class="btn answer_delete" name="answer_delete" href="">삭제</a>
+				<a class="btn answer_delete" name="answer_delete" href="delete_answer.php?id=<?= $_GET["id"] ?>">삭제</a>
 			</div>
 			<?php } ?>
 			<hr>
@@ -215,15 +215,16 @@
 		<?php if ($logged_in) { ?>
 		<div class="write-answer">
 			<h2>Your Answer</h2>
-			<form action="question.php">
+			<form action="create_answer.php" method="post">
 				<div id="wmd-editor">
         			<div id="wmd-button-bar"></div>
-        			<textarea id="wmd-input"></textarea>
+        			<textarea id="wmd-input" name="answer"></textarea>
     		</div>
 				<hr>
 				<div id="wmd-preview" class="wmd-preview"></div>
 				<hr>
 			<input class="btn btn-primary" type="submit" value="submit" />
+			<input type="hidden" name="id" value="<?= $_GET["id"] ?>">
 			</form>
 		</div>
 		<?php
