@@ -31,9 +31,10 @@
             }
             $i++; 
         }
+        $db->query("UPDATE question SET title = '$title' WHERE id = $id AND u_id = $u_id");
+        $db->query("UPDATE question SET content = '$content' WHERE id = $id AND u_id = $u_id");
         header("Location: question.php?id=$id");
     } catch(PDOException $e){
-        echo $tag;
         echo $e -> getMessage();
     }
 ?>
