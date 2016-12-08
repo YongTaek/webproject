@@ -215,15 +215,16 @@
 		<?php if ($logged_in) { ?>
 		<div class="write-answer">
 			<h2>Your Answer</h2>
-			<form action="question.php">
+			<form action="create_answer.php" method="post">
 				<div id="wmd-editor">
         			<div id="wmd-button-bar"></div>
-        			<textarea id="wmd-input"></textarea>
+        			<textarea id="wmd-input" name="answer"></textarea>
     		</div>
 				<hr>
 				<div id="wmd-preview" class="wmd-preview"></div>
 				<hr>
 			<input class="btn btn-primary" type="submit" value="submit" />
+			<input type="hidden" name="id" value="<?= $id ?>">
 			</form>
 		</div>
 		<?php
