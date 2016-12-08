@@ -16,7 +16,7 @@
     $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->query("INSERT INTO comment(u_id, reference_id, content, time, type) VALUES($u_id, $r_id, '$content', '$time', '$type')");
-    $result = array("error" => "false", "content" => $conent, "time" => $time, "name" => $name );
+    $result = array("error" => "false", "content" => $content, "time" => $time, "name" => $name );
     // $pusher->trigger('lecture_channel', 'new_comment', $result);
 
   } catch (PDOException $e) {
