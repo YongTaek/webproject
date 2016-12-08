@@ -1,5 +1,9 @@
 <?php
 	session_start();
+	$logged_in = false;
+	if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
+		$logged_in = true;
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,6 +18,11 @@
 	<link rel="stylesheet" type="text/css" href="/public/css/wmd.css" />
 	<script type="text/javascript" src="/public/js/showdown.js"></script>
 	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<link rel="stylesheet" href="/public/css/pusher.css" type="text/css">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
+	<script src="/public/js/push.js"></script>
 </head>
 <body>
 	<header role = "banner" class="banner-color">
@@ -25,13 +34,10 @@
 				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
-				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
+				<?php if ($logged_in) { ?>
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
 					<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
-					<ul class="hidden" id="setting">
-						<li><a href="user-setting.php">Setting</a></li>
-					</ul>
 				<?php } else { ?>
 					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
@@ -40,7 +46,7 @@
 			<input type="text" class="pull-right search" name="search">
 		</nav>
 		<div class = "jumbotron banner-color">
-			<h1 class="align-center">Notice</h1>
+			<h1 class="align-center">Q & A</h1>
 			<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
 		</div>
 	</header>
@@ -51,20 +57,27 @@
 		<?php
 			if (isset($_GET["id"])) {
 				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-				$rows = $db->query("SELECT title, score, content FROM question WHERE id = ".$_GET["id"]);
+				$rows = $db->query("SELECT title, score, content, u.id, name, time FROM question q JOIN user u ON q.u_id = u.id WHERE q.id = ".$_GET["id"]);
 				foreach ($rows as $row) {
 		?>
 
 		<div class="question">
 			<!-- qeustion title -->
 			<h1 id="question_title"><?= $row["title"] ?></h1>
+			<div class="question_info">
+				<span><?= $row["name"] ?></span>
+				<span><?= $row["time"] ?></span>
+			</div>
+			<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $row["id"])) { ?>
 			<div class="question_btn">
 				<a class="btn question_modify" name="question_modify" href="modify_question.php?id=<?= $_GET["id"] ?>">수정</a>
 				<a class="btn question_delete" name="question_delete" href="delete_question.php?id=<?= $_GET["id"] ?>">삭제</a>
 			</div>
+			<?php } ?>
 			<hr>
 			<div>
 				<div class="vote">
+					<a class="pin-off"></a>
 					<a class="vote-up-off"></a>
 					<!-- 추천 수 -->
 					<span class="vote-count"><?= $row["score"] ?></span>
@@ -81,17 +94,20 @@
 		<div class="comment">
 			<hr>
 			<?php
-				$comments = $db->query("SELECT content, name, time FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'question' AND reference_id = ".$_GET["id"]);
+				$comments = $db->query("SELECT content, name, time, u.id, score FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'question' AND reference_id = ".$_GET["id"]);
 				foreach ($comments as $comment) {
 			?>
 			<div>
+					<span><?= $comment["score"] ?></span>
 					<span><?= $comment["content"] ?></span>
 					<span><?= $comment["name"] ?></span>
 					<span class=""><?= $comment["time"] ?></span>
+					<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
 					<div class="comment_btn">
 						<a class="btn comment_modify" name="comment_modify" href="">수정</a>
 						<a class="btn comment_delete" name="comment_delete" href="">삭제</a>
 					</div>
+					<?php } ?>
 			</div>
 			<hr>
 			<?php } ?>
@@ -109,7 +125,7 @@
 		</div>
 		<!-- question에 대한 answer -->
 		<?php
-			$answers = $db->query("SELECT a.id, name, score, content FROM answer a JOIN user u WHERE u.id = a.u_id AND q_id = ".$_GET["id"]);
+			$answers = $db->query("SELECT a.id, name, score, content, u.id, time FROM answer a JOIN user u WHERE u.id = a.u_id AND q_id = ".$_GET["id"]);
 			$count = $answers->rowCount();
 
 			if ($count > 0) {
@@ -117,10 +133,16 @@
 		?>
 		<div class="answer">
 			<h2 id="answer_title"><?= $count ?> Answer</h2>
+			<div class="answer_info">
+				<span><?= $answer["name"] ?></span>
+				<span><?= $answer["time"] ?></span>
+			</div>
+			<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $answer["id"])) { ?>
 			<div class="answer_btn">
 				<a class="btn answer_modify" name="answer_modify" href="">수정</a>
 				<a class="btn answer_delete" name="answer_delete" href="">삭제</a>
 			</div>
+			<?php } ?>
 			<hr>
 			<div class="overflow">
 				<div class="vote">
@@ -134,22 +156,25 @@
 					<?= $answer["content"] ?>
 				</div>
 			</div>
+			<hr>
 		</div>
 		<!-- comment iterative -->
 		<div class="comment">
-			<hr>
 			<?php
-				$comments = $db->query("SELECT content, name, time FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'answer' AND reference_id = ".$answer["id"]);
+				$comments = $db->query("SELECT content, name, time, u.id, score FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'answer' AND reference_id = ".$answer[0]);
 				foreach ($comments as $comment) {
 			?>
 			<div>
+					<span><?= $comment["score"] ?></span>
 					<span><?= $comment["content"] ?></span>
 					<span><?= $comment["name"] ?></span>
 					<span class=""><?= $comment["time"] ?></span>
+					<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
 					<div class="comment_btn">
 						<a class="btn comment_modify" name="comment_modify" href="">수정</a>
 						<a class="btn comment_delete" name="comment_delete" href="">삭제</a>
 					</div>
+					<?php } ?>
 			</div>
 			<hr>
 			<?php } ?>
@@ -161,7 +186,7 @@
 					<input id="comment-write" type="text" name="comment" />
 					<input class="btn" id="submit" type="submit" value="등록"/>
 				</div>
-				<input type="hidden" name="id" value="<?= $answer["id"] ?>" />
+				<input type="hidden" name="id" value="<?= $answer[0] ?>" />
 				<input type="hidden" name="type" value="answer">
 			</form>
 		</div>
@@ -169,6 +194,7 @@
 				}
 			}
 		?>
+		<?php if ($logged_in) { ?>
 		<div class="write-answer">
 			<h2>Your Answer</h2>
 			<form action="question.php">
@@ -183,6 +209,7 @@
 			</form>
 		</div>
 		<?php
+			}
 				}
 			}
 		?>

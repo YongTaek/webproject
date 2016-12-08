@@ -17,6 +17,9 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="../public/js/push.js"></script>
+	<script src="../public/js/jquery-ui-1.12.1.min.js"></script>
+	<script src="../public/js/jquery.caret.min.js"></script>
+	<script src="../public/js/jquery.tag-editor.min.js"></script>
 	<title></title>
 </head>
 <body>
@@ -69,10 +72,7 @@
 
 		</div>
 		<!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
-		<script src="../public/js/jquery-3.1.1.min.js"></script>
-		<script src="../public/js/jquery-ui-1.12.1.min.js"></script>
-		<script src="../public/js/jquery.caret.min.js"></script>
-		<script src="../public/js/jquery.tag-editor.min.js"></script>
+
 		<script>
 			$(function() {
 				$('#tag').tagEditor({

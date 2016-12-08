@@ -1,5 +1,9 @@
 <?php
 	session_start();
+	$logged_in = false;
+	if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
+		$logged_in = true;
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +12,11 @@
 	<link rel="stylesheet" type="text/css" href="/public/css/freelist.css">
 	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
 	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="/public/css/pusher.css" type="text/css">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
+	<script src="/public/js/push.js"></script>
 	<meta charset="utf-8">
 	<title>자유 게시판</title>
 </head>
@@ -23,7 +32,7 @@
 				<li class="pull-left"><a href="/php/freelist.php" class="active menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
-				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
+				<?php if ($logged_in) { ?>
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
 					<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
@@ -41,19 +50,37 @@
 	</div>
 	<div class= "content">
 		<div class="subheader">
-			<a type="button" class="createBtn btn btn-primary" href="create-freepost.php">Ask Question</a>
+			<?php if ($logged_in) { ?>
+			<a type="button" class="createBtn btn btn-primary" href="create-freepost.php">Post Free</a>
+			<?php } ?>
 			<h2>ALL FREE</h2>
 			<ul class="nav nav-tabs">
-				<li class="question-tab active"><a href = "/recent">recent</a></li>
-				<li class="question-tab"><a href = "/recommend">recommend</a></li>
-				<li class="question-tab"><a href = "/myFree">My Free</a></li>
-				<li class="question-tab"><a href = "/myfavorite">Favorite</a></li>
+				<?php
+					if (isset($_GET["type"])) {
+						if ($_GET["type"] == "my") { ?>
+				<li class="question-tab"><a href = "/php/freelist.php">recent</a></li>
+				<li class="question-tab active"><a href = "/php/freelist.php?type=my">My Free</a></li>
+						<?php } else { ?>
+				<li class="question-tab active"><a href = "/php/freelist.php">recent</a></li>
+				<li class="question-tab"><a href = "/php/freelist.php?type=my">My Free</a></li>
+						<?php } } else { ?>
+				<li class="question-tab active"><a href = "/php/freelist.php">recent</a></li>
+				<li class="question-tab"><a href = "/php/freelist.php?type=my">My Free</a></li>
+					<?php } ?>
 			</ul>
 		</div>
 		<div class= "qlist-wapper">
 		<?php
 			$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-			$b_rows = $db->query("SELECT b.id, b.title, time, u.name FROM board b JOIN user u on b.u_id = u.id");
+			if (isset($_GET["type"])) {
+				if ($_GET["type"] == "my") {
+					$b_rows = $db->query("SELECT b.id, b.title, time, u.name FROM board b JOIN user u on b.u_id = u.id WHERE b.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
+				} else {
+					$b_rows = $db->query("SELECT b.id, b.title, time, u.name FROM board b JOIN user u on b.u_id = u.id ORDER BY time DESC");
+				}
+			} else {
+				$b_rows = $db->query("SELECT b.id, b.title, time, u.name FROM board b JOIN user u on b.u_id = u.id ORDER BY time DESC");
+			}
 			foreach ($b_rows as $row) { 
 				$c_rows = $db->query("SELECT distinct c.u_id, c.content, c.time FROM board b JOIN comment c on b.u_id = c.u_id WHERE c.type = 'board' AND c.reference_id = ".$row["id"]);
 				$count = $c_rows->rowCount();
@@ -80,10 +107,13 @@
 					</h3>
 				</div>
 				<div class="question-list-right">
-					<a class="star-off" href="#"></a>
 					<div>
 						<h5 class="date"><?= $row["time"] ?></h5> <!-- 날짜 -->
 						<h5 class="name">by. <?= $row["name"] ?></h5> <!--작성자 -->
+					</div>
+					<div class="on-off">
+						<a class="star-off" href="#"></a>
+						<a class="pin-off" href="#"></a>
 					</div>
 				</div>
 			</div>

@@ -1,5 +1,9 @@
 <?php
 	session_start();
+	$logged_in = false;
+	if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
+		$logged_in = true;
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +11,12 @@
 	<link rel="stylesheet" href="/public/css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="/public/css/questionlist.css">
 	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="/public/css/pusher.css" type="text/css">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
+	<script src="/public/js/push.js"></script>
 	<meta charset="utf-8">
 	<title>질문 게시판</title>
 </head>
@@ -23,7 +32,7 @@
 				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
 			</ul>
 			<div role="login" class="pull-right">
-				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
+				<?php if ($logged_in) { ?>
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
 					<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
@@ -41,7 +50,9 @@
 	</div>
 	<div class= "content">
 		<div class="subheader">
+			<?php if ($logged_in) { ?>
 			<a type="button" class="createBtn btn btn-primary" href="/php/create-question.php">Ask Question</a>
+			<?php } ?>
 			<h2>ALL QUESTION</h2>
 			<ul class="nav nav-tabs">
 				<?php
@@ -130,10 +141,19 @@
 					</div>
 				</div>
 				<div class="question-list-right">
-					<a class="star-off" href="#"></a>
 					<div>
 						<h5 class="date"><?= $row["time"] ?></h5>
-						<h5 class="name">by. <?= $row["name"] ?></h5>
+						<?php
+							if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant"))
+								$name = $row["name"];
+							else
+								$name = "anonymous";
+						?>
+						<h5 class="name">by. <?= $name ?></h5>
+					</div>
+					<div class="on-off">
+						<a class="star-off" href="#"></a>
+						<a class="pin-off" href="#"></a>
 					</div>
 				</div>
 			</div>

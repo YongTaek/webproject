@@ -1,20 +1,25 @@
 
 function slidebar() {
-  var sidebar = $("#sidebar");
-  // submenu 가 화면상에 보일때는 위로 보드랍게 접고 아니면 아래로 보드랍게 펼치기
-  $('#side').click(function () {
+  var comment = $("#comment");
+
+  $('#side').click(function (event) {
     var effect = 'slide';
-    var options = {direction: 'right'};
+    var options = { direction: "right"};
     var duration = 500;
+    $('#sidebar').toggle("slide", { direction : "right" }, 500, function () {
+      changeDrawerClass(event);
 
-    sidebar.toggle(duration);
+    });
   })
+}
 
-  // var slide = $("#side");
-  // if (slide.is(":visible")) {
-  //   slide.slideUp();
-  // } else {
-  //   slide.slideDown();
-  // }
+function changeDrawerClass(event) {
+  if($(event.target).hasClass('opendrawer')) {
+    $(event.target).removeClass('opendrawer');
+    $(event.target).addClass('closedrawer');
+  } else {
+    $(event.target).addClass('opendrawer');
+    $(event.target).removeClass('closedrawer');
+  }
 }
 $(document).ready(slidebar);

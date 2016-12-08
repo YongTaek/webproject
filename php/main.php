@@ -10,6 +10,11 @@
 	<link rel="stylesheet" href="/public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="/public/css/main.css" type="text/css">
 	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
+	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
+	<script src="/public/js/push.js"></script>
 </head>
 <body>
 	<header role = "banner" class="banner-color">
@@ -48,7 +53,7 @@
 				<ul>
 					<?php
 						$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-						$rows = $db->query("SELECT id, title, DATE_FORMAT(time, '%Y-%m-%d') FROM notice");
+						$rows = $db->query("SELECT id, title, DATE_FORMAT(time, '%Y-%m-%d') FROM notice ORDER BY DATE_FORMAT(time, '%Y-%m-%d') DESC");
 						foreach ($rows as $row) {
 					?>
 					<li class= "list">
@@ -62,12 +67,12 @@
 				</ul>
 			</div>
 			<div class = "col-lg-6">
-				<a class="h2" href="#"><h2>Question</h2></a>
+				<a class="h2" href="/php/questionlist.php"><h2>Question</h2></a>
 				<hr/>
 				<ul>
 					<?php
 						$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-						$rows = $db->query("SELECT id, title, DATE_FORMAT(time, '%Y-%m-%d') FROM question");
+						$rows = $db->query("SELECT id, title, DATE_FORMAT(time, '%Y-%m-%d') FROM question ORDER BY DATE_FORMAT(time, '%Y-%m-%d') DESC");
 						foreach ($rows as $row) {
 					?>
 					<li class= "list">
