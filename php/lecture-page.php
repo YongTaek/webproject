@@ -5,6 +5,9 @@ if (isset($_GET["id"])) {
 	$rows = $rows -> fetch();
 	$lectureName = $rows['name'];
   $lectureFile = $rows['url'];
+  if ($lectureName === "") {
+    header("Location: /view/error.php");
+  }
 }
 ?>
 <!DOCTYPE html>
@@ -23,7 +26,7 @@ if (isset($_GET["id"])) {
 </head>
 <body>
 	<a href="#" class="closedrawer" id="side"></a>
-	<embed src = "<?= $lectureFile ?>"/* file path */></embed>
+	<embed src = "<?= $lectureFile ?>"></embed>
 	<div id="comment">
 		<?php include("./lecture-thread.php"); ?>
 	</div>
