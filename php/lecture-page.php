@@ -6,8 +6,7 @@ if (isset($_GET["id"])) {
 	$lectureName = $rows['name'];
   $lectureFile = $rows['url'];
   if ($lectureName !== "") {
-    header("HTTP/1.1 404 Invalid Request");
-  	die("HTTP/1.1 404 Invalid Request - No page");
+    header("/view/error.php");
   }
 }
 ?>
