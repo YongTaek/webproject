@@ -154,7 +154,7 @@
 			<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $answer["id"])) { ?>
 			<div class="answer_btn">
 				<a class="btn answer_modify" name="answer_modify" href="">수정</a>
-				<a class="btn answer_delete" name="answer_delete" href="delete_answer.php">삭제</a>
+				<a class="btn answer_delete" name="answer_delete" href="delete_answer.php?id=<?= $_GET["id"] ?>">삭제</a>
 			</div>
 			<?php } ?>
 			<hr>
