@@ -23,7 +23,7 @@ if (isset($_GET["id"])) {
 </head>
 <body>
 	<a href="#" class="closedrawer" id="side"></a>
-	<embed src = "<?= $lectureFile ?>"/* file path */></embed>
+	<embed src = "<?= $lectureFile ?>"></embed>
 	<div id="comment">
 		<?php include("./lecture-thread.php"); ?>
 	</div>
