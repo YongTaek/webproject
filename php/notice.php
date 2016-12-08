@@ -82,7 +82,7 @@
 			</div>
 		</div>
 		<!-- comment iterative-->
-		<div class="comment">
+		<div id="comment-list" class="comment">
 				<hr>
 				<?php
 					$comments = $db->query("SELECT content, name, time, u.id FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'notice' AND reference_id = ".$row["id"]);
