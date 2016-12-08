@@ -8,6 +8,8 @@ if (isset($_GET["id"])) {
   if ($lectureName === "") {
     header("Location: /view/error.php");
   }
+} else {
+  header("Location: /view/error.php");
 }
 ?>
 <!DOCTYPE html>
