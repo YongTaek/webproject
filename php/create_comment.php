@@ -12,7 +12,7 @@
   $type = $_POST["type"];
   $name = $_SESSION["name"];
 
-  header('Content-type: text/plain');
+  header('Content-type: application/json');
   try {
     $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
