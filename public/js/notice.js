@@ -2,8 +2,8 @@ function ready () {
   $("#submit").click(function (event){
 
     var form = $("#form");
-    var params = form.serialize();
-
+    var params = form.serializeObject();
+    console.log(params);
     $.ajax({
       url: form.attr("action"),
       type : "POST",
