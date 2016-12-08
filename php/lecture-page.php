@@ -6,7 +6,7 @@ if (isset($_GET["id"])) {
 	$lectureName = $rows['name'];
   $lectureFile = $rows['url'];
   if ($lectureName !== "") {
-    header("/view/error.php");
+    header("Location: /view/error.php");
   }
 }
 ?>
