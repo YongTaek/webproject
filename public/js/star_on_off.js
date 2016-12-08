@@ -1,10 +1,9 @@
 
-function favorite() {
-	var event = $(this);
+function favorite(event) {
 
 	if (window.location.pathname == "/php/questionlist.php")
   	$.get("favorite.php", 
-  		{ id: $(this)[0].parentElement.parentElement.parentElement.getElementsByClassName("mini-count")[0].childNodes[1].textContent,
+  		{ id: event[0].parentElement.parentElement.parentElement.getElementsByClassName("mini-count")[0].childNodes[1].textContent,
   			type: "favorite" })
   	.done(function (data) {
   		if (!data.error) {
@@ -28,12 +27,11 @@ function favorite() {
   	});
 }
 
-function unfavorite() {
-	var event = $(this);
+function unfavorite(event) {
 
 	if (window.location.pathname == "/php/questionlist.php")
   	$.get("favorite.php", 
-  		{ id: $(this)[0].parentElement.parentElement.parentElement.getElementsByClassName("mini-count")[0].childNodes[1].textContent,
+  		{ id: event[0].parentElement.parentElement.parentElement.getElementsByClassName("mini-count")[0].childNodes[1].textContent,
   			type: "unfavorite" })
   	.done(function (data) {
   		if (!data.error) {
@@ -57,9 +55,9 @@ function unfavorite() {
   	});
 }
 
-$(".star-off").on('click', favorite);
+$(".star-off").on('click', function () { favorite($(this)) });
 
-$(".star-on").on('click', unfavorite);
+$(".star-on").on('click', function () { unfavorite($(this)) });
 
 $(".pin-off").on('click', function(){
 
