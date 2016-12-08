@@ -57,9 +57,9 @@ function unfavorite() {
   	});
 }
 
-$(".star-off").on('click', favorite;
+$(".star-off").on('click', favorite);
 
-$(".star-on").on('click', unfavorite;
+$(".star-on").on('click', unfavorite);
 
 $(".pin-off").on('click', function(){
 
