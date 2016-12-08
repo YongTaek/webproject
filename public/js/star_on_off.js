@@ -1,6 +1,5 @@
 
-$(".star-off").on('click', function () {
-
+function favorite() {
 	var event = $(this);
 
 	if (window.location.pathname == "/php/questionlist.php")
@@ -11,6 +10,8 @@ $(".star-off").on('click', function () {
   		if (!data.error) {
   			event.removeClass("star-off");
   			event.addClass("star-on");
+  			event.off();
+  			event.on('click', unfavorite);
   		}
 		});
 	if (window.location.pathname == "/php/question.php")
@@ -21,13 +22,13 @@ $(".star-off").on('click', function () {
   		if (!data.error) {
   			event.removeClass("star-off");
   			event.addClass("star-on");
+  			event.off();
+  			event.on('click', unfavorite);
   		}
   	});
+}
 
-})
-
-$(".star-on").on('click', function () {
-
+function unfavorite() {
 	var event = $(this);
 
 	if (window.location.pathname == "/php/questionlist.php")
@@ -38,6 +39,8 @@ $(".star-on").on('click', function () {
   		if (!data.error) {
   			event.removeClass("star-on");
   			event.addClass("star-off");
+  			event.off();
+  			event.on('click', favorite);
   		}
 		});
 	if (window.location.pathname == "/php/question.php")
@@ -48,10 +51,15 @@ $(".star-on").on('click', function () {
   		if (!data.error) {
   			event.removeClass("star-on");
   			event.addClass("star-off");
+  			event.off();
+  			event.on('click', favorite);
   		}
   	});
+}
 
-})
+$(".star-off").on('click', favorite;
+
+$(".star-on").on('click', unfavorite;
 
 $(".pin-off").on('click', function(){
 
@@ -60,6 +68,6 @@ $(".pin-off").on('click', function(){
 	} else{
 		$(this).addClass("pin-on");
 	}
-})
+});
 
 
