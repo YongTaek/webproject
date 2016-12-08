@@ -1,18 +1,17 @@
 function lectureReady(){
+
+  var params = $(".lecture")[0].serialize();
   $("#submit").click(function (event){
     $.ajax({
       url: "../php/create_comment.php",
       type : "POST",
-      context: $("#input").value
+      data: params
     }).done(function (data) {
       if(!data['error']){
         alert("등록 에러! X(");
       };
     });
   });  
-  function appendComment(data){
-
-  };
 
   var comment = $("#comment");
 
@@ -36,6 +35,14 @@ function changeDrawerClass(event) {
     $(event.target).removeClass('closedrawer');
   }
 }
+
+function appendComment(data){
+    var content = data['content'];
+    var time = data['time'];
+    var name = data['name'];
+
+
+  };
 
 $(document).ready(lectureReady);
 
