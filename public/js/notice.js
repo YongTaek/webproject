@@ -6,7 +6,8 @@ function ready () {
     $.ajax({
       url: "../php/create_comment.php",
       type : "POST",
-      data : params
+      data : params,
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
     }).done(function (data) {
       alert('asdf');
       if(!data['error']){
@@ -16,7 +17,6 @@ function ready () {
       }
     });
   });
-
 }
 function addComment(data) {
   var div = document.createElement('div');
