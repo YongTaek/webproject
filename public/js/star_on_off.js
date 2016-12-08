@@ -19,9 +19,3 @@ $(".pin-off").on('click', function(){
 })
 
 
-
-// $(".star-off").click(function () {
-// 	if($('a').hasClass('.star-off')){
-// 		$('a').addClass('star-on')
-// 	}
-// });

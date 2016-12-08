@@ -1,0 +1,145 @@
+.container {
+	background: white;
+	padding: 10px;
+	width: 85%;
+	border-radius: 5px;
+}
+.title {
+  width: 50%;
+}
+.index {
+  width: 10%;
+  border-right: 1px solid #dfdfdf;
+}
+.button {
+  background-color: rgb(208,44,60);
+  color: white;
+  margin-left: -19px;
+  width: 12%;
+}
+.button:hover {
+  color: white;
+}
+.list-wrapper *{
+  display: inline-block;
+}
+.title * {
+  width: 100%;
+}
+#list {
+  list-style: none;
+  padding-left: 0;
+  background-color: white;
+}
+.list-item *{
+  height: 40px;
+  line-height: 40px;
+  font-size: 25px;
+}
+.list-item .index, .list-item a.button{
+  text-align: center;
+}
+.createBtn {
+  margin: 0 auto 20px auto;
+  display: block;
+  width: 120px;
+}
+
+.table {
+  background: white;
+  margin:auto;
+  width: 90%;
+  margin-bottom: 50px;
+}
+
+th{
+  margin: auto;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+tr{
+  font-size: 18px;
+}
+
+.setting-text {
+	margin-left: 30px;
+}
+
+#setting-assistant{
+	margin-bottom: 50px;
+}
+
+.lecture-open {
+	border-radius: 2px;
+	border: solid 1px #428bca;
+	color: #428bca;
+	padding : 5px;
+}
+
+.lecture-close {
+	border: solid 1px #d9534f;
+	color: #d9534f;
+}
+
+.lecture-close:hover {
+	text-decoration: none;
+}
+
+.lecture-open:hover {
+	text-decoration: none;
+}
+
+.remove-student {
+	border-radius: 2px;
+	border: solid 1px #d9534f;
+	color: #d9534f;
+	padding : 5px;
+}
+
+.lecture-change {
+	border-radius: 2px;
+	border: solid 1px #5bc0de;
+	color: #5bc0de;
+	padding : 5px;
+}
+
+.top-text *{
+	display: inline-block;
+}
+
+.lecture-change:hover{
+	text-decoration: none;
+}
+
+.remove-student:hover {
+	text-decoration: none;
+}
+
+#add-assistant {
+	border-radius: 2px;
+	border: solid 1px #428bca;
+	color: #428bca;
+	padding : 5px;
+	margin-left: 10px;
+}
+
+#add-student {
+	border-radius: 2px;
+	border: solid 1px #428bca;
+	color: #428bca;
+	padding : 5px;
+	margin-left: 10px;
+}
+
+#link {
+	border-radius: 2px;
+	border: solid 1px #428bca;
+	color: #428bca;
+	padding : 5px;
+	margin-left: 10px;
+}
+
+a:hover {
+	text-decoration: none;
+}
