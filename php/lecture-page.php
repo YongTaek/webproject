@@ -5,7 +5,7 @@ if (isset($_GET["id"])) {
 	$rows = $rows -> fetch();
 	$lectureName = $rows['name'];
   $lectureFile = $rows['url'];
-  if ($lectureName !== "") {
+  if ($lectureName === "") {
     header("Location: /view/error.php");
   }
 }

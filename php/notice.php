@@ -12,9 +12,17 @@
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="icon/SelabFavicon.png" type="image/png">
 	<link rel="stylesheet" href="/public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<script src="/public/css/jquery-3.1.1.min.js" type="text/javascript"></script>
+	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
 	<link rel="stylesheet" href="/public/css/notice.css" type="text/css">
+	<link rel="stylesheet" href="/public/css/pusher.css" type="text/css">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="/public/css/Nwagon.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
+	<script src="/public/js/push.js"></script>
+	<script src="/public/js/Nwagon.js"></script>
+	<script src="/public/js/notice-chart.js"></script>
 </head>
 <body>
 	<header role = "banner" class="banner-color">
@@ -53,7 +61,7 @@
 	<div class="container">
 		<div class="notice">
 			<div class="title">
-				<a class="star-off" href="#" ></a>
+				<a class="pin-off" href="#" ></a>
 				<h1 id="title_id">
 					<span><?= $row["title"] ?></span>
 				</h1>
