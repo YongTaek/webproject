@@ -1,11 +1,16 @@
-function LectureReady(){
+function lectureReady(){
   $("#submit").click(function (event){
     $.ajax({
-      
-    })
-  })
-}
-function slidebar() {
+      url: "../php/create_comment.php",
+      type : "POST",
+      context: $("#input").value
+    }).done(function (data) {
+      if(!data['error']){
+        alert("등록 에러! X(");
+      };
+    });
+  });
+  
   var comment = $("#comment");
 
   $('#side').click(function (event) {
@@ -14,10 +19,10 @@ function slidebar() {
     var duration = 500;
     $('#sidebar').toggle("slide", { direction : "right" }, 500, function () {
       changeDrawerClass(event);
-
     });
   })
-}
+
+};
 
 function changeDrawerClass(event) {
   if($(event.target).hasClass('opendrawer')) {
@@ -28,4 +33,4 @@ function changeDrawerClass(event) {
     $(event.target).removeClass('closedrawer');
   }
 }
-$(document).ready(slidebar);
+$(document).ready(lectureReady);

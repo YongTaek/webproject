@@ -12,6 +12,11 @@
 	<link rel="stylesheet" type="text/css" href="/public/css/freelist.css">
 	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
 	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="/public/css/pusher.css" type="text/css">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
+	<script src="/public/js/push.js"></script>
 	<meta charset="utf-8">
 	<title>자유 게시판</title>
 </head>
@@ -46,7 +51,7 @@
 	<div class= "content">
 		<div class="subheader">
 			<?php if ($logged_in) { ?>
-			<a type="button" class="createBtn btn btn-primary" href="create-freepost.php">Ask Question</a>
+			<a type="button" class="createBtn btn btn-primary" href="create-freepost.php">Post Free</a>
 			<?php } ?>
 			<h2>ALL FREE</h2>
 			<ul class="nav nav-tabs">
@@ -102,10 +107,13 @@
 					</h3>
 				</div>
 				<div class="question-list-right">
-					<a class="star-off" href="#"></a>
 					<div>
 						<h5 class="date"><?= $row["time"] ?></h5> <!-- 날짜 -->
 						<h5 class="name">by. <?= $row["name"] ?></h5> <!--작성자 -->
+					</div>
+					<div class="on-off">
+						<a class="star-off" href="#"></a>
+						<a class="pin-off" href="#"></a>
 					</div>
 				</div>
 			</div>
