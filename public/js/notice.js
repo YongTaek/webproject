@@ -12,6 +12,7 @@ function ready () {
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
       dataType: 'json',
       success : function (result) {
+        console.log(result);
         if (result.error === "false") {
           addComment(result);
         }
@@ -26,11 +27,11 @@ function ready () {
 function addComment(data) {
   var div = document.createElement('div');
   var contentSpan = document.createElement("span");
-  contentSpan.innerHTML = data.content;
+  contentSpan.innerHTML = data.content + " ";
   var nameSpan = document.createElement("span");
-  nameSpan.innerHTML = data.name;
+  nameSpan.innerHTML = data.name + " ";
   var timeSpan = document.createElement("time");
-  timeSpan.innerHTML = data.time;
+  timeSpan.innerHTML = data.time + " ";
   var ownerDiv = document.createElement('div');
   ownerDiv.className = "comment_btn";
   var modifyA = document.createElement('a');
