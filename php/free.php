@@ -77,7 +77,7 @@
     <div class="comment">
         <hr>
         <?php
-          $comments = $db->query("SELECT content, name, time, u.id FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'board' AND reference_id = ".$row["b.id"]);
+          $comments = $db->query("SELECT content, name, time, u.id FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'board' AND reference_id = ".$row[0]);
           foreach ($comments as $comment) {
         ?>
         <div>
