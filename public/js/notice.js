@@ -3,7 +3,7 @@ function ready () {
 
     var params = $("#form").serialize();
     $.ajax({
-      url: "../php/create_comment.php",
+      url: "create_comment.php",
       type : "POST",
       data : params,
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
