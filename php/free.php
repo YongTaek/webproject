@@ -62,10 +62,10 @@
           <span><?= $row["name"] ?></span>
           <span><?= $row["time"] ?></span>
         </div>
-        <?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $row["u.id"])) { ?>
+        <?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $row["id"])) { ?>
         <div class="free_btn">
-          <a class="btn free_modify" href="modify_free.php?id=<?= $row["b.id"] ?>">수정</a>
-          <a class="btn free_delete" href="delete_free.php?id=<?= $row["b.id"] ?>">삭제</a>
+          <a class="btn free_modify" href="modify_free.php?id=<?= $row[0] ?>">수정</a>
+          <a class="btn free_delete" href="delete_free.php?id=<?= $row[0] ?>">삭제</a>
         </div>
         <?php } ?>
       </div>
@@ -77,7 +77,7 @@
     <div class="comment">
         <hr>
         <?php
-          $comments = $db->query("SELECT content, name, time, u.id FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'board' AND reference_id = ".$row["b.id"]);
+          $comments = $db->query("SELECT content, name, time, u.id FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'board' AND reference_id = ".$row[0]);
           foreach ($comments as $comment) {
         ?>
         <div>
@@ -101,7 +101,7 @@
           <input id="comment-write" type="text" name="comment" />
           <input class="btn" id="submit" type="submit" value="등록"/>
         </div>
-        <input type="hidden" name="id" value="<?= $row["b.id"] ?>" />
+        <input type="hidden" name="id" value="<?= $row[0] ?>" />
         <input type="hidden" name="type" value="board">
       </form>
     </div>

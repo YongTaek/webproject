@@ -3,15 +3,17 @@ if (isset($_GET["id"])) {
   $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
   $rows = $db->query("SELECT l.id, l.name, l.url from lecture l where l.id = ".$_GET["id"]);
 	$rows = $rows -> fetch();
-	print_r($rows['id']);
-	print $_GET["id"];
-	$lectureId = $rows['id'];
+	$lectureName = $rows['name'];
+  $lectureFile = $rows['url'];
+  if ($lectureName !== "") {
+    header("Location: /view/error.php");
+  }
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>lecture</title>
+	<title><?= $lectureName ?></title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="/public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
@@ -24,7 +26,7 @@ if (isset($_GET["id"])) {
 </head>
 <body>
 	<a href="#" class="closedrawer" id="side"></a>
-	<embed src = "../files/Notes03(file_io)_3.pdf"/* file path */></embed>
+	<embed src = "<?= $lectureFile ?>"></embed>
 	<div id="comment">
 		<?php include("./lecture-thread.php"); ?>
 	</div>
