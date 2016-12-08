@@ -11,10 +11,10 @@ function lectureReady(){
     });
   });
   
-  // appendComment(data){
+  appendComment(data){
 
-  // };
-  
+  }
+
   var comment = $("#comment");
 
   $('#side').click(function (event) {
