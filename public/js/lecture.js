@@ -11,9 +11,9 @@ function lectureReady(){
     });
   });
   
-  appendComment(data){
+  function appendComment(data){
 
-  }
+  };
 
   var comment = $("#comment");
 
