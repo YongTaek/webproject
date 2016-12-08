@@ -4,8 +4,9 @@
   date_default_timezone_set('Asia/Seoul');
 
   $r_id = $_POST["id"];
+  //$_SESSION["id"]
   $u_id = 2010000000;
-  $content = $_POST["comment"];
+  $content = $_POST["content"];
   $time = date("Y-m-d H:i:s");
   $type = $_POST["type"];
 
