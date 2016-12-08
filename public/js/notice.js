@@ -3,13 +3,13 @@ function ready () {
 
     var form = $("#form");
     var params = form.serialize();
-    console.log(params);
+    console.log(JSON.stringify(params));
     $.ajax({
       url: form.attr("action"),
       type : "POST",
       data : params,
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-      dataType: 'html',
+      dataType: 'json',
       success : function (result) {
         console.log(result);
       },
