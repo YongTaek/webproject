@@ -178,6 +178,7 @@
 				}
 			}
 		?>
+		<?php if ($logged_in) { ?>
 		<div class="write-answer">
 			<h2>Your Answer</h2>
 			<form action="question.php">
@@ -192,6 +193,7 @@
 			</form>
 		</div>
 		<?php
+			}
 				}
 			}
 		?>
