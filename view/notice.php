@@ -25,6 +25,7 @@
 				<li class="pull-left"><a href="/view/noticelist.php" class="menu-item active" >NOTICE</a></li>
 				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item">QUESTION</a></li>
 				<li class="pull-left"><a href="/view/freelist.php" class="menu-item">FREE BOARD</a></li>
+				<li class="pull-left"><a href="/view/lecture-list.php" class="menu-item">LECTURE</a></li>
 			</ul>
 			<div role="login" class="pull-right">
 				<a id="login" href="/view/login.php" class='pull-right'>LOGIN</a>
@@ -79,13 +80,10 @@
 						<li><input type="checkbox" name="item"/>펑펑펑</li>
 					</ul>
 				</div>
-				<input class="votebtn formargin" type="button" name="submitVoteBtn" value="투표">
+				<input class="votebtn formargin" type="submit" name="submitVoteBtn" value="투표">
 				<a class="votebtn" id="vote-result">결과 보기</a>
-				<div id="chart">
-				</form>
-
-
-			</div>
+				<div id="chart"></div>
+			</form>
 		</div>
 		<!-- comment iterative-->
 		<div class="comment">
