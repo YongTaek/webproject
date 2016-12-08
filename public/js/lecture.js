@@ -9,11 +9,10 @@ function lectureReady(){
         alert("등록 에러! X(");
       };
     });
-  });
+  });  
+  function appendComment(data){
 
-  // appendComment(data){
-  //
-  // }
+  };
 
   var comment = $("#comment");
 
