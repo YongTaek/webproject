@@ -101,7 +101,7 @@
           <input id="comment-write" type="text" name="comment" />
           <input class="btn" id="submit" type="submit" value="등록"/>
         </div>
-        <input type="hidden" name="id" value="<?= $row["id"] ?>" />
+        <input type="hidden" name="id" value="<?= $row[0] ?>" />
         <input type="hidden" name="type" value="board">
       </form>
     </div>
