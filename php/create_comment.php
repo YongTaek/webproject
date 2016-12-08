@@ -11,7 +11,6 @@
   $time = date("Y-m-d H:i:s");
   $type = $_POST["type"];
   $name = $_SESSION["name"];
-  print 'adsf';
   header("Content-type: application/json");
   try {
     $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
