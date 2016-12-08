@@ -16,6 +16,7 @@
 	<script src="/public/js/push.js"></script>
 	<script src="/public/js/Nwagon.js"></script>
 	<script src="/public/js/notice-chart.js"></script>
+	<script src="/public/js/notice.js"></script>
 </head>
 <body>
 	<header role = "banner" class="banner-color">
@@ -107,7 +108,7 @@
 					<label>Comment:</label>
 					<div>
 						<input id="comment-write" type="text" name="comment" />
-						<input class="btn" id="submit" type="submit" value="등록"/>
+						<input class="btn" id="submit" type="button" value="등록"/>
 					</div>
 
 				</form>
