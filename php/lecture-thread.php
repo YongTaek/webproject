@@ -1,7 +1,7 @@
 <div id="sidebar">
   <div class="threads">
     <?php
-      $comments = $db->query("SELECT c.id, c.content, c.time u.name from comment c join lecture l on c.type='lecture' and l.id=c.reference_id, join user u on u.id=c.u_id order by time limit 10");
+      $comments = $db->query("SELECT c.id, c.content, c.time u.name from comment c join lecture l on c.type=\"lecture\" and l.id=c.reference_id join user u on u.id=c.u_id order by time limit 10");
       foreach ($comments as $comment ) {
           $userName = $comment['name'];
           $time = $comment['time'];
