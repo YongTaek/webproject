@@ -6,7 +6,7 @@ function ready () {
     console.log(JSON.stringify(params));
     console.log(form.attr("action"));
     $.ajax({
-      url: form.attr("action"),
+      url: '/php/create_comment.php',
       type : "POST",
       data : params,
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
