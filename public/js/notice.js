@@ -7,12 +7,12 @@ function ready () {
       type : "POST",
       data : params,
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-      dataType : 'json',
+      dataType : 'html',
       success : function (result, status) {
         console.log(result);
       }
     }).done(function (data) {
-      alert('asdf');
+      alert(data);
       if(!data['error']){
         alert("등록 에러! X(");
       } else {
