@@ -9,8 +9,7 @@ function lectureReady(){
         alert("등록 에러! X(");
       };
     });
-  });
-  
+  });  
   function appendComment(data){
 
   };

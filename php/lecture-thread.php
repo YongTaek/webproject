@@ -1,7 +1,8 @@
 <div id="sidebar">
   <div class="threads">
     <?php
-      $comments = $db->query("SELECT c.id, c.content, c.time u.name from comment c join lecture l on c.type=\"lecture\" and l.id=c.reference_id join user u on u.id=c.u_id where c.reference_id=".$_GET['id']. "order by time limit 10");
+      $comments = $db->query("SELECT c.id, c.content, c.time u.name from comment c join lecture l on c.type=\"lecture\" and l.id=c.reference_id join user u on u.id=c.u_id where c.reference_id=".$_GET['id']. " order by time limit 10");
+      print_r($comments);
       foreach ($comments as $comment ) {
           $userName = $comment['name'];
           $time = $comment['time'];
@@ -14,11 +15,8 @@
             <?= $content ?>
           </p>
     </div>
-      <?php } ?>
+    <?php } ?>
 
-    <div class="thread">
-      feejejek
-    </div>
   </div>
   <form class="lecture" action="create_comment.php" method="POST">
     <textarea id="input" name="content" cols="23" rows="8"></textarea>
