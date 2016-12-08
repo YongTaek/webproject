@@ -6,8 +6,6 @@ function ready () {
       url: "create_comment.php",
       type : "POST",
       data : params,
-      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-      dataType : 'html',
       success : function (result, status) {
         console.log(result);
       }
