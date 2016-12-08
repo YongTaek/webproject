@@ -6,7 +6,7 @@
 	}
 ?>
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
 	<title>Question</title>
 	<meta charset="utf-8">
