@@ -10,11 +10,14 @@
   $count = $num->rowCount();
   try{
     if($count == 0){
-    $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $db->query("INSERT INTO answer(u_id, q_id, content, time) VALUES($u_id, $id, '$content', '$time')");
-    header("Location: question.php?id=$id");
-    else;
+      $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $db->query("INSERT INTO answer(u_id, q_id, content, time) VALUES($u_id, $id, '$content', '$time')");
+      header("Location: question.php?id=$id");
+    }
+    else{
+
+    }
   } catch(PDOException $e){
    	echo $e->getMessage();
     }
