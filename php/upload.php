@@ -20,10 +20,10 @@ if(!isset($result)) {
 	} else if($_POST['url'] !== "") {
 		$dbUrl = $_POST['url'];
 	} else {
+		print 'asdf';
 		$result = array("error" => "true");
 	}
 	if(isset($result)) {
-		print 'asdf';
 		print json_encode($result);
 	} else {
 		$name = $_POST["title"];
