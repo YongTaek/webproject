@@ -1,13 +1,15 @@
 function ready () {
   $("#submit").click(function (event){
 
-    var params = $("#form").serialize();
+    var form = $("#form");
+    var params = form.serialize();
+
     $.ajax({
-      url: "create_comment.php",
+      url: form.attr("action"),
       type : "POST",
       data : params,
       dataType : 'json',
-      success : function (result, status) {
+      success : function (result) {
         console.log(result);
       }
     }).done(function (data) {
