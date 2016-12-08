@@ -2,7 +2,7 @@ function ready () {
   $("#submit").click(function (event){
 
     var form = $("#form");
-    var params = form.serializeArray();
+    var params = form.serialize();
     console.log(params);
     $.ajax({
       url: form.attr("action"),
