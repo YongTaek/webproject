@@ -22,7 +22,6 @@
     $pusher->trigger('lecture_channel', 'new_comment', $result);
 
   } catch (PDOException $e) {
-    echo $e->getMessage();
     $result = array("error" => "true");
   }
   print json_encode($result);
