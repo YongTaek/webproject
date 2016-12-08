@@ -8,8 +8,11 @@ function ready () {
       url: form.attr("action"),
       type : "POST",
       data : params,
-      dataType : 'json',
       success : function (result) {
+        console.log(result);
+      },
+      error : function (result) {
+        alert("실패");
         console.log(result);
       }
     }).done(function (data) {
