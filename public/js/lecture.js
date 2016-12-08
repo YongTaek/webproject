@@ -11,6 +11,10 @@ function lectureReady(){
     });
   });
   
+  // appendComment(data){
+
+  // };
+  
   var comment = $("#comment");
 
   $('#side').click(function (event) {

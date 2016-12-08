@@ -6,7 +6,6 @@
     <div class="thread">
       feejejek
     </div>
-
   </div>
   <form class="lecture" action="create-comment.php" method="post">
     <textarea id="input" name="content" cols="23" rows="8"></textarea>
