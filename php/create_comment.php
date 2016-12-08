@@ -8,13 +8,14 @@
   $content = $_POST["content"];
   $time = date("Y-m-d H:i:s");
   $type = $_POST["type"];
+  $name = $_SESSION["name"];
 
   header('Content-type: text/plain');
   try {
     $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->query("INSERT INTO comment(u_id, reference_id, content, time, type) VALUES($u_id, $r_id, '$content', '$time', '$type')");
-    $result = array("error" => "false");
+    $result = array("error" => "false", "content" => $conent, "time" => $time, "name" => $name );
   } catch (PDOException $e) {
     echo $e->getMessage();
     $result = array("error" => "true");
