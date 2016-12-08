@@ -8,19 +8,14 @@ function ready () {
       url: form.attr("action"),
       type : "POST",
       data : params,
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: 'html',
       success : function (result) {
         console.log(result);
       },
       error : function (result) {
         alert("실패");
         console.log(result);
-      }
-    }).done(function (data) {
-      alert(data);
-      if(!data['error']){
-        alert("등록 에러! X(");
-      } else {
-        addComent(data);
       }
     });
   });
