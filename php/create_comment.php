@@ -2,8 +2,8 @@
   session_start();
 
   date_default_timezone_set('Asia/Seoul');
-  // require('library/Pusher.php');
-  // require('library/push_setting.php');
+  require('/php/library/Pusher.php');
+  require('/php/library/push_setting.php');
 
   $r_id = $_POST["id"];
   $u_id = $_SESSION["id"];
