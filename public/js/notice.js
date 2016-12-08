@@ -8,6 +8,7 @@ function ready () {
       type : "POST",
       data : params
     }).done(function (data) {
+      alert('asdf');
       if(!data['error']){
         alert("등록 에러! X(");
       } else {
