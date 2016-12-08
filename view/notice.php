@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="/public/css/Nwagon.css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
-	<script src="../public/js/push.js"></script>
+	<script src="/public/js/push.js"></script>
 	<script src="/public/js/Nwagon.js"></script>
 	<script src="/public/js/notice-chart.js"></script>
 </head>
@@ -58,7 +58,7 @@
 					<a class="btn notice_delete" name="notice_delete" href="">삭제</a>
 				</div>
 			</div>
-			
+
 
 			<div class="content">
 				<p>Content</p>
