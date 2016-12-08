@@ -65,7 +65,13 @@
 			<!-- qeustion title -->
 			<h1 id="question_title"><?= $row["title"] ?></h1>
 			<div class="question_info">
-				<span><?= $row["name"] ?></span>
+				<?php
+					if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant"))
+						$name = $row["name"];
+					else
+						$name = "anonymous";
+				?>
+				<span><?= $name ?></span>
 				<span><?= $row["time"] ?></span>
 			</div>
 			<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $row["id"])) { ?>
@@ -100,7 +106,11 @@
 			<div>
 					<span><?= $comment["score"] ?></span>
 					<span><?= $comment["content"] ?></span>
-					<span><?= $comment["name"] ?></span>
+					<?php
+						if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant"))
+							$name = $comment["name"];
+					?>
+					<span><?= $name ?></span>
 					<span class=""><?= $comment["time"] ?></span>
 					<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
 					<div class="comment_btn">
@@ -134,7 +144,11 @@
 		<div class="answer">
 			<h2 id="answer_title"><?= $count ?> Answer</h2>
 			<div class="answer_info">
-				<span><?= $answer["name"] ?></span>
+				<?php
+					if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant"))
+						$name = $answer["name"];
+				?>
+				<span><?= $name ?></span>
 				<span><?= $answer["time"] ?></span>
 			</div>
 			<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $answer["id"])) { ?>
@@ -167,7 +181,11 @@
 			<div>
 					<span><?= $comment["score"] ?></span>
 					<span><?= $comment["content"] ?></span>
-					<span><?= $comment["name"] ?></span>
+					<?php
+						if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant"))
+							$name = $row["name"];
+					?>
+					<span><?= $name ?></span>
 					<span class=""><?= $comment["time"] ?></span>
 					<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
 					<div class="comment_btn">
