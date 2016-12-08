@@ -4,6 +4,7 @@ function ready () {
     var form = $("#form");
     var params = form.serialize();
     console.log(JSON.stringify(params));
+    console.log(form.attr("action"));
     $.ajax({
       url: form.attr("action"),
       type : "POST",
