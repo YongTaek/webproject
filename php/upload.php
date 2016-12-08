@@ -11,10 +11,12 @@ if(!isset($result)) {
 		$result = array("error" => "true");
 	} else if(isset($_FILES['upload']['name'])) {
 		$uploaddir = "../files/";
-		$fileUrl = $uploaddir . basename($_FILES['upload']['name']);
+		$fileUrl = basename($_FILES['upload']['name']);
+		print $fileUrl;
 		if(move_uploaded_file($_FILES['upload']['tmp_name'],$fileUrl)){
 			$dbUrl = $fileUrl;
 		} else{
+			print 'asdf';
 			$result = array("error" => "true");
 		}
 	} else if($_POST['url'] !== "") {
@@ -23,7 +25,6 @@ if(!isset($result)) {
 		$result = array("error" => "true");
 	}
 	if(isset($result)) {
-		print 'asdf';
 		print json_encode($result);
 	} else {
 		$name = $_POST["title"];
