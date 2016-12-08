@@ -40,14 +40,3 @@ function addComment(data) {
   $("#comment").append(div);
 }
 $(document).ready(ready);
-<div>
-  <span><?= $comment["content"] ?></span>
-  <span><?= $comment["name"] ?></span>
-  <span class=""><?= $comment["time"] ?></span>
-  <?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
-  <div class="comment_btn">
-    <a class="btn comment_modify" href="/php/modify_comment.php">수정</a>
-    <a class="btn comment_delete" href="/php/delete_comment.php">삭제</a>
-  </div>
-  <?php } ?>
-</div>
