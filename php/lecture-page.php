@@ -5,6 +5,7 @@ if (isset($_GET["id"])) {
 	$rows = $rows -> fetch();
 	$lectureName = $rows['name'];
   $lectureFile = $rows['url'];
+  print $lectureFile;
 }
 ?>
 <!DOCTYPE html>
