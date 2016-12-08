@@ -1,14 +1,16 @@
 
 $(".star-off").on('click', function () {
 
+	var event = $(this);
+
 	if (window.location.pathname == "/php/questionlist.php")
   	$.get("favorite.php", 
   		{ id: $(this)[0].parentElement.parentElement.parentElement.getElementsByClassName("mini-count")[0].childNodes[1].textContent,
   			type: "favorite" })
   	.done(function (data) {
   		if (!data.error) {
-  			$(this).removeClass("star-off");
-  			$(this).addClass("star-on");
+  			event.removeClass("star-off");
+  			event.addClass("star-on");
   		}
 		});
 	if (window.location.pathname == "/php/question.php")
@@ -17,8 +19,8 @@ $(".star-off").on('click', function () {
   			type: "favorite" })
   	.done(function(data) {
   		if (!data.error) {
-  			$(this).removeClass("star-off");
-  			$(this).addClass("star-on");
+  			event.removeClass("star-off");
+  			event.addClass("star-on");
   		}
   	});
 
@@ -26,14 +28,16 @@ $(".star-off").on('click', function () {
 
 $(".star-on").on('click', function () {
 
+	var event = $(this);
+
 	if (window.location.pathname == "/php/questionlist.php")
   	$.get("favorite.php", 
   		{ id: $(this)[0].parentElement.parentElement.parentElement.getElementsByClassName("mini-count")[0].childNodes[1].textContent,
   			type: "unfavorite" })
   	.done(function (data) {
   		if (!data.error) {
-  			$(this).removeClass("star-on");
-  			$(this).addClass("star-off");
+  			event.removeClass("star-on");
+  			event.addClass("star-off");
   		}
 		});
 	if (window.location.pathname == "/php/question.php")
@@ -42,8 +46,8 @@ $(".star-on").on('click', function () {
   			type: "unfavorite" })
   	.done(function(data) {
   		if (!data.error) {
-  			$(this).removeClass("star-on");
-  			$(this).addClass("star-off");
+  			event.removeClass("star-on");
+  			event.addClass("star-off");
   		}
   	});
 
