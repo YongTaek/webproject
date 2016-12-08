@@ -15,12 +15,12 @@ if(!isset($result)) {
 		if(move_uploaded_file($_FILES['upload']['tmp_name'],$fileUrl)){
 			$dbUrl = $fileUrl;
 		} else{
+			print 'asdf';
 			$result = array("error" => "true");
 		}
 	} else if($_POST['url'] !== "") {
 		$dbUrl = $_POST['url'];
 	} else {
-		print 'asdf';
 		$result = array("error" => "true");
 	}
 	if(isset($result)) {
