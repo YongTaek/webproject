@@ -32,6 +32,3 @@ channel.bind('my_event', function(data) {
 	toastr.error(data.message, '질문 실패');
 	// 골라서 쓰기
 });
-
-
-
