@@ -12,7 +12,9 @@ function ready () {
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
       dataType: 'json',
       success : function (result) {
-        console.log(result);
+        if (result.error === "false") {
+          addComment(result);
+        }
       },
       error : function (result) {
         alert("실패");
