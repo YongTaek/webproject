@@ -10,36 +10,36 @@ for (var i = 0; i < questionArray.length; i++) {
 	channel.bind('new_comment', function(data) {
 		// https://github.com/CodeSeven/toastr#escape-html-characters
 		// http://codeseven.github.io/toastr/demo.html
-		toastr.options = {
-			"closeButton": true,
-			"debug": false,
-			"newestOnTop": false,
-			"progressBar": false,
-			"onclick" : function () {
-				var link = document.location.href;
-				if (link === data.url) {
-					appendComment(data);
-				} else {
-					// window.location.href = data.url;
-				}
-			},
-			"positionClass": "toast-top-right",
-			"preventDuplicates": true,
-			"showDuration": "300",
-			"hideDuration": "1000",
-			"timeOut": "10000",
-			"extendedTimeOut": "1000",
-			"showEasing": "swing",
-			"hideEasing": "linear",
-			"showMethod": "fadeIn",
-			"hideMethod": "fadeOut"
-		};
+		var link = document.location.href;
+		if (link === data.url) {
+			appendComment(data);
+		} else {
+			toastr.options = {
+				"closeButton": true,
+				"debug": false,
+				"newestOnTop": false,
+				"progressBar": false,
+				"onclick" : function () {
+					window.location.href = data.url;
+				},
+				"positionClass": "toast-top-right",
+				"preventDuplicates": true,
+				"showDuration": "300",
+				"hideDuration": "1000",
+				"timeOut": "10000",
+				"extendedTimeOut": "1000",
+				"showEasing": "swing",
+				"hideEasing": "linear",
+				"showMethod": "fadeIn",
+				"hideMethod": "fadeOut"
+			};
 
-		//toastr.info(data.message,'질문 등록');
-		// toastr.warning(data.message, '질문 경고');
-		//toastr.success(data.message, '질문 등록 성공');
-		// toastr.error(data, '질문 실패');
-		Command: toastr["info"](data.content);
+			//toastr.info(data.message,'질문 등록');
+			// toastr.warning(data.message, '질문 경고');
+			//toastr.success(data.message, '질문 등록 성공');
+			// toastr.error(data, '질문 실패');
+			Command: toastr["info"](data.content);
+		}
 		// 골라서 쓰기
 	});
 }
@@ -49,9 +49,7 @@ for (var i = 0; i < lectureArray.length; i++) {
 		// https://github.com/CodeSeven/toastr#escape-html-characters
 		// http://codeseven.github.io/toastr/demo.html
 		var link = document.location.href;
-		console.log("asdf");
 		if (link === data.url) {
-			// window.location.href = data.url;
 			appendComment(data);
 		} else {
 			toastr.options = {
@@ -81,5 +79,47 @@ for (var i = 0; i < lectureArray.length; i++) {
 			// 골라서 쓰기
 			Command: toastr["info"](data.content);
 		}
+	});
+}
+var url = document.location.href;
+var params = url.substring(url.indexOf("?") + 1, url.length);
+var r_id = params.split("=")[1];
+
+if ($.inArray(parseInt(r_id), questionArray) < 0) {
+	var channel = pusher.subscribe(r_id);
+	channel.bind('new_comment', function(data) {
+		// https://github.com/CodeSeven/toastr#escape-html-characters
+		// http://codeseven.github.io/toastr/demo.html
+		var link = document.location.href;
+		if (link === data.url) {
+			appendComment(data);
+		} else {
+			toastr.options = {
+				"closeButton": true,
+				"debug": false,
+				"newestOnTop": false,
+				"progressBar": false,
+				"onclick" : function () {
+					window.location.href = data.url;
+				},
+				"positionClass": "toast-top-right",
+				"preventDuplicates": true,
+				"showDuration": "300",
+				"hideDuration": "1000",
+				"timeOut": "10000",
+				"extendedTimeOut": "1000",
+				"showEasing": "swing",
+				"hideEasing": "linear",
+				"showMethod": "fadeIn",
+				"hideMethod": "fadeOut"
+			};
+
+			//toastr.info(data.message,'질문 등록');
+			// toastr.warning(data.message, '질문 경고');
+			//toastr.success(data.message, '질문 등록 성공');
+			// toastr.error(data, '질문 실패');
+			Command: toastr["info"](data.content);
+		}
+		// 골라서 쓰기
 	});
 }

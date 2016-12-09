@@ -15,8 +15,6 @@
   <link rel="stylesheet" href="/public/css/base.css" type="text/css">
   <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
 
-  
-
   <script type="text/javascript">
     <?php if (isset($_SESSION["id"]) && isset($_SESSION["favQuestion"]) && isset($_SESSION["openLecture"])) { ?>
       var questionArray = <?php echo json_encode($_SESSION["favQuestion"]); ?>;
@@ -65,7 +63,7 @@
   <div class="container">
     <div class = "top-text">
       <h3 class="setting-text">Lecture List</h3>
-      <a id="link" href="/view/lecture-upload.php">강의 파일 업로드</a>
+      <a id="link" href="/php/lecture-upload.php">강의 파일 업로드</a>
     </div>
     <table class="table table-striped">
       <thead>
@@ -95,7 +93,7 @@
           <td><?= $row["id"] ?></td>
           <td><a href="<?= $row["url"] ?>"><?= $row["name"] ?></a></td>
           <td><a href="#" class="<?= $class ?>"><?= $status ?></a></td>
-          <td><a href="lecture-upload.php" class="lecture-change">Change</a></td>
+          <td><a href="lecture-upload.php?id=<?= $row["id"] ?>" class="lecture-change">Change</a></td>
         </tr>
        <?php } ?>
       </tbody>
@@ -178,10 +176,10 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
               </div>
               <div class="btn-group btn-delete hidden" role="group">
-                <button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Delete</button>
+                <button type="button" id="deleteDialogAssistant" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Delete</button>
               </div>
               <div class="btn-group" role="group">
-                <button type="button" id="saveImage" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
+                <button type="button" id="saveDialogAssistant" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
               </div>
             </div>
           </div>
@@ -218,10 +216,10 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
               </div>
               <div class="btn-group btn-delete hidden" role="group">
-                <button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Delete</button>
+                <button type="button" id="deleteDialogStudent" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Delete</button>
               </div>
               <div class="btn-group" role="group">
-                <button type="button" id="saveImage" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
+                <button type="button" id="saveDialogStudent" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
               </div>
             </div>
           </div>

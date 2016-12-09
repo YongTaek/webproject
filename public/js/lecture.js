@@ -10,7 +10,7 @@ function lectureReady(){
       dataType: "json"
     }).done(function (da) {
       // var da = $.parseJSON(data);
-      if(da.error == "false"){
+      if(da.error == "true"){
         alert("등록 에러! X(");
       }
       else{
@@ -33,7 +33,7 @@ function lectureReady(){
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"
       }).done(function(da){
-        if(da.error == "false"){
+        if(da.error == "true"){
           alert("로드 에러! ;(");
         }
         else{

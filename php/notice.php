@@ -47,7 +47,14 @@
 				<?php if ($logged_in) { ?>
 					<a id="login" href="/php/logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
-					<a id="mypage" href="/php/myPage.php" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
+				<?php
+					if ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant") {
+						$href = "/php/setting.php";
+					} else {
+						$href = "/php/changepw.php";
+					}
+				?>
+					<a id="mypage" href="<?= $href ?>" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
 				<?php } else { ?>
 					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>

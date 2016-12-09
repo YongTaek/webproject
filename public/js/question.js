@@ -14,7 +14,7 @@ function questionReady(){
 				alert("등록 에러! X(");
 			}
 			else{
-				redirectComment(da,$(form.parent()).siblings().not(form.parent()));
+				appendComment(da,$(form.parent()).siblings().not(form.parent()));
 			}
 		});
 	});
