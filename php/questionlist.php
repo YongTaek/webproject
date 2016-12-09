@@ -153,8 +153,8 @@
 						<h5 class="name">by. <?= $name ?></h5>
 					</div>
 					<div class="on-off">
-						<a class="star-off"></a>
-						<a class="pin-off"></a>
+						<a class="star-off" href="#"></a>
+						<a class="pin-off" href="#"></a>
 					</div>
 				</div>
 			</div>
