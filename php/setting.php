@@ -63,7 +63,7 @@
   <div class="container">
     <div class = "top-text">
       <h3 class="setting-text">Lecture List</h3>
-      <a id="link" href="/view/lecture-upload.php">강의 파일 업로드</a>
+      <a id="link" href="/php/lecture-upload.php">강의 파일 업로드</a>
     </div>
     <table class="table table-striped">
       <thead>
