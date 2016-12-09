@@ -82,10 +82,10 @@
         $rows = $db->query("SELECT id, name, url, open FROM lecture");
         foreach ($rows as $row) {
         if($row["open"] == 0){
-          $status = "Open";
+          $status = "Close";
         } 
         else{ 
-          $status = "Close";
+          $status = "Open";
         }
         ?>
         <tr>
