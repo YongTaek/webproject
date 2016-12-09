@@ -63,7 +63,7 @@
 
 			<?php
 				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-				$rows = $db->query("SELECT n.id, title, time, name FROM notice n JOIN user u ON n.u_id = u.id ORDER BY time DESC");
+				$rows = $db->query("SELECT n.id, title, time, name, pinned FROM notice n JOIN user u ON n.u_id = u.id ORDER BY time DESC");
 				foreach ($rows as $row) {
 			?>
 
@@ -83,8 +83,14 @@
 				</div>
 				<div class="question-list-right">
 					<div class="on-off">
-						<a class="star-off" href="#"></a>
-						<a class="pin-off" href="#"></a>
+						<?php
+							if ($row["pinned"]) {
+								$pin = "pin-on";
+							} else {
+								$pin = "pin-off";
+							}
+						?>
+						<a class="<?= $pin ?>"></a>
 					</div>
 					<div>
 						<h5 class="date"><?= $row["time"] ?></h5> <!-- 날짜 -->

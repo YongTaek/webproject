@@ -56,14 +56,21 @@
 	<?php
 		if (isset($_GET["id"])) {
 			$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-			$rows = $db->query("SELECT n.id, name, title, content, time FROM notice n JOIN user u ON n.u_id = u.id WHERE n.id = ".$_GET["id"]);
+			$rows = $db->query("SELECT n.id, name, title, content, time, pinned FROM notice n JOIN user u ON n.u_id = u.id WHERE n.id = ".$_GET["id"]);
 			foreach ($rows as $row) {
   ?>
 
 	<div class="container">
 		<div class="notice">
 			<div class="title">
-				<a class="pin-off" href="#" ></a>
+				<?php
+					if ($row["pinned"]) {
+						$pin = "pin-on";
+					} else {
+						$pin = "pin-off";
+					}
+				?>
+				<a class="<?= $pin ?>"></a>
 				<h1 id="title_id">
 					<span><?= $row["title"] ?></span>
 				</h1>
