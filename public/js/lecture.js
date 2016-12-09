@@ -22,7 +22,6 @@ function lectureReady(){
 
     if($(this).scrollTop() == 0){
       var date = $("span.date")[0].innerHTML;
-      d
       var url = window.location;
       var parameter = url.search.split("?")[1];
       var params = parameter+"&date="+date;
