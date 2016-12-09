@@ -1,15 +1,21 @@
 function lectureReady(){
-
-  var params = $(".lecture")[0].serialize();
   $("#submit").click(function (event){
+    var params = $(this).parent().serialize();
+    console.log(params);
     $.ajax({
       url: "../php/create_comment.php",
       type : "POST",
-      data: params
-    }).done(function (data) {
-      if(!data['error']){
+      data: params,
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json"
+    }).done(function (da) {
+      // var da = $.parseJSON(data);
+      if(da.error == "false"){
         alert("등록 에러! X(");
-      };
+      }
+      else{
+        appendComment(da);
+      }
     });
   });  
 
@@ -36,13 +42,34 @@ function changeDrawerClass(event) {
   }
 }
 
-function appendComment(data){
-    var content = data['content'];
-    var time = data['time'];
-    var name = data['name'];
+function appendComment(da){
+  // var da = $.parseJSON(data);
+  // var content = da.content;
+  var content = "hello";
+  // var time = da.time;
+  var time = "2016.12.08 6:45pm";
+  // var name = da.name;
+  var name = "익명";
 
+  var div = $("<div></div>");
 
-  };
+  var spancontent = $("<span></span>").text(content);
+  spancontent.addClass("content");
+  var spandate = $("<span></span>").text(time);
+  spandate.addClass("date");
+  var spanwriter = $("<span></span>").text(name);
+  spanwriter.addClass("writer");
+
+  div.append(spancontent);
+  div.append($("<br>"));
+  div.append(spanwriter);
+  div.append($("<br>"));
+  div.append(spandate);
+  div.addClass("thread");
+  $(".threads").append(div);
+
+  $(".threads").animate({scrollTop: $(".threads").prop("scrollHeight")});
+};
 
 $(document).ready(lectureReady);
 
@@ -76,6 +103,6 @@ channel.bind('new_comment', function(data) {
 	//toastr.info(data.message,'질문 등록');
 	// toastr.warning(data.message, '질문 경고');
 	 //toastr.success(data.message, '질문 등록 성공');
-	toastr.error(data.message, '질문 실패');
+  toastr.error(data.message, '질문 실패');
 	// 골라서 쓰기
 });
