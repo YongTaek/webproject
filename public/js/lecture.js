@@ -1,7 +1,3 @@
-$(window).on("load",function(){
-  console.log("hello");
-  $(".threads").scrollTop($(".threads").prop("scrollHeight"));
-});
 function lectureReady(){
   $("#submit").click(function (event){
     var params = $(this).parent().serialize();
@@ -21,6 +17,32 @@ function lectureReady(){
         // appendComment(da);
       }
     });
+  });
+  $(".threads").scroll(function(){
+
+    if($(this).scrollTop() == 0){
+      var date = $("span.date")[0].innerHTML;
+      var url = window.location;
+      var parameter = url.search.split("?")[1];
+      var params = parameter+"&date="+date;
+      console.log(params);
+      $.ajax({
+        url: "../php/load-thread.php",
+        type: "POST",
+        data: params,
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json"
+      }).done(function(da){
+        if(da.error == "true"){
+          alert("로드 에러! ;(");
+        }
+        else{
+          for(var i = 0; i<da.length;i++){
+            prependComment(da[i]);
+          }
+        }
+      });
+    };
   });
 
   var comment = $("#comment");
@@ -42,6 +64,7 @@ function changeDrawerClass(event) {
   } else {
     $(event.target).addClass('opendrawer');
     $(event.target).removeClass('closedrawer');
+    $(".threads").scrollTop($(".threads").prop("scrollHeight"));
   };
 };
 
@@ -73,6 +96,33 @@ function appendComment(da){
   $("#input").val("");
 
   $(".threads").animate({scrollTop: $(".threads").prop("scrollHeight")});
+};
+function prependComment(da){
+  // var da = $.parseJSON(data);
+  var content = da.content;
+  // var content = "hello";
+  var time = da.time;
+  // var time = "2016.12.08 6:45pm";
+  var name = da.name;
+  // var name = "익명";
+
+  var div = $("<div></div>");
+
+  var spancontent = $("<span></span>").text(content);
+  spancontent.addClass("content");
+  var spandate = $("<span></span>").text(time);
+  spandate.addClass("date");
+  var spanwriter = $("<span></span>").text(name);
+  spanwriter.addClass("writer");
+
+  div.append(spancontent);
+  div.append($("<br>"));
+  div.append(spanwriter);
+  div.append($("<br>"));
+  div.append(spandate);
+  div.addClass("thread");
+  $(".threads").prepend(div);
+  $("#input").val("");
 };
 
 $(document).ready(lectureReady);

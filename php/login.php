@@ -18,6 +18,7 @@
       foreach ($favorites as $row) {
         $questionArray[] = $row["q_id"];
       }
+      //TODO: 내가 쓴 질문에 대해 subscribe 필요!
       $lectureArray = array();
       $lectures = $db->query("SELECT id from lecture where open = 1");
       foreach ($lectures as $row ) {

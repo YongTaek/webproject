@@ -31,7 +31,7 @@ session_start();
 				<li class="pull-left"><a href="/php/noticelist.php" class="menu-item" >NOTICE</a></li>
 				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item active">QUESTION</a></li>
 				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
-				<li class="pull-left"><a href="/view/lecture-list.php" class="menu-item">LECTURE</a></li>
+				<li class="pull-left"><a href="/php/lecture-list.php" class="menu-item">LECTURE</a></li>
 			</ul>
 			<div role="login" class="pull-right">
 				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
@@ -59,15 +59,11 @@ session_start();
 		$u_id = $_SESSION["id"];
 		$rows = $db->query("SELECT title, content FROM question WHERE u_id = $u_id AND id = $id");
 		
-		$row = $rows->fetch();
+		//$row = $rows->fetch();
 	}
 	?>
 	<form action='submit_answer_modify.php' method="post">
-		<h2>Title</h2>
-		<div class="title">
-			<input name="title" type="text" value="<?= $row["title"] ?>">
-		</div>
-		<h2>Content</h2>
+		<h2>Your Answer</h2>
 		<div class="content" id="wmd-editor">
 			<div id="wmd-button-bar"></div>
 			<textarea id="wmd-input" name="content"><?= $row["content"] ?></textarea>

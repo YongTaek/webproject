@@ -192,7 +192,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 								</div>
 								<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $answer["id"])) { ?>
 								<div class="answer_btn">
-									<a class="btn answer_modify" name="answer_modify" href="/php/modify-answer-page.php">수정</a>
+									<a class="btn answer_modify" name="answer_modify" href="modify-answer-page.php?id=<?= $_GET["id"] ?>">수정</a>
 									<a class="btn answer_delete" name="answer_delete" href="delete_answer.php?id=<?= $_GET["id"] ?>">삭제</a>
 								</div>
 								<?php } ?>
@@ -251,7 +251,11 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 							}
 						}
 						?>
-						<?php if ($logged_in) { ?>
+						<?php 
+						$u_id = $_SESSION["id"];
+						$isWriteAnswer = $db->query("SELECT id FROM answer WHERE u_id = $u_id AND q_id = ".$_GET["id"]);
+						$num = $isWriteAnswer->rowCount();
+						if ($logged_in && $num == 0) { ?>
 						<div class="write-answer">
 							<h2>Your Answer</h2>
 							<form action="create_answer.php" method="post">
