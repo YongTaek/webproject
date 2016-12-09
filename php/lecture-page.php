@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_GET["id"])) {
   $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
   $id = $_GET["id"];
