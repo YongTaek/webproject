@@ -1,10 +1,10 @@
 <?php
-// session_start();
+session_start();
 header("Content-Type:application/json");
-// $authority = $_SESSION['auth'];
-// if ($authority !== 'professor') {
-	// $result = array("error" => "true");
-// }
+$authority = $_SESSION['auth'];
+if ($authority !== 'professor') {
+	$result = array("error" => "true");
+}
 // print $result;
 if(!isset($result)) {
 	if(isset($_FILES['upload']['name']) && $_POST['url'] !== "") {
