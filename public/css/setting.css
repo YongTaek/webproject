@@ -80,6 +80,8 @@ tr{
 .lecture-close {
 	border: solid 1px #d9534f;
 	color: #d9534f;
+	padding : 5px;
+	border-radius: 2px;
 }
 
 .lecture-close:hover {

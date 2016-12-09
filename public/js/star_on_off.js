@@ -68,3 +68,53 @@ $(".pin-off, .pin-on").on('click', function () {
 		}
 	});
 });
+
+$(".vote-up-off").on('click', function () {
+	var t = $(this)[0].parentElement.parentElement.parentElement.className;
+
+	if (t == "question") {
+		var element = window.location.search.split("=")[1];
+	} else {
+		var element = $(this)[0].parentElement.parentElement.parentElement.nextElementSibling.getElementsByTagName("input")[2].value;
+	}
+
+	$.ajax({
+		url: "vote.php",
+		context: this,
+		data: {
+			id: element,
+			type: t,
+			score: "up"
+		},
+		success: function (data) {
+			if (data.error === "false") {
+				$(this)[0].parentElement.childNodes[5].textContent = $(this)[0].parentElement.childNodes[5].textContent + 1;
+			}
+		}
+	});
+});
+
+$(".vote-down-off").on('click', function () {
+	var t = $(this)[0].parentElement.parentElement.parentElement.className;
+
+	if (t == "question") {
+		var element = window.location.search.split("=")[1];
+	} else {
+		var element = $(this)[0].parentElement.parentElement.parentElement.nextElementSibling.getElementsByTagName("input")[2].value;
+	}
+
+	$.ajax({
+		url: "vote.php",
+		context: this,
+		data: {
+			id: element,
+			type: t,
+			score: "down"
+		},
+		success: function (data) {
+			if (data.error === "false") {
+				$(this)[0].parentElement.childNodes[5].textContent = $(this)[0].parentElement.childNodes[5].textContent - 1;
+			}
+		}
+	});
+});
