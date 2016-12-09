@@ -1,12 +1,23 @@
 <div id="sidebar">
   <div class="threads">
     <?php
-      $comments = $db->query("SELECT c.id, c.content, c.time, u.name from comment c join lecture l on c.type='lecture' and l.id=c.reference_id join user u on u.id=c.u_id where c.reference_id=$id order by time limit 10 ");
-      $comments = $comments->fetch();
-      for ($i=0; $i < $comments.length; $i++) {
-        $userName = $comments[$i]['name'];
-        $time = $comment[$i]['time'];
-        $content = $comment[$i]['content'];
+      $comments = $db->query("SELECT c.id, c.content, c.time, u.name from comment c join lecture l on c.type='lecture' and l.id=c.reference_id join user u on u.id=c.u_id where c.reference_id=$id order by time desc limit 10 ");
+      $arrays = array();
+      foreach ($comments as $comment ) {
+          $userName = $comment['name'];
+          $time = $comment['time'];
+          $content = $comment['content'];
+          $arrays[] = array('userName' => $userName, 'time' => $time, 'content' => $content);
+      }
+    ?>
+    <?php
+      $arrays = array_reverse($arrays);
+      foreach ($arrays as $array) {
+          $userName = $array['userName'];
+          $time = $array['time'];
+          $content = $array['content'];
+          print $userName;
+          print $time;
     ?>
     <div class="thread">
           <span class="content">
@@ -21,11 +32,7 @@
             <?= $time ?>
           </span>
     </div>
-    <?php
-        $comments = $comments->fetch();
-        }
-    ?>
-
+    <?php } ?>
   </div>
   <form class="lecture" action="create_comment.php" method="POST">
     <textarea id="input" name="content" cols="23" rows="8"></textarea>

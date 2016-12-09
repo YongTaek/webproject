@@ -30,7 +30,7 @@
   <script src="/public/js/push.js"></script>
   <script src="/public/js/lec-open-close.js"></script>
   <script src="/public/js/pusher.js"></script>
-
+  <script src="/public/js/settingDialog.js"></script>
 </head>
 <body>
   <header role = "banner" class="banner-color">
@@ -177,11 +177,13 @@
               <div class="btn-group" role="group">
                 <button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
               </div>
+
               <div class="btn-group btn-delete hidden" role="group">
-                <button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Delete</button>
+                <button type="button" id="deleteDialogAssistant" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Delete</button>
               </div>
+
               <div class="btn-group" role="group">
-                <button type="button" id="saveImage" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
+                <button type="button" id="saveDialogAssistant" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
               </div>
             </div>
           </div>
@@ -218,10 +220,10 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
               </div>
               <div class="btn-group btn-delete hidden" role="group">
-                <button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Delete</button>
+                <button type="button" id="deleteDialogStudent" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Delete</button>
               </div>
               <div class="btn-group" role="group">
-                <button type="button" id="saveImage" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
+                <button type="button" id="saveDialogStudent" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
               </div>
             </div>
           </div>

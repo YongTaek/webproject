@@ -106,3 +106,7 @@ channel.bind('new_comment', function(data) {
   toastr.error(data.message, '질문 실패');
 	// 골라서 쓰기
 });
+
+$(".threads").load(function(){
+  $(".threads").animate({scrollTop: $(".threads").prop("scrollHeight")});
+});
