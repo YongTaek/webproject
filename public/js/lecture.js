@@ -14,10 +14,10 @@ function lectureReady(){
         alert("등록 에러! X(");
       }
       else{
-        appendComment(da);
+        // appendComment(da);
       }
     });
-  });  
+  });
 
   var comment = $("#comment");
 
