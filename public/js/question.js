@@ -32,9 +32,9 @@ function appendComment(da,comment){
 
 	var div = $("<div></div>");
 
-	var spancontent = $("<span></span>").text(content+" ");
-	var spanname = $("<span></span>").text(name+" ");
-	var spantime = $("<span></span>").text(time+" ");
+	var spancontent = $("<span></span>").val(content+" ");
+	var spanname = $("<span></span>").val(name+" ");
+	var spantime = $("<span></span>").val(time+" ");
 
 	var btns = $("<div class = 'comment_btn'></div>");
 
