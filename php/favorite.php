@@ -15,12 +15,15 @@
         throw new PDOException("Already Favorite", 1);
       else
         $db->query("INSERT INTO favorite VALUES($u_id, $id)");
+        $_SESSION["favQuestion"][] = $id;
     } else {
       $rows = $db->query("SELECT * FROM favorite WHERE u_id = $u_id AND q_id = $id");
       if ($rows->rowCount() == 0)
         throw new PDOException("Not Favorite", 1);
       else
         $db->query("DELETE FROM favorite WHERE u_id = $u_id AND q_id = $id");
+        $newArray = array_diff($_SESSION["favQuestion"], array($id));
+        $_SESSION["favQuestion"] = $newArray;
     }
 
     $result = array("error" => "false");

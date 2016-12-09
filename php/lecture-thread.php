@@ -1,11 +1,12 @@
 <div id="sidebar">
   <div class="threads">
     <?php
-      $comments = $db->query("SELECT c.id, c.content, c.time, u.name from comment c join lecture l on c.type='lecture' and l.id=c.reference_id join user u on u.id=c.u_id where c.reference_id=$id limit 10 order by time");
-      foreach ($comments as $comment ) {
-          $userName = $comment['name'];
-          $time = $comment['time'];
-          $content = $comment['content'];
+      $comments = $db->query("SELECT c.id, c.content, c.time, u.name from comment c join lecture l on c.type='lecture' and l.id=c.reference_id join user u on u.id=c.u_id where c.reference_id=$id order by time limit 10 ");
+      $comments->fetch();
+      for ($i=0; $i < $comments; $i++) {
+        $userName = $comments[$i]['name'];
+        $time = $comment[$i]['time'];
+        $content = $comment[$i]['content'];
     ?>
     <div class="thread">
           <span class="content">
@@ -20,7 +21,10 @@
             <?= $time ?>
           </span>
     </div>
-    <?php } ?>
+    <?php
+        $comments->fetch();
+        }
+    ?>
 
   </div>
   <form class="lecture" action="create_comment.php" method="POST">
