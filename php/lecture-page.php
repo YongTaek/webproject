@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_GET["id"])) {
   $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
   $id = $_GET["id"];
@@ -26,7 +27,8 @@ if (isset($_GET["id"])) {
 	<link rel="stylesheet" href="/public/css/lecture-page.css" type="text/css">
   <script type="text/javascript">
 		<?php if (isset($_SESSION["id"]) && isset($_SESSION["favQuestion"]) && isset($_SESSION["openLecture"])) { ?>
-			var questionArray = <?php echo json_encode($_SESSION["favQuestion"]); ?>;
+      console.log(<?php echo json_encode($_SESSION["favQuestion"]); ?>);
+      var questionArray = <?php echo json_encode($_SESSION["favQuestion"]); ?>;
 			var lectureArray = <?php echo json_encode($_SESSION["openLecture"]); ?>;
 		<?php } ?>
 	</script>
@@ -36,18 +38,18 @@ if (isset($_GET["id"])) {
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="/public/js/lecture.js" type="text/javascript"></script>
-  <script src="/public/js/pusher.js"></script>
 
 </head>
 <body>
 <?php
 	if($status != 0) { ?>
-		<a href="#" class="closedrawer" id="side"></a>
+		<a class="closedrawer" id="side"></a>
 <?php }
 ?>
 	<embed src = "<?= $lectureFile ?>"></embed>
 	<div id="comment">
 		<?php include("./lecture-thread.php"); ?>
 	</div>
+  <script src="/public/js/pusher.js"></script>
 </body>
 </html>
