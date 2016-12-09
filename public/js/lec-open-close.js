@@ -13,7 +13,7 @@ function func(){
 			context: this,
 			data: {
 				id: status
-			}
+			},
 			success: function (data){
 				if(data.error === "false"){
 					if (status == "open") {
