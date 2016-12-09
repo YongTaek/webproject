@@ -63,11 +63,7 @@ session_start();
 	}
 	?>
 	<form action='submit_answer_modify.php' method="post">
-		<h2>Title</h2>
-		<div class="title">
-			<input name="title" type="text" value="<?= $row["title"] ?>">
-		</div>
-		<h2>Content</h2>
+		<h2>Your Answer</h2>
 		<div class="content" id="wmd-editor">
 			<div id="wmd-button-bar"></div>
 			<textarea id="wmd-input" name="content"><?= $row["content"] ?></textarea>
