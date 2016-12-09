@@ -83,15 +83,17 @@
         foreach ($rows as $row) {
         if($row["open"] == 0){
           $status = "Close";
+          $class = "lecture-close";
         } 
         else{ 
           $status = "Open";
+          $class = "lecture-open";
         }
         ?>
         <tr>
           <td><?= $row["id"] ?></td>
           <td><a href="<?= $row["url"] ?>"><?= $row["name"] ?></a></td>
-          <td><a href="#" class="lecture-open"><?= $status ?></a></td>
+          <td><a href="#" class=<?= $class ?>><?= $status ?></a></td>
           <td><a href="lecture-upload.php" class="lecture-change">Change</a></td>
         </tr>
        <?php } ?>
