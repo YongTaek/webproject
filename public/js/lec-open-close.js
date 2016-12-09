@@ -1,6 +1,6 @@
 
 function func(){
-	$(".lecture-open").click(function (event) {
+	$(".lecture-open").on('click', function () {
 
 		if ($(this).hasClass("lecture-close")) {
 			var status = "open";
@@ -15,7 +15,7 @@ function func(){
 				id: status
 			},
 			success: function (data){
-				if(data.error === "false"){
+				if(data.error === "false") {
 					if (status == "open") {
 						$(this).text("Close");
 						$(this).removeClass("lecture-open");

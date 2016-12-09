@@ -1,3 +1,7 @@
+$(window).on("load",function(){
+  console.log("hello");
+  $(".threads").scrollTop($(".threads").prop("scrollHeight"));
+});
 function lectureReady(){
   $("#submit").click(function (event){
     var params = $(this).parent().serialize();
