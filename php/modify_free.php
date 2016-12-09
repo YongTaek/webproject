@@ -26,13 +26,13 @@
   				<li class="pull-left"><a href="/view/noticelist.php" class="menu-item" >NOTICE</a></li>
   				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item active">QUESTION</a></li>
   				<li class="pull-left"><a href="/view/freelist.php" class="menu-item">FREE BOARD</a></li>
-          <li class="pull-left"><a href="/view/lecture-list.php" class="menu-item active">LECTURE</a></li>
+          <li class="pull-left"><a href="/view/lecture-list.php" class="menu-item">LECTURE</a></li>
   			</ul>
   			<div role="login" class="pull-right">
   				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
             <a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
             <div class="pull-right vr"></div>
-            <a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
+            <a id="mypage" href="/php/changepw.php" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
             <ul class="hidden" id="setting">
               <li><a href="user-setting.php">Setting</a></li>
             </ul>

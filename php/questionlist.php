@@ -30,13 +30,13 @@
 				<li class="pull-left"><a href="/php/noticelist.php" class="menu-item" >NOTICE</a></li>
 				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item active">QUESTION</a></li>
 				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
-				<li class="pull-left"><a href="/view/lecture-list.php" class="menu-item active">LECTURE</a></li>
+				<li class="pull-left"><a href="/php/lecture-list.php" class="menu-item">LECTURE</a></li>
 			</ul>
 			<div role="login" class="pull-right">
 				<?php if ($logged_in) { ?>
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
-					<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
+					<a id="mypage" href="/php/changepw.php" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
 				<?php } else { ?>
 					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
@@ -91,16 +91,16 @@
 				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
 				if (isset($_GET["type"])) {
 					if ($_GET["type"] == "recommend") {
-						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id ORDER BY score DESC");
+						$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id ORDER BY score DESC");
 					} elseif ($_GET["type"] == "my") {
-						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id WHERE q.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
+						$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id WHERE q.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
 					} elseif ($_GET["type"] == "favorite") {
-						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id JOIN favorite f ON q.id = f.q_id WHERE f.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
+						$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id JOIN favorite f ON q.id = f.q_id WHERE f.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
 					} else {
-						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id ORDER BY time DESC");
+						$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id ORDER BY time DESC");
 					}
 				} else {
-					$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id ORDER BY time DESC");
+					$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id ORDER BY time DESC");
 				}
 				foreach ($rows as $row) {
 			?>
@@ -153,8 +153,24 @@
 						<h5 class="name">by. <?= $name ?></h5>
 					</div>
 					<div class="on-off">
-						<a class="star-off" href="#"></a>
-						<a class="pin-off" href="#"></a>
+						<?php
+							$fav = $db->query("SELECT u_id, q_id FROM favorite WHERE u_id = ".$_SESSION["id"]." AND q_id = ".$row["id"]);
+							$count = $fav->rowCount();
+							if ($count > 0) {
+								$star = "star-on";
+							} else {
+								$star = "star-off";
+							}
+						?>
+						<a class="<?= $star ?>" href="#"></a>
+						<?php
+							if ($row["pinned"]) {
+								$pin = "pin-on";
+							} else {
+								$pin = "pin-off";
+							}
+						?>
+						<a class="<?= $pin ?>" href="#"></a>
 					</div>
 				</div>
 			</div>

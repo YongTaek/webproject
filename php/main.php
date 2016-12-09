@@ -10,11 +10,36 @@
 	<link rel="stylesheet" href="/public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="/public/css/main.css" type="text/css">
 	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
+	<script type="text/javascript">
+		<?php
+			if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
+			$isLogin = true;
+			$userId = $_SESSION["id"];
+			$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$rows = $db->query("SELECT q_id from favorite where u_id=$userId");
+			$questionArray = array();
+			foreach ($rows as $row) {
+				$questionArray[] = $row["q_id"];
+			}
+			$lectureArray = array();
+			$rows = $db->query("SELECT id from lecture where open = 1");
+			foreach ($rows as $row ) {
+				$lectureArray[] = $row["id"];
+			}
+			$_SESSION["favQuestion"] = $questionArray;
+			$_SESSION["openLecture"] = $lectureArray;
+		?>
+			var questionArray = <?php echo json_encode($_SESSION["favQuestion"]); ?>;
+			var lectureArray = <?php echo json_encode($_SESSION["openLecture"]); ?>;
+		<?php } ?>
+	</script>
 	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="/public/js/push.js"></script>
+	<script src="/public/js/main.js"></script>
 </head>
 <body>
 	<header role = "banner" class="banner-color">
@@ -24,13 +49,16 @@
 				<li class="pull-left"><a href="/php/noticelist.php" class="menu-item" >NOTICE</a></li>
 				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item">QUESTION</a></li>
 				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
-				<li class="pull-left"><a href="/view/lecture-list.php" class="menu-item active">LECTURE</a></li>
+				<li class="pull-left"><a href="/view/lecture-list.php" class="menu-item">LECTURE</a></li>
 			</ul>
 			<div role="login" class="pull-right">
-				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
+				<?php
+						if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
+
+				?>
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
-					<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
+					<a id="mypage" href="/php/changepw.php" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
 					<ul class="hidden" id="setting">
 						<li><a href="user-setting.php">Setting</a></li>
 					</ul>

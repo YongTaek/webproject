@@ -34,13 +34,13 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 				<li class="pull-left"><a href="/php/noticelist.php" class="menu-item" >NOTICE</a></li>
 				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item active">QUESTION</a></li>
 				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
-				<li class="pull-left"><a href="/view/lecture-list.php" class="menu-item active">LECTURE</a></li>
+				<li class="pull-left"><a href="/php/lecture-list.php" class="menu-item">LECTURE</a></li>
 			</ul>
 			<div role="login" class="pull-right">
 				<?php if ($logged_in) { ?>
 				<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 				<div class="pull-right vr"></div>
-				<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
+				<a id="mypage" href="/php/changepw.php" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
 				<?php } else { ?>
 				<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
@@ -60,7 +60,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 		<?php
 		if (isset($_GET["id"])) {
 			$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-			$rows = $db->query("SELECT title, score, content, u.id, name, time FROM question q JOIN user u ON q.u_id = u.id WHERE q.id = ".$_GET["id"]);
+			$rows = $db->query("SELECT title, score, content, u.id, name, time, pinned FROM question q JOIN user u ON q.u_id = u.id WHERE q.id = ".$_GET["id"]);
 			foreach ($rows as $row) {
 				?>
 
@@ -86,12 +86,28 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 					<hr>
 					<div>
 						<div class="vote">
-							<a class="pin-off"></a>
+							<?php
+								if ($row["pinned"]) {
+									$pin = "pin-on";
+								} else {
+									$pin = "pin-off";
+								}
+							?>
+							<a class="<?= $pin ?>"></a>
+							<?php
+								$fav = $db->query("SELECT u_id, q_id FROM favorite WHERE u_id = ".$_SESSION["id"]." AND q_id = ".$row["id"]);
+								$count = $fav->rowCount();
+								if ($count > 0) {
+									$star = "star-on";
+								} else {
+									$star = "star-off";
+								}
+							?>
 							<a class="vote-up-off"></a>
 							<!-- 추천 수 -->
 							<span class="vote-count"><?= $row["score"] ?></span>
 							<a class="vote-down-off"></a>
-							<a class="star-off"></a>
+							<a class="<?= $star ?>"></a>
 						</div>
 						<!-- question 내용 -->
 						<div class="content">
@@ -168,7 +184,6 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 										<!-- answer 추천 수 -->
 										<span class="vote-count"><?= $answer["score"] ?></span>
 										<a class="vote-down-off"></a>
-										<a class="star-off"></a>
 									</div>
 									<div class="content">
 										<?= $answer["content"] ?>
