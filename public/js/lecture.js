@@ -66,6 +66,7 @@ function appendComment(da){
   div.append(spandate);
   div.addClass("thread");
   $(".threads").append(div);
+  $("#input").val("");
 
   $(".threads").animate({scrollTop: $(".threads").prop("scrollHeight")});
 };

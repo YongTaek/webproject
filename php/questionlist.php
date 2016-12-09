@@ -154,10 +154,14 @@
 					</div>
 					<div class="on-off">
 						<?php
-							$fav = $db->query("SELECT u_id, q_id FROM favorite WHERE u_id = ".$_SESSION["id"]." AND q_id = ".$row["id"]);
-							$count = $fav->rowCount();
-							if ($count > 0) {
-								$star = "star-on";
+							if ($logged_in) {
+								$fav = $db->query("SELECT u_id, q_id FROM favorite WHERE u_id = ".$_SESSION["id"]." AND q_id = ".$row["id"]);
+								$count = $fav->rowCount();
+								if ($count > 0) {
+									$star = "star-on";
+								} else {
+									$star = "star-off";
+								}
 							} else {
 								$star = "star-off";
 							}
