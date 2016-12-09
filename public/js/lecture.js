@@ -14,22 +14,22 @@ function lectureReady(){
         alert("등록 에러! X(");
       }
       else{
-        appendComment(da);
+        // appendComment(da);
       }
     });
   });
   $(".threads").scroll(function(){
 
     if($(this).scrollTop() == 0){
-      var date = $(".thread span.date")[0].innerHTML;
+      var date = $("span.date")[0].innerHTML;
       var url = window.location;
       var parameter = url.search.split("?")[1];
-      console.log(parameter);
-
+      var params = parameter+"&date="+date;
+      console.log(params);
       $.ajax({
         url: "../php/load-thread.php",
         type: "POST",
-        data: parameter+"&date="+date,
+        data: params,
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"
       }).done(function(da){
