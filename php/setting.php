@@ -177,11 +177,13 @@
               <div class="btn-group" role="group">
                 <button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
               </div>
+
               <div class="btn-group btn-delete hidden" role="group">
-                <button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Delete</button>
+                <button type="button" id="deleteDialogAssistant" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Delete</button>
               </div>
+
               <div class="btn-group" role="group">
-                <button type="button" id="saveImage" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
+                <button type="button" id="saveDialogAssistant" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
               </div>
             </div>
           </div>
