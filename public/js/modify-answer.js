@@ -1,33 +1,13 @@
 function answerModify(){
-	$("a.answer_modify").on('click', function () {
+	$(".answer_modify").on('click', function () {
+
 		console.log($(this).parent().siblings('.overflow').children('.content').attr("class"));
 		console.log($(this).text());
 		if($(this).text() == "수정"){
 			var content = $(this).parent().siblings('.overflow').children('.content');
 			var contentText = $(content).html();
 			content.empty();
-			// var form = document.createElement("form");
-			// $(form).attr('action', 'question.php');
-			// var divWndEditor = document.createElement("div");
-			// $(divWndEditor).attr('id', 'wnd-editor');
-			// var divButton = document.createElement("div");
-			// $(divButton).attr('id', 'wmd-button-bar');
-			// var textarea = document.createElement("textarea");
-			// $(textarea).attr('id', 'wnd-input');
-			// divWndEditor.append(textarea);
-			// divWndEditor.append(divButton);
-			// var divPreview = document.createElement("div");
-			// $(divPreview).attr('id', 'wnd-preview');
-			// form.append(divWndEditor);
-			// form.append("<hr>");
-			// form.append(divPreview);
-			// form.append("<hr>");
-			// content.append(form);
-	    	// var modifyArea = document.createElement("textarea");  // Create with DOM
-	    	// modifyArea.innerHTML = contentText;
-	    	// $(modifyArea).css({"width":"1000px", "height":"250px"});
-	    	// $(modifyArea).wmd();
-	    	// content.append(modifyArea);
+
 	    	content.append("<iframe src=\"/view/modify-answer.php\" width=\"1000\" height=\"500\"></iframe>");
 	    	$(this).text("완료");
 		}else{

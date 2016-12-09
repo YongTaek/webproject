@@ -26,7 +26,7 @@ $(".star-off, .star-on").on('click', function () {
 					$(this).removeClass("star-off");
 					$(this).addClass("star-on");
 				}
-  		}
+  			}
 		}
 	});
 });
