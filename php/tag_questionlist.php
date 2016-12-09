@@ -134,7 +134,7 @@
 							$tags = $db->query("SELECT distinct name FROM tag_question tq JOIN tag t WHERE t_id = id AND q_id = ".$row["id"]);
 							foreach ($tags as $tag) {
 						?>
-						<a href="tag_questionlist.php?id=<?= $tag["name"] ?>" class= "tag"><?= $tag["name"] ?></a>
+						<a href="tag_questionlist.php" class= "tag"><?= $tag["name"] ?></a>
 						<?php
 							}
 						?>
