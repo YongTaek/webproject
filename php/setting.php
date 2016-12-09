@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="/public/css/base.css" type="text/css">
   <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
 
-  <script src="/public/js/bootstrap.min.js"></script>
+ 
 
   <script type="text/javascript">
     <?php if (isset($_SESSION["id"]) && isset($_SESSION["favQuestion"]) && isset($_SESSION["openLecture"])) { ?>
@@ -29,6 +29,7 @@
   <script src="/public/js/push.js"></script>
   <script src="/public/js/lec-open-close.js"></script>
   <script src="/public/js/pusher.js"></script>
+  <script src="/public/js/bootstrap.min.js"></script>
 
 </head>
 <body>
