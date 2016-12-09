@@ -44,6 +44,9 @@ for (var i = 0; i < lectureArray.length; i++) {
   		"debug": false,
   		"newestOnTop": false,
   		"progressBar": false,
+      "onclick" : function () {
+        window.location.href = data.url;
+      },
   		"positionClass": "toast-top-right",
   		"preventDuplicates": true,
   		"showDuration": "300",
@@ -63,4 +66,7 @@ for (var i = 0; i < lectureArray.length; i++) {
   	// 골라서 쓰기
     Command: toastr["success"](data);
   });
+}
+function linkUrl(data) {
+
 }
