@@ -9,7 +9,7 @@ function func(){
 		}
 
 		$.ajax({
-			url: "lec-open-close"
+			url: "lec-open-close.php",
 			context: this,
 			data: {
 				id: status
