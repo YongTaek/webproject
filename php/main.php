@@ -24,7 +24,6 @@
 			}
 		?>
 			var a = <?php echo json_encode($array); ?>;
-			console.log(a);
 		<?php } ?>
 	</script>
 	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
@@ -32,6 +31,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="/public/js/push.js"></script>
+	<script src="/public/js/main.js"></script>
 </head>
 <body>
 	<header role = "banner" class="banner-color">
