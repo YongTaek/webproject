@@ -34,6 +34,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 				<li class="pull-left"><a href="/php/noticelist.php" class="menu-item" >NOTICE</a></li>
 				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item active">QUESTION</a></li>
 				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
+				<li class="pull-left"><a href="/view/lecture-list.php" class="menu-item active">LECTURE</a></li>
 			</ul>
 			<div role="login" class="pull-right">
 				<?php if ($logged_in) { ?>

@@ -30,6 +30,7 @@
 				<li class="pull-left"><a href="/php/noticelist.php" class="menu-item" >NOTICE</a></li>
 				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item active">QUESTION</a></li>
 				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
+				<li class="pull-left"><a href="/view/lecture-list.php" class="menu-item active">LECTURE</a></li>
 			</ul>
 			<div role="login" class="pull-right">
 				<?php if ($logged_in) { ?>
@@ -131,10 +132,10 @@
 					</h3>
 					<div class= "tags">
 						<?php
-							$tags = $db->query("SELECT distinct name FROM tag_question tq JOIN tag t WHERE t_id = id AND q_id = ".$row["id"]);
+							$tags = $db->query("SELECT distinct name, t.id FROM tag_question tq JOIN tag t WHERE t_id = id AND q_id = ".$row["id"]);
 							foreach ($tags as $tag) {
 						?>
-						<a href="tag_questionlist.php?tag=<?= $tag["name"] ?>" class= "tag"><?= $tag["name"] ?></a>
+						<a href="tag_questionlist.php?id=<?= $tag["id"] ?>" class= "tag"><?= $tag["name"] ?></a>
 						<?php
 							}
 						?>
