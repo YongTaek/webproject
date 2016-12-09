@@ -88,7 +88,11 @@ $(".vote-up-off").on('click', function () {
 		},
 		success: function (data) {
 			if (data.error === "false") {
-				$(this)[0].parentElement.childNodes[5].textContent = $(this)[0].parentElement.childNodes[5].textContent + 1;
+				if (t == "question") {
+					$(this)[0].parentElement.childNodes[7].textContent = parseInt($(this)[0].parentElement.childNodes[7].textContent) + 1;
+				} else {
+					$(this)[0].parentElement.childNodes[5].textContent = parseInt($(this)[0].parentElement.childNodes[5].textContent) + 1;
+				}
 			}
 		}
 	});
@@ -113,7 +117,11 @@ $(".vote-down-off").on('click', function () {
 		},
 		success: function (data) {
 			if (data.error === "false") {
-				$(this)[0].parentElement.childNodes[5].textContent = $(this)[0].parentElement.childNodes[5].textContent - 1;
+				if (t == "question") {
+					$(this)[0].parentElement.childNodes[7].textContent = parseInt($(this)[0].parentElement.childNodes[7].textContent) - 1;
+				} else {
+					$(this)[0].parentElement.childNodes[5].textContent = parseInt($(this)[0].parentElement.childNodes[5].textContent) - 1;
+				}
 			}
 		}
 	});
