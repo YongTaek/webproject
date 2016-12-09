@@ -40,7 +40,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 				<?php if ($logged_in) { ?>
 				<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 				<div class="pull-right vr"></div>
-				<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
+				<a id="mypage" href="/php/changepw.php" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
 				<?php } else { ?>
 				<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
