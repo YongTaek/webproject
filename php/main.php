@@ -18,9 +18,13 @@
 			$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
 			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$rows = $db->query("SELECT q_id from favorite where u_id=$userId");
+			$array = array();
+			foreach ($rows as $row) {
+				$array[] = $row["q_id"];
+			}
+			$_SESSION["favQuestion"] = $array;
 		?>
-			var a = <?php echo json_encode($rows); ?>
-			console.log(a);
+			var a = <?php echo json_encode($_SESSION["favQuestion"]); ?>;
 		<?php } ?>
 	</script>
 	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
@@ -28,6 +32,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="/public/js/push.js"></script>
+	<script src="/public/js/main.js"></script>
 </head>
 <body>
 	<header role = "banner" class="banner-color">
@@ -37,7 +42,7 @@
 				<li class="pull-left"><a href="/php/noticelist.php" class="menu-item" >NOTICE</a></li>
 				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item">QUESTION</a></li>
 				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
-				<li class="pull-left"><a href="/view/lecture-list.php" class="menu-item active">LECTURE</a></li>
+				<li class="pull-left"><a href="/view/lecture-list.php" class="menu-item">LECTURE</a></li>
 			</ul>
 			<div role="login" class="pull-right">
 				<?php
@@ -46,7 +51,7 @@
 				?>
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
-					<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
+					<a id="mypage" href="/php/changepw.php" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
 					<ul class="hidden" id="setting">
 						<li><a href="user-setting.php">Setting</a></li>
 					</ul>

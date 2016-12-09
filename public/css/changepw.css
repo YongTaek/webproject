@@ -137,6 +137,10 @@ content form{
     background: url("../img/login_button_hover.png") center no-repeat #ffbbbe;
 }
 
+#newPassword {
+    bottom: 25px;
+}
+
 /* animation  */
 content form input, .login_icon{
     transition: all 0.5s ease;
