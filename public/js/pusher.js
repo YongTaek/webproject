@@ -92,7 +92,6 @@ if ($.inArray(parseInt(r_id), questionArray) < 0) {
 		// http://codeseven.github.io/toastr/demo.html
 		var link = document.location.href;
 		if (link === data.url) {
-			alert("asdf");
 			appendComment(data);
 		} else {
 			toastr.options = {
