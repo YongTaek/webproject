@@ -16,6 +16,8 @@ for (var i = 0; i < questionArray.length; i++) {
   		"newestOnTop": false,
   		"progressBar": false,
       "onclick" : function () {
+				var link = document.location.href;
+				console.log(link);
         window.location.href = data.url;
       },
   		"positionClass": "toast-top-right",
