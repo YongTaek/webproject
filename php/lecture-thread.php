@@ -15,6 +15,7 @@
           <span class="writer">
             <?= $userName ?>
           </span>
+          <br>
           <span class="date">
             <?= $time ?>
           </span>
