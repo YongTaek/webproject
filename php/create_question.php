@@ -8,6 +8,7 @@
   $tag = $_POST["tags"];
   $time = date("Y-m-d H:i:s");
   $num = count($tag);
+  var_dump($tag);
   try {
     $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -26,7 +27,7 @@
         $db->query("INSERT INTO tag_question(t_id, q_id) values(".$t["id"].",".$q["id"].")");
       }
    }
-    header("Location: question.php?id=".$q["id"]);
+    // header("Location: question.php?id=".$q["id"]);
   } catch (PDOException $e) {
     echo $tag;
     echo $e->getMessage();
