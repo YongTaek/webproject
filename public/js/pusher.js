@@ -18,7 +18,7 @@ for (var i = 0; i < questionArray.length; i++) {
       "onclick" : function () {
 				var link = document.location.href;
 				console.log(link);
-        window.location.href = data.url;
+        // window.location.href = data.url;
       },
   		"positionClass": "toast-top-right",
   		"preventDuplicates": true,
@@ -53,7 +53,7 @@ for (var i = 0; i < lectureArray.length; i++) {
       "onclick" : function () {
 				var link = document.location.href;
 				console.log(link);
-        window.location.href = data.url;
+        // window.location.href = data.url;
       },
   		"positionClass": "toast-top-right",
   		"preventDuplicates": true,
