@@ -59,7 +59,7 @@ session_start();
 		$u_id = $_SESSION["id"];
 		$rows = $db->query("SELECT title, content FROM question WHERE u_id = $u_id AND id = $id");
 		
-		$row = $rows->fetch();
+		//$row = $rows->fetch();
 	}
 	?>
 	<form action='submit_answer_modify.php' method="post">
