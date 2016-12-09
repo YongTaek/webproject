@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  $logged_in = false;
+  if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
+    $logged_in = true;
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +42,7 @@
         <li class="pull-left"><a href="/php/lecture-list.php" class="menu-item">LECTURE</a></li>
       </ul>
       <div role="login" class="pull-right">
-        <?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
+        <?php if ($logged_in) { ?>
         <a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
         <div class="pull-right vr"></div>
         <a id="mypage" href="/php/changepw.php" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
@@ -69,24 +76,18 @@
         </tr>
       </thead>
       <tbody>
+      <?php
+        $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $rows = $db->query("SELECT id, name FROM lecture");
+        foreach ($rows as $row) { ?>
         <tr>
-          <td>1</td>
-          <td>Javascript</td>
+          <td><?= $row["id"] ?></td>
+          <td><?= $row["name"] ?></td>
           <td><a href="#" class="lecture-open">Open</a></td>
-          <td><a href="#" class="lecture-change">Change</a></td>
+          <td><a href="lecture-upload.php" class="lecture-change">Change</a></td>
         </tr>
-        <tr>
-          <td>1</td>
-          <td>Javascript</td>
-          <td><a href="#" class="lecture-open">Open</a></td>
-          <td><a href="#" class="lecture-change">Change</a></td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Javascript</td>
-          <td><a href="#" class="lecture-open">Open</a></td>
-          <td><a href="#" class="lecture-change">Change</a></td>
-        </tr>
+       <?php } ?>
       </tbody>
     </table>
     <div id = "setting-student">

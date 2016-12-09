@@ -16,7 +16,9 @@ for (var i = 0; i < questionArray.length; i++) {
   		"newestOnTop": false,
   		"progressBar": false,
       "onclick" : function () {
-        window.location.href = data.url;
+				var link = document.location.href;
+				console.log(link);
+        // window.location.href = data.url;
       },
   		"positionClass": "toast-top-right",
   		"preventDuplicates": true,
@@ -49,7 +51,9 @@ for (var i = 0; i < lectureArray.length; i++) {
   		"newestOnTop": false,
   		"progressBar": false,
       "onclick" : function () {
-        window.location.href = data.url;
+				var link = document.location.href;
+				console.log(link);
+        // window.location.href = data.url;
       },
   		"positionClass": "toast-top-right",
   		"preventDuplicates": true,
