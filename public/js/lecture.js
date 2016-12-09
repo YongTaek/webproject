@@ -1,4 +1,5 @@
 function lectureReady(){
+
   $("#submit").click(function (event){
     var params = $(this).parent().serialize();
     console.log(params);
@@ -106,3 +107,7 @@ channel.bind('new_comment', function(data) {
   toastr.error(data.message, '질문 실패');
 	// 골라서 쓰기
 });
+
+$(window).load(function(){
+  $(".threads").animate({scrollTop: $(".threads").prop("scrollHeight")});
+})
