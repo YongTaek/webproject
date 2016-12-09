@@ -17,13 +17,11 @@ function func(){
 			success: function (data){
 				if(data.error === "false"){
 					if (status == "open") {
+						$(this).text("Close");
+						$(this).addClass("lecture-close");
+					} else {
 						$(this).text("Open");
 						$(this).removeClass("lecture-close");
-						$(this).addClass("lecture-open");
-					} else {
-						$(this).text("Close");
-						$(this).removeClass("lecture-open");
-						$(this).addClass("lecture-close");
 					}
 				}
 			}
