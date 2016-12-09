@@ -18,8 +18,12 @@
 			$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
 			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$rows = $db->query("SELECT q_id from favorite where u_id=$userId");
+			$array = array();
+			foreach ($rows as $row) {
+				$array[] = $row["q_id"];
+			}
 		?>
-			var a = <?php echo json_encode($rows); ?>
+			var a = <?php echo json_encode($array); ?>
 			console.log(a);
 		<?php } ?>
 	</script>
