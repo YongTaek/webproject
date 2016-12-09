@@ -2,8 +2,8 @@
   <div class="threads">
     <?php
       $comments = $db->query("SELECT c.id, c.content, c.time, u.name from comment c join lecture l on c.type='lecture' and l.id=c.reference_id join user u on u.id=c.u_id where c.reference_id=$id order by time limit 10 ");
-      $comments->fetch();
-      for ($i=0; $i < $comments; $i++) {
+      $comments = $comments->fetch();
+      for ($i=0; $i < $comments.length; $i++) {
         $userName = $comments[$i]['name'];
         $time = $comment[$i]['time'];
         $content = $comment[$i]['content'];
@@ -22,7 +22,7 @@
           </span>
     </div>
     <?php
-        $comments->fetch();
+        $comments = $comments->fetch();
         }
     ?>
 
