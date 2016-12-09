@@ -23,7 +23,7 @@
 				$array[] = $row["q_id"];
 			}
 		?>
-			var a = <?php echo json_encode($array); ?>
+			var a = <?php echo json_encode($array); ?>;
 			console.log(a);
 		<?php } ?>
 	</script>
