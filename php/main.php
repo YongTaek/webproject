@@ -10,6 +10,19 @@
 	<link rel="stylesheet" href="/public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="/public/css/main.css" type="text/css">
 	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
+	<script type="text/javascript">
+		<?php
+			if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
+			$isLogin = true;
+			$userId = $_SESSION["id"];
+			$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$rows = $db->query("SELECT q_id from favorite where u_id=$userId");
+		?>
+			var a = <?php echo json_encode($rows) ?>
+			console.log(a);
+		<?php } ?>
+	</script>
 	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
@@ -27,7 +40,10 @@
 				<li class="pull-left"><a href="/view/lecture-list.php" class="menu-item active">LECTURE</a></li>
 			</ul>
 			<div role="login" class="pull-right">
-				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
+				<?php
+						if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
+
+				?>
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
 					<a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
