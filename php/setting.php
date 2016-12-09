@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  $logged_in = false;
+  if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
+    $logged_in = true;
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +14,9 @@
   <link rel="stylesheet" href="/public/css/setting.css" type="text/css">
   <link rel="stylesheet" href="/public/css/base.css" type="text/css">
   <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
+
+  <script src="/public/js/bootstrap.min.js"></script>
+
   <script type="text/javascript">
     <?php if (isset($_SESSION["id"]) && isset($_SESSION["favQuestion"]) && isset($_SESSION["openLecture"])) { ?>
       var questionArray = <?php echo json_encode($_SESSION["favQuestion"]); ?>;
@@ -14,7 +24,6 @@
     <?php } ?>
   </script>
   <script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="//js.pusher.com/3.2/pusher.min.js"></script>
   <script src="/public/js/push.js"></script>
@@ -33,7 +42,7 @@
         <li class="pull-left"><a href="/php/lecture-list.php" class="menu-item">LECTURE</a></li>
       </ul>
       <div role="login" class="pull-right">
-        <?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
+        <?php if ($logged_in) { ?>
         <a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
         <div class="pull-right vr"></div>
         <a id="mypage" href="/php/changepw.php" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
@@ -67,24 +76,27 @@
         </tr>
       </thead>
       <tbody>
+      <?php
+        $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $rows = $db->query("SELECT id, name, url, open FROM lecture");
+        foreach ($rows as $row) {
+        if($row["open"] == 0){
+          $status = "Close";
+          $class = "lecture-close";
+        } 
+        else{ 
+          $status = "Open";
+          $class = "lecture-open";
+        }
+        ?>
         <tr>
-          <td>1</td>
-          <td>Javascript</td>
-          <td><a href="#" class="lecture-open">Open</a></td>
-          <td><a href="#" class="lecture-change">Change</a></td>
+          <td><?= $row["id"] ?></td>
+          <td><a href="<?= $row["url"] ?>"><?= $row["name"] ?></a></td>
+          <td><a href="#" class=<?= $class ?>><?= $status ?></a></td>
+          <td><a href="lecture-upload.php" class="lecture-change">Change</a></td>
         </tr>
-        <tr>
-          <td>1</td>
-          <td>Javascript</td>
-          <td><a href="#" class="lecture-open">Open</a></td>
-          <td><a href="#" class="lecture-change">Change</a></td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Javascript</td>
-          <td><a href="#" class="lecture-open">Open</a></td>
-          <td><a href="#" class="lecture-change">Change</a></td>
-        </tr>
+       <?php } ?>
       </tbody>
     </table>
     <div id = "setting-student">

@@ -1,6 +1,6 @@
 function questionReady(){
 	$(".commentBtn").on("click", function (event){
-		var thiis = $(this);
+		var input = $(this).siblings().not($(this));
 		var form = $(this).parent().parent();
 		var forminput = form.serialize();
 		console.log(forminput);
@@ -14,8 +14,7 @@ function questionReady(){
 				alert("등록 에러! X(");
 			}
 			else{
-				appendComment(da,$(form.parent()).siblings().not(form.parent()));
-				thiis.val("");
+				redirectComment(da,$(form.parent()).siblings().not(form.parent()));
 			}
 		});
 	});
@@ -47,13 +46,14 @@ function appendComment(da,comment){
 	btns.append(edit);
 	btns.append(remove);
 
-	div.append(spancontent);
-	div.append(spanname);
-	div.append(spantime);
+	div.append(spancontent," ");
+	div.append(spanname," ");
+	div.append(spantime," ");
 	div.append(btns);
 
 	$(comment).append(div);
 	$(comment).append($("<hr>"));
+	// window.location.href = document.location.href;
 
 };
 
