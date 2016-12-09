@@ -122,6 +122,7 @@ tr{
 	color: #428bca;
 	padding : 5px;
 	margin-left: 10px;
+	background: white;
 }
 
 #add-student {
@@ -130,6 +131,7 @@ tr{
 	color: #428bca;
 	padding : 5px;
 	margin-left: 10px;
+	background: white;
 }
 
 #link {
@@ -152,3 +154,26 @@ a:hover {
 	text-decoration: none;
 }
 
+.center {
+    margin-top:50px;   
+}
+
+.modal-header {
+	padding-bottom: 5px;
+}
+
+.modal-footer {
+    	padding: 0;
+	}
+    
+.modal-footer .btn-group button {
+	height:40px;
+	border-top-left-radius : 0;
+	border-top-right-radius : 0;
+	border: none;
+	border-right: 1px solid #ddd;
+}
+	
+.modal-footer .btn-group:last-child > button {
+	border-right: 0;
+}

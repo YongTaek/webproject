@@ -35,7 +35,11 @@
 
 .pin-on {
   background-image: url("../img/pin-icon-on.png");
-  
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+  overflow: hidden;
+  margin-left: 7px;
 }
 .star-off {
   background-position: 0 -120px;

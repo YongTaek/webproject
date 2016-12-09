@@ -1,5 +1,6 @@
 function questionReady(){
 	$(".commentBtn").on("click", function (event){
+		var thiis = $(this);
 		var form = $(this).parent().parent();
 		var forminput = form.serialize();
 		console.log(forminput);
@@ -13,7 +14,8 @@ function questionReady(){
 				alert("등록 에러! X(");
 			}
 			else{
-				appendComment(da,form.parent().sibilings().not(form.parent()));
+				$(thiis).val("");
+				appendComment(da,$(form.parent()).siblings().not(form.parent()));
 			}
 		});
 	});
@@ -21,13 +23,12 @@ function questionReady(){
 
 function appendComment(da,comment){
 	console.log(comment);
-	// var da = $.parseJSON(data);
-	// var content = da.content;
-	var content = "hello";
-	// var time = da.time;
-	var time = "2016.12.08 6:45pm";
-	// var name = da.name;
-	var name = "익명";
+	var content = da.content;
+	// var content = "hello";
+	var time = da.time;
+	// var time = "2016.12.08 6:45pm";
+	var name = da.name;
+	// var name = "익명";
 
 	var div = $("<div></div>");
 
@@ -35,9 +36,21 @@ function appendComment(da,comment){
 	var spanname = $("<span></span>").text(name);
 	var spantime = $("<span></span>").text(time);
 
-	div.append(spancontent);
-	div.append(name);
-	div.append(time);
+	var btns = $("<div class = 'comment_btn'></div>");
+
+	var edit = $("<a class = 'btn question_modify' name='question_modify'>수정</a>");
+	edit.href = "modify_question.php?id=" + da.r_id;
+
+	var remove = $("<a class = 'btn question_delete' name = 'question_delete'>삭제</a>");
+	remove.href = "delete_question.php?id=" + da.r_id;
+
+	btns.append(edit);
+	btns.append(remove);
+
+	div.append(spancontent," ");
+	div.append(spanname," ");
+	div.append(spantime," ");
+	div.append(btns);
 
 	$(comment).append(div);
 	$(comment).append($("<hr>"));

@@ -11,25 +11,7 @@
 	<link rel="stylesheet" href="/public/css/main.css" type="text/css">
 	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
 	<script type="text/javascript">
-		<?php
-			if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
-			$isLogin = true;
-			$userId = $_SESSION["id"];
-			$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$rows = $db->query("SELECT q_id from favorite where u_id=$userId");
-			$questionArray = array();
-			foreach ($rows as $row) {
-				$questionArray[] = $row["q_id"];
-			}
-			$lectureArray = array();
-			$rows = $db->query("SELECT id from lecture where open = 1");
-			foreach ($rows as $row ) {
-				$lectureArray[] = $row["id"];
-			}
-			$_SESSION["favQuestion"] = $questionArray;
-			$_SESSION["openLecture"] = $lectureArray;
-		?>
+		<?php if (isset($_SESSION["id"]) && isset($_SESSION["favQuestion"]) && isset($_SESSION["openLecture"])) { ?>
 			var questionArray = <?php echo json_encode($_SESSION["favQuestion"]); ?>;
 			var lectureArray = <?php echo json_encode($_SESSION["openLecture"]); ?>;
 		<?php } ?>
@@ -39,7 +21,8 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="/public/js/push.js"></script>
-	<script src="/public/js/main.js"></script>
+	<script src="/public/js/pusher.js"></script>
+
 </head>
 <body>
 	<header role = "banner" class="banner-color">

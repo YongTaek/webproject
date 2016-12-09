@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	$logged_in = false;
+	if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
+		$logged_in = true;
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,17 +13,24 @@
 	<link rel="shortcut icon" href="icon/SelabFavicon.png" type="image/png">
 	<link rel="stylesheet" href="../public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
-	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="../public/css/create-post.css" />
 	<link rel="stylesheet" type="text/css" href="../public/css/lecture-upload.css" />
-
+	<script type="text/javascript">
+		<?php if (isset($_SESSION["id"]) && isset($_SESSION["favQuestion"]) && isset($_SESSION["openLecture"])) { ?>
+			var questionArray = <?php echo json_encode($_SESSION["favQuestion"]); ?>;
+			var lectureArray = <?php echo json_encode($_SESSION["openLecture"]); ?>;
+		<?php } ?>
+	</script>
+	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<link rel="stylesheet" href="../public/css/notice.css" type="text/css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="/public/js/jquery.form.js"></script>
 	<script src="/public/js/lecture-upload.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="/public/js/push.js"></script>
+	<script src="/public/js/pusher.js"></script>
+
 </head>
 
 <body>
@@ -30,16 +44,13 @@
 				<li class="pull-left"><a href="/php/lecture-list.php" class="menu-item active">LECTURE</a></li>
 			</ul>
 			<div role="login" class="pull-right">
-				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
-				<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
-				<div class="pull-right vr"></div>
-				<a id="mypage" href="/php/changepw.php" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
-				<ul class="hidden" id="setting">
-					<li><a href="user-setting.php">Setting</a></li>
-				</ul>
-				<?php } else { ?>
-				<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
-				<?php } ?>
+				<?php if ($logged_in) { ?>
+          <a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
+          <div class="pull-right vr"></div>
+          <a id="mypage" href="/php/changepw.php" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
+        <?php } else { ?>
+          <a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
+        <?php } ?>
 			</div>
 			<img src="/public/img/search.png" class="pull-right search-icon">
 			<input type="text" class="pull-right search" name="search">
