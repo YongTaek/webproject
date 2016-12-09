@@ -17,6 +17,7 @@
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="../public/js/push.js"></script>
 	<script src="../public/js/question.js"></script>
+	<script src="/public/js/modify-answer.js"></script>
 </head>
 <body>
 	<header role = "banner" class="banner-color">
@@ -114,7 +115,7 @@
 			<span>date</span>
 		</div>
 		<div class="answer_btn">
-			<a class="btn answer_modify" name="answer_modify" href="">수정</a>
+			<a class="btn answer_modify" name="answer_modify" href="#">수정</a>
 			<a class="btn answer_delete" name="answer_delete" href="">삭제</a>
 		</div>
 		<hr>
