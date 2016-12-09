@@ -28,8 +28,8 @@ if (isset($_GET["id"])) {
 		<?php if (isset($_SESSION["id"]) && isset($_SESSION["favQuestion"]) && isset($_SESSION["openLecture"])) { ?>
 			var questionArray = <?php echo json_encode($_SESSION["favQuestion"]); ?>;
 			var lectureArray = <?php echo json_encode($_SESSION["openLecture"]); ?>;
+      console.log(questionArray);
 		<?php } ?>
-    console.log('asdf');
 	</script>
 	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<script src="/public/js/jquery-ui-1.12.1.min.js"></script>
