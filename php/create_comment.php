@@ -20,8 +20,8 @@
     // $pusher->trigger('lecture_channel', 'new_comment', $result);
 
   } catch (PDOException $e) {
-    $e -> getMessage();
-    $result = array("error" => "true", "r_id" => $r_id, "content" => $content, "type" => $type);
+    print $e -> getMessage();
+    // $result = array("error" => "true", "r_id" => $r_id, "content" => $content, "type" => $type);
   }
   print json_encode($result);
 ?>
