@@ -52,7 +52,7 @@ $(".pin-off, .pin-on").on('click', function () {
 		context: this,
 		data: {
 			id: element,
-			type: "unpin",
+			type: t,
 			where: which
 		},
 		success: function (data) {
@@ -67,13 +67,4 @@ $(".pin-off, .pin-on").on('click', function () {
 			}
 		}
 	});
-});
-
-$(".pin-off").on('click', function(){
-
-	if($(this).hasClass("pin-on")){
-		$(this).removeClass("pin-on");
-	} else{
-		$(this).addClass("pin-on");
-	}
 });
