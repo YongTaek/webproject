@@ -8,11 +8,16 @@
           $content = $comment['content'];
     ?>
     <div class="thread">
-          <p>
-            <?= $userName ?>
-            <?= $time ?>
+          <span class="content">
             <?= $content ?>
-          </p>
+          </span>
+          <br>
+          <span class="writer">
+            <?= $userName ?>
+          </span>
+          <span class="date">
+            <?= $time ?>
+          </span>
     </div>
     <?php } ?>
 
