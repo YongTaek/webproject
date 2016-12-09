@@ -152,8 +152,8 @@
 						<h5 class="name">by. <?= $name ?></h5>
 					</div>
 					<div class="on-off">
-						<button class="star-off"></button>
-						<button class="pin-off"></button>
+						<a class="star-off"></a>
+						<a class="pin-off"></a>
 					</div>
 				</div>
 			</div>
