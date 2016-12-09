@@ -20,17 +20,11 @@
           print $time;
     ?>
     <div class="thread">
-          <span class="content">
-            <?= $content ?>
-          </span>
+          <span class="content"><?= $content ?></span>
           <br>
-          <span class="writer">
-            <?= $userName ?>
-          </span>
+          <span class="writer"><?= $userName ?></span>
           <br>
-          <span class="date">
-            <?= $time ?>
-          </span>
+          <span class="date"><?= $time ?></span>
     </div>
     <?php } ?>
   </div>

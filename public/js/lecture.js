@@ -21,7 +21,8 @@ function lectureReady(){
   $(".threads").scroll(function(){
 
     if($(this).scrollTop() == 0){
-      var date = $(".thread span.date")[0].innerHTML;
+      var date = $("span.date")[0].innerHTML;
+      d
       var url = window.location;
       var parameter = url.search.split("?")[1];
       var params = parameter+"&date="+date;
