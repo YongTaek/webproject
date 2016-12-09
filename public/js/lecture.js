@@ -36,7 +36,6 @@ function changeDrawerClass(event) {
     $(event.target).removeClass('opendrawer');
     $(event.target).addClass('closedrawer');
   } else {
-    $(".threads").scrollTop($(".threads").prop("scrollHeight"));
     $(event.target).addClass('opendrawer');
     $(event.target).removeClass('closedrawer');
   };
@@ -107,3 +106,7 @@ channel.bind('new_comment', function(data) {
   toastr.error(data.message, '질문 실패');
 	// 골라서 쓰기
 });
+
+$(window).load(function(){
+  $(".threads").scrollTop($(".threads").prop("scrollHeight"));
+})
