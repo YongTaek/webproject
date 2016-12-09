@@ -94,7 +94,7 @@
         <tr>
           <td><?= $row["id"] ?></td>
           <td><a href="<?= $row["url"] ?>"><?= $row["name"] ?></a></td>
-          <td><a href="#" class=<?= $class ?>><?= $status ?></a></td>
+          <td><a class="<?= $class ?>"><?= $status ?></a></td>
           <td><a href="lecture-upload.php" class="lecture-change">Change</a></td>
         </tr>
        <?php } ?>
