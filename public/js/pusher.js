@@ -20,7 +20,8 @@ for (var i = 0; i < questionArray.length; i++) {
 				if (link === data.url) {
 					appendComment(data);
 				} else {
-        	window.location.href = data.url;
+        	// window.location.href = data.url;
+					alert('asfd');
 				}
       },
   		"positionClass": "toast-top-right",
@@ -56,7 +57,8 @@ for (var i = 0; i < lectureArray.length; i++) {
       "onclick" : function () {
 				var link = document.location.href;
 				if (link === data.url) {
-        	window.location.href = data.url;
+        	// window.location.href = data.url;
+					alert('asfd');
 				}
       },
   		"positionClass": "toast-top-right",
