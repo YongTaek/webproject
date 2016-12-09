@@ -100,7 +100,7 @@
 						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id ORDER BY time DESC");
 					}
 				} else {
-					$rows = $db->query("SELECT q.id, title, time, score, u.name FROM question q JOIN user u ON q.u_id = u.id join tag_question tq on tq.q_id = q.id join tag t on t.id = tq.t_id WHERE t.name = ".$_GET["id"]." ORDER BY time DESC");
+					$rows = $db->query("SELECT q.id, title, time, score, u.name FROM question q JOIN user u ON q.u_id = u.id join tag_question tq on tq.q_id = q.id join tag t on t.id = tq.t_id WHERE t.id = ".$_GET["id"]." ORDER BY time DESC");
 				}
 				foreach ($rows as $row) {
 			?>
