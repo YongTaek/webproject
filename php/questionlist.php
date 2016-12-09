@@ -91,16 +91,16 @@
 				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
 				if (isset($_GET["type"])) {
 					if ($_GET["type"] == "recommend") {
-						$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id ORDER BY score DESC");
+						$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id ORDER BY pinned DESC, score DESC");
 					} elseif ($_GET["type"] == "my") {
 						$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id WHERE q.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
 					} elseif ($_GET["type"] == "favorite") {
 						$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id JOIN favorite f ON q.id = f.q_id WHERE f.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
 					} else {
-						$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id ORDER BY time DESC");
+						$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id ORDER BY pinned DESC, time DESC");
 					}
 				} else {
-					$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id ORDER BY time DESC");
+					$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id ORDER BY pinned DESC, time DESC");
 				}
 				foreach ($rows as $row) {
 			?>
@@ -166,7 +166,7 @@
 								$star = "star-off";
 							}
 						?>
-						<a class="<?= $star ?>" href="#"></a>
+						<a class="<?= $star ?>"></a>
 						<?php
 							if ($row["pinned"]) {
 								$pin = "pin-on";
@@ -174,7 +174,7 @@
 								$pin = "pin-off";
 							}
 						?>
-						<a class="<?= $pin ?>" href="#"></a>
+						<a class="<?= $pin ?>"></a>
 					</div>
 				</div>
 			</div>
