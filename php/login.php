@@ -12,7 +12,19 @@
       $_SESSION["id"] = $row["id"];
       $_SESSION["name"] = $row["name"];
       $_SESSION["auth"] = $row["authority"];
-
+      $userId = $row["id"];
+      $favorites = $db->query("SELECT q_id from favorite where u_id=$userId");
+      $questionArray = array();
+      foreach ($favorites as $row) {
+        $questionArray[] = $row["q_id"];
+      }
+      $lectureArray = array();
+      $lectures = $db->query("SELECT id from lecture where open = 1");
+      foreach ($lectures as $row ) {
+        $lectureArray[] = $row["id"];
+      }
+      $_SESSION["favQuestion"] = $questionArray;
+      $_SESSION["openLecture"] = $lectureArray;
       header("Location: main.php");
       exit;
     } else {
