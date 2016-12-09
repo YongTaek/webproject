@@ -132,7 +132,7 @@
 					</h3>
 					<div class= "tags">
 						<?php
-							$tags = $db->query("SELECT distinct name t.id FROM tag_question tq JOIN tag t WHERE t_id = id AND q_id = ".$row["id"]);
+							$tags = $db->query("SELECT distinct name, t.id FROM tag_question tq JOIN tag t WHERE t_id = id AND q_id = ".$row["id"]);
 							foreach ($tags as $tag) {
 						?>
 						<a href="tag_questionlist.php?id=<?= $tag["id"] ?>" class= "tag"><?= $tag["name"] ?></a>
