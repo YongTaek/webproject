@@ -9,7 +9,7 @@ function questionReady(){
 			data : forminput,
 			dataType : "json"
 		}).done(function (da) {
-			if(da.error == "false"){
+			if(da.error == "true"){
 				alert("등록 에러! X(");
 			}
 			else{
