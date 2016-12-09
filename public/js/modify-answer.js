@@ -23,12 +23,12 @@ function answerModify(){
 			// form.append(divPreview);
 			// form.append("<hr>");
 			// content.append(form);
-	    	var modifyArea = document.createElement("textarea");  // Create with DOM
-	    	modifyArea.innerHTML = contentText;
-	    	$(modifyArea).css({"width":"1000px", "height":"250px"});
-	    	$(modifyArea).wmd();
-	    	content.append(modifyArea);
-	    	//content.append("<iframe src=\"/view/modify-answer.php\" width=\"555\" height=\"200\"></iframe>");
+	    	// var modifyArea = document.createElement("textarea");  // Create with DOM
+	    	// modifyArea.innerHTML = contentText;
+	    	// $(modifyArea).css({"width":"1000px", "height":"250px"});
+	    	// $(modifyArea).wmd();
+	    	// content.append(modifyArea);
+	    	content.append("<iframe src=\"/view/modify-answer.php\" width=\"1000\" height=\"500\"></iframe>");
 	    	$(this).text("완료");
 		}else{
 			$(this).text("수정");
