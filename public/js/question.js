@@ -14,7 +14,11 @@ function questionReady(){
 				alert("등록 에러! X(");
 			}
 			else{
-				redirectComment(da,$(form.parent()).siblings().not(form.parent()));
+				var url = document.location.href;
+				var params = url.substring(url.indexOf("?") +1, url.length);
+ 				if (parseInt(params) === parseInt(da.r_id)) {
+					appendComment(da,$(form.parent()).siblings().not(form.parent()));
+				}
 			}
 		});
 	});

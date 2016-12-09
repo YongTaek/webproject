@@ -78,6 +78,10 @@
 					<div class="tab url">
 						<input type="input" name="url">
 					</div>
+					<?php
+					if(isset($_GET["id"])){ ?>
+						<input type="hidden" name="id" value="<?= $_GET["id"] ?>">
+					<?php }?>
 				</form>
 				<div class='buttons'>
 					<input id ='sub-mit' form = "form" class='btn btn-primary' type='submit' value="submit">

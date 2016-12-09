@@ -51,7 +51,6 @@ for (var i = 0; i < lectureArray.length; i++) {
 		var link = document.location.href;
 		console.log("asdf");
 		if (link === data.url) {
-			// window.location.href = data.url;
 			appendComment(data);
 		} else {
 			toastr.options = {
