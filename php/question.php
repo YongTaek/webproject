@@ -84,11 +84,11 @@
 			<div>
 				<div class="vote">
 					<a class="pin-off"></a>
-					<button class="vote-up-off"></button>
+					<a class="vote-up-off"></a>
 					<!-- 추천 수 -->
 					<span class="vote-count"><?= $row["score"] ?></span>
-					<button class="vote-down-off"></button>
-					<button class="star-off"></button>
+					<a class="vote-down-off"></a>
+					<a class="star-off"></a>
 				</div>
 				<!-- question 내용 -->
 				<div class="content">
@@ -160,11 +160,11 @@
 			<hr>
 			<div class="overflow">
 				<div class="vote">
-					<button class="vote-up-off"></button>
+					<a class="vote-up-off"></a>
 					<!-- answer 추천 수 -->
 					<span class="vote-count"><?= $answer["score"] ?></span>
-					<button class="vote-down-off"></button>
-					<button class="star-off"></button>
+					<a class="vote-down-off"></a>
+					<a class="star-off"></a>
 				</div>
 				<div class="content">
 					<?= $answer["content"] ?>

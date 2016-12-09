@@ -46,5 +46,3 @@ $(".pin-off").on('click', function(){
 		$(this).addClass("pin-on");
 	}
 });
-
-
