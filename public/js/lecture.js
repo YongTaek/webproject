@@ -1,3 +1,7 @@
+$(window).on("load",(function(){
+  console.log("hello");
+  $(".threads").scrollTop($(".threads").prop("scrollHeight"));
+});
 function lectureReady(){
   $("#submit").click(function (event){
     var params = $(this).parent().serialize();
@@ -105,9 +109,4 @@ channel.bind('new_comment', function(data) {
 	 //toastr.success(data.message, '질문 등록 성공');
   toastr.error(data.message, '질문 실패');
 	// 골라서 쓰기
-});
-
-$(window).load(function(){
-  console.log("hello");
-  $(".threads").scrollTop($(".threads").prop("scrollHeight"));
 });
