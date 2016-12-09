@@ -14,12 +14,12 @@ function questionReady(){
 				alert("등록 에러! X(");
 			}
 			else{
-				appendComment(da,$(form.parent()).siblings().not(form.parent()));
+				// appendComment(da,$(form.parent()).siblings().not(form.parent()));
+				window.location.href = document.location.href;
 			}
 		});
 	});
 };
-
 function appendComment(da,comment){
 	console.log(comment);
 	var content = da.content;
