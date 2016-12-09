@@ -23,16 +23,59 @@ function answerModify(){
 			// form.append(divPreview);
 			// form.append("<hr>");
 			// content.append(form);
-	    	// var modifyArea = document.createElement("textarea");  // Create with DOM
-	    	// modifyArea.innerHTML = contentText;
-	    	// $(modifyArea).css({"width":"1000px", "height":"250px"});
-	    	// content.append(modifyArea);
-	    	content.append("<form action=\"question.php\"><div id=\"wmd-editor\"><div id=\"wmd-button-bar\"></div><textarea id=\"wmd-input\"></textarea></div><hr><div id=\"wmd-preview\" class=\"wmd-preview\"></div><hr><input class=\"btn btn-primary\" type=\"submit\" value=\"submit\" /></form>");
+	    	var modifyArea = document.createElement("textarea");  // Create with DOM
+	    	modifyArea.innerHTML = contentText;
+	    	$(modifyArea).css({"width":"1000px", "height":"250px"});
+	    	$(modifyArea).wmd();
+	    	content.append(modifyArea);
+	    	//content.append("<iframe src=\"/view/modify-answer.php\" width=\"555\" height=\"200\"></iframe>");
 	    	$(this).text("완료");
 		}else{
 			$(this).text("수정");
 		}
 		
-	})
+	});
 }
+
+(function($) {
+    var counter = 0;
+    
+    $.fn.wmd = function(_options) {
+        this.each(function() {
+            var defaults = {"preview": true};
+            var options = $.extend({}, _options || {}, defaults);
+            
+            if (!options.button_bar) {
+                options.button_bar = "wmd-button-bar-" + counter;
+                $("<div/>")
+                    .attr("class", "wmd-button-bar")
+                    .attr("id", options.button_bar)
+                    .insertBefore(this);
+            }
+                
+            if (typeof(options.preview) == "boolean" && options.preview) {
+                options.preview = "wmd-preview-" + counter;
+                $("<div/>")
+                    .attr("class", "wmd-preview")
+                    .attr("id", options.preview)
+                    .insertAfter(this);
+            }
+
+            if (typeof(options.output) == "boolean" && options.output) {
+                options.output = "wmd-output-" + counter;
+                $("<div/>")
+                    .attr("class", "wmd-output")
+                    .attr("id", options.output)
+                    .insertAfter(this);
+            }
+                
+            this.id = this.id || "wmd-input-" + counter;
+            options.input = this.id;
+            
+            setup_wmd(options);
+            counter++;
+        });
+    };
+})(jQuery);
+
 $(document).ready(answerModify);
