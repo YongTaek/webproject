@@ -134,7 +134,7 @@ h2 {
   color: gray;
 }
 
-#comment-write {
+.comment-write {
   width: 95%;
   margin: 0px;
 }
