@@ -12,12 +12,13 @@ $(".star-off, .star-on").on('click', function () {
 			data: {
 				id: element,
 				type: "unfavorite"
+			},
+			success: function (data) {
+				if (!data.error) {
+  				$(this).removeClass("star-on");
+  				$(this).addClass("star-off");
+  			}
 			}
-		}).done(function (data) {
-			if (!data.error) {
-  			$(this).removeClass("star-on");
-  			$(this).addClass("star-off");
-  		}
 		});
 	} else {
 		$.ajax({
@@ -26,12 +27,13 @@ $(".star-off, .star-on").on('click', function () {
 			data: {
 				id: element,
 				type: "favorite"
+			},
+			success: function (data) {
+				if (!data.error) {
+  				$(this).removeClass("star-off");
+  				$(this).addClass("star-on");
+  			}
 			}
-		}).done(function (data) {
-			if (!data.error) {
-  			$(this).removeClass("star-off");
-  			$(this).addClass("star-on");
-  		}
 		});
 	}
 });
