@@ -36,12 +36,6 @@ function appendComment(da,comment){
 	var spanname = $("<span></span>").text(name);
 	var spantime = $("<span></span>").text(time);
 
-	div.append(spancontent);
-	div.append(spanname);
-	div.append(spantime);
-
-	$(comment).append(div);
-
 	var btns = $("<div class = 'question_btn'></div>");
 
 	var edit = $("<a class = 'btn question_modify' name='question_modify'></a>");
@@ -53,7 +47,12 @@ function appendComment(da,comment){
 	btns.append(edit);
 	btns.append(remove);
 
-	$(comment).append(btns);
+	div.append(spancontent);
+	div.append(spanname);
+	div.append(spantime);
+	div.append(btns);
+
+	$(comment).append(div);
 	$(comment).append($("<hr>"));
 
 };
