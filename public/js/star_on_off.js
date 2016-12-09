@@ -1,14 +1,16 @@
 
-$(".star-off").on('click', function () {
+function favorite(event) {
 
 	if (window.location.pathname == "/php/questionlist.php")
   	$.get("favorite.php", 
-  		{ id: $(this).parentNode.parentNode.parentNode.getElementsByClassName("mini-count")[0].childNodes[1].textContent,
+  		{ id: event[0].parentElement.parentElement.parentElement.getElementsByClassName("mini-count")[0].childNodes[1].textContent,
   			type: "favorite" })
   	.done(function (data) {
   		if (!data.error) {
-  			$(this).removeClass("star-off");
-  			$(this).addClass("star-on");
+  			event.removeClass("star-off");
+  			event.addClass("star-on");
+  			event.off();
+  			event.on('click', unfavorite);
   		}
 		});
 	if (window.location.pathname == "/php/question.php")
@@ -17,23 +19,26 @@ $(".star-off").on('click', function () {
   			type: "favorite" })
   	.done(function(data) {
   		if (!data.error) {
-  			$(this).removeClass("star-off");
-  			$(this).addClass("star-on");
+  			event.removeClass("star-off");
+  			event.addClass("star-on");
+  			event.off();
+  			event.on('click', unfavorite);
   		}
   	});
+}
 
-})
-
-$(".star-on").on('click', function () {
+function unfavorite(event) {
 
 	if (window.location.pathname == "/php/questionlist.php")
   	$.get("favorite.php", 
-  		{ id: $(this).parentNode.parentNode.parentNode.getElementsByClassName("mini-count")[0].childNodes[1].textContent,
+  		{ id: event[0].parentElement.parentElement.parentElement.getElementsByClassName("mini-count")[0].childNodes[1].textContent,
   			type: "unfavorite" })
   	.done(function (data) {
   		if (!data.error) {
-  			$(this).removeClass("star-on");
-  			$(this).addClass("star-off");
+  			event.removeClass("star-on");
+  			event.addClass("star-off");
+  			event.off();
+  			event.on('click', favorite);
   		}
 		});
 	if (window.location.pathname == "/php/question.php")
@@ -42,12 +47,17 @@ $(".star-on").on('click', function () {
   			type: "unfavorite" })
   	.done(function(data) {
   		if (!data.error) {
-  			$(this).removeClass("star-on");
-  			$(this).addClass("star-off");
+  			event.removeClass("star-on");
+  			event.addClass("star-off");
+  			event.off();
+  			event.on('click', favorite);
   		}
   	});
+}
 
-})
+$(".star-off").on('click', function () { favorite($(this)) });
+
+$(".star-on").on('click', function () { unfavorite($(this)) });
 
 $(".pin-off").on('click', function(){
 
@@ -56,6 +66,6 @@ $(".pin-off").on('click', function(){
 	} else{
 		$(this).addClass("pin-on");
 	}
-})
+});
 
 
