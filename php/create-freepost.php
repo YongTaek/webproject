@@ -32,7 +32,7 @@
   				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
             <a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
             <div class="pull-right vr"></div>
-            <a id="mypage" href="#" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
+            <a id="mypage" href="/php/changepw.php" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
             <ul class="hidden" id="setting">
               <li><a href="user-setting.php">Setting</a></li>
             </ul>
