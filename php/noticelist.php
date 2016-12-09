@@ -63,7 +63,7 @@
 
 			<?php
 				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-				$rows = $db->query("SELECT n.id, title, time, name, pinned FROM notice n JOIN user u ON n.u_id = u.id ORDER BY time DESC");
+				$rows = $db->query("SELECT n.id, title, time, name, pinned FROM notice n JOIN user u ON n.u_id = u.id ORDER BY pinned DESC, time DESC");
 				foreach ($rows as $row) {
 			?>
 
