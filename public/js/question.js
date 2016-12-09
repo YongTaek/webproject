@@ -13,7 +13,7 @@ function questionReady(){
 				alert("등록 에러! X(");
 			}
 			else{
-				appendComment(da,form.parent().sibilings().not(form.parent()));
+				appendComment(da,$(form.parent()).sibilings().not(form.parent()));
 			}
 		});
 	});
