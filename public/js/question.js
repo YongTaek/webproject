@@ -36,7 +36,7 @@ function appendComment(da,comment){
 	var spanname = $("<span></span>").text(name);
 	var spantime = $("<span></span>").text(time);
 
-	var btns = $("<div class = 'question_btn'></div>");
+	var btns = $("<div class = 'comment_btn'></div>");
 
 	var edit = $("<a class = 'btn question_modify' name='question_modify'>수정</a>");
 	edit.href = "modify_question.php?id=" + da.r_id;
