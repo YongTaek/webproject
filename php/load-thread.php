@@ -3,6 +3,7 @@
 
   $r_id = $_POST["id"];
   $time = $_POST["date"];
+  $time = date_parse_from_format("Y-M-d H:i:s",$time);
   header("Content-type: application/json");
   try {
     $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
