@@ -19,7 +19,7 @@
 			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$rows = $db->query("SELECT q_id from favorite where u_id=$userId");
 		?>
-			var a = <?php echo json_encode($rows) ?>
+			var a = <?php echo json_encode($rows); ?>
 			console.log(a);
 		<?php } ?>
 	</script>
