@@ -1,9 +1,10 @@
+function saveFromDialog(){
 
-
-$("#saveDiagramStudent").on('click', function () {
-	console.log("saveDiagramStudent");
+$("#saveDialogStudent").on('click', function () {
+	console.log("saveDialogStudent");
 }
 
-$("#saveDiagramAssistant").on('click', function () {
-	console.log("saveDiagramAssistant");
+$("#saveDialogAssistant").on('click', function () {
+	console.log("saveDialogAssistant");
+}
 }
