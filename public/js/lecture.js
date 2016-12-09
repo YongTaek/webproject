@@ -36,6 +36,7 @@ function changeDrawerClass(event) {
     $(event.target).removeClass('opendrawer');
     $(event.target).addClass('closedrawer');
   } else {
+    $(".threads").scrollTop($(".threads").prop("scrollHeight"));
     $(event.target).addClass('opendrawer');
     $(event.target).removeClass('closedrawer');
   };
@@ -105,8 +106,4 @@ channel.bind('new_comment', function(data) {
 	 //toastr.success(data.message, '질문 등록 성공');
   toastr.error(data.message, '질문 실패');
 	// 골라서 쓰기
-});
-
-$(".threads").load(function(){
-  $(".threads").animate({scrollTop: $(".threads").prop("scrollHeight")});
 });
