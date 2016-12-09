@@ -11,8 +11,15 @@
 	<link rel="stylesheet" href="/public/css/main.css" type="text/css">
 	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
 	<script type="text/javascript">
-		<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
-			var a = 1;
+		<?php
+			if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
+			$isLogin = true;
+			$userId = $_SESSION["id"];
+			$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$rows = $db->query("SELECT q_id from favorite where u_id=$userId");
+		?>
+			var a = <?php echo json_encode($rows) ?>
 			console.log(a);
 		<?php } ?>
 	</script>
