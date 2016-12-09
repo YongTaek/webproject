@@ -30,6 +30,7 @@
 
     $result = array("error" => "false");
   } catch (PDOException $e) {
+    echo $e->getMessage();
     $result = array("error" => "true");
   }
   header("Content-type: application/json");
