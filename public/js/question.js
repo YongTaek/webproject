@@ -20,7 +20,7 @@ function questionReady(){
 	});
 };
 
-function redirectComment(da,comment){
+function appendComment(da,comment){
 	console.log(comment);
 	var content = da.content;
 	// var content = "hello";
