@@ -14,7 +14,7 @@ $(".star-off, .star-on").on('click', function () {
 				type: "unfavorite"
 			},
 			success: function (data) {
-				if (!data.error) {
+				if (data.error === "false") {
   				$(this).removeClass("star-on");
   				$(this).addClass("star-off");
   			}
@@ -29,7 +29,7 @@ $(".star-off, .star-on").on('click', function () {
 				type: "favorite"
 			},
 			success: function (data) {
-				if (!data.error) {
+				if (data.error === "false") {
   				$(this).removeClass("star-off");
   				$(this).addClass("star-on");
   			}
