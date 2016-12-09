@@ -99,16 +99,16 @@
 				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
 				if (isset($_GET["type"])) {
 					if ($_GET["type"] == "recommend") {
-						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id ORDER BY pinned DESC, score DESC");
+						$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id ORDER BY pinned DESC, score DESC");
 					} elseif ($_GET["type"] == "my") {
-						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id WHERE q.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
+						$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id WHERE q.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
 					} elseif ($_GET["type"] == "favorite") {
-						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id JOIN favorite f ON q.id = f.q_id WHERE f.u_id = ".$_SESSION["id"]." ORDER BY pinned DESC, time DESC");
+						$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id JOIN favorite f ON q.id = f.q_id WHERE f.u_id = ".$_SESSION["id"]." ORDER BY pinned DESC, time DESC");
 					} else {
-						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id ORDER BY pinned DESC, time DESC");
+						$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id ORDER BY pinned DESC, time DESC");
 					}
 				} else {
-					$rows = $db->query("SELECT q.id, title, time, score, u.name FROM question q JOIN user u ON q.u_id = u.id join tag_question tq on tq.q_id = q.id join tag t on t.id = tq.t_id WHERE t.id = ".$_GET["id"]." ORDER BY pinned DESC, time DESC");
+					$rows = $db->query("SELECT q.id, title, time, score, u.name, pinned FROM question q JOIN user u ON q.u_id = u.id join tag_question tq on tq.q_id = q.id join tag t on t.id = tq.t_id WHERE t.id = ".$_GET["id"]." ORDER BY pinned DESC, time DESC");
 				}
 				foreach ($rows as $row) {
 			?>
