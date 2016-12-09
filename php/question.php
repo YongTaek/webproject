@@ -251,7 +251,11 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 							}
 						}
 						?>
-						<?php if ($logged_in) { ?>
+						<?php 
+						$u_id = $_SESSION["id"];
+						$isWriteAnswer = $db->query("SELECT id FROM answer WHERE u_id = $u_id AND q_id = ".$_GET["id"]);
+						$num = $isWriteAnswer->rowCount();
+						if ($logged_in && $num == 0) { ?>
 						<div class="write-answer">
 							<h2>Your Answer</h2>
 							<form action="create_answer.php" method="post">
