@@ -35,8 +35,8 @@ function appendComment(da,comment){
 	var spantime = $("<span></span>").text(time);
 
 	div.append(spancontent);
-	div.append(name);
-	div.append(time);
+	div.append(spanname);
+	div.append(spantime);
 
 	$(comment).append(div);
 	$(comment).append($("<hr>"));
