@@ -149,7 +149,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 							<form action="create_comment.php" method="POST">
 								<label>Comment:</label>
 								<div>
-									<input id="comment-write" type="text" name="comment" />
+									<input id="comment-write" type="text" name="content" />
 									<input class="btn commentBtn submit" id="submit" type="button" value="등록"/>
 								</div>
 								<input type="hidden" name="id" value="<?= $_GET["id"] ?>" />
@@ -224,7 +224,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 										<form action="create_comment.php" method="POST">
 											<label>Comment:</label>
 											<div>
-												<input id="comment-write" type="text" name="comment" />
+												<input id="comment-write" type="text" name="content" />
 												<input class="commentBtn" id="submit" type="button" value="등록"/>
 											</div>
 											<input type="hidden" name="id" value="<?= $answer[0] ?>" />
