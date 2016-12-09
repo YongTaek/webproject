@@ -54,7 +54,7 @@ function appendComment(da,comment){
 
 	// $(comment).append(div);
 	// $(comment).append($("<hr>"));
-	window.location.href = "/php/question.php?id="+da.r_id;
+	window.location.href = document.location.href;
 
 };
 

@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="/public/css/base.css" type="text/css">
   <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
 
-  <script src="/public/js/bootstrap.min.js"></script>
+ 
 
   <script type="text/javascript">
     <?php if (isset($_SESSION["id"]) && isset($_SESSION["favQuestion"]) && isset($_SESSION["openLecture"])) { ?>
@@ -29,6 +29,7 @@
   <script src="/public/js/push.js"></script>
   <script src="/public/js/lec-open-close.js"></script>
   <script src="/public/js/pusher.js"></script>
+  <script src="/public/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -76,24 +77,18 @@
         </tr>
       </thead>
       <tbody>
+      <?php
+        $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $rows = $db->query("SELECT id, name, url FROM lecture");
+        foreach ($rows as $row) { ?>
         <tr>
-          <td>1</td>
-          <td>Javascript</td>
+          <td><?= $row["id"] ?></td>
+          <td><a href="<?= $row["url"] ?>"><?= $row["name"] ?></a></td>
           <td><a href="#" class="lecture-open">Open</a></td>
-          <td><a href="#" class="lecture-change">Change</a></td>
+          <td><a href="lecture-upload.php" class="lecture-change">Change</a></td>
         </tr>
-        <tr>
-          <td>1</td>
-          <td>Javascript</td>
-          <td><a href="#" class="lecture-open">Open</a></td>
-          <td><a href="#" class="lecture-change">Change</a></td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Javascript</td>
-          <td><a href="#" class="lecture-open">Open</a></td>
-          <td><a href="#" class="lecture-change">Change</a></td>
-        </tr>
+       <?php } ?>
       </tbody>
     </table>
     <div id = "setting-student">
