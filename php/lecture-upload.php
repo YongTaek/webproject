@@ -85,7 +85,7 @@
 				</form>
 				<div class='buttons'>
 					<input id ='sub-mit' form = "form" class='btn btn-primary' type='submit' value="submit">
-					<a class="btn btn-primary" href="/view/setting.php">cancel</a>
+					<a class="btn btn-primary" href="/php/setting.php">cancel</a>
 				</div>
 			</div>
 		</div>
