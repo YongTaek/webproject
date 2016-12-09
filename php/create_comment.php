@@ -2,8 +2,8 @@
   session_start();
 
   date_default_timezone_set('Asia/Seoul');
-  // require('./library/Pusher.php');
-  // require('./library/push_setting.php');
+  require('./library/Pusher.php');
+  require('./library/push_setting.php');
 
   $r_id = $_POST["id"];
   $u_id = $_SESSION["id"];
@@ -21,7 +21,7 @@
 
   } catch (PDOException $e) {
     print $e -> getMessage();
-    // $result = array("error" => "true", "r_id" => $r_id, "content" => $content, "type" => $type);
+    $result = array("error" => "true", "r_id" => $r_id, "content" => $content, "type" => $type);
   }
   print json_encode($result);
 ?>
