@@ -11,11 +11,17 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 	<title>Question</title>
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="icon/SelabFavicon.png" type="image/png">
-	<script type="text/javascript" src="/public/js/jquery-3.1.1.min.js"></script>
 	<link rel="stylesheet" href="/public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
 	<link rel="stylesheet" href="/public/css/question.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="/public/css/wmd.css" />
+	<script type="text/javascript">
+		<?php if (isset($_SESSION["id"]) && isset($_SESSION["favQuestion"]) && isset($_SESSION["openLecture"])) { ?>
+			var questionArray = <?php echo json_encode($_SESSION["favQuestion"]); ?>;
+			var lectureArray = <?php echo json_encode($_SESSION["openLecture"]); ?>;
+		<?php } ?>
+	</script>
+	<script type="text/javascript" src="/public/js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="/public/js/showdown.js"></script>
 	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 	<link rel="stylesheet" href="/public/css/pusher.css" type="text/css">
@@ -25,6 +31,8 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 	<script src="/public/js/push.js"></script>
 	<script src="../public/js/question.js"></script>
 	<script src="/public/js/modify-answer.js"></script>
+	<script src="/public/js/pusher.js"></script>
+
 </head>
 <body>
 	<header role = "banner" class="banner-color">

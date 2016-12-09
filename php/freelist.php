@@ -11,12 +11,20 @@
 	<link rel="stylesheet" href="/public/css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="/public/css/freelist.css">
 	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
-	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<link rel="stylesheet" href="/public/css/pusher.css" type="text/css">
 	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript">
+		<?php if (isset($_SESSION["id"]) && isset($_SESSION["favQuestion"]) && isset($_SESSION["openLecture"])) { ?>
+			var questionArray = <?php echo json_encode($_SESSION["favQuestion"]); ?>;
+			var lectureArray = <?php echo json_encode($_SESSION["openLecture"]); ?>;
+		<?php } ?>
+	</script>
+	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="/public/js/push.js"></script>
+	<script src="/public/js/pusher.js"></script>
+
 	<meta charset="utf-8">
 	<title>자유 게시판</title>
 </head>
@@ -82,7 +90,7 @@
 			} else {
 				$b_rows = $db->query("SELECT b.id, b.title, time, u.name, pinned FROM board b JOIN user u on b.u_id = u.id ORDER BY pinned DESC, time DESC");
 			}
-			foreach ($b_rows as $row) { 
+			foreach ($b_rows as $row) {
 				$c_rows = $db->query("SELECT distinct c.u_id, c.content, c.time FROM board b JOIN comment c on b.u_id = c.u_id WHERE c.type = 'board' AND c.reference_id = ".$row["id"]);
 				$count = $c_rows->rowCount();
 		?>
