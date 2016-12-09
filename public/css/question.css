@@ -10,12 +10,12 @@
 .vote {
   float: left;
 }
-.vote-up-off, .vote-down-off, .vote-count, .star-off {
+.vote-up-off, .vote-down-off, .vote-count, .star-off, .star-on {
   display: block;
   height: 30px;
   min-width: 46px;
 }
-.vote-up-off, .vote-down-off, .star-off {
+.vote-up-off, .vote-down-off, .star-off, .star-on {
   background-image: url(../img/sprites.svg);
 }
 .vote-up-off {

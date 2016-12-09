@@ -27,7 +27,14 @@
 		} else {
 			$name = $_POST["title"];
 			$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-			$db->query("UPDATE lecture SET name = '$name', url = '$dbUrl' WHERE id = $_POST["id"]");
+			if(isset($_POST["id"])){
+				$id = $_POST["id"];
+				$db->query("UPDATE lecture SET name = '$name', url = '$dbUrl' WHERE id = $id");
+			}
+			else{
+				$db->query("INSERT INTO lecture(name, url) VALUES ('$name', '$dbUrl')");
+
+			}
 			$result = array("error" => "false");
 			print json_encode($result);
 		}
