@@ -59,7 +59,8 @@ for (var i = 0; i < lectureArray.length; i++) {
   	//toastr.info(data.message,'질문 등록');
   	// toastr.warning(data.message, '질문 경고');
   	//toastr.success(data.message, '질문 등록 성공');
-  	toastr.error(data, '질문 실패');
+  	// toastr.error(data, '질문 실패');
   	// 골라서 쓰기
+Command: toastr["success"]("My name is Inigo Montoya. You killed my father. Prepare to die!")
   });
 }
