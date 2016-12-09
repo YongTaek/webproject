@@ -13,6 +13,7 @@
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->query("INSERT INTO question(u_id, title, content, time) VALUES($id, '$title', '$content', '$time')");
     if($num > 0){
+      $tags = explode(",", $tag);
       $questionId = $db->query("SELECT id from question where title='$title' and content='$content' and time='$time'");
       $q = $questionId->fetch();
       foreach ($tags as $tag) { 
@@ -26,8 +27,7 @@
         $db->query("INSERT INTO tag_question(t_id, q_id) values(".$t["id"].",".$q["id"].")");
       }
    }
-   var_dump($tag);
-    // header("Location: question.php?id=".$q["id"]);
+    header("Location: question.php?id=".$q["id"]);
   } catch (PDOException $e) {
     echo $tag;
     echo $e->getMessage();
