@@ -4,6 +4,8 @@ if (isset($_GET["id"])) {
   $id = $_GET["id"];
   $rows = $db->query("SELECT l.id, l.name, l.url from lecture l where l.id = $id");
 	$rows = $rows -> fetch();
+	$s = $db->query("SELECT open from lecture where id = $id");
+	$status = $s -> fetch();
 	$lectureName = $rows['name'];
   $lectureFile = $rows['url'];
   if ($lectureName === "") {
@@ -30,7 +32,11 @@ if (isset($_GET["id"])) {
 	<script src="/public/js/lecture.js" type="text/javascript"></script>
 </head>
 <body>
-	<a href="#" class="closedrawer" id="side"></a>
+<?php
+	if($status != 0) { ?>
+		<a href="#" class="closedrawer" id="side"></a>
+<?php }
+?>
 	<embed src = "<?= $lectureFile ?>"></embed>
 	<div id="comment">
 		<?php include("./lecture-thread.php"); ?>
