@@ -22,8 +22,9 @@
 			foreach ($rows as $row) {
 				$array[] = $row["q_id"];
 			}
+			$_SESSION["favQuestion"] = $array;
 		?>
-			var a = <?php echo json_encode($array); ?>;
+			var a = <?php echo json_encode($_SESSION["favQuestion"]); ?>;
 		<?php } ?>
 	</script>
 	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
