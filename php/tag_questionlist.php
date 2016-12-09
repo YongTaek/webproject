@@ -99,7 +99,7 @@
 						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id ORDER BY time DESC");
 					}
 				} else {
-					$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id ORDER BY time DESC");
+					$rows = $db->query("SELECT q.id, title, time, score, u.name FROM question q JOIN user u ON q.u_id = u.id join tag_question tq on tq.q_id = q.id join tag t on t.id = tq.t_id WHERE t.name = ".$_GET["tag"]." ORDER BY time DESC";);
 				}
 				foreach ($rows as $row) {
 			?>
@@ -134,7 +134,7 @@
 							$tags = $db->query("SELECT distinct name FROM tag_question tq JOIN tag t WHERE t_id = id AND q_id = ".$row["id"]);
 							foreach ($tags as $tag) {
 						?>
-						<a href="tag_questionlist.php?tag=<?= $tag["name"] ?>" class= "tag"><?= $tag["name"] ?></a>
+						<a href="tag_questionlist.php" class= "tag"><?= $tag["name"] ?></a>
 						<?php
 							}
 						?>
