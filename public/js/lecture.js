@@ -108,5 +108,6 @@ channel.bind('new_comment', function(data) {
 });
 
 $(window).load(function(){
+  console.log("hello");
   $(".threads").scrollTop($(".threads").prop("scrollHeight"));
-})
+});
