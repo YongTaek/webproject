@@ -1,6 +1,6 @@
 function questionReady(){
 	$(".commentBtn").on("click", function (event){
-		var thiis = $(this);
+		var input = $(this).siblings().not($(this));
 		var form = $(this).parent().parent();
 		var forminput = form.serialize();
 		console.log(forminput);
@@ -14,7 +14,7 @@ function questionReady(){
 				alert("등록 에러! X(");
 			}
 			else{
-				$(thiis).val("");
+				$(input).val("");
 				appendComment(da,$(form.parent()).siblings().not(form.parent()));
 			}
 		});
