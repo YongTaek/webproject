@@ -23,6 +23,8 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="/public/js/push.js"></script>
+	<script src="../public/js/question.js"></script>
+	<script src="/public/js/modify-answer.js"></script>
 </head>
 <body>
 	<header role = "banner" class="banner-color">
