@@ -18,7 +18,8 @@
     $db->query("INSERT INTO comment(u_id, reference_id, content, time, type) VALUES ($u_id, $r_id, \"$content\", \"$time\", \"$type\")");
     $result = array("error" => "false", "content" => $content, "time" => $time, "name" => $name );
 
-    $pusher->trigger('lecture_channel', 'new_comment', $result);
+
+    $pusher->trigger("$r_id", 'new_comment', $result);
   } catch (PDOException $e) {
     $result = array("error" => "true", "r_id" => $r_id, "content" => $content, "type" => $type);
   }

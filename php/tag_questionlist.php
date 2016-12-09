@@ -30,6 +30,7 @@
 				<li class="pull-left"><a href="/php/noticelist.php" class="menu-item" >NOTICE</a></li>
 				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item active">QUESTION</a></li>
 				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
+				<li class="pull-left"><a href="/php/lecture-list.php" class="menu-item">LECTURE</a></li>
 			</ul>
 			<div role="login" class="pull-right">
 				<?php if ($logged_in) { ?>
@@ -99,7 +100,7 @@
 						$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id ORDER BY time DESC");
 					}
 				} else {
-					$rows = $db->query("SELECT q.id, title, time, score, name FROM question q JOIN user u ON q.u_id = u.id ORDER BY time DESC");
+					$rows = $db->query("SELECT q.id, title, time, score, u.name FROM question q JOIN user u ON q.u_id = u.id join tag_question tq on tq.q_id = q.id join tag t on t.id = tq.t_id WHERE t.id = ".$_GET["id"]." ORDER BY time DESC");
 				}
 				foreach ($rows as $row) {
 			?>
@@ -131,10 +132,10 @@
 					</h3>
 					<div class= "tags">
 						<?php
-							$tags = $db->query("SELECT distinct name FROM tag_question tq JOIN tag t WHERE t_id = id AND q_id = ".$row["id"]);
+							$tags = $db->query("SELECT distinct name, t.id FROM tag_question tq JOIN tag t WHERE t_id = id AND q_id = ".$row["id"]);
 							foreach ($tags as $tag) {
 						?>
-						<a href="tag_questionlist.php" class= "tag"><?= $tag["name"] ?></a>
+						<a href="tag_questionlist.php?id=<?= $tag["id"] ?>" class= "tag"><?= $tag["name"] ?></a>
 						<?php
 							}
 						?>
