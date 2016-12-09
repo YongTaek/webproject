@@ -36,6 +36,7 @@ function changeDrawerClass(event) {
     $(event.target).removeClass('opendrawer');
     $(event.target).addClass('closedrawer');
   } else {
+    $(".threads").scrollTop($(".threads").prop("scrollHeight"));
     $(event.target).addClass('opendrawer');
     $(event.target).removeClass('closedrawer');
   };
