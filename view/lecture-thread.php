@@ -29,7 +29,7 @@
       <span class="date">2016.12.08 6:45pm</span>
     </div>
   </div>
-  <form class="lecture" action="create-comment.php" method="post">
+  <form id="form" class="lecture" action="create-comment.php" method="post">
     <textarea id="input" name="content" cols="23" rows="8"></textarea>
     <input type="text" hidden="hidden" />
     <input type="button" class="btn btn-primary" id="submit" value="등록"/>
