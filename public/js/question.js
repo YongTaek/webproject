@@ -1,13 +1,13 @@
-function questionReady(){
-	
-	$(".commentBtn").click(function (event){
-		console.log("Event:");
+function questionReady(){	
+	$(".commentBtn").on("click", function (event){
+		var forminput = $(this).parent().parent().serialize();
 		$.ajax({
 			url: "../php/create_comment.php",
 			type : "POST",
-			context: $("#input").value
+			data : forminput
 		}).done(function (data) {
-			if(!data['error']){
+			var da = $.parseJSON(data);
+			if(da.error == "true"){
 				alert("등록 에러! X(");
 			};
 		});
