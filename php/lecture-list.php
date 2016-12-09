@@ -68,7 +68,7 @@
       $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $rows = $db->query("SELECT id, name, url FROM lecture");
-      foreach ($rows as $row) { ?>
+      ?>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -76,6 +76,7 @@
             <th>Chapter Name</th>
           </tr>
         </thead>
+        <?php foreach ($rows as $row) { ?>
         <tbody>
           <tr>
             <td><?= $row["id"] ?></td>
