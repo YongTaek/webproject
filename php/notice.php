@@ -103,13 +103,13 @@
 			</form>
 		</div>
 		<!-- comment iterative-->
-		<div class="comment">
+		<div id="comment-list" class="comment">
 				<hr>
 				<?php
 					$comments = $db->query("SELECT content, name, time, u.id FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'notice' AND reference_id = ".$row["id"]);
 					foreach ($comments as $comment) {
 				?>
-				<div>
+				<div class="comment-list">
 					<span><?= $comment["content"] ?></span>
 					<span><?= $comment["name"] ?></span>
 					<span class=""><?= $comment["time"] ?></span>
@@ -127,7 +127,7 @@
 			<form id="form" action="create_comment.php" method="POST">
 				<label>Comment:</label>
 				<div>
-					<input id="comment-write" type="text" name="comment" />
+					<input id="comment-write" type="text" name="content" />
 					<input class="btn" id="submit" type="button" value="등록"/>
 				</div>
 				<input type="hidden" name="id" value="<?= $row["id"] ?>" />

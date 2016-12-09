@@ -16,7 +16,7 @@
       $db->query("INSERT INTO answer(u_id, q_id, content, time) VALUES($u_id, $id, '$content', '$time')");
     }
     else{
-      echo "<script>alert(\"이미 썼자나ㅡㅡ\");</script>";
+      // 한 질문에 답변 여러개 못단다고 알려줘야댐
     }
     header("Location: question.php?id=$id");
   } catch(PDOException $e){
