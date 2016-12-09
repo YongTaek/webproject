@@ -11,7 +11,7 @@
       }
     ?>
     <?php
-      $arrays = array_reverse($array);
+      $arrays = array_reverse($arrays);
       foreach ($arrays as $array) {
           $userName = $array['userName'];
           $time = $array['time'];
