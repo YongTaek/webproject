@@ -37,7 +37,6 @@ if (isset($_GET["id"])) {
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="/public/js/lecture.js" type="text/javascript"></script>
-  <script src="/public/js/pusher.js"></script>
 
 </head>
 <body>
@@ -50,5 +49,6 @@ if (isset($_GET["id"])) {
 	<div id="comment">
 		<?php include("./lecture-thread.php"); ?>
 	</div>
+  <script src="/public/js/pusher.js"></script>
 </body>
 </html>
