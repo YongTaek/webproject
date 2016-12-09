@@ -76,12 +76,10 @@
   z-index: 99;
 }
 .opendrawer {
-  /* background: url('/public/img/sideopen.png') no-repeat; */
-  background: url('public/img/conversation-speech-bubble-.png') no-repeat;
+  background: url('/public/img/sideopen.png') no-repeat;
 }
 .closedrawer {
-  /* background: url('/public/img/sideclose.png') no-repeat; */
-  background: url('public/img/conversation-speech-bubble-.png') no-repeat;
+  background: url('/public/img/sideclose.png') no-repeat;
 }
 
 .writer{
