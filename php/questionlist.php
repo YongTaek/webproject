@@ -11,12 +11,20 @@
 	<link rel="stylesheet" href="/public/css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="/public/css/questionlist.css">
 	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
-	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<link rel="stylesheet" href="/public/css/pusher.css" type="text/css">
 	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript">
+		<?php if (isset($_SESSION["id"]) && isset($_SESSION["favQuestion"]) && isset($_SESSION["openLecture"])) { ?>
+			var questionArray = <?php echo json_encode($_SESSION["favQuestion"]); ?>;
+			var lectureArray = <?php echo json_encode($_SESSION["openLecture"]); ?>;
+		<?php } ?>
+	</script>
+	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="/public/js/push.js"></script>
+	<script src="/public/js/pusher.js"></script>
+
 	<meta charset="utf-8">
 	<title>질문 게시판</title>
 </head>
@@ -95,7 +103,7 @@
 					} elseif ($_GET["type"] == "my") {
 						$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id WHERE q.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
 					} elseif ($_GET["type"] == "favorite") {
-						$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id JOIN favorite f ON q.id = f.q_id WHERE f.u_id = ".$_SESSION["id"]." ORDER BY time DESC");
+						$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id JOIN favorite f ON q.id = f.q_id WHERE f.u_id = ".$_SESSION["id"]." ORDER BY pinned DESC, time DESC");
 					} else {
 						$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id ORDER BY pinned DESC, time DESC");
 					}

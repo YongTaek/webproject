@@ -36,24 +36,23 @@ function appendComment(da,comment){
 	var spanname = $("<span></span>").text(name);
 	var spantime = $("<span></span>").text(time);
 
-	div.append(spancontent);
-	div.append(spanname);
-	div.append(spantime);
+	var btns = $("<div class = 'comment_btn'></div>");
 
-	$(comment).append(div);
-
-	var btns = $("<div class = 'question_btn'></div>");
-
-	var edit = $("<a class = 'btn question_modify' name='question_modify'></a>");
+	var edit = $("<a class = 'btn question_modify' name='question_modify'>수정</a>");
 	edit.href = "modify_question.php?id=" + da.r_id;
 
-	var remove = $("<a class = 'btn question_delete' name = 'question_delete'></a>");
+	var remove = $("<a class = 'btn question_delete' name = 'question_delete'>삭제</a>");
 	remove.href = "delete_question.php?id=" + da.r_id;
 
 	btns.append(edit);
 	btns.append(remove);
 
-	$(comment).append(btns);
+	div.append(spancontent);
+	div.append(spanname);
+	div.append(spantime);
+	div.append(btns);
+
+	$(comment).append(div);
 	$(comment).append($("<hr>"));
 
 };
