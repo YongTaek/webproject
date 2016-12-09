@@ -48,7 +48,14 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 				<?php if ($logged_in) { ?>
 				<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 				<div class="pull-right vr"></div>
-				<a id="mypage" href="/php/changepw.php" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
+				<?php
+					if ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant") {
+						$href = "/php/setting.php";
+					} else {
+						$href = "/php/changepw.php";
+					}
+				?>
+				<a id="mypage" href="<?= $href ?>" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
 				<?php } else { ?>
 				<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
@@ -104,7 +111,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 							<a class="<?= $pin ?>"></a>
 							<?php
 								if ($logged_in) {
-									$fav = $db->query("SELECT u_id, q_id FROM favorite WHERE u_id = ".$_SESSION["id"]." AND q_id = ".$row["id"]);
+									$fav = $db->query("SELECT u_id, q_id FROM favorite WHERE u_id = ".$_SESSION["id"]." AND q_id = ".$_GET["id"]);
 									$count = $fav->rowCount();
 									if ($count > 0) {
 										$star = "star-on";
