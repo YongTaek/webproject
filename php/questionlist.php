@@ -166,7 +166,7 @@
 								$star = "star-off";
 							}
 						?>
-						<a class="<?= $star ?>" href="#"></a>
+						<a class="<?= $star ?>"></a>
 						<?php
 							if ($row["pinned"]) {
 								$pin = "pin-on";
@@ -174,7 +174,7 @@
 								$pin = "pin-off";
 							}
 						?>
-						<a class="<?= $pin ?>" href="#"></a>
+						<a class="<?= $pin ?>"></a>
 					</div>
 				</div>
 			</div>
