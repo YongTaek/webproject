@@ -76,15 +76,15 @@
             <th>Chapter Name</th>
           </tr>
         </thead>
-        <?php foreach ($rows as $row) { ?>
         <tbody>
+        <?php foreach ($rows as $row) { ?>
           <tr>
             <td><?= $row["id"] ?></td>
             <td><a href="<?= $row["url"] ?>"><?= $row["name"] ?></a></td>
           </tr>
+        <?php }?>
         </tbody>
       </table>
-      <?php }?>
     </div>
   </body>
   </html>
