@@ -43,7 +43,7 @@ if (isset($_GET["id"])) {
 <body>
 <?php
 	if($status != 0) { ?>
-		<a href="#" class="closedrawer" id="side"></a>
+		<a class="closedrawer" id="side"></a>
 <?php }
 ?>
 	<embed src = "<?= $lectureFile ?>"></embed>

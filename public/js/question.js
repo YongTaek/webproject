@@ -14,13 +14,13 @@ function questionReady(){
 				alert("등록 에러! X(");
 			}
 			else{
-				// redirectComment(da,$(form.parent()).siblings().not(form.parent()));
+				redirectComment(da,$(form.parent()).siblings().not(form.parent()));
 			}
 		});
 	});
 };
 
-function appendComment(comment){
+function appendComment(da,comment){
 	console.log(comment);
 	var content = da.content;
 	// var content = "hello";
