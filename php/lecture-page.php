@@ -25,7 +25,7 @@ if (isset($_GET["id"])) {
 	<script src="/public/js/jquery-ui-1.12.1.min.js"></script>
   <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-	<script src="//js.pusher.com/3.2/pusher.min.js"></script>.
+	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="/public/js/lecture.js" type="text/javascript"></script>
 </head>
 <body>

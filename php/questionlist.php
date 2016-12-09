@@ -30,6 +30,7 @@
 				<li class="pull-left"><a href="/php/noticelist.php" class="menu-item" >NOTICE</a></li>
 				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item active">QUESTION</a></li>
 				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
+				<li class="pull-left"><a href="/view/lecture-list.php" class="menu-item active">LECTURE</a></li>
 			</ul>
 			<div role="login" class="pull-right">
 				<?php if ($logged_in) { ?>
@@ -152,8 +153,8 @@
 						<h5 class="name">by. <?= $name ?></h5>
 					</div>
 					<div class="on-off">
-						<button class="star-off"></button>
-						<button class="pin-off"></button>
+						<a class="star-off" href="#"></a>
+						<a class="pin-off" href="#"></a>
 					</div>
 				</div>
 			</div>
