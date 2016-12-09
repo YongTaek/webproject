@@ -124,8 +124,10 @@
         </tbody>
       </table>
     </div>
-    
-
+    <div class="top-text">
+      <h3 class="setting-text">Change Password</h3>
+      <a id="change-password" href="/php/changepw.php">비밀번호 변경</a>
+    </div>
   </div>
 </body>
 </html>
