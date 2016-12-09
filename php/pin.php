@@ -26,7 +26,7 @@
         throw new PDOException("None", 1);
     } else {
       $rows = $db->query("SELECT pinned FROM $which WHERE id = $id");
-      if ($rows->rowCount() == 0) {
+      if ($rows->rowCount() > 0) {
         $row = $rows->fetch();
         if (!$row["pinned"])
           throw new PDOException("Not Pinned", 1);
