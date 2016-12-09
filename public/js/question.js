@@ -14,8 +14,8 @@ function questionReady(){
 				alert("등록 에러! X(");
 			}
 			else{
+				$(thiis).val("");
 				appendComment(da,$(form.parent()).siblings().not(form.parent()));
-				thiis.val("");
 			}
 		});
 	});
@@ -32,9 +32,9 @@ function appendComment(da,comment){
 
 	var div = $("<div></div>");
 
-	var spancontent = $("<span></span>").html(content+" ");
-	var spanname = $("<span></span>").html(name+" ");
-	var spantime = $("<span></span>").html(time+" ");
+	var spancontent = $("<span></span>").text(content);
+	var spanname = $("<span></span>").text(name);
+	var spantime = $("<span></span>").text(time);
 
 	var btns = $("<div class = 'comment_btn'></div>");
 
@@ -47,9 +47,9 @@ function appendComment(da,comment){
 	btns.append(edit);
 	btns.append(remove);
 
-	div.append(spancontent);
-	div.append(spanname);
-	div.append(spantime);
+	div.append(spancontent," ");
+	div.append(spanname," ");
+	div.append(spantime," ");
 	div.append(btns);
 
 	$(comment).append(div);
