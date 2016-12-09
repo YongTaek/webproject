@@ -116,41 +116,42 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 					</div>
 				</div>
 				<!-- comment iterative -->
-				<div class="comment">
-					<hr>
-					<?php
-					$comments = $db->query("SELECT content, name, time, u.id, score FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'question' AND reference_id = ".$_GET["id"]);
-					foreach ($comments as $comment) {
-						?>
-						<div>
-							<span><?= $comment["score"] ?></span>
-							<span><?= $comment["content"] ?></span>
-							<?php
-							if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant"))
-								$name = $comment["name"];
+				<div class="about-comment">
+					<div class="comment">
+						<hr>
+						<?php
+						$comments = $db->query("SELECT content, name, time, u.id, score FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'question' AND reference_id = ".$_GET["id"]);
+						foreach ($comments as $comment) {
 							?>
-							<span><?= $name ?></span>
-							<span class=""><?= $comment["time"] ?></span>
-							<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
-							<div class="comment_btn">
-								<a class="btn comment_modify" name="comment_modify" href="">수정</a>
-								<a class="btn comment_delete" name="comment_delete" href="">삭제</a>
+							<div>
+								<span><?= $comment["content"] ?></span>
+								<?php
+								if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant"))
+									$name = $comment["name"];
+								?>
+								<span><?= $name ?></span>
+								<span><?= $comment["time"] ?></span>
+								<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
+								<div class="comment_btn">
+									<a class="btn comment_modify" name="comment_modify" href="">수정</a>
+									<a class="btn comment_delete" name="comment_delete" href="">삭제</a>
+								</div>
+								<?php } ?>
 							</div>
+							<hr>
 							<?php } ?>
 						</div>
-						<hr>
-						<?php } ?>
-					</div>
-					<div class="comment">
-						<form action="create_comment.php" method="POST">
-							<label>Comment:</label>
-							<div>
-								<input id="comment-write" type="text" name="comment" />
-								<input class="btn commentBtn submit" id="submit" type="button" value="등록"/>
-							</div>
-							<input type="hidden" name="id" value="<?= $_GET["id"] ?>" />
-							<input type="hidden" name="type" value="question">
-						</form>
+						<div class="comment">
+							<form action="create_comment.php" method="POST">
+								<label>Comment:</label>
+								<div>
+									<input id="comment-write" type="text" name="comment" />
+									<input class="btn commentBtn submit" id="submit" type="button" value="등록"/>
+								</div>
+								<input type="hidden" name="id" value="<?= $_GET["id"] ?>" />
+								<input type="hidden" name="type" value="question">
+							</form>
+						</div>
 					</div>
 					<!-- question에 대한 answer -->
 					<?php
@@ -191,40 +192,41 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 								<hr>
 							</div>
 							<!-- comment iterative -->
-							<div class="comment">
-								<?php
-								$comments = $db->query("SELECT content, name, time, u.id, score FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'answer' AND reference_id = ".$answer[0]);
-								foreach ($comments as $comment) {
-									?>
-									<div>
-										<span><?= $comment["score"] ?></span>
-										<span><?= $comment["content"] ?></span>
-										<?php
-										if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant"))
-											$name = $row["name"];
+							<div class="about-comment">
+								<div class="comment">
+									<?php
+									$comments = $db->query("SELECT content, name, time, u.id, score FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'answer' AND reference_id = ".$answer[0]);
+									foreach ($comments as $comment) {
 										?>
-										<span><?= $name ?></span>
-										<span class=""><?= $comment["time"] ?></span>
-										<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
-										<div class="comment_btn">
-											<a class="btn comment_modify" name="comment_modify" href="">수정</a>
-											<a class="btn comment_delete" name="comment_delete" href="">삭제</a>
+										<div>
+											<span><?= $comment["content"] ?></span>
+											<?php
+											if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant"))
+												$name = $row["name"];
+											?>
+											<span><?= $name ?></span>
+											<span><?= $comment["time"] ?></span>
+											<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
+											<div class="comment_btn">
+												<a class="btn comment_modify" name="comment_modify" href="">수정</a>
+												<a class="btn comment_delete" name="comment_delete" href="">삭제</a>
+											</div>
+											<?php } ?>
 										</div>
+										<hr>
 										<?php } ?>
 									</div>
-									<hr>
-									<?php } ?>
-								</div>
-								<div class="comment">
-									<form action="create_comment.php" method="POST">
-										<label>Comment:</label>
-										<div>
-											<input id="comment-write" type="text" name="comment" />
-											<input class="commentBtn" id="submit" type="button" value="등록"/>
-										</div>
-										<input type="hidden" name="id" value="<?= $answer[0] ?>" />
-										<input type="hidden" name="type" value="answer">
-									</form>
+									<div class="comment">
+										<form action="create_comment.php" method="POST">
+											<label>Comment:</label>
+											<div>
+												<input id="comment-write" type="text" name="comment" />
+												<input class="commentBtn" id="submit" type="button" value="등록"/>
+											</div>
+											<input type="hidden" name="id" value="<?= $answer[0] ?>" />
+											<input type="hidden" name="type" value="answer">
+										</form>
+									</div>
 								</div>
 								<?php
 							}
