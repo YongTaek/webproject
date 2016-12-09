@@ -21,7 +21,6 @@ for (var i = 0; i < questionArray.length; i++) {
 					appendComment(data);
 				} else {
 					// window.location.href = data.url;
-					alert('asfd');
 				}
 			},
 			"positionClass": "toast-top-right",
@@ -54,7 +53,6 @@ for (var i = 0; i < lectureArray.length; i++) {
 		if (link === data.url) {
 			// window.location.href = data.url;
 			appendComment(data);
-			alert('asfd');
 		} else {
 			toastr.options = {
 				"closeButton": true,
