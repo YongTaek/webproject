@@ -80,6 +80,27 @@
 			<div class="content">
 				<p><?= $row["content"] ?></p>
 			</div>
+			<form class="vote" action="notice_vote_submit" accept-charset="utf-8">
+
+				<div class="vote-name">펑펑펑</div>
+				<div class="vote-period">2016-11-23 ~ 2016-12-2</div>
+				<div class="divider"></div>
+				<div class="vote-item-single"> <!-- 선택 갯수가 한개일 때! -->
+					<ul class="vote-item">
+						<li><input type="radio" name="item" checked = "checked"/>펑펑</li>
+						<li><input type="radio" name="item"/>펑펑펑</li>
+					</ul>
+				</div>
+				<div class="vote-item-multi"> <!-- 선택 갯수가 여려개일 때 -->
+					<ul class="vote-item">
+						<li><input type="checkbox" name="item"/>펑펑</li>
+						<li><input type="checkbox" name="item"/>펑펑펑</li>
+					</ul>
+				</div>
+				<input class="votebtn formargin" type="submit" name="submitVoteBtn" value="투표">
+				<a class="votebtn" id="vote-result">결과 보기</a>
+				<div id="chart"></div>
+			</form>
 		</div>
 		<!-- comment iterative-->
 		<div class="comment">
