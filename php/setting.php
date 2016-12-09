@@ -30,7 +30,7 @@
   <script src="/public/js/push.js"></script>
   <script src="/public/js/lec-open-close.js"></script>
   <script src="/public/js/pusher.js"></script>
-
+  <script src="/public/js/settingDialog.js" type="text/javascript"></script>
 </head>
 <body>
   <header role = "banner" class="banner-color">
