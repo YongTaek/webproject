@@ -161,8 +161,28 @@
 						<h5 class="name">by. <?= $name ?></h5>
 					</div>
 					<div class="on-off">
-						<a class="star-off" href="#"></a>
-						<a class="pin-off" href="#"></a>
+						<?php
+							if ($logged_in) {
+								$fav = $db->query("SELECT u_id, q_id FROM favorite WHERE u_id = ".$_SESSION["id"]." AND q_id = ".$row["id"]);
+								$count = $fav->rowCount();
+								if ($count > 0) {
+									$star = "star-on";
+								} else {
+									$star = "star-off";
+								}
+							} else {
+								$star = "star-off";
+							}
+						?>
+						<a class="<?= $star ?>"></a>
+						<?php
+							if ($row["pinned"]) {
+								$pin = "pin-on";
+							} else {
+								$pin = "pin-off";
+							}
+						?>
+						<a class="<?= $pin ?>"></a>
 					</div>
 				</div>
 			</div>
