@@ -1,5 +1,9 @@
 <?php
 	session_start();
+	$logged_in = false;
+  if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
+    $logged_in = true;
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,16 +39,17 @@
 				<li class="pull-left"><a href="/view/lecture-list.php" class="menu-item">LECTURE</a></li>
 			</ul>
 			<div role="login" class="pull-right">
-				<?php
-						if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
-
-				?>
+				<?php if ($logged_in) { ?>
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
-					<a id="mypage" href="/php/changepw.php" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
-					<ul class="hidden" id="setting">
-						<li><a href="user-setting.php">Setting</a></li>
-					</ul>
+				<?php
+					if ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant") {
+						$href = "/php/setting.php";
+					} else {
+						$href = "/php/changepw.php";
+					}
+				?>
+					<a id="mypage" href="<?= $href ?>" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
 				<?php } else { ?>
 					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
