@@ -64,6 +64,11 @@
 
         </li>
       </ul> -->
+      <?php
+      $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $rows = $db->query("SELECT id, name, url FROM lecture");
+      foreach ($rows as $row) { ?>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -73,11 +78,12 @@
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
-            <td><a href="/view/lecture-page/1">title</a></td>
+            <td><?= $row["id"] ?></td>
+            <td><a href="<?= $row["url"] ?>"><?= $row["name"] ?></a></td>
           </tr>
         </tbody>
       </table>
+      <?php }?>
     </div>
   </body>
   </html>
