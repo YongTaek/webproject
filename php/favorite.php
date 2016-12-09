@@ -23,7 +23,10 @@
       else
         $db->query("DELETE FROM favorite WHERE u_id = $u_id AND q_id = $id");
         $newArray = array_diff($_SESSION["favQuestion"], array($id));
-        $_SESSION["favQuestion"] = $newArray;
+        $_SESSION["favQuestion"] = array();
+        foreach ($newArray as $array ) {
+          $_SESSION["favQuestion"][] = $array;
+        }
     }
 
     $result = array("error" => "false");
