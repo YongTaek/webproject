@@ -18,13 +18,20 @@
 			$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
 			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$rows = $db->query("SELECT q_id from favorite where u_id=$userId");
-			$array = array();
+			$questionArray = array();
 			foreach ($rows as $row) {
-				$array[] = $row["q_id"];
+				$questionArray[] = $row["q_id"];
 			}
-			$_SESSION["favQuestion"] = $array;
+			$lectureArray = array();
+			$rows = $db->query("SELECT id from lecture where open = 1");
+			foreach ($rows as $row ) {
+				$lectureArray[] = $row["id"];
+			}
+			$_SESSION["favQuestion"] = $questionArray;
+			$_SESSION["openLecture"] = $lectureArray;
 		?>
-			var a = <?php echo json_encode($_SESSION["favQuestion"]); ?>;
+			var questionArray = <?php echo json_encode($_SESSION["favQuestion"]); ?>;
+			var lectureArray = <?php echo json_encode($_SESSION["openLecture"]); ?>;
 		<?php } ?>
 	</script>
 	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
