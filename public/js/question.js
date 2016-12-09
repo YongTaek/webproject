@@ -38,10 +38,10 @@ function appendComment(da,comment){
 
 	var btns = $("<div class = 'question_btn'></div>");
 
-	var edit = $("<a class = 'btn question_modify' name='question_modify'></a>");
+	var edit = $("<a class = 'btn question_modify' name='question_modify'>수정</a>");
 	edit.href = "modify_question.php?id=" + da.r_id;
 
-	var remove = $("<a class = 'btn question_delete' name = 'question_delete'></a>");
+	var remove = $("<a class = 'btn question_delete' name = 'question_delete'>삭제</a>");
 	remove.href = "delete_question.php?id=" + da.r_id;
 
 	btns.append(edit);
