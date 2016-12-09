@@ -19,18 +19,22 @@
         $row = $rows->fetch();
         if ($row["pinned"])
           throw new PDOException("Already Pinned", 1);
+        else
+          $db->query("UPDATE $which SET pinned = 1 WHERE id = $id");
       }
       else
-        $db->query("UPDATE $which SET pinned = 1 WHERE id = $id");
+        throw new PDOException("None", 1);
     } else {
       $rows = $db->query("SELECT pinned FROM $which WHERE id = $id");
       if ($rows->rowCount() == 0) {
         $row = $rows->fetch();
         if (!$row["pinned"])
           throw new PDOException("Not Pinned", 1);
+        else
+          $db->query("UPDATE $which SET pinned = 0 WHERE id = $id");
       }
       else
-        $db->query("UPDATE $which SET pinned = 0 WHERE id = $id");
+        throw new PDOException("None", 1);
     }
 
     $result = array("error" => "false");
