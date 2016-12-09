@@ -26,9 +26,9 @@ if (isset($_GET["id"])) {
 	<link rel="stylesheet" href="/public/css/lecture-page.css" type="text/css">
   <script type="text/javascript">
 		<?php if (isset($_SESSION["id"]) && isset($_SESSION["favQuestion"]) && isset($_SESSION["openLecture"])) { ?>
-			var questionArray = <?php echo json_encode($_SESSION["favQuestion"]); ?>;
+      console.log(<?php echo json_encode($_SESSION["favQuestion"]); ?>);
+      var questionArray = <?php echo json_encode($_SESSION["favQuestion"]); ?>;
 			var lectureArray = <?php echo json_encode($_SESSION["openLecture"]); ?>;
-      console.log(questionArray);
 		<?php } ?>
 	</script>
 	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
