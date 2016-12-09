@@ -10,7 +10,7 @@ function lectureReady(){
       dataType: "json"
     }).done(function (da) {
       // var da = $.parseJSON(data);
-      if(da.error == "false"){
+      if(da.error == "true"){
         alert("등록 에러! X(");
       }
       else{
@@ -28,8 +28,7 @@ function lectureReady(){
     $('#sidebar').toggle("slide", { direction : "right" }, 500, function () {
       changeDrawerClass(event);
     });
-  })
-
+  });
 };
 
 function changeDrawerClass(event) {
@@ -39,8 +38,8 @@ function changeDrawerClass(event) {
   } else {
     $(event.target).addClass('opendrawer');
     $(event.target).removeClass('closedrawer');
-  }
-}
+  };
+};
 
 function appendComment(da){
   // var da = $.parseJSON(data);
