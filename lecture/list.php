@@ -65,16 +65,7 @@
       <p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
     </div>
   </header>
-    <!-- <div class="createBtn">
-      <a type="button" class="btn btn-primary" href="/questions/create">Create Lecture</a>
-    </div> -->
     <div class="container">
-      <!-- <ul id="list">
-        <li class= "list-item">
-
-
-        </li>
-      </ul> -->
       <?php
       $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -92,7 +83,7 @@
         <?php foreach ($rows as $row) { ?>
           <tr>
             <td><?= $row["id"] ?></td>
-            <td><a href="/php/lecture-page.php?id=<?= $row["id"] ?>"><?= $row["name"] ?></a></td>
+            <td><a href="/lecture/class.php?id=<?= $row["id"] ?>"><?= $row["name"] ?></a></td>
             <?php if($row["open"] == 1){
                 $open = "OPEN";
               }else{
@@ -100,7 +91,6 @@
             }?>
             <td><span class="<?= $open?>"><?= $open ?></p></td>
         <?php } ?>
-
           </tr>
         </tbody>
       </table>
