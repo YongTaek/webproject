@@ -13,18 +13,21 @@
 	  			$db->query("DELETE FROM favorite WHERE u_id =".$fav["u_id"]);
 	  		}
 	  	}
+
   		$tags = $db->query("SELECT DISTINCT q_id FROM question JOIN tag_question on id = q_id WHERE u_id = $id");
-  		if(!empty($tags) && ($tags->rowCount() > 0)){
+  		if(!empty($tags) && ($tags->rowCount() > 0)){ // 삭제
 	  		foreach ($tags as $tag) {
-	  			$db->query("DELETE FROM tag_question WHERE q_id = ".$tag[$id]);	
+	  			$db->query("DELETE FROM tag_question WHERE q_id =".$tag["q_id"]);	
 	  		}
   		}
+
   		$isAnswered = $db->query("SELECT a.q_id FROM answer a JOIN question q on a.q_id = q.id where q.u_id = $id");
   		if(!empty($isAnswered) && ($isAnswered->rowCount() > 0)){
   			foreach ($isAnswered as $answer) {
-  				$db->query("DELETE FROM answer WHERE q_id = ".$answer[$q_id]);	
+  				$db->query("DELETE FROM answer WHERE q_id =".$answer["q_id"]);	
   			}
   		}
+
 		$db->query("DELETE FROM question WHERE u_id = $id");
 		$db->query("DELETE FROM board WHERE u_id = $id");
   		$db->query("DELETE FROM user WHERE id = $id");
