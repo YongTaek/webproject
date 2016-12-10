@@ -1,6 +1,6 @@
 <?php
   session_start();
-
+  // header("Content-type: application/json; charset=UTF-8");
   date_default_timezone_set('Asia/Seoul');
   require('./library/Pusher.php');
   require('./library/push_setting.php');
@@ -12,9 +12,9 @@
   $time = date("Y-m-d H:i:s");
   $type = $_POST["type"];
   $name = $_SESSION["name"];
-  header("Content-type: application/json");
   try {
     $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
+    $db->exec("set names utf8");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->query("INSERT INTO comment(u_id, reference_id, content, time, type) VALUES ($u_id, $r_id, \"$content\", \"$time\", \"$type\")");
     $result = array("error" => "false", "r_id" => $r_id, "content" => $content, "time" => $time, "name" => $name , "type" => $type);
