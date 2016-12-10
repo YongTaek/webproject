@@ -33,13 +33,3 @@ span.date{
 	color: black;
 }
 
-.tag{
-	background: #428bca;
-	border-radius: 2px;
-	color: white;
-	margin-bottom: 5px;
-}
-
-.tag:hover{
-	text-decoration: none;
-}

@@ -146,3 +146,14 @@ body{
 	background: #d9edf7;
 	padding: 5px;
 }
+
+.tag{
+	background: #428bca;
+	border-radius: 2px;
+	color: white;
+	margin-bottom: 5px;
+}
+
+.tag:hover{
+	text-decoration: none;
+}
