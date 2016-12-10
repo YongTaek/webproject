@@ -3,8 +3,14 @@
   date_default_timezone_set('Asia/Seoul');
 
   $id = $_SESSION["id"];
-  $title = $_POST["title"];
+  $title = htmlspecialchars($_POST["title"]);
   $content = $_POST["content"];
+
+  $content = str_replace("\n", "&#10;", $content);
+  $content = str_replace("\t", "&#9;", $content);
+  $content = str_replace("\'", "&#39;", $content);
+  $content = str_replace("\"", "&#34;", $content);
+  
   $tag = $_POST["tags"];
   $time = date("Y-m-d H:i:s");
   $tags = explode(",", $tag);

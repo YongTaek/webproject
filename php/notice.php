@@ -105,7 +105,7 @@
 				<?php } ?>
 			</div>
 			<div class="content">
-				<p><?= $row["content"] ?></p>
+				<?= $row["content"] ?>
 			</div>
 		</div>
 		<!-- comment iterative-->
