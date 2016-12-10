@@ -162,3 +162,7 @@ h2 {
   height: 28px;
   line-height: initial;
 }
+
+.width100 {
+  width: 100%;
+}
