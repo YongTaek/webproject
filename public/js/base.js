@@ -48,6 +48,7 @@ function onclick(){
 			}
 			else{
 				alert("키워드를 입력해주세요 >:(");
+				e.preventDefault();
 			}
 		}
 	});
