@@ -67,13 +67,14 @@
       <?php
       $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $rows = $db->query("SELECT id, name, url FROM lecture");
+        $rows = $db->query("SELECT id, name, url, open FROM lecture");
       ?>
       <table class="table table-striped">
         <thead>
           <tr>
             <th>Index</th>
             <th>Chapter Name</th>
+            <th>In Class</th>
           </tr>
         </thead>
         <tbody>
@@ -81,6 +82,11 @@
           <tr>
             <td><?= $row["id"] ?></td>
             <td><a href="<?= $row["url"] ?>"><?= $row["name"] ?></a></td>
+            <?php if($row["open"] == 0){ ?>
+                <td><p class="open">OPEN</p><td>
+              }else{?>
+                <td><p class="close">CLOSE</p><td>
+            <?php }?>
           </tr>
         <?php }?>
         </tbody>
