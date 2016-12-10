@@ -161,7 +161,7 @@
 			<?php } ?>
 			<p class="bg-info">Lecture</p>
 			<?php
-				$rows = $db->query("SELECT id, name FROM lecture WHERE name like \"%$keyword%\" order by time DESC");
+				$rows = $db->query("SELECT id, name FROM lecture WHERE name like \"%$keyword%\"");
 				foreach ($rows as $row) {
 			?>
 			<div class= "question">
