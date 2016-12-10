@@ -10,7 +10,7 @@ function lectureReady(){
       dataType: "json"
     }).done(function (da) {
       // var da = $.parseJSON(data);
-      if(da.error == "false"){
+      if(da.error == "true"){
         alert("등록 에러! X(");
       }
       else{
