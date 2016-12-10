@@ -1,16 +1,17 @@
 <?php
 	session_start();
-	$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
-  	$id = $_GET["id"];
-  	$u_id = $_SESSION["id"];
-
-  $check_auth = $db->query("SELECT u_id FROM question WHERE id = $id");
-  $auth = $db->fetch();
-  if(!($_SESSION["auth"] === 'professor' || $_SESSION["auth"] === 'assistant' || $u_id == $auth["u_id"])){
-    header("Location: /error.php");
-  }
+  $id = $_GET["id"];
+  $u_id = $_SESSION["id"];
 
   try{
+      $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $check_auth = $db->query("SELECT u_id FROM question WHERE id = $id");
+      $auth = $check_auth->fetch();
+      if(!($_SESSION["auth"] === 'professor' || $_SESSION["auth"] === 'assistant' || $u_id === $auth["u_id"])){
+        header("Location: /error.php");
+      }
+
     	$isFavorite = $db->query("SELECT q_id FROM favorite WHERE q_id = $id");
     	$isAnswered = $db->query("SELECT id FROM answer WHERE q_id = $id");
     	$fav_num = $isFavorite->fetch();

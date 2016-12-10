@@ -7,14 +7,21 @@
   $content = $_POST["content"];
   $content = str_replace("\n", "<br/>", $content);
   $time = date("Y-m-d H:i:s");
+  $type = $_POST["type"];
   $redirectId = $_POST["questionId"];
   $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   try {
-    $db->query("UPDATE comment set content=\"$content\" where id=$id");
-    $db->query("UPDATE comment set time=\"$time\" where id=$id");
-    header("Location: /board/question/post.php?id=$redirectId");
+    $db->query("UPDATE comment set content=\"$content\" where id=$id and type=\"$type\"");
+    $db->query("UPDATE comment set time=\"$time\" where id=$id and type=\"$type\"");
+    if ($type === "question") {
+      header("Location: /board/question/post.php?id=$redirectId");
+    } else if ($type === "notice") {
+      header("Location: /board/notice/post.php?id=$redirectId");
+    } else if ($type === "board") {
+      header("Location: /board/free/post.php?id=$redirectId");
+    }
   } catch (Exception $e) {
     echo $e -> getMessage();
   }

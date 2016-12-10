@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   	$id = $_POST["id"];
   	$u_id = $_SESSION["id"];
   	$title = htmlspecialchars($_POST["title"]);
@@ -11,13 +12,12 @@
     $c_count = count($tags);
   	$i=0;
 
-    $check_auth = $db->query("SELECT u_id FROM question WHERE id = $id");
-    $auth = $db->fetch();
-    if(!($_SESSION["auth"] === 'professor' || $_SESSION["auth"] === 'assistant' || $u_id == $auth["u_id"])){
-        header("Location: /error.php");
-    }
-
     try{
+        $check_auth = $db->query("SELECT u_id FROM question WHERE id = $id");
+        $auth = $check_auth->fetch();
+        if(!($_SESSION["auth"] === 'professor' || $_SESSION["auth"] === 'assistant' || $u_id == $auth["u_id"])){
+            header("Location: /error.php");
+        }
         if($tags[0] == NULL){
             $db->query("DELETE FROM tag_question WHERE q_id = $id");
         }
