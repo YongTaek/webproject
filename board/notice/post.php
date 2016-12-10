@@ -22,7 +22,6 @@
 	<script src="/public/js/comment.js"></script>
 	<script src="/public/js/Nwagon.js"></script>
 	<script src="/public/js/notice-chart.js"></script>
-	<script src="/public/js/notice.js"></script>
 	<script src="/public/js/pusher.js"></script>
 </head>
 <body>
@@ -77,8 +76,8 @@
 					<span class=""><?= $comment["time"] ?></span>
 					<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
 					<div class="comment_btn">
-						<a class="btn comment_modify" href="/comment/modify.php">수정</a>
-						<a class="btn comment_delete" href="/comment/delete.php">삭제</a>
+						<a class="btn comment_modify" >수정</a>
+						<a class="btn comment_delete" >삭제</a>
 					</div>
 					<?php } ?>
 				</div>

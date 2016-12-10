@@ -1,28 +1,4 @@
 function ready () {
-  $("#submit").click(function (event){
-
-    var form = $("#form");
-    var params = form.serialize();
-    console.log(JSON.stringify(params));
-    console.log(form.attr("action"));
-    $.ajax({
-      url: '/comment/create.php',
-      type : "POST",
-      data : params,
-      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-      dataType: 'json',
-      success : function (result) {
-        console.log(result);
-        if (result.error === "false") {
-          addComment(result);
-        }
-      },
-      error : function (result) {
-        alert("실패");
-        console.log(result);
-      }
-    });
-  });
 }
 function addComment(data) {
   var div = document.createElement('div');
