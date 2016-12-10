@@ -25,6 +25,7 @@ function questionReady(){
 		var form = document.createElement("form");
 		form.setAttribute("class", "width100");
 		form.setAttribute("action", "modify_comment.php");
+		from.setAttribute("method", "post");
 		var contentInput = document.createElement("input");
 		contentInput.setAttribute("name", "content");
 		contentInput.setAttribute("class", "comment-write");
