@@ -40,7 +40,7 @@
 			</ul>
 
 			<div role="login" class="pull-right">
-				<img id="bell"></a>
+				<img id="bell" src="/public/img/bell.png"></img>
 				<?php if ($logged_in) { ?>
 					
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
