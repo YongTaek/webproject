@@ -71,6 +71,7 @@ function onclick(){
 	});
 
 	$("#all-delete").click(function() {
+		addTextNoNotification();
 		$.ajax({
 			url: '/api/read-allnotification.php',
 			type : "POST",
@@ -80,7 +81,7 @@ function onclick(){
 				if (result.error === "false") {
 					$("#notifications").empty();
 					$("#notification").text("0");
-					addTextNoNotification();
+					//addTextNoNotification();
 				}
 			},
 			error : function (result) {
