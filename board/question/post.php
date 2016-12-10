@@ -224,7 +224,7 @@
 						if ($logged_in && $num == 0) { ?>
 						<div class="write-answer">
 							<h2>Your Answer</h2>
-							<form action="/board/answer/create.php" method="post">
+							<form action="/answer/create.php" method="post">
 								<div id="wmd-editor">
 									<div id="wmd-button-bar"></div>
 									<textarea id="wmd-input" name="answer"></textarea>
