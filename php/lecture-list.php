@@ -95,7 +95,7 @@
                 $open = "CLOSE";
             }?>
 
-            <td><p class="<?= $open?>"><?= $open?></p><td>
+            <td><p class="<?= $open?>"><?= $open ?></p></td>
           </tr>
         </tbody>
       </table>
