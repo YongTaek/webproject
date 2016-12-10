@@ -55,7 +55,7 @@ function makeNotification(notification) {
 	var timeP = document.createElement("p");
 
 	contentP.innerHTML = notification.content;
-	timeP.innerHTML = notification.content;
+	timeP.innerHTML = notification.time;
 	div.append(contentP);
 	div.append(timeP);
 	a.append(div);
