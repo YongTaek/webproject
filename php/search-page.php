@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
 	<link rel="stylesheet" href="/public/css/bootstrap.min.css" type="text/css">
-	<link rel="stylesheet" type="text/css" href="/public/css/noticelist.css">
+<!-- 	<link rel="stylesheet" type="text/css" href="/public/css/noticelist.css"> -->
 	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
 	<link rel="stylesheet" href="/public/css/pusher.css" type="text/css">
 	<link rel="stylesheet" href="/public/css/search-page.css" type="text/css">
