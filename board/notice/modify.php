@@ -1,4 +1,4 @@
-<?php include("./common/pusher.php"); ?>
+<?php include("../../common/pusher.php"); ?>
 
 <!DOCTYPE html>
 <html>
@@ -9,7 +9,7 @@
   	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
     <script src="/public/js/jquery-ui-1.12.1.min.js"></script>
     <script src="/public/js/base.js"></script>
-    <?php include("./common/script.php"); ?>
+    <?php include("../../common/script.php"); ?>
 
     <link rel="stylesheet" type="text/css" href="/public/css/wmd.css" />
     <link rel="stylesheet" type="text/css" href="/public/css/create-post.css" />
@@ -17,7 +17,7 @@
     <title>글쓰기</title>
   </head>
   <body>
-    <?php include("./common/header.php"); ?>
+    <?php include("../../common/header.php"); ?>
     <?php
       $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
       $id = $_GET["id"];

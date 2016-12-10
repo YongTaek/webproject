@@ -1,4 +1,4 @@
-<?php include("./common/pusher.php"); ?>
+<?php include("../../common/pusher.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +14,7 @@
   <script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
   <script src="/public/js/jquery-ui-1.12.1.min.js"></script>
   <script src="/public/js/base.js"></script>
-  <?php include("./common/script.php"); ?>
+  <?php include("../../common/script.php"); ?>
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="//js.pusher.com/3.2/pusher.min.js"></script>
@@ -23,7 +23,7 @@
   
 </head>
 <body>
-  <?php include("./common/header.php"); ?>
+  <?php include("../../common/header.php"); ?>
 
   <?php
     if (isset($_GET["id"])) {
