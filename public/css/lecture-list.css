@@ -56,13 +56,13 @@ tr{
 }
 
 .OPEN {
-  border-right: 1px solid #428bca;
+  border: 1px solid #428bca;
   color: #428bca;
   padding: 5px;
 }
 
 .CLOSE {
-  border-right: 1px solid #d9534f;
+  border: 1px solid #d9534f;
   color: #d9534f;
   padding: 5px;
 }
