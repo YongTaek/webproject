@@ -108,7 +108,7 @@
 			<?php
 				$rows = $db->query("SELECT distinct q.id, q.title, time, u.name FROM question q JOIN user u JOIN tag t JOIN tag_question tq ON q.u_id = u.id and t.id = tq.t_id and q.id = tq.q_id WHERE title like \"%$keyword%\" or t.name like \"%$keyword%\" ORDER BY time DESC");
 				foreach ($rows as $row) {
-			?>
+					?>
 			<div class= "question">
 				<div class= "question-num-summary">
 					<div class= "question-number">
@@ -122,6 +122,16 @@
 					<h3 class="title">
 						<a href= <?= "/php/question.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
 					</h3>
+					<div class="tags">
+					<?php
+							$tags = $db->query("SELECT distinct name, t.id FROM tag_question tq JOIN tag t WHERE t_id = id AND q_id = ".$row["id"]);
+							foreach ($tags as $tag) {
+						?>
+						<a href="tag_questionlist.php?id=<?= $tag["id"] ?>" class= "tag"><?= $tag["name"] ?></a>
+						<?php
+							}
+						?>
+					</div>
 				</div>
 				<div class="question-list-right">
 					<div>
