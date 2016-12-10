@@ -30,6 +30,7 @@
 				<hr/>
 				<ul>
 					<?php
+						$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
 						$rows = $db->query("SELECT id, title, DATE_FORMAT(time, '%Y-%m-%d') FROM notice ORDER BY DATE_FORMAT(time, '%Y-%m-%d') DESC");
 						foreach ($rows as $row) {
 					?>
