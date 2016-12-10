@@ -1,4 +1,4 @@
-<?php include("./common/pusher.php"); ?>
+<?php include("../common/pusher.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +14,7 @@
 	<script src="/public/js/jquery-ui-1.12.1.min.js"></script>
 	<script src="/public/js/base.js"></script>
 
-	<?php include("./common/script.php"); ?>
+	<?php include("../common/script.php"); ?>
 	
 	<link rel="stylesheet" href="../public/css/notice.css" type="text/css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
@@ -26,7 +26,7 @@
 </head>
 
 <body>
-	<?php include("./common/header.php"); ?>
+	<?php include("../common/header.php"); ?>
 	<div class="main">
 		<div class="container">
 			<form id = "form" action='/api/lecture/upload.php' enctype="multipart/form-data" method="post">
