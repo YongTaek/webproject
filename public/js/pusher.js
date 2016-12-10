@@ -1,5 +1,3 @@
-console.log(questionArray);
-console.log(lectureArray);
 Pusher.logToConsole = false;
 
 var pusher = new Pusher('dc9f3fc01f0f63f45083', {
@@ -24,7 +22,7 @@ for (var i = 0; i < questionArray.length; i++) {
 				a.remove();
 				$("#notification").text(parseInt($("#notification").text()) - 1);
 				sendReadMessage(data);
-				// window.location.href = data.url;
+				window.location.href = data.url;
 			},
 			"positionClass": "toast-top-right",
 			"preventDuplicates": true,
@@ -49,12 +47,14 @@ for (var i = 0; i < questionArray.length; i++) {
 function makeNotification(notification) {
 	var a = document.createElement("a");
 	a.setAttribute("class", "notification");
+	a.setAttribute("href", notification.url);
 	var div = document.createElement("div");
+	div.setAttribute("class", "notification-thread");
 	var contentP = document.createElement("p");
 	var timeP = document.createElement("p");
 
 	contentP.innerHTML = notification.content;
-	timeP.innerHTML = notification.content;
+	timeP.innerHTML = notification.time;
 	div.append(contentP);
 	div.append(timeP);
 	a.append(div);

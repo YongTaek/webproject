@@ -103,7 +103,7 @@
           }
         ?>
         <a class="<?= $pin ?>"></a>
-        <p><?= $row["content"] ?></p>
+        <?= $row["content"] ?>
       </div>
     </div>
     <!-- comment iterative-->
