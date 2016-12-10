@@ -8,9 +8,6 @@
   $content = $data["content"];
   $time = $data["time"];
   $url = $data["url"];
-  print $content;
-  print $time;
-  print $url;
   try {
     $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

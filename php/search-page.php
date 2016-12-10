@@ -78,6 +78,7 @@
 			
 			<p class="bg-info">Notice</p>
 			<?php
+			echo $keyword;
 				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
 				$rows = $db->query("SELECT n.id, title, time, name FROM notice n JOIN user u ON n.u_id = u.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
 				foreach ($rows as $row) {
@@ -107,7 +108,6 @@
 			<p class="bg-info">Question</p>
 			<?php
 				$rows = $db->query("SELECT q.id, title, time, name FROM question q JOIN user u ON q.u_id = q.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
-				
 				foreach ($rows as $row) {
 			?>
 			<div class= "question">
