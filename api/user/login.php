@@ -29,9 +29,9 @@
       header("Location: /index.php");
       exit;
     } else {
-      echo "Login Failed";
+      header("Location: /error.php");
     }
   } else {
-    echo "Login Failed";
+    header("Location: /error.php");
   }
 ?>
