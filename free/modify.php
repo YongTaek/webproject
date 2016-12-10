@@ -10,7 +10,7 @@
     header("Location: /error.php");
   }
 
-  if (trim($_POST["title"]) === "" || trim($_POST["content"]) === "" || !preg_match("/^[0-9]$/", $_POST["id"])) {
+  if (!isset($_POST["title"]) || !isset($_POST["content"]) || trim($_POST["title"]) === "" || trim($_POST["content"]) === "" || !preg_match("/^[0-9]$/", $_POST["id"])) {
     header("Location: /error.php");
   }
 
