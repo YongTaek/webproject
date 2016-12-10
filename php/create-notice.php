@@ -18,7 +18,7 @@ session_start();
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="//js.pusher.com/3.2/pusher.min.js"></script>
   <script src="/public/js/create-vote-item.js" type="text/javascript" charset="utf-8" async defer></script>
-<script src="/public/js/base.js"></script>
+  <script src="/public/js/base.js"></script>
   <script src="../public/js/push.js"></script>
   <title>글쓰기</title>
 </head>
@@ -29,7 +29,7 @@ session_start();
      <ul id="menu" class="inline-list pull-left">
       <li class="pull-left"><a href="/php/noticelist.php" class="menu-item active" >NOTICE</a></li>
       <li class="pull-left"><a href="/php/questionlist.php" class="menu-item">QUESTION</a></li>
-      <li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
+      <li class="pull-left"><a href="/php/freelist.php" class="menu-item">BOARD</a></li>
       <li class="pull-left"><a href="/php/lecture-list.php" class="menu-item">LECTURE</a></li>
     </ul>
     <div role="login" class="pull-right">
@@ -49,7 +49,7 @@ session_start();
       </button>
       <form method = "post" id = "search-content" action="php/search-page.php">
       <input type="text" class="pull-right search" name="search">
-      </form>
+    </form>
   </nav>
   <div class = "jumbotron banner-color">
    <h1 class="align-center">Create Notice</h1>
@@ -72,38 +72,13 @@ session_start();
       <hr>
       <div id="wmd-preview" class="wmd-preview"></div>
       <hr>
-      <h2 class="voteBtn">Register Vote</h2><img src="/public/img/vote-box.png" alt="vote" class= "voteBtn" id = "voteBtn"/>
-      <div id = "vote">
-        <h3>Vote Subject</h3>
-        <div class="subject">
-          <input name="subject" type="text">
-        </div>
-        <h3>Period</h3>
-        <div>
-          <input type="datetime-local" name="startDate" value="">
-          <input type="datetime-local" name="endDate" value="">
-        </div>
-        <h3>Number of Selection</h3>
-        <select name="select_num">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-        <h3>Items   <img class="plusBtn" src="/public/img/plus_icon.png" id="plus"/>
-          <img class="minusBtn" src="/public/img/minus_icon.png" id="minus"/></h3>
-          <ul>
-            <li class = "voteitem"><input type="text" name="item" value=""></li>
-          </ul>
-        </div>
-        <div class='buttons'>
-          <input class='btn btn-primary' type='submit' value="submit">
-          <button class='btn btn-primary'>cancel</button>
-        </div>
-      </form>
-    </div>
+      <div class='buttons'>
+        <input class='btn btn-primary' type='submit' value="submit">
+        <button class='btn btn-primary'>cancel</button>
+      </div>
+    </form>
   </div>
-  <script type="text/javascript" src="/public/js/wmd.js"></script>
+</div>
+<script type="text/javascript" src="/public/js/wmd.js"></script>
 </body>
 </html>
