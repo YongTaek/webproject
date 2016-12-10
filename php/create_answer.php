@@ -22,7 +22,7 @@
     else{
       echo "<script language=javascript>
       alert(\"한 질문에 답변 여러개 달 수 없어요!\");
-      location=\"question.php\";
+      location=\"question.php?id=$id\";
       </script>";
       // 한 질문에 답변 여러개 못단다고 알려줘야댐
     }
