@@ -41,8 +41,11 @@
 					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
 			</div>
-			<img src="/public/img/search.png" class="pull-right search-icon">
-			<input type="text" class="pull-right search" name="search">
+			<form action="../php/search-page.php">
+		    <input type="image" src="/public/img/search.png" class="pull-right search-icon">
+		    <!-- <a href="/view/question/search"><img src="/public/img/search.png" class="pull-right search-icon"></a> -->
+		    <input type="text" class="pull-right search" name="search">
+		    </form>
 
 		</nav>
 		<div class = "jumbotron banner-color">
