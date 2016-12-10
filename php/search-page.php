@@ -161,7 +161,7 @@
 			<?php } ?>
 			<p class="bg-info">Lecture</p>
 			<?php
-				$rows = $db->query("SELECT id, name, time FROM lecture WHERE name like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
+				$rows = $db->query("SELECT id, name FROM lecture WHERE name like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
 				foreach ($rows as $row) {
 			?>
 			<div class= "question">
@@ -180,7 +180,7 @@
 				</div>
 				<div class="question-list-right">
 					<div>
-						<h5 class="date"><?= $row["time"] ?></h5> <!-- 날짜 -->
+						
 						<h5 class="name">by. <?= "professor" ?></h5> <!--작성자 -->
 					</div>
 				</div>
