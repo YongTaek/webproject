@@ -24,6 +24,7 @@ function questionReady(){
 		var div = $(this).parent().parent();
 		div.empty();
 		var form = document.createElement("form");
+		from.setAttribute("class", width100);
 		form.setAttribute("action", "modify_comment.php");
 		var contentInput = document.createElement("input");
 		contentInput.setAttribute("name", "content");
@@ -34,6 +35,7 @@ function questionReady(){
 		var submitInput = document.createElement("input");
 		submitInput.setAttribute("class", "btn commentModify submit");
 		submitInput.setAttribute("value", "수정");
+		submitInput.setAttribute("type", "submit");
 		form.append(contentInput);
 		form.append(idInput);
 		form.append(submitInput);
