@@ -7,18 +7,19 @@
   		$db->query("DELETE FROM comment where u_id=$id");
   		$db->query("DELETE FROM answer WHERE u_id = $id");
   		$db->query("DELETE FROM favorite WHERE u_id = $id");
-  		$favorite = $db->query("SELECT f.q_id FROM question q JOIN favorite f on q.id = f.q_id WHERE u.id = $id");
-  		$fav_num = $favorite->fetch();
-  		if($fav_num != 0){
+  		$favorite = $db->query("SELECT f.u_id FROM favorite f JOIN question q ON id = q_id WHERE q.u_id = $id");
+  		if(!empty($favorite) && ($favorite->rowCount() > 0)){
 	  		foreach ($favorite as $fav) {
-	  			$db->query("DELETE FROM favorite WHERE q_id =".$fav["id"]);
+	  			$db->query("DELETE FROM favorite WHERE u_id =".$fav["u_id"]);
 	  		}
 	  	}
-  		$tags = $db->query("SELECT q_id FROM question JOIN tag_question on id = q_id WHERE u_id = $id");
-  		foreach ($tags as $tag) {
-  			$db->query("DELETE FROM tag_question WHERE q_id = ".$tags[$id]);	
+  		$tags = $db->query("SELECT DISTINCT q_id FROM question JOIN tag_question on id = q_id WHERE u_id = $id");
+  		if(!empty($tags) && ($tags->rowCount() > 0)){
+	  		foreach ($tags as $tag) {
+	  			$db->query("DELETE FROM tag_question WHERE q_id = ".$tag[$id]);	
+	  		}
   		}
-		$db->query("DELETE FROM question WHERE id = $id AND u_id = $id");
+		$db->query("DELETE FROM question WHERE u_id = $id");
 		$db->query("DELETE FROM board WHERE u_id = $id");
   		$db->query("DELETE FROM user WHERE id = $id");
   		header("Location: setting.php");

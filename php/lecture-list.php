@@ -25,7 +25,7 @@
   <script src="//js.pusher.com/3.2/pusher.min.js"></script>
   <script src="/public/js/push.js"></script>
   <script src="/public/js/pusher.js"></script>
-
+  <script src="/public/js/base.js"></script>
 </head>
 <body>
   <header role = "banner" class="banner-color">

@@ -13,7 +13,6 @@
   try {
     $db->query("UPDATE comment set content=\"$content\" where id=$id");
     $db->query("UPDATE comment set time=\"$time\" where id=$id");
-    $array = array("error" => "false");
     header("Location: question.php?id=$redirectId");
   } catch (Exception $e) {
     echo $e -> getMessage();
