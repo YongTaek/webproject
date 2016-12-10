@@ -22,7 +22,7 @@ function questionReady(){
 
 	$(".comment_modify").on("click", function (event) {
 		var div = $(this).parent().parent();
-		div.val("");
+		div.empty();
 		var form = document.createElement("form");
 		form.setAttribute("action", "modify_comment.php");
 		var contentInput = document.createElement("input");
