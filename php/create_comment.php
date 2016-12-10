@@ -8,6 +8,11 @@
   $r_id = $_POST["id"];
   $u_id = $_SESSION["id"];
   $content = $_POST["content"];
+  $enc = mb_detect_encoding($content, array("UTF-8", "EUC-KR", "SJIS"));
+  if ($content != "UTF-8") {
+    $content = iconv($enc, "UTF-8", $content);
+  }
+  console.log($content);
   $time = date("Y-m-d H:i:s");
   $type = $_POST["type"];
   $name = $_SESSION["name"];
