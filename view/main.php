@@ -12,6 +12,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="/public/js/push.js"></script>
+	<script src="/public/js/base.js"></script>
 </head>
 
 <body>
@@ -36,8 +37,12 @@
 					</ul>
 				</div>
 			</div>
-			<img src="/public/img/search.png" class="pull-right search-icon">
+			<button class="pull-right">
+				<img src="/public/img/search.png" class="search-icon">
+			</button>
+			<form id = "search-content" action="../php/search-page.php">
 			<input type="text" class="pull-right search" name="search">
+			</form>
 		</nav>
 		<div class = "jumbotron banner-color">
 			<h1 class="align-center">Home</h1>
