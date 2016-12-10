@@ -1,4 +1,4 @@
-<?php include("./common/pusher.php"); ?>
+<?php include("../../common/pusher.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +12,7 @@
 	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<script src="/public/js/jquery-ui-1.12.1.min.js"></script>
 	<script src="/public/js/base.js"></script>
-	<?php include("./common/script.php"); ?>
+	<?php include("../../common/script.php"); ?>
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
@@ -22,12 +22,7 @@
 	<title>자유 게시판</title>
 </head>
 <body>
-	<?php include("./common/header.php"); ?>
-
-	<div class = "jumbotron banner-color">
-		<h1 class="align-center">FREE BOARD</h1>
-		<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
-	</div>
+	<?php include("../../common/header.php"); ?>
 	<div class= "content">
 		<div class="subheader">
 			<?php if ($logged_in) { ?>

@@ -1,4 +1,4 @@
-<?php include("./common/pusher.php"); ?>
+<?php include("../../common/pusher.php"); ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,7 +9,7 @@
     <script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
     <script src="/public/js/jquery-ui-1.12.1.min.js"></script>
     <script src="/public/js/base.js"></script>
-    <?php include("./common/script.php"); ?>
+    <?php include("../../common/script.php"); ?>
     
     <link rel="stylesheet" type="text/css" href="/public/css/wmd.css" />
     <link rel="stylesheet" type="text/css" href="/public/css/create-post.css" />
@@ -23,39 +23,7 @@
     <title>글쓰기</title>
   </head>
   <body>
-    <header role = "banner" class="banner-color">
-  		<nav role="navigation" >
-  			<div id="logo" class="pull-left"><a href="/view/main.php"><img class="logo" src="../public/img/selab_logo_S.png" /></a></div>
-  			<ul id="menu" class="inline-list pull-left">
-  				<li class="pull-left"><a href="/view/noticelist.php" class="menu-item" >NOTICE</a></li>
-  				<li class="pull-left"><a href="/view/questionlist.php" class="menu-item active">QUESTION</a></li>
-  				<li class="pull-left"><a href="/view/freelist.php" class="menu-item">BOARD</a></li>
-          <li class="pull-left"><a href="/view/lecture-list.php" class="menu-item">LECTURE</a></li>
-  			</ul>
-  			<div role="login" class="pull-right">
-  				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
-            <a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
-            <div class="pull-right vr"></div>
-            <a id="mypage" href="/php/changepw.php" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
-            <ul class="hidden" id="setting">
-              <li><a href="user-setting.php">Setting</a></li>
-            </ul>
-          <?php } else { ?>
-            <a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
-          <?php } ?>
-  			</div>
-  			<button class="pull-right">
-        <img src="/public/img/search.png" class="search-icon">
-      </button>
-      <form method="post" id = "search-content" action="/php/search-page.php">
-      <input type="text" class="pull-right search" name="search">
-      </form>
-  		</nav>
-  		<div class = "jumbotron banner-color">
-  			<h1 class="align-center">Create Post</h1>
-  			<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
-  		</div>
-  	</header>
+    <?php include("../../common/header.php"); ?>
     <?php
       $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
       $id = $_GET["id"];
