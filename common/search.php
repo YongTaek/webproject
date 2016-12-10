@@ -1,7 +1,8 @@
 <?php include("pusher.php"); 
 $keyword = $_POST["search"];
+$test = "hello!!!!!!";
 if($keyword === ""){
-	header("Location: /error.php");
+	var_dump($test);
 }
 ?>
 <!DOCTYPE html>
