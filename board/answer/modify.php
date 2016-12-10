@@ -65,7 +65,7 @@
       	}
 	?>
 	<div class='container'>
-	<form action='submit_answer_modify.php' method="post">
+	<form action='/answer/modify.php' method="post">
 		<h2>Your Answer</h2>
 		<div class="content" id="wmd-editor">
 			<div id="wmd-button-bar"></div>

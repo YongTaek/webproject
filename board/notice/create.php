@@ -59,7 +59,7 @@ session_start();
 
 <div class="container">
   <div class="write-answer">
-    <form action="create_notice.php" method="POST">
+    <form action="/notice/create.php" method="POST">
       <h2>Title</h2>
       <div class="title">
         <input name="title" type="text">

@@ -57,7 +57,7 @@
 	</header>
 	<div class='container'>
 		<!-- action php  -->
-		<form action='create_question.php' method="post">
+		<form action='/question/create.php' method="post">
 			<h2>Title</h2>
 			<div class="title">
 				<input name="title" type="text">

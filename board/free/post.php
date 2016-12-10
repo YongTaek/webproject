@@ -89,8 +89,8 @@
         </div>
         <?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $row["id"])) { ?>
         <div class="free_btn">
-          <a class="btn free_modify" href="modify_free.php?id=<?= $row[0] ?>">수정</a>
-          <a class="btn free_delete" href="delete_free.php?id=<?= $row[0] ?>">삭제</a>
+          <a class="btn free_modify" href="/board/free/modify.php?id=<?= $row[0] ?>">수정</a>
+          <a class="btn free_delete" href="/board/free/delete.php?id=<?= $row[0] ?>">삭제</a>
         </div>
         <?php } ?>
       </div>
@@ -128,7 +128,7 @@
         <?php } ?>
     </div>
     <div class="comment">
-      <form action="create_comment.php" method="POST">
+      <form action="/comment/create.php" method="POST">
         <label>Comment:</label>
         <div>
           <input id="comment-write" type="text" name="comment" />
