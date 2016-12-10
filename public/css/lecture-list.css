@@ -58,11 +58,14 @@ tr{
 .OPEN {
   border: 1px solid #428bca;
   color: #428bca;
-  padding: 5px;
+  padding: 3px;
+  display: inline-flex;
 }
 
 .CLOSE {
   border: 1px solid #d9534f;
   color: #d9534f;
-  padding: 5px;
+  padding: 3px;
+  display: inline-flex;
+
 }

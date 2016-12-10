@@ -26,7 +26,14 @@ function saveAssistant() {
 	console.log('!');
 	console.log(aid);
 
-	$("#saveAss").ajaxForm({
+	$.ajax({
+		url: "save_assistant.php",
+		type: "POST",
+		data: {
+			id: aid,
+			name: aname
+		},
+		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
     dataType: 'text',
     success: function (responseText) {
       console.log(responseText);
