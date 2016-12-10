@@ -2,7 +2,7 @@
 	session_start();
 	header("Content-Type:application/json");
 	$authority = $_SESSION['auth'];
-	if ($authority !== 'professor') {
+	if (!($authority === 'professor' || $authority === 'assistant')) {
 		$result = array("error" => "true");
 	}
 	// print $result;

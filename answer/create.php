@@ -4,6 +4,10 @@
   require('../library/Pusher.php');
   require('../library/push-setting.php');
 
+  if (!isset($_SESSION["id"])) {
+    header("Location: /user/login.php");
+  }
+
   $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
   $u_id = $_SESSION["id"];
   $id = $_POST["id"];
