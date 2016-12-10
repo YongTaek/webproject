@@ -42,10 +42,10 @@ if (isset($_GET["id"])) {
 	if($status != 0) { ?>
 		<a class="closedrawer" id="side"></a>
 <?php }
-	if($fileType === "pdf"){
+	if($fileType === "pdf" || $fileType === "pps"){
 ?>
 	<embed src = "<?= $lectureFile ?>"></embed>
-	<?php }else if( $fileType === "html"|| $fileType === "pps" ){ ?>
+	<?php }else if( $fileType === "html"){ ?>
 	<iframe src = "<?= $lectureFile ?>"></iframe>
 	<?php } ?>
 	<div id="comment">
