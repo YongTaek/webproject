@@ -14,7 +14,8 @@ function activeMenu(){
 		$(menuitems[2]).addClass("active");	
 	}
 }
-$(document).load(activeMenu);
+$(window).load(activeMenu);
+
 function onclick(){
 
 	$("button.pull-right").click(function(){
