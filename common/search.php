@@ -1,5 +1,6 @@
-<?php include("pusher.php"); ?>
-
+<?php include("pusher.php"); 
+$keyword = $_POST["search"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
