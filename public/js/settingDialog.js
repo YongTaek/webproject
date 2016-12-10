@@ -17,8 +17,11 @@ function passwd_reset() {
 			if (data.error === "false") {
 				alert("비밀번호를 초기화했습니다.");
 			}
+		},
+		error: function (e) {
+			console.log(e.responseText);
 		}
-	})
+	});
 }
 
 function saveStudent() {

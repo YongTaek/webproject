@@ -6,16 +6,15 @@
   $id = $_POST["id"];
   $content = $_POST["content"];
   $time = date("Y-m-d H:i:s");
-
+  $redirectId = $_POST["questionId"];
   $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  header("Content-type: application/json");
   try {
     $db->query("UPDATE comment set content=\"$content\" where id=$id");
     $db->query("UPDATE comment set time=\"$time\" where id=$id");
     $array = array("error" => "false");
-    print json_encode($array);
+    header("Location: question.php?id=$redirectId");
   } catch (Exception $e) {
     echo $e -> getMessage();
   }

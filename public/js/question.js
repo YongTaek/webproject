@@ -30,11 +30,16 @@ function questionReady(){
 		contentInput.setAttribute("name", "content");
 		contentInput.setAttribute("class", "comment-write");
 		var idInput = document.createElement("input");
+		var questionIdInput = document.createElement("input");
 		idInput.setAttribute("name", "id");
 		var idSpan = div.find("span.hidden");
 		var commentId = idSpan[0].innerHTML;
 		idInput.setAttribute("value", commentId);
 		idInput.setAttribute("type","hidden");
+		var questionId = idSpan[1].innerHTML;
+		questionIdInput.setAttribute("value",questionId);
+		questionIdInput.setAttribute("type", "hidden");
+		questionIdInput.setAttribute("name", "qeustionId");
 		var submitInput = document.createElement("input");
 		submitInput.setAttribute("class", "btn commentModify submit");
 		submitInput.setAttribute("value", "수정");
@@ -45,8 +50,6 @@ function questionReady(){
 		div.empty();
 		div.append(form);
 	});
-
-	$(".commentModify").on("click", modifyAjax);
 
 };
 
