@@ -66,17 +66,19 @@
     <div class="comment">
         <hr>
         <?php
-          $comments = $db->query("SELECT content, name, time, u.id FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'board' AND reference_id = ".$row[0]);
+          $comments = $db->query("SELECT c.id as c_id, content, name, time, u.id FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'board' AND reference_id = ".$row[0]);
           foreach ($comments as $comment) {
         ?>
         <div>
           <span><?= $comment["content"] ?></span>
           <span><?= $comment["name"] ?></span>
           <span class=""><?= $comment["time"] ?></span>
+          <span class="hidden"><?= $comment["c_id"] ?></span>
+          <span class="hidden"><?= $_GET["id"] ?></span>
           <?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
           <div class="comment_btn">
-            <a class="btn comment_modify" name="comment_modify" href="">수정</a>
-            <a class="btn comment_delete" name="comment_delete" href="">삭제</a>
+            <a class="btn comment_modify" name="comment_modify" >수정</a>
+            <a class="btn comment_delete" name="comment_delete" >삭제</a>
           </div>
           <?php } ?>
         </div>
@@ -87,8 +89,8 @@
       <form action="/comment/create.php" method="POST">
         <label>Comment:</label>
         <div>
-          <input id="comment-write" type="text" name="comment" />
-          <input class="btn commentBtn" id="submit" type="submit" value="등록"/>
+          <input id="comment-write" type="text" name="content" />
+          <input class="btn commentBtn" id="submit" type="button" value="등록"/>
         </div>
         <input type="hidden" name="id" value="<?= $row[0] ?>" />
         <input type="hidden" name="type" value="board">

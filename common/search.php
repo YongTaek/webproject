@@ -62,7 +62,7 @@ $keyword = $_POST["search"];
 			<?php } ?>
 			<p class="search-text">Question</p>
 			<?php
-				$rows = $db->query("SELECT DISTINCT q.id, q.title, time, u.name FROM question q JOIN user u ON q.u_id = u.id WHERE title like \"%$keyword%\") UNION (SELECT DISTINCT q.id, q.title, time, u.name FROM question q JOIN user u ON q.u_id = u.id WHERE t.name like \"%$keyword%\") order by time DESC");
+				$rows = $db->query("SELECT DISTINCT q.id, q.title, time, u.name FROM question q JOIN user u on q.u_id = u.id WHERE title LIKE \"%$keyword%\" UNION SELECT DISTINCT q.id, q.title, time, u.name FROM question q JOIN user u ON q.u_id = u.id JOIN tag t JOIN tag_question tq ON t.id = tq.t_id and q.id = tq.q_id WHERE t.name LIKE \"%$keyword%\" order by time DESC");
 				foreach ($rows as $row) {
 					?>
 			<div class= "question">
