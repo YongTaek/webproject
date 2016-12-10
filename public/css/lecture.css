@@ -79,15 +79,15 @@
   background: url('/public/img/question-yellow-bubble.png') no-repeat;
 }
 
-.opendrawer :hover {
-   background: url('/public/img/question-talk.png') no-repeat;
+.opendrawer:hover {
+  background: url('/public/img/question-talk.png') no-repeat;
 }
 
 .closedrawer {
   background: url('/public/img/question-yellow-bubble.png') no-repeat;
 }
 
-.closedrawer :hover{
+.closedrawer:hover{
   background: url('/public/img/question-talk.png') no-repeat;
 }
 
