@@ -2,6 +2,18 @@
   session_start();
 
   $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
+
+  $check_auth = $db->query("SELECT u_id FROM question WHERE id = $id");
+  $auth = $check_auth->fetch();
+
+  if (!($_SESSION["auth"] === "professor" || $_SESSION["auth"] === "assistant" || $_SESSION["id"] === $auth["u_id"])) {
+    header("Location: /error.php");
+  }
+
+  if (trim($_POST["title"]) === "" || trim($_POST["content"]) === "" || !preg_match("/^[0-9]$/", $_POST["id"])) {
+    header("Location: /error.php");
+  }
+
   $id = $_POST["id"];
   $u_id = $_SESSION["id"];
   $title = htmlspecialchars($_POST["title"]);
