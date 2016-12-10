@@ -17,16 +17,15 @@
     $db->exec("set names utf8");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->query("INSERT INTO comment(u_id, reference_id, content, time, type) VALUES ($u_id, $r_id, \"$content\", \"$time\", \"$type\")");
-    $result = array("error" => "false", "r_id" => $r_id, "content" => $content, "time" => $time, "name" => $name , "type" => $type);
     if ($type === "lecture") {
       $url = "http://webapp.yongtech.kr/lecture/class.php?id=$r_id";
     }else if ($type === "question") {
       $url = "http://webapp.yongtech.kr/board/question/post.php?id=$r_id";
     }
-    $result["url"] = $url;
+    $result = array("error" => "false", "r_id" => $r_id, "content" => $content, "time" => $time, "name" => $name , "type" => $type, "url" => $url);
+    print $url;
     $db->query("INSERT INTO notification(u_id, message, url, time) values (\"$u_id\", \"$content\", \"$url\",\"$time\")");
     $pusher->trigger("$r_id", 'new_comment', $result);
-
   } catch (PDOException $e) {
     $result = array("error" => "true", "r_id" => $r_id, "content" => $content, "type" => $type);
   }
