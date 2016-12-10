@@ -1,19 +1,38 @@
-function saveFromDialog(){
+$(document).ready(function () {
+	$("#saveDialogStudent").on('click', saveStudent);
+	$("#saveDialogAssistant").on('click', saveAssistant);
+});
 
-	$("#saveDialogStudent").on('click', function () { //여기서는 파일로 가져오는거랑 폼으로 입력받는거 2개 다!
-		var sid = $("#dialogStuID").val();
-		var sname = $("#dialogStuName").val();
-		console.log('*');
-		console.log(sid);
-		
-	});
+function saveStudent() {
+	var sid = $("#dialogStuID").val();
+	var sname = $("#dialogStuName").val();
+	console.log('*');
+	console.log(sid);
 
-	$("#saveDialogAssistant").on('click', function () {
-		var aid = $("#dialogAssID").val();
-		var aname = $("#dialogAssName").val();
-		console.log('!');
-		console.log(aid);
-	});
+	$("#saveStu").ajaxForm({
+    dataType: 'text',
+    success: function (responseText) {
+      console.log(responseText);
+    },
+    error: function (e) {
+      console.log(e.responseText);
+    }
+  });
 }
 
-$(document).ready(saveFromDialog);
+function saveAssistant() {
+	var aid = $("#dialogAssID").val();
+	var aname = $("#dialogAssName").val();
+	console.log('!');
+	console.log(aid);
+
+	$("#saveAss").ajaxForm({
+    dataType: 'text',
+    success: function (responseText) {
+      console.log(responseText);
+    },
+    error: function (e) {
+      console.log(e.responseText);
+    }
+  });
+}
