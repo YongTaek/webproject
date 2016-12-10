@@ -76,10 +76,10 @@
   z-index: 99;
 }
 .opendrawer {
-  background: url('/public/img/talk.png') no-repeat;
+  background: url('/public/img/talkBig.png') no-repeat;
 }
 .closedrawer {
-  background: url('/public/img/talk.png') no-repeat;
+  background: url('/public/img/talkBig.png') no-repeat;
 }
 
 .writer{
