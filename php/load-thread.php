@@ -5,7 +5,8 @@
   $time = $_POST["date"];
   // print $time;
   $time = date_parse_from_format("Y-m-d H:i:s",$time);
-  print $time;
+  $timeStamp = mktim($time['hour'],$time['minute'],$time['second'],$time['month'],$time['day'],$time['year'],$time['is_dst']);
+  print $timeStamp;
   // header("Content-type: application/json");
   // try {
   //   $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
