@@ -86,15 +86,15 @@
       </thead>
       <tbody>
       <?php
-        $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+        $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $rows = $db->query("SELECT id, name, url, open FROM lecture");
         foreach ($rows as $row) {
         if($row["open"] == 0){
           $status = "Close";
           $class = "lecture-close";
-        } 
-        else{ 
+        }
+        else{
           $status = "Open";
           $class = "lecture-open";
         }

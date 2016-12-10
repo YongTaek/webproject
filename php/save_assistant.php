@@ -1,11 +1,11 @@
 <?php
   session_start();
-  
+
   $id = $_POST["id"];
   $name = $_POST["name"];
 
   try {
-    $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+    $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $options = [

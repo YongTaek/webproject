@@ -78,7 +78,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 
 		<?php
 		if (isset($_GET["id"])) {
-			$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+			$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
 			$rows = $db->query("SELECT title, score, content, u.id, name, time, pinned FROM question q JOIN user u ON q.u_id = u.id WHERE q.id = ".$_GET["id"]);
 			foreach ($rows as $row) {
 				?>

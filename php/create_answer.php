@@ -4,10 +4,11 @@
   require('./library/Pusher.php');
   require('./library/push_setting.php');
 
-  $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+  $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
   $u_id = $_SESSION["id"];
   $id = $_POST["id"];
-  $content = $_POST["answer"];
+  $answer = $_POST["answer"];
+  $content = mb_internal_encoding($answer,"UTF-8");
   $time = date("Y-m-d H:i:s");
   $num = $db->query("SELECT id FROM answer WHERE q_id = $id AND u_id = $u_id");
   $count = $num->rowCount();

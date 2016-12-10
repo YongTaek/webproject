@@ -5,7 +5,7 @@
     $cur_pass = $_POST["id"];
     $new_pass = $_POST["password"];
 
-    $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+    $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $rows = $db->query("SELECT * FROM user WHERE id = ".$_SESSION["id"]);
     if ($rows->rowCount() > 0) {
