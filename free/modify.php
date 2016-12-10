@@ -15,7 +15,7 @@
   $title = htmlspecialchars($_POST["title"]);
   $content = $_POST["content"];
   $content = str_replace("\n", "<br/>", $content);
-  $db->query("UPDATE board SET title = '$title' WHERE id = $id AND u_id = $u_id");
-  $db->query("UPDATE board SET content = '$content' WHERE id = $id AND u_id = $u_id");
+  $db->query("UPDATE board SET title = '$title' WHERE id = $id");
+  $db->query("UPDATE board SET content = '$content' WHERE id = $id");
   header("Location: /board/free/post.php?id=$id");
   ?>

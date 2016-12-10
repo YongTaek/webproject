@@ -15,8 +15,8 @@
     $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $db->query("UPDATE notice SET title = '$title' WHERE id = $id AND u_id = $u_id");
-    $db->query("UPDATE notice SET content = '$content' WHERE id = $id AND u_id = $u_id");
+    $db->query("UPDATE notice SET title = '$title' WHERE id = $id");
+    $db->query("UPDATE notice SET content = '$content' WHERE id = $id");
     header("Location: /board/notice/post.php?id=$id");
   } catch (PDOException $e) {
     header("Location: /error.php");
