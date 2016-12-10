@@ -14,8 +14,10 @@
 	  		}
 	  	}
   		$tags = $db->query("SELECT q_id FROM question JOIN tag_question on id = q_id WHERE u_id = $id");
-  		foreach ($tags as $tag) {
-  			$db->query("DELETE FROM tag_question WHERE q_id = ".$tags[$id]);	
+  		if(!empty($tags)){
+	  		foreach ($tags as $tag) {
+	  			$db->query("DELETE FROM tag_question WHERE q_id = ".$tags[$id]);	
+	  		}
   		}
 		$db->query("DELETE FROM question WHERE id = $id AND u_id = $id");
 		$db->query("DELETE FROM board WHERE u_id = $id");
