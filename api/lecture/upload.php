@@ -25,7 +25,7 @@
 		if(isset($result)) {
 			print json_encode($result);
 		} else {
-			if (trim($_POST["title"])) {
+			if (trim($_POST["title"]) === "") {
 				$result = array("error" => "true");
 			}
 			else {
