@@ -1,4 +1,4 @@
-<?php include("../common/pusher.php"); ?>
+<?php include("../../common/pusher.php"); ?>
 
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@
 	<script src="/public/js/jquery-ui-1.12.1.min.js"></script>
 	<script src="/public/js/base.js"></script>
 
-	<?php include("../common/script.php"); ?>
+	<?php include("../../common/script.php"); ?>
 
 	<script type="text/javascript" src="/public/js/showdown.js"></script>
 	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
@@ -29,7 +29,7 @@
 	<script src="/public/js/pusher.js"></script>
 </head>
 <body>
-	<?php include("../common/header.php"); ?>
+	<?php include("../../common/header.php"); ?>
 
 
 	<!-- parameter id=value 로 가져와서 question 내용 보여주기 -->

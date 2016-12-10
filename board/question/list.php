@@ -13,7 +13,7 @@
 	<script src="/public/js/jquery-ui-1.12.1.min.js"></script>
 	<script src="/public/js/base.js"></script>
 
-	<?php include("../common/script.php"); ?>
+	<?php include("../../common/script.php"); ?>
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
@@ -23,12 +23,8 @@
 	<title>질문 게시판</title>
 </head>
 <body>
-	<?php include("../common/header.php"); ?>
+	<?php include("../../common/header.php"); ?>
 
-	<div class = "jumbotron banner-color">
-		<h1 class="align-center">QUESTIONS</h1>
-		<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
-	</div>
 	<div class= "content">
 		<div class="subheader">
 			<?php if ($logged_in) { ?>

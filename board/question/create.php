@@ -1,4 +1,4 @@
-<?php include("../common/pusher.php"); ?>
+<?php include("../../common/pusher.php"); ?>
 
 <!DOCTYPE html>
 <html>
@@ -17,7 +17,7 @@
 	<script src="/public/js/jquery-3.1.1.min.js"></script>
 	<script src="/public/js/jquery-ui-1.12.1.min.js"></script>
 	<script src="/public/js/base.js"></script>
-	<?php include("../common/script.php"); ?>
+	<?php include("../../common/script.php"); ?>
 
 	<script type="text/javascript" src="/public/js/showdown.js"></script>
 	<link rel="stylesheet" href="/public/css/pusher.css" type="text/css">
@@ -28,7 +28,7 @@
 	<title>question create</title>
 </head>
 <body>
-	<?php include("../common/header.php"); ?>
+	<?php include("../../common/header.php"); ?>
 	<div class='container'>
 		<!-- action php  -->
 		<form action='/question/create.php' method="post">
