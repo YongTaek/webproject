@@ -63,7 +63,7 @@
     ?>
     <div class="container">
       <div class="write-answer">
-        <form action="submit_freemodify.php" method="POST">
+        <form action="/free/modify.php" method="POST">
           <h2>Title</h2>
           <div class="title">
             <input name="title" type="text" value="<?= $row["title"] ?>">

@@ -99,8 +99,8 @@
 				</div>
 				<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant")) { ?>
 				<div class="notice_btn">
-					<a class="btn notice_modify" href="/php/modify_notice.php?id=<?= $row["id"] ?>">수정</a>
-					<a class="btn notice_delete" href="/php/delete_notice.php?id=<?= $row["id"] ?>">삭제</a>
+					<a class="btn notice_modify" href="/board/notice/modify.php?id=<?= $row["id"] ?>">수정</a>
+					<a class="btn notice_delete" href="/board/notice/delete.php?id=<?= $row["id"] ?>">삭제</a>
 				</div>
 				<?php } ?>
 			</div>
@@ -121,8 +121,8 @@
 					<span class=""><?= $comment["time"] ?></span>
 					<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
 					<div class="comment_btn">
-						<a class="btn comment_modify" href="/php/modify_comment.php">수정</a>
-						<a class="btn comment_delete" href="/php/delete_comment.php">삭제</a>
+						<a class="btn comment_modify" href="/comment/modify.php">수정</a>
+						<a class="btn comment_delete" href="/comment/delete.php">삭제</a>
 					</div>
 					<?php } ?>
 				</div>
@@ -130,7 +130,7 @@
 				<?php } ?>
 		</div>
 		<div id="comment" class="comment">
-			<form id="form" action="create_comment.php" method="POST">
+			<form id="form" action="comment/create.php" method="POST">
 				<label>Comment:</label>
 				<div>
 					<input id="comment-write" type="text" name="content" />

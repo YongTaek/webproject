@@ -75,7 +75,7 @@
 			<?php } ?>
 			<h2>ALL NOTICE</h2>
 			<ul class="nav nav-tabs">
-				<li class="question-tab active"><a href = "/php/noticelist.php">recent</a></li>
+				<li class="question-tab active"><a href = "/board/notice/list.php">recent</a></li>
 			</ul>
 		</div>
 		<div class= "qlist-wapper">
@@ -97,7 +97,7 @@
 				</div>
 				<div class="question-list-left">
 					<h3 class="title">
-						<a href= <?= "/php/notice.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
+						<a href= <?= "/board/notice/post.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
 					</h3>
 				</div>
 				<div class="question-list-right">

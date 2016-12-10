@@ -1,4 +1,4 @@
-<?php include("./common/pusher.php"); ?>
+<?php include("/common/pusher.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +13,7 @@
 	<script src="/public/js/jquery-ui-1.12.1.min.js"></script>
 	<script src="/public/js/base.js"></script>
 
-	<?php include("./common/script.php"); ?>
+	<?php include("/common/script.php"); ?>
 
 	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
@@ -22,11 +22,11 @@
 	<script src="/public/js/pusher.js"></script>
 </head>
 <body>
-	<?php include("./common/header.php"); ?>
+	<?php include("/common/header.php"); ?>
 	<div class="main">
 		<div class="container">
 			<div class = "col-lg-6">
-				<a class="h2" href="/notice/list.php"><h2>Notice</h2></a>
+				<a class="h2" href="/board/notice/list.php"><h2>Notice</h2></a>
 				<hr/>
 				<ul>
 					<?php
@@ -37,7 +37,7 @@
 					<li class= "list">
 					<!-- $id is contents id of notice -->
 					<!--title is the content title -->
-						<a href= <?= "/php/notice.php/?id=".$row["id"] ?> ><span class="title"><?= $row["title"] ?></span></a>
+						<a href= <?= "/board/notice/post.php/?id=".$row["id"] ?> ><span class="title"><?= $row["title"] ?></span></a>
 						<!-- date is when the content writes -->
 						<span class="date"><?= $row["DATE_FORMAT(time, '%Y-%m-%d')"] ?></span>
 					</li>
@@ -45,7 +45,7 @@
 				</ul>
 			</div>
 			<div class = "col-lg-6">
-				<a class="h2" href="/php/questionlist.php"><h2>Question</h2></a>
+				<a class="h2" href="/board/question/list.php"><h2>Question</h2></a>
 				<hr/>
 				<ul>
 					<?php
@@ -56,7 +56,7 @@
 					<li class= "list">
 						<!-- $id is contents id of notice -->
 						<!--title is the content title -->
-						<a href= <?= "/php/question.php?id=".$row["id"] ?> ><span class="title"><?= $row["title"] ?></span></a>
+						<a href= <?= "/board/question/post.php?id=".$row["id"] ?> ><span class="title"><?= $row["title"] ?></span></a>
 						<!-- date is when the content writes -->
 						<span class="date"><?= $row["DATE_FORMAT(time, '%Y-%m-%d')"] ?></span>
 					</li>
