@@ -6,6 +6,10 @@
     header("Location: /user/login.php");
   }
 
+  if (trim($_POST["title"]) === "" || trim($_POST["content"]) === "") {
+    header("Location: /error.php"); 
+  }
+
   $id = $_SESSION["id"];
   $title = htmlspecialchars($_POST["title"]);
   $content = $_POST["content"];
