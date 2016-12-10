@@ -12,7 +12,6 @@
 		</header>
 		<content>
 			<img src="/public/img/sad_icon.png"/>
-			<p> 원하는 글자를 넣으세여 </p>
 		</content>
 	</div>
 </body>
