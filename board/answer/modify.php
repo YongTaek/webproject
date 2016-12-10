@@ -35,7 +35,7 @@
 		$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
       	$id = $_GET["id"];
       	$u_id = $_SESSION["id"];
-      	$rows = $db->query("SELECT content FROM answer WHERE u_id = $u_id AND q_id = $id");
+      	$rows = $db->query("SELECT content FROM answer WHERE q_id = $id");
       	if($rows->rowCount() > 0){
       		$row = $rows->fetch();
       	}
