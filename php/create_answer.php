@@ -16,7 +16,8 @@
       $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $db->query("INSERT INTO answer(u_id, q_id, content, time) VALUES($u_id, $id, '$content', '$time')");
-      $pusher->trigger("$id", 'new_comment', "$id 에 답변이 달렸습니다!");
+      $array = array('content' => "$id 에 답변이 달렸습니다!" );
+      $pusher->trigger("$id", 'new_comment', $array);
     }
     else{
       // 한 질문에 답변 여러개 못단다고 알려줘야댐
