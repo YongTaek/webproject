@@ -52,6 +52,15 @@ function lectureReady(){
       changeDrawerClass(event);
     });
   });
+
+  $("textarea").keypress(function(event) {
+    console.log('*');
+    if (event.which == 13) {
+        console.log('!');
+        event.preventDefault();
+        $("form").submit();
+    }
+  });
 };
 
 function changeDrawerClass(event) {

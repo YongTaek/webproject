@@ -4,22 +4,30 @@ $(window).on("load" ,function(){
 	if(location[1] === "lecture"){
 		$(menuitems[3]).addClass("active");
 		$("h1.align-center").text("Lecture");
-		$("p.align-center").text("Let's study hard!\\(>_<)/");
+		$("p.align-center").text("Let's study hard!");
 	}
 	else if(location[2] === "notice"){
 		$(menuitems[0]).addClass("active");
 		$("h1.align-center").text("Notice");
-		$("p.align-center").text("It is notice page!~(^_^)~");
+		$("p.align-center").text("It is notice page!");
 	}
 	else if(location[2] === "question"){
 		$(menuitems[1]).addClass("active");	
 		$("h1.align-center").text("Question");
-		$("p.align-center").text("Let's ask a lot of questions!d(ㅇㅅㅇ)b");	
+		$("p.align-center").text("Let's ask a lot of questions!");	
 	}
 	else if(location[2] === "free"){
 		$(menuitems[2]).addClass("active");	
 		$("h1.align-center").text("Freeboard");
-		$("p.align-center").text("Let's talk freely!(/* 3 *)/");
+		$("p.align-center").text("Let's talk freely!");
+	}
+	else if(location[2] === "setting.php"){
+		$("h1.align-center").text("Setting");
+		$("p.align-center").text("It is setting page.");
+	}
+	else if(location[2] === "search.php"){
+		$("h1.align-center").text("Search");
+		$("p.align-center").text("Here is the result about your searching");
 	}
 });
 
@@ -31,6 +39,17 @@ function onclick(){
 		}
 		else{
 			alert("키워드를 입력해주세요 >:(");
+		}
+	});
+	$("input.search").keypress(function(e){
+		if(e.which == 13){
+			if($(this).val() !== ""){
+				$("form#search-content").submit();
+			}
+			else{
+				alert("키워드를 입력해주세요 >:(");
+				e.preventDefault();
+			}
 		}
 	});
 
@@ -76,7 +95,7 @@ function addTextNoNotification(){
 	var span = document.createElement("span");
 	span.setAttribute("class","no-notification");
 	span.innerHTML = "받지 않은 알림이 없습니다!";
-
+	$("#notifications").empty();
 	$("#notifications").append("<span class=\"no-notification\">받지 않은 알림이 없습니다!</span>");
 }
 

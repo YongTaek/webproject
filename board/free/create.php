@@ -30,7 +30,7 @@
         <form action="/free/create.php" method="POST">
           <h2>Title</h2>
           <div class="title">
-            <input name="title" type="text">
+            <input name="title" type="text" required>
           </div>
           <h2>Content</h2>
           <div class="content" id="wmd-editor">

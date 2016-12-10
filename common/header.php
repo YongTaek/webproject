@@ -41,7 +41,12 @@
       <img src="/public/img/search.png" class="search-icon">
     </button>
     <form method="post" id = "search-content" action="/common/search.php">
-    <input type="text" class="pull-right search" name="search">
+    <?php if (isset($keyword)){ ?>
+      <input type="text" class="pull-right search" name="search" value="<?= $keyword ?>">
+    <?php }else{ ?>
+      <input type="text" class="pull-right search" name="search">
+      <?php } ?>
+    
     </form>
 
   </nav>
