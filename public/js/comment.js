@@ -89,7 +89,8 @@ function questionReady(){
 			}
 		});
 	});
-	$( "#commentBtn" ).keypress(function() {
+
+	$(".commentBtn").keypress(function() {
 		var input = $(this).siblings().not($(this));
 		var form = $(this).parent().parent();
 		var forminput = form.serialize();
