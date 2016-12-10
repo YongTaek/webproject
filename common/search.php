@@ -152,7 +152,7 @@ $keyword = $_POST["search"];
 			</div>
 			<?php }
 			if(str_len($keyword) == 0){
-			header("Location: /error.php");
+				var_dump("keyworkd");
 			} else{
 				var_dump("aksdlsfjalskdjflasdjflasjl;");}?>
 		</div>
