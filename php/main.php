@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="/public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="/public/css/main.css" type="text/css">
 	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
+	<link rel="stylesheet" href="/public/css/sidebar.css" type="text/css">
 	<script type="text/javascript">
 		<?php if (isset($_SESSION["id"]) && isset($_SESSION["favQuestion"]) && isset($_SESSION["openLecture"])) { ?>
 			var questionArray = <?php echo json_encode($_SESSION["favQuestion"]); ?>;
@@ -40,7 +41,11 @@
 			</ul>
 
 			<div role="login" class="pull-right">
-				<img id="bell" src="/public/img/bell.png"></img>
+				<div class="pull-right circle side-bar">
+					<span class="notification-num">1</span>
+				</div>
+				<img id="bell" class="pull-right side-bar" src="/public/img/bell.png"></img>
+				
 				<?php if ($logged_in) { ?>
 
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
@@ -57,7 +62,7 @@
 
 					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
-
+				
 			</div>
 
 			<button class="pull-right">
@@ -66,7 +71,11 @@
 			<form method="post" id = "search-content" action="/php/search-page.php">
 			<input type="text" class="pull-right search" name="search">
 			</form>
+
 		</nav>
+		<div>
+			<?php include("./notification-side.php"); ?>
+		</div>
 		<div class = "jumbotron banner-color">
 			<h1 class="align-center">Home</h1>
 			<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
