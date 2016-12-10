@@ -122,6 +122,7 @@ function prependComment(da){
   div.append(spandate);
   div.addClass("thread");
   div.hide().prependTo(".threads").fadeIn();
+  $(".threads").animate({scrollTop: $(".threads").height()});
   // $(".threads").prepend(div));
   $("#input").val("");
 };
