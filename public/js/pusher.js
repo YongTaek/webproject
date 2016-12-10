@@ -44,7 +44,7 @@ for (var i = 0; i < questionArray.length; i++) {
 
 function sendReadMessage(notification) {
 	$.ajax({
-		url: '/php/read-push.php',
+		url: '/php/read_notification.php',
 		type : "POST",
 		data : { data : notification},
 		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
