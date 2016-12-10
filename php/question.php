@@ -139,7 +139,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 					<div class="comment">
 						<hr>
 						<?php
-						$comments = $db->query("SELECT content, name, time, u.id, score FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'question' AND reference_id = ".$_GET["id"]);
+						$comments = $db->query("SELECT c.id as c_id, content, name, time, u.id as, score FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'question' AND reference_id = ".$_GET["id"]);
 						foreach ($comments as $comment) {
 							?>
 							<div>
@@ -152,8 +152,8 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 								<span><?= $comment["time"] ?></span>
 								<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
 								<div class="comment_btn">
-									<a class="btn comment_modify" name="comment_modify" href="">수정</a>
-									<a class="btn comment_delete" name="comment_delete" href="">삭제</a>
+									<a class="btn comment_modify" name="comment_modify">수정</a>
+									<a class="btn comment_delete" name="comment_delete">삭제</a>
 								</div>
 								<?php } ?>
 							</div>
@@ -251,7 +251,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 							}
 						}
 						?>
-						<?php 
+						<?php
 						$u_id = $_SESSION["id"];
 						$isWriteAnswer = $db->query("SELECT id FROM answer WHERE u_id = $u_id AND q_id = ".$_GET["id"]);
 						$num = $isWriteAnswer->rowCount();

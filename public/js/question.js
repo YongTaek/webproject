@@ -19,7 +19,27 @@ function questionReady(){
 			}
 		});
 	});
+
+	$(".comment_modify").on("click", function (event) {
+		var div = $(this).parent().parent();
+		div.innerHTML = "";
+		var form = document.createElement("form");
+		form.setAttribute("action", "modify_comment.php");
+		var contentInput = document.createElement("input");
+		contentInput.setAttribute("name", "content");
+		contentInput.setAttribute("class", "comment-write");
+		var idInput = document.createElement("input");
+		idInput.setAttribute("name", "id");
+		idInput.setAttribute("type","hidden");
+		var submitInput = document.createElement("input");
+		submitInput.setAttribute("class", "btn commentBtn submit");
+		form.append(contentInput);
+		form.append(idInput);
+		form.append(submitInput);
+		div.append(form);
+	})
 };
+
 function appendComment(da,comment){
 	console.log(comment);
 	var content = da.content;
