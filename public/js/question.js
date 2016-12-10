@@ -46,6 +46,7 @@ function questionReady(){
 		submitInput.setAttribute("type", "submit");
 		form.append(contentInput);
 		form.append(idInput);
+		form.append(questionIdInput);
 		form.append(submitInput);
 		div.empty();
 		div.append(form);
