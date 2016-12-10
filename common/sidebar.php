@@ -3,7 +3,11 @@
   <a href="javascript:void(0)" class="closebtn">&times;</a>
   <a id="all-delete" class="all-notification-delete">모든 알림 삭제</a>
   <hr>
-  <!-- <span class="no-notification">받지 않은 알림이 없습니다!</span> -->
+  <?php if($pushArray === undefined){ ?>
+  
+    <span class="no-notification">받지 않은 알림이 없습니다!</span>
+  
+  <?php }?>
   <div id="notifications">
     <?php
     foreach ($pushArray as $array ) {
