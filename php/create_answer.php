@@ -7,14 +7,13 @@
   $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
   $u_id = $_SESSION["id"];
   $id = $_POST["id"];
-  $answer = $_POST["answer"];
-  $content = mb_internal_encoding($answer,"UTF-8");
+  $content = $_POST["answer"];
   $time = date("Y-m-d H:i:s");
   $num = $db->query("SELECT id FROM answer WHERE q_id = $id AND u_id = $u_id");
   $count = $num->rowCount();
   try{
     if($count == 0){
-      $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+      $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $db->query("INSERT INTO answer(u_id, q_id, content, time) VALUES($u_id, $id, '$content', '$time')");
       $array = array('content' => "$id 에 답변이 달렸습니다!", "url" => "http://webapp.yongtech.kr/php/question.php?id=$id", 'time' => "$time");
