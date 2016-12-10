@@ -1,6 +1,6 @@
 
 $(".star-off, .star-on").on('click', function () {
-	if (window.location.pathname == "/php/questionlist.php")
+	if (window.location.pathname == "/board/question/list.php")
 		var element = $(this)[0].parentElement.parentElement.parentElement.getElementsByClassName("mini-count")[0].childNodes[1].textContent;
 	else
 		var element = window.location.search.split("=")[1];
@@ -11,7 +11,7 @@ $(".star-off, .star-on").on('click', function () {
 		var t = "favorite";
 
 	$.ajax({
-		url: "favorite.php",
+		url: "/api/board/favorite.php",
 		context: this,
 		data: {
 			id: element,
@@ -34,11 +34,11 @@ $(".star-off, .star-on").on('click', function () {
 $(".pin-off, .pin-on").on('click', function () {
 	if (window.location.pathname.includes("list")) {
 		var element = $(this)[0].parentElement.parentElement.parentElement.getElementsByClassName("mini-count")[0].childNodes[1].textContent;
-		var which = window.location.pathname.slice(5, window.location.pathname.search("list"));
+		var which = window.location.pathname.split("/")[2];
 	}
 	else {
 		var element = window.location.search.split("=")[1];
-		var which = window.location.pathname.slice(5, window.location.pathname.indexOf('.'));
+		var which = window.location.pathname.split("/")[2];
 	}
 
 	if ($(this).hasClass("pin-on")) {
@@ -48,7 +48,7 @@ $(".pin-off, .pin-on").on('click', function () {
 	}
 
 	$.ajax({
-		url: "pin.php",
+		url: "/api/board/pin.php",
 		context: this,
 		data: {
 			id: element,
@@ -79,7 +79,7 @@ $(".vote-up-off").on('click', function () {
 	}
 
 	$.ajax({
-		url: "vote.php",
+		url: "/api/board/vote.php",
 		context: this,
 		data: {
 			id: element,
@@ -108,7 +108,7 @@ $(".vote-down-off").on('click', function () {
 	}
 
 	$.ajax({
-		url: "vote.php",
+		url: "/api/board/vote.php",
 		context: this,
 		data: {
 			id: element,
