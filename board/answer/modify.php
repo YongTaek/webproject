@@ -32,37 +32,36 @@
 	<?php include("../../common/header.php"); ?>
 
 	<?php
-	$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-	$id = $_GET["id"];
-	$u_id = $_SESSION["id"];
-	$rows = $db->query("SELECT content FROM answer WHERE u_id = $u_id AND q_id = $id");
-	if($rows->rowCount() > 0){
-		$row = $rows->fetch();
-	}
+		$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+      	$id = $_GET["id"];
+      	$u_id = $_SESSION["id"];
+      	$rows = $db->query("SELECT content FROM answer WHERE u_id = $u_id AND q_id = $id");
+      	if($rows->rowCount() > 0){
+      		$row = $rows->fetch();
+      	}
 	?>
 	<div class='container'>
-		<form action='/answer/modify.php' method="post">
-			<h2>Your Answer</h2>
-			<div class="content" id="wmd-editor">
-				<div id="wmd-button-bar"></div>
-				<textarea id="wmd-input" name="content"><?= $row["content"] ?></textarea>
-			</div>
-			<hr>
-			<div id="wmd-preview" class="wmd-preview"></div>
-			<hr>
-			<input type="hidden" name="id" value="<?= $id ?>">
-			<div class='buttons'>
-				<input class='btn btn-primary' type='submit' value="submit">
-		</form>
-		<button class='btn btn-primary'>cancel</button>
-	</div>
+	<form action='/answer/modify.php' method="post">
+		<h2>Your Answer</h2>
+		<div class="content" id="wmd-editor">
+			<div id="wmd-button-bar"></div>
+			<textarea id="wmd-input" name="content"><?= $row["content"] ?></textarea>
+		</div>
+		<hr>
+		<div id="wmd-preview" class="wmd-preview"></div>
+		<hr>
+		<input type="hidden" name="id" value="<?= $id ?>">
+		<div class='buttons'>
+			<input class='btn btn-primary' type='submit' value="submit">
+			<button class='btn btn-primary'>cancel</button>
+		</div>
 		
+	</form>
 
+</div>
 
-	</div>
+<script src="/public/js/jquery.caret.min.js"></script>
 
-	<script src="/public/js/jquery.caret.min.js"></script>
-
-	<script type="text/javascript" src="/public/js/wmd.js"></script>
+<script type="text/javascript" src="/public/js/wmd.js"></script>
 </body>
 </html>
