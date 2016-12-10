@@ -154,6 +154,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 								<span><?= $name ?></span>
 								<span><?= $comment["time"] ?></span>
 								<span class="hidden"><?= $comment["c_id"] ?></span>
+								<span class="hidden"><?= $_GET["id"] ?></span>
 								<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
 								<div class="comment_btn">
 									<a class="btn comment_modify" name="comment_modify">수정</a>
@@ -230,6 +231,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 											<span><?= $name ?></span>
 											<span><?= $comment["time"] ?></span>
 											<span class="hidden"><?= $comment["c_id"] ?></span>
+											<span class="hidden"><?= $_GET["id"] ?></span>
 											<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
 											<div class="comment_btn">
 												<a class="btn comment_modify" name="comment_modify" href="">수정</a>
