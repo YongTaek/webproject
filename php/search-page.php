@@ -162,7 +162,7 @@
 			<?php } ?>
 			<p class="bg-info">Lecture</p>
 			<?php
-				$rows = $db->query("SELECT l.id, title, time, name FROM lecture l JOIN user u ON l.u_id = u.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
+				$rows = $db->query("SELECT l.id, name, time FROM lecture l WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
 				foreach ($rows as $row) {
 			?>
 			<div class= "question">
@@ -176,13 +176,13 @@
 				</div>
 				<div class="question-list-left">
 					<h3 class="title">
-						<a href= <?= "/php/notice.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
+						<a href= <?= "/php/notice.php?id=".$row["id"] ?> ><?= $row["name"] ?></a> <!-- 제목 -->
 					</h3>
 				</div>
 				<div class="question-list-right">
 					<div>
 						<h5 class="date"><?= $row["time"] ?></h5> <!-- 날짜 -->
-						<h5 class="name">by. <?= $row["name"] ?></h5> <!--작성자 -->
+						<h5 class="name">by. <?= "professor" ?></h5> <!--작성자 -->
 					</div>
 				</div>
 			</div>
