@@ -24,6 +24,7 @@ for (var i = 0; i < questionArray.length; i++) {
 				a.remove();
 				$("#notification").text(parseInt($("#notification").text()) - 1);
 				sendReadMessage(data);
+				window.location.href = data.url;
 			},
 			"positionClass": "toast-top-right",
 			"preventDuplicates": true,
@@ -70,7 +71,6 @@ function sendReadMessage(notification) {
 		dataType: 'json',
 		success : function (result) {
 			console.log(result);
-			window.location.href = data.url;
 		},
 		error : function (result) {
 			console.log(result);
