@@ -56,7 +56,7 @@
 				<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant")) { ?>
 				<div class="notice_btn">
 					<a class="btn notice_modify" href="/board/notice/modify.php?id=<?= $row["id"] ?>">수정</a>
-					<a class="btn notice_delete" href="/board/notice/delete.php?id=<?= $row["id"] ?>">삭제</a>
+					<a class="btn notice_delete" href="/notice/delete.php?id=<?= $row["id"] ?>">삭제</a>
 				</div>
 				<?php } ?>
 			</div>
