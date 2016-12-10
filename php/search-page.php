@@ -92,7 +92,7 @@
 					</div>
 				</div>
 				<div class="question-list-left">
-					<h3 class="title">
+					<h3 class="title not-question-title">
 						<a href= <?= "/php/notice.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
 					</h3>
 				</div>
@@ -106,7 +106,7 @@
 			<?php } ?>
 			<p class="text">Question</p>
 			<?php
-				$rows = $db->query("SELECT distinct q.id, q.title, time, u.name FROM question q JOIN user u JOIN tag t JOIN tag_question tq ON q.u_id = u.id and t.id = tq.t_id and q.id = tq.q_id WHERE title like \"%$keyword%\" or t.name like \"%$keyword%\" ORDER BY time DESC");
+				$rows = $db->query("SELECT distinct q.id, q.title, time, u.name FROM question q JOIN user u ON q.u_id = u.id JOIN tag t JOIN tag_question tq ON t.id = tq.t_id WHERE title like \"%$keyword%\" or t.name like \"%$keyword%\" ORDER BY time DESC");
 				foreach ($rows as $row) {
 					?>
 			<div class= "question">
@@ -157,7 +157,7 @@
 					</div>
 				</div>
 				<div class="question-list-left">
-					<h3 class="title">
+					<h3 class="title not-question-title">
 						<a href= <?= "/php/free.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
 					</h3>
 				</div>
@@ -184,7 +184,7 @@
 					</div>
 				</div>
 				<div class="question-list-left">
-					<h3 class="title">
+					<h3 class="title not-question-title">
 						<a href= <?= "/php/lecture-page.php?id=".$row["id"] ?> ><?= $row["name"] ?></a> <!-- 제목 -->
 					</h3>
 				</div>
