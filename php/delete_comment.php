@@ -10,7 +10,6 @@
 	try {
 
 		$db->query("DELETE from comment where id=$id");
-
 		$array = array("error" => "false");
 		print json_encode($array);
 	} catch (Exception $e) {
