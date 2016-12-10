@@ -37,9 +37,9 @@ function questionReady(){
 		idInput.setAttribute("value", commentId);
 		idInput.setAttribute("type","hidden");
 		var questionId = idSpan[1].innerHTML;
+		questionIdInput.setAttribute("name", "questionId");
 		questionIdInput.setAttribute("value",questionId);
 		questionIdInput.setAttribute("type", "hidden");
-		questionIdInput.setAttribute("name", "qeustionId");
 		var submitInput = document.createElement("input");
 		submitInput.setAttribute("class", "btn commentModify submit");
 		submitInput.setAttribute("value", "수정");
