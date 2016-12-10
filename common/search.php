@@ -1,5 +1,6 @@
-<?php include("pusher.php"); ?>
-
+<?php include("pusher.php"); 
+$keyword = $_POST["search"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +62,7 @@
 			<?php } ?>
 			<p class="search-text">Question</p>
 			<?php
-				$rows = $db->query("SELECT DISTINCT q.id, q.title, time, u.name FROM question q JOIN user u ON q.u_id = u.id WHERE title like \"%$keyword%\" UNION SELECT DISTINCT q.id, q.title, time, u.name FROM question q JOIN user u ON q.u_id = u.id WHERE t.name like \"%$keyword%\" order by time DESC");
+				$rows = $db->query("SELECT DISTINCT q.id, q.title, time, u.name FROM question q JOIN user u ON q.u_id = u.id WHERE title like \"%$keyword%\") UNION (SELECT DISTINCT q.id, q.title, time, u.name FROM question q JOIN user u ON q.u_id = u.id WHERE t.name like \"%$keyword%\") order by time DESC");
 				foreach ($rows as $row) {
 					?>
 			<div class= "question">
