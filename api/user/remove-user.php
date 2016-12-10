@@ -4,6 +4,9 @@
   	$u_id = $_SESSION["id"];
   	$id = $_GET["id"];
   	try{
+      if(!($_SESSION["auth"] === 'professor' || $_SESSION["auth"] === 'assistant')){
+        header("Location: /error.php");
+      }
       $db->query("DELETE FROM notification WHERE u_id = $id");
   		$db->query("DELETE FROM comment WHERE u_id = $id");
   		$db->query("DELETE FROM answer WHERE u_id = $id");

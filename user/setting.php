@@ -1,4 +1,10 @@
-<?php include("../common/pusher.php"); ?>
+<?php include("../common/pusher.php"); 
+  session_start();
+  $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
+  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  if(!($_SESSION["auth"] === 'professor' || $_SESSION["auth"] === 'assistant')){
+    header("Location: /error.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
