@@ -1,5 +1,6 @@
 <?php
 session_start();
+header("Content-type: text/html; charset=UTF-8");
 $logged_in = false;
 if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
 	$logged_in = true;
