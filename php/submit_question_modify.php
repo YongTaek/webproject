@@ -3,8 +3,9 @@
 	$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
   	$id = $_POST["id"];
   	$u_id = $_SESSION["id"];
-  	$title = $_POST["title"];
+  	$title = htmlspecialchars($_POST["title"]);
   	$content = $_POST["content"];
+    $content = str_replace("\n", "<br/>", $content);
   	$t = $_POST["tags"];
   	$tags = explode(",", $t);
     $c_count = count($tags);
