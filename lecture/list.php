@@ -40,7 +40,7 @@
         <?php foreach ($rows as $row) { ?>
           <tr>
             <td><?= $row["id"] ?></td>
-            <td><a href="/lecture/class.php?id=<?= $row["id"] ?>"><?= $row["name"] ?></a></td>
+            <td><a href="/lecture/class.php?id=<?= $row["id"] ?>" target = "_blank"><?= $row["name"] ?></a></td>
             <?php if($row["open"] == 1){
                 $open = "OPEN";
               }else{
