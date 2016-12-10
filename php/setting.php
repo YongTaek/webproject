@@ -115,6 +115,7 @@
             <th>SID</th>
             <th>Name</th>
             <th>Remove</th>
+            <th>Password</th>
           </tr>
         </thead>
         <tbody>
@@ -122,7 +123,8 @@
             <td>1</td>
             <td>2014038111</td>
             <td>천유정</td>
-            <td><a href="#" class="remove-student">remove</a></td>
+            <td><a href="#" class="remove-student">Remove</a></td>
+            <td><a href="#" class="reset-student">Reset</a></td>
           </tr>
         </tbody>
       </table>
@@ -138,6 +140,8 @@
             <th>Index</th>
             <th>SID</th>
             <th>Name</th>
+            <th>Remove</th>
+            <th>Password</th>
           </tr>
         </thead>
         <tbody>
@@ -145,6 +149,8 @@
             <td>1</td>
             <td>2014038111</td>
             <td>천유정</td>
+            <td><a href="#" class="remove-assistant">Remove</a></td>
+            <td><a href="#" class="reset-assistant">Reset</a></td>
           </tr>
         </tbody>
       </table>
