@@ -2,7 +2,7 @@
   session_start();
   date_default_timezone_set('Asia/Seoul');
   require('../library/Pusher.php');
-  require('../library/push_setting.php');
+  require('../library/push-setting.php');
 
   $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
   $u_id = $_SESSION["id"];
