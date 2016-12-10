@@ -3,7 +3,7 @@
   $id = $_SESSION["id"];
   if (isset($id)) {
     header("Location: main.php?id=$id");
-  }
+  } 
   $content = $data["content"];
   $time = $data["time"];
   $url = $data["url"];
