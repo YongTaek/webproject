@@ -19,6 +19,7 @@
 		$tempArray = array("message" => $message, "url" => $url, "time" => $time);
 		$pushArrayp[] = $tempArray;
 	}
+	print_r($pushArray);
 ?>
 <!DOCTYPE html>
 <html>
