@@ -8,7 +8,7 @@
     <?php
     foreach ($pushArray as $array ) {
     ?>
-    <a class="notification" href="<?=$array["url"]?>">
+    <a class="notification" zhref="<?=$array["url"]?>">
       <div class="notification-thread">
         <p class="notification-text"><?=$array["message"]?></p>
         <p class="notification-text"><?=$array["time"]?></p>

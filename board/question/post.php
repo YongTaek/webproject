@@ -58,7 +58,7 @@
 					<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $row["id"])) { ?>
 					<div class="question_btn">
 						<a class="btn question_modify" name="question_modify" href="/board/question/modify.php?id=<?= $_GET["id"] ?>">수정</a>
-						<a class="btn question_delete" name="question_delete" href="/board/question/delete.php?id=<?= $_GET["id"] ?>">삭제</a>
+						<a class="btn question_delete" name="question_delete" href="/question/delete.php?id=<?= $_GET["id"] ?>">삭제</a>
 					</div>
 					<?php } ?>
 					<hr>
@@ -158,7 +158,7 @@
 								<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $answer["id"])) { ?>
 								<div class="answer_btn">
 									<a class="btn answer_modify" name="answer_modify" href="/board/answer/modify.php?id=<?= $_GET["id"] ?>">수정</a>
-									<a class="btn answer_delete" name="answer_delete" href="/board/answer/delete.php?id=<?= $_GET["id"] ?>">삭제</a>
+									<a class="btn answer_delete" name="answer_delete" href="/answer/delete.php?id=<?= $_GET["id"] ?>">삭제</a>
 								</div>
 								<?php } ?>
 								<hr>
