@@ -1,6 +1,10 @@
 <header role = "banner" class="banner-color">
   <nav role="navigation">
-    <div id="logo" class="pull-left"><a href="/php/main.php"><img class="logo" src="/public/img/selab_logo_S.png"/></a></div>
+    <div id="logo" class="pull-left">
+      <a href="/index.php">
+        <img class="logo" src="/public/img/selab_logo_S.png"/>
+      </a>
+    </div>
     <ul id="menu" class="inline-list pull-left">
       <li class="pull-left"><a href="/php/noticelist.php" class="menu-item" >NOTICE</a></li>
       <li class="pull-left"><a href="/php/questionlist.php" class="menu-item">QUESTION</a></li>
@@ -20,15 +24,15 @@
         <div class="pull-right vr"></div>
       <?php
         if ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant") {
-          $href = "/php/setting.php";
+          $href = "/user/setting.php";
         } else {
-          $href = "/php/changepw.php";
+          $href = "/user/change-password.php";
         }
       ?>
         <a id="mypage" href="<?= $href ?>" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
       <?php } else { ?>
 
-        <a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
+        <a id="login" href="/user/login.php" class='pull-right'>LOGIN</a>
       <?php } ?>
 
     </div>
@@ -42,7 +46,7 @@
 
   </nav>
   <div>
-    <?php include("./notification-side.php"); ?>
+    <?php include("/common/sidebar.php"); ?>
   </div>
   <div class = "jumbotron banner-color">
     <h1 class="align-center">Home</h1>
