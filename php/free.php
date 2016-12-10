@@ -36,7 +36,7 @@
       <ul id="menu" class="inline-list pull-left">
         <li class="pull-left"><a href="/php/noticelist.php" class="menu-item" >NOTICE</a></li>
         <li class="pull-left"><a href="/php/questionlist.php" class="menu-item">QUESTION</a></li>
-        <li class="pull-left"><a href="/php/freelist.php" class="menu-item active">FREE BOARD</a></li>
+        <li class="pull-left"><a href="/php/freelist.php" class="menu-item active">BOARD</a></li>
         <li class="pull-left"><a href="/php/lecture-list.php" class="menu-item">LECTURE</a></li>
       </ul>
       <div role="login" class="pull-right">
@@ -58,7 +58,7 @@
       <button class="pull-right">
         <img src="/public/img/search.png" class="search-icon">
       </button>
-      <form id = "search-content" action="../php/search-page.php">
+      <form method = "post" id = "search-content" action="php/search-page.php">
       <input type="text" class="pull-right search" name="search">
       </form>
     </nav>

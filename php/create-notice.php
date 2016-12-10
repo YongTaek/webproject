@@ -29,7 +29,7 @@ session_start();
      <ul id="menu" class="inline-list pull-left">
       <li class="pull-left"><a href="/php/noticelist.php" class="menu-item active" >NOTICE</a></li>
       <li class="pull-left"><a href="/php/questionlist.php" class="menu-item">QUESTION</a></li>
-      <li class="pull-left"><a href="/php/freelist.php" class="menu-item">FREE BOARD</a></li>
+      <li class="pull-left"><a href="/php/freelist.php" class="menu-item">BOARD</a></li>
       <li class="pull-left"><a href="/php/lecture-list.php" class="menu-item">LECTURE</a></li>
     </ul>
     <div role="login" class="pull-right">
@@ -45,9 +45,9 @@ session_start();
       <?php } ?>
     </div>
     <button class="pull-right">
-      <img src="/public/img/search.png" class="search-icon">
-    </button>
-    <form id = "search-content" action="../php/search-page.php">
+        <img src="/public/img/search.png" class="search-icon">
+      </button>
+      <form method = "post" id = "search-content" action="php/search-page.php">
       <input type="text" class="pull-right search" name="search">
     </form>
   </nav>
@@ -72,6 +72,10 @@ session_start();
       <hr>
       <div id="wmd-preview" class="wmd-preview"></div>
       <hr>
+      <div class='buttons'>
+        <input class='btn btn-primary' type='submit' value="submit">
+        <button class='btn btn-primary'>cancel</button>
+      </div>
     </form>
   </div>
 </div>
