@@ -79,7 +79,7 @@
 			<p class="bg-info">Notice</p>
 			<?php
 				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-				$rows = $db->query("SELECT n.id, title, time, name FROM notice n JOIN user u ON n.u_id = u.id WHERE title = $keyword ORDER BY pinned DESC, time DESC");
+				$rows = $db->query("SELECT n.id, title, time, name FROM notice n JOIN user u ON n.u_id = u.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
 				
 				foreach ($rows as $row) {
 			?>
