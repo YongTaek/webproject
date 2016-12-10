@@ -85,4 +85,6 @@
 	color: white;
 	background-color: rgb(92, 187, 230);
 }
-
+.comment > div > *{
+  display: inline-block;
+}
