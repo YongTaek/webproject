@@ -50,12 +50,12 @@
 		<hr>
 		<div id="wmd-preview" class="wmd-preview"></div>
 		<hr>
-		
+		<input type="hidden" name="id" value="<?= $id ?>">
 		<div class='buttons'>
 			<input class='btn btn-primary' type='submit' value="submit">
 			<button class='btn btn-primary'>cancel</button>
 		</div>
-		<input type="hidden" name="id" value="<?= $id ?>">
+		
 	</form>
 
 </div>

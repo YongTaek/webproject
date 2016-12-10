@@ -1,8 +1,6 @@
 <?php include("pusher.php"); 
 $keyword = $_POST["search"];
-if($keyword === ""){
-	header("Location: /error.php");
-}
+$test = "hello!!!!!!";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -153,7 +151,10 @@ if($keyword === ""){
 					</div>
 				</div>
 			</div>
-			<?php } ?>
+			<?php } if($keyword === ""){
+			var_dump($test);
+}else{ var_dump("hello")}?>
+
 		</div>
 	</div>
 </body>
