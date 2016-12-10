@@ -30,7 +30,7 @@ function questionReady(){
 		contentInput.setAttribute("class", "comment-write");
 		var idInput = document.createElement("input");
 		idInput.setAttribute("name", "id");
-		var commentId = $(div).find("span.hidden").innerHTML;
+		var commentId = div.find("span.hidden").innerHTML;
 		idInput.setAttribute("value", commentId);
 		idInput.setAttribute("type","hidden");
 		var submitInput = document.createElement("input");
