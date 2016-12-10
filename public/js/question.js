@@ -52,6 +52,26 @@ function questionReady(){
 		div.append(form);
 	});
 
+	$(".comment_delete").on("click", function (event) {
+		var url = window.location;
+		var parameter = url.search.split("?")[1];
+		var questionId = parameter.split("=")[1];
+		var commentId = $(this).parent().parent().find("span.hidden")[1].innerHTML;
+		var query = "id=" + commentId + "&questionId=" + questionId;
+		$.ajax({
+			url: "delete_comment.php",
+			type: "POST",
+			data: query,
+			dataType: 'json'
+		}).done(function (data) {
+			if(data.error === "true") {
+				alert("삭제 오류");
+			} else {
+				window.location.href = document.location.href;
+			}
+		});
+	});
+
 };
 
 function modifyAjax(event) {
