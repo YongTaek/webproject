@@ -10,6 +10,7 @@ if (isset($_GET["id"])) {
 	$lectureName = $rows['name'];
 	$fileType = explode(".",$lectureName);
 	$fileType = $fileType[count($fileType)-1];
+	echo $fileType;
   $lectureFile = $rows['url'];
   if ($lectureName === "") {
     header("Location: /error.php");
