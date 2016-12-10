@@ -7,15 +7,17 @@
   $content = $_POST["content"];
   $tag = $_POST["tags"];
   $time = date("Y-m-d H:i:s");
+  $tags = explode(",", $tag);
   $num = count($tag);
   try {
     $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->query("INSERT INTO question(u_id, title, content, time) VALUES($id, '$title', '$content', '$time')");
-    if($num > 0){
-      $tags = explode(",", $tag);
+    $qid = 0;
+    if($tags[0] != ""){
       $questionId = $db->query("SELECT id from question where title='$title' and content='$content' and time='$time'");
       $q = $questionId->fetch();
+      $qid = $q["id"];
       foreach ($tags as $tag) { 
         $tagId = $db->query("SELECT id from tag where name='$tag'");
         $t = $tagId->fetch();
@@ -27,7 +29,8 @@
         $db->query("INSERT INTO tag_question(t_id, q_id) values(".$t["id"].",".$q["id"].")");
       }
    }
-    header("Location: question.php?id=".$q["id"]);
+
+    header("Location: question.php?id=".$qid);
   } catch (PDOException $e) {
     echo $tag;
     echo $e->getMessage();
