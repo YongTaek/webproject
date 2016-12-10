@@ -18,6 +18,7 @@ for (var i = 0; i < questionArray.length; i++) {
 			"newestOnTop": false,
 			"progressBar": false,
 			"onclick" : function () {
+				sendReadMessage(data);
 				window.location.href = data.url;
 			},
 			"positionClass": "toast-top-right",
@@ -41,7 +42,21 @@ for (var i = 0; i < questionArray.length; i++) {
 	});
 }
 
-
+function sendReadMessage(notification) {
+	$.ajax({
+		url: '/php/read-push.php',
+		type : "POST",
+		data : { data : notification},
+		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+		dataType: 'json',
+		success : function (result) {
+			console.log(result);
+		},
+		error : function (result) {
+			console.log(result);
+		}
+	});
+}
 
 for (var i = 0; i < lectureArray.length; i++) {
 	var channel = pusher.subscribe(lectureArray[i]);
