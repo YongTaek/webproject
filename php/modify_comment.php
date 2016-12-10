@@ -13,7 +13,8 @@
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   try {
-    $db->query("UPDATE comment set content=\"$content\" and time=\"$time\" where id=$id");
+    $db->query("UPDATE comment set content=\"$content\" where id=$id");
+    $db->query("UPDATE comment set time=\"$time\" where id=$id");
     $array = array("error" => "false");
     print json_encode($array);
   } catch (Exception $e) {
