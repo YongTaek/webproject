@@ -152,7 +152,7 @@ $test = "hello!!!!!!";
 				</div>
 			</div>
 			<?php } 
-			if(empty($keyword)){
+			if(str_len($keyword)==0){
 				var_dump($test);
 					}else{ var_dump("hello");}
 			?>
