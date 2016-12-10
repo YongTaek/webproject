@@ -37,9 +37,7 @@ function lectureReady(){
           alert("로드 에러! ;(");
         }
         else{
-          for(var i = 0; i<da.length;i++){
-            prependComment(da[i]);
-          }
+          prependComment(da);
         }
       });
     };
@@ -97,34 +95,40 @@ function appendComment(da){
 
   $(".threads").animate({scrollTop: $(".threads").prop("scrollHeight")});
 };
-function prependComment(da){
-  // var da = $.parseJSON(data);
-  var content = da.content;
-  // var content = "hello";
-  var time = da.time;
-  // var time = "2016.12.08 6:45pm";
-  var name = da.name;
-  // var name = "익명";
+function prependComment(data){
+  var originScrollHeight = $(".threads").prop("scrollHeight");
+  for(var i = 0; i<data.length;i++){
+    var da = data[i];
+    // var da = $.parseJSON(data);
+    var content = da.content;
+    // var content = "hello";
+    var time = da.time;
+    // var time = "2016.12.08 6:45pm";
+    var name = da.name;
+    // var name = "익명";
 
-  var div = $("<div></div>");
+    var div = $("<div></div>");
 
-  var spancontent = $("<span></span>").text(content);
-  spancontent.addClass("content");
-  var spandate = $("<span></span>").text(time);
-  spandate.addClass("date");
-  var spanwriter = $("<span></span>").text(name);
-  spanwriter.addClass("writer");
+    var spancontent = $("<span></span>").text(content);
+    spancontent.addClass("content");
+    var spandate = $("<span></span>").text(time);
+    spandate.addClass("date");
+    var spanwriter = $("<span></span>").text(name);
+    spanwriter.addClass("writer");
 
-  div.append(spancontent);
-  div.append($("<br>"));
-  div.append(spanwriter);
-  div.append($("<br>"));
-  div.append(spandate);
-  div.addClass("thread");
-  // div.hide().prependTo(".threads").fadeIn();
-  // $(".threads").animate({scrollTop: $(".threads").height()});
-  $(".threads").prepend(div);
-  $("#input").val("");
+    div.append(spancontent);
+    div.append($("<br>"));
+    div.append(spanwriter);
+    div.append($("<br>"));
+    div.append(spandate);
+    div.addClass("thread");
+    $(".threads").prepend(div);
+  }
+  var afterScrollHeight = $(".threads").prop("scrollHeight");
+  var originScrollHeight = afterScrollHeight - originScrollHeight;
+  $(".threads").scrollTop(originScrollHeight);
+    // div.hide().prependTo(".threads").fadeIn();
+    // $(".threads").animate({scrollTop: $(".threads").height()});
 };
 
 $(document).ready(lectureReady);
