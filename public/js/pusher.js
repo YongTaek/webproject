@@ -1,10 +1,11 @@
 console.log(questionArray);
 console.log(lectureArray);
-Pusher.logToConsole = true;
+Pusher.logToConsole = false;
 
 var pusher = new Pusher('dc9f3fc01f0f63f45083', {
 	encrypted: true
 });
+
 for (var i = 0; i < questionArray.length; i++) {
 	var channel = pusher.subscribe(questionArray[i]);
 	channel.bind('new_comment', function(data) {
@@ -39,15 +40,16 @@ for (var i = 0; i < questionArray.length; i++) {
 		// 골라서 쓰기
 	});
 }
+
+
+
 for (var i = 0; i < lectureArray.length; i++) {
-	console.log("lecture : " + lectureArray[i]);
 	var channel = pusher.subscribe(lectureArray[i]);
 	channel.bind('new_comment', function(data) {
 		// https://github.com/CodeSeven/toastr#escape-html-characters
 		// http://codeseven.github.io/toastr/demo.html
 		var link = document.location.href;
 		if (link === data.url) {
-			console.log("adsf");
 			appendComment(data);
 		} else {
 			toastr.options = {

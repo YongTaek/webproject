@@ -3,7 +3,7 @@
 	$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
   	$id = $_GET["id"];
   	$u_id = $_SESSION["id"];
- 
+
   	$isFavorite = $db->query("SELECT q_id FROM favorite WHERE q_id = $id");
   	$isAnswered = $db->query("SELECT id FROM answer WHERE q_id = $id");
   	$fav_num = $isFavorite->fetch();
@@ -14,7 +14,6 @@
       alert(\"답변이 달려있는 질문은 지울 수 없어요!\");
       location=\"questionlist.php\";
       </script>";
-
   	}
   	else{
 	  	if($fav_num != 0){
@@ -25,5 +24,5 @@
 	  	$db->query("DELETE FROM comment WHERE reference_id = $id");
  	    header("Location: questionlist.php");
 	}
-  	
+
 ?>
