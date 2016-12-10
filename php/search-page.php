@@ -76,7 +76,7 @@
 		</div>
 		<div class= "qlist-wapper">
 			
-			<p class="bg-info">Notice</p>
+			<p class="text">Notice</p>
 			<?php
 				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
 				$rows = $db->query("SELECT n.id, title, time, name FROM notice n JOIN user u ON n.u_id = u.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
@@ -104,7 +104,7 @@
 				</div>
 			</div>
 			<?php } ?>
-			<p class="bg-info">Question</p>
+			<p class="text">Question</p>
 			<?php
 				$rows = $db->query("SELECT q.id, q.title, time, u.name FROM question q JOIN user u JOIN tag t JOIN tag_question tq ON q.u_id = u.id and t.id = tq.t_id and q.id = tq.q_id WHERE title like \"%$keyword%\" or t.name like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
 				foreach ($rows as $row) {
@@ -131,7 +131,7 @@
 				</div>
 			</div>
 			<?php } ?>
-			<p class="bg-info">Free Board</p>
+			<p class="text">Board</p>
 			<?php
 				$rows = $db->query("SELECT b.id, title, time, name FROM board b JOIN user u ON b.u_id = u.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
 				
@@ -159,7 +159,7 @@
 				</div>
 			</div>
 			<?php } ?>
-			<p class="bg-info">Lecture</p>
+			<p class="text">Lecture</p>
 			<?php
 				$rows = $db->query("SELECT id, name FROM lecture WHERE name like \"%$keyword%\"");
 				foreach ($rows as $row) {
