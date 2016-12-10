@@ -1,7 +1,6 @@
 <?php
 
-  print_r($_POST["data"]);
-  $data = json_decode($_POST["data"]);
+  $data = $_POST["data"];
   $id = $_SESSION["id"];
   if (isset($id)) {
     header("Location: main.php?id=$id");
@@ -9,7 +8,9 @@
   $content = $data["content"];
   $time = $data["time"];
   $url = $data["url"];
-
+  print $content;
+  print $time;
+  print $url;
   try {
     $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
