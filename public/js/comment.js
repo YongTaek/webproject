@@ -58,6 +58,7 @@ function questionReady(){
 		form.append(contentInput);
 		form.append(idInput);
 		form.append(IdInput);
+		form.append(typeInput);
 		form.append(submitInput);
 		div.empty();
 		div.append(form);

@@ -10,7 +10,7 @@ $(window).on("load" ,function(){
 	else if(location[2] === "question"){
 		$(menuitems[1]).addClass("active");		
 	}
-	else if(location[2] === "board"){
+	else if(location[2] === "free"){
 		$(menuitems[2]).addClass("active");	
 	}
 });
