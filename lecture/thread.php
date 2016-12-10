@@ -1,9 +1,9 @@
 <div id="sidebar">
 <?php
-      $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $rows = $db->query("SELECT id, open FROM lecture WHERE id = $id");
       $row = $rows->fetch();
+
       if($row["open"] == 0){ ?>
         <div class="threads full-height" >
       <?php }
@@ -20,8 +20,6 @@
           $content = $comment['content'];
           $arrays[] = array('userName' => $userName, 'time' => $time, 'content' => $content);
       }
-    ?>
-    <?php
       $arrays = array_reverse($arrays);
       foreach ($arrays as $array) {
           $userName = $array['userName'];
