@@ -22,7 +22,6 @@ function questionReady(){
 
 	$(".comment_modify").on("click", function (event) {
 		var div = $(this).parent().parent();
-		div.empty();
 		var form = document.createElement("form");
 		form.setAttribute("class", "width100");
 		form.setAttribute("action", "modify_comment.php");
@@ -31,6 +30,8 @@ function questionReady(){
 		contentInput.setAttribute("class", "comment-write");
 		var idInput = document.createElement("input");
 		idInput.setAttribute("name", "id");
+		var commentId = div.find("span.hidden").innerHTML;
+		idInput.setAttribute("value", commentId);
 		idInput.setAttribute("type","hidden");
 		var submitInput = document.createElement("input");
 		submitInput.setAttribute("class", "btn commentModify submit");
@@ -39,6 +40,7 @@ function questionReady(){
 		form.append(contentInput);
 		form.append(idInput);
 		form.append(submitInput);
+		div.empty();
 		div.append(form);
 	});
 };
