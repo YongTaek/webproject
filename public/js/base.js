@@ -71,6 +71,7 @@ function onclick(){
 	});
 
 	$("#all-delete").click(function() {
+		addTextNoNotification();
 		$.ajax({
 			url: '/api/read-allnotification.php',
 			type : "POST",
