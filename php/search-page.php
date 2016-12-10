@@ -62,7 +62,7 @@
 				<img src="/public/img/search.png" class="search-icon">
 			</button>
 			<form method="post" id = "search-content" action="/php/search-page.php">
-			<input type="text" class="pull-right search" name="search">
+			<input type="text" class="pull-right search" name="search" value=<?= $keyword?>>
 			</form>
 		</nav>
 	</header><!-- /header -->
@@ -75,10 +75,10 @@
 			<h2>ALL SEARCH</h2>
 		</div>
 		<div class= "qlist-wapper">
-
+			
 			<p class="bg-info">Notice</p>
 			<?php
-				$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
+				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
 				$rows = $db->query("SELECT n.id, title, time, name FROM notice n JOIN user u ON n.u_id = u.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
 				foreach ($rows as $row) {
 			?>
@@ -106,7 +106,7 @@
 			<?php } ?>
 			<p class="bg-info">Question</p>
 			<?php
-				$rows = $db->query("SELECT q.id, title, time, name FROM question q JOIN user u ON q.u_id = u.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
+				$rows = $db->query("SELECT distinct q.id, q.title, time, u.name FROM question q JOIN user u JOIN tag t JOIN tag_question tq ON q.u_id = u.id and t.id = tq.t_id and q.id = tq.q_id WHERE title like \"%$keyword%\" or t.name like \"%$keyword%\" ORDER BY time DESC");
 				foreach ($rows as $row) {
 			?>
 			<div class= "question">
@@ -134,7 +134,7 @@
 			<p class="bg-info">Free Board</p>
 			<?php
 				$rows = $db->query("SELECT b.id, title, time, name FROM board b JOIN user u ON b.u_id = u.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
-
+				
 				foreach ($rows as $row) {
 			?>
 			<div class= "question">
@@ -161,7 +161,7 @@
 			<?php } ?>
 			<p class="bg-info">Lecture</p>
 			<?php
-				$rows = $db->query("SELECT id, name FROM lecture WHERE name like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
+				$rows = $db->query("SELECT id, name FROM lecture WHERE name like \"%$keyword%\"");
 				foreach ($rows as $row) {
 			?>
 			<div class= "question">
@@ -180,7 +180,6 @@
 				</div>
 				<div class="question-list-right">
 					<div>
-
 						<h5 class="name">by. <?= "professor" ?></h5> <!--작성자 -->
 					</div>
 				</div>

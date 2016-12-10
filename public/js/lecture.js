@@ -9,6 +9,7 @@ function lectureReady(){
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
       dataType: "json"
     }).done(function (da) {
+      $("#input").val("");
       // var da = $.parseJSON(data);
       if(da.error == "true"){
         alert("등록 에러! X(");
@@ -89,7 +90,6 @@ function appendComment(da){
   div.append(spandate);
   div.addClass("thread");
   $(".threads").append(div);
-  $("#input").val("");
 
   $(".threads").animate({scrollTop: $(".threads").prop("scrollHeight")});
 };
