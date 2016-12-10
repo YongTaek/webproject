@@ -9,8 +9,8 @@
     ?>
     <a class="notification" href="<?=$array["url"]?>">
       <div class="notification-thread">
-        <p><?=$array["message"]?></p>
-        <p><?=$array["time"]?></p>
+        <p class="notification-text"><?=$array["message"]?></p>
+        <p class="notification-text"><?=$array["time"]?></p>
       </div>
     </a>
     <?php

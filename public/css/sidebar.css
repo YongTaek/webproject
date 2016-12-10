@@ -42,7 +42,7 @@
     .sidenav a {font-size: 18px;}
 }
  */
-p{
+.notification-text{
     color: #ccc;
     font-size: 15px;
     margin:0px;
