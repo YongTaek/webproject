@@ -6,7 +6,8 @@
   $id = $_POST["id"];
   $content = $_POST["content"];
   $time = date("Y-m-d H:i:s");
-
+  print $id;
+  print $time;
   $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
