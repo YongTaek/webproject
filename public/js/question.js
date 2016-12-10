@@ -22,7 +22,7 @@ function questionReady(){
 
 	$(".comment_modify").on("click", function (event) {
 		var div = $(this).parent().parent();
-		div.innerHTML = "";
+		div.empty();
 		var form = document.createElement("form");
 		form.setAttribute("action", "modify_comment.php");
 		var contentInput = document.createElement("input");
@@ -33,6 +33,7 @@ function questionReady(){
 		idInput.setAttribute("type","hidden");
 		var submitInput = document.createElement("input");
 		submitInput.setAttribute("class", "btn commentModify submit");
+		submitInput.setAttribute("value", "수정");
 		form.append(contentInput);
 		form.append(idInput);
 		form.append(submitInput);
