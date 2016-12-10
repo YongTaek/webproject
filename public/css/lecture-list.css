@@ -54,6 +54,18 @@ th{
 tr{
   font-size: 18px;
 }
-/* .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-    background-color: #BEEAFF;
-} */
+
+.OPEN {
+  border: 1px solid #428bca;
+  color: #428bca;
+  padding: 5px;
+  display: inline-flex;
+}
+
+.CLOSE {
+  border: 1px solid #d9534f;
+  color: #d9534f;
+  padding: 5px;
+  display: inline-flex;
+
+}
