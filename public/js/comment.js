@@ -22,11 +22,15 @@ function questionReady(){
 
 	$(".comment_modify").on("click", function (event) {
 		var div = $(this).parent().parent();
+		var content = div.find("span")[0].innerHTML;
+		div.empty();
+
 		var form = document.createElement("form");
 		form.setAttribute("class", "width100");
 		form.setAttribute("action", "/comment/modify.php");
 		form.setAttribute("method", "post");
 		var contentInput = document.createElement("input");
+		contentInput.text(content);
 		contentInput.setAttribute("name", "content");
 		contentInput.setAttribute("class", "comment-write");
 		var idInput = document.createElement("input");
@@ -60,7 +64,7 @@ function questionReady(){
 		form.append(IdInput);
 		form.append(typeInput);
 		form.append(submitInput);
-		div.empty();
+
 		div.append(form);
 	});
 
