@@ -12,7 +12,7 @@
     header("Location: /error.php");
   }
 
-  if (!preg_match("/^[0-9]$/", $_POST["id"])) {
+  if (!preg_match("/^[0-9]+$/", $_POST["id"])) {
     header("Location: /error.php");
   }
 
