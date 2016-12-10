@@ -1,7 +1,7 @@
 <?php
 
 	require('Pusher.php');
-	require('push_setting.php');
+	require('push-setting.php');
 
 	$data['message'] = $_POST['data'];
 	$pusher->trigger('test_channel', 'my_event', $data);

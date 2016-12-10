@@ -18,7 +18,7 @@
     $rows = $db->query("SELECT id FROM notice WHERE u_id=$id AND title='$title' AND content='$content' AND time='$time'");
     if ($rows->rowCount() > 0) {
         $row = $rows->fetch();
-        header("Location: notice.php?id=".$row["id"]);
+        header("Location: /board/notice/post.php?id=".$row["id"]);
     }
   } catch (PDOException $e) {
     echo $e->getMessage();

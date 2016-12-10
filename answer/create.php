@@ -21,12 +21,12 @@
       $db->query("INSERT INTO answer(u_id, q_id, content, time) VALUES($u_id, $id, '$content', '$time')");
       $array = array('content' => "$id 에 답변이 달렸습니다!", "url" => "http://webapp.yongtech.kr/php/question.php?id=$id", 'time' => "$time");
       $pusher->trigger("$id", 'new_comment', $array);
-      header("Location: question.php?id=$id");
+      header("Location: /board/question/post.php?id=$id");
     }
     else{
       echo "<script language=javascript>
       alert(\"한 질문에 답변 여러개 달 수 없어요!\");
-      location=\"question.php\";
+      location=\"/board/question/post.php\";
       </script>";
       // 한 질문에 답변 여러개 못단다고 알려줘야댐
     }

@@ -22,7 +22,7 @@
 	  	$db->query("DELETE FROM tag_question WHERE q_id = $id");
 	  	$db->query("DELETE FROM question WHERE id = $id AND u_id = $u_id");
 	  	$db->query("DELETE FROM comment WHERE reference_id = $id");
- 	    header("Location: questionlist.php");
+ 	    header("Location: board/question/list.php");
 	}
 
 ?>

@@ -34,34 +34,34 @@
 	<header role ="banner">
 		<nav role="navigation" class="banner-color">
 			<div id="logo" class="pull-left">
-				<a href="/php/main.php"><img class="logo" src="/public/img/selab_logo_S.png" /></a>
+				<a href="/index.php"><img class="logo" src="/public/img/selab_logo_S.png" /></a>
 			</div>
 			<ul id="menu" class="inline-list pull-left">
-				<li class="pull-left"><a href="/php/noticelist.php" class="active menu-item" >NOTICE</a></li>
-				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item">QUESTION</a></li>
-				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">BOARD</a></li>
-				<li class="pull-left"><a href="/php/lecture-list.php" class="menu-item">LECTURE</a></li>
+				<li class="pull-left"><a href="/board/notice/list.php" class="active menu-item" >NOTICE</a></li>
+				<li class="pull-left"><a href="/board/question/list.php" class="menu-item">QUESTION</a></li>
+				<li class="pull-left"><a href="/board/free/list.php" class="menu-item">BOARD</a></li>
+				<li class="pull-left"><a href="/lecture/list.php" class="menu-item">LECTURE</a></li>
 			</ul>
 			<div role="login" class="pull-right">
 				<?php if ($logged_in) { ?>
-					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
+					<a id="login" href="/api/logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
 				<?php
 					if ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant") {
-						$href = "/php/setting.php";
+						$href = "/user/setting.php";
 					} else {
-						$href = "/php/changepw.php";
+						$href = "/user/change-password.php";
 					}
 				?>
 					<a id="mypage" href="<?= $href ?>" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
 				<?php } else { ?>
-					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
+					<a id="login" href="/user/login.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
 			</div>
 			<button class="pull-right">
 				<img src="/public/img/search.png" class="search-icon">
 			</button>
-			<form method="post" id = "search-content" action="/php/search-page.php">
+			<form method="post" id = "search-content" action="/common/search.php">
 			<input type="text" class="pull-right search" name="search" value=<?= $keyword?>>
 			</form>
 		</nav>
@@ -93,7 +93,7 @@
 				</div>
 				<div class="question-list-left">
 					<h3 class="title not-question-title">
-						<a href= <?= "/php/notice.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
+						<a href= <?= "/board/notice/post.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
 					</h3>
 				</div>
 				<div class="question-list-right">
@@ -120,14 +120,14 @@
 				</div>
 				<div class="question-list-left">
 					<h3 class="title">
-						<a href= <?= "/php/question.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
+						<a href= <?= "/board/question/post.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
 					</h3>
 					<div class="tags">
 					<?php
 							$tags = $db->query("SELECT distinct name, t.id FROM tag_question tq JOIN tag t WHERE t_id = id AND q_id = ".$row["id"]);
 							foreach ($tags as $tag) {
 						?>
-						<a href="tag_questionlist.php?id=<?= $tag["id"] ?>" class= "tag"><?= $tag["name"] ?></a>
+						<a href="board/question/list-tag.php?id=<?= $tag["id"] ?>" class= "tag"><?= $tag["name"] ?></a>
 						<?php
 							}
 						?>
@@ -158,7 +158,7 @@
 				</div>
 				<div class="question-list-left">
 					<h3 class="title not-question-title">
-						<a href= <?= "/php/free.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
+						<a href= <?= "/board/free/post.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
 					</h3>
 				</div>
 				<div class="question-list-right">
@@ -185,7 +185,7 @@
 				</div>
 				<div class="question-list-left">
 					<h3 class="title not-question-title">
-						<a href= <?= "/php/lecture-page.php?id=".$row["id"] ?> ><?= $row["name"] ?></a> <!-- 제목 -->
+						<a href= <?= "/lecture/class.php?id=".$row["id"] ?> ><?= $row["name"] ?></a> <!-- 제목 -->
 					</h3>
 				</div>
 				<div class="question-list-right">
