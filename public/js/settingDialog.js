@@ -10,6 +10,8 @@ function saveStudent() {
 	console.log(sid);
 
 	$("#saveStu").ajaxForm({
+		url: "save_student.php",
+		enctype: "multipart/form-data",
     dataType: 'text',
     success: function (responseText) {
       console.log(responseText);
@@ -18,6 +20,8 @@ function saveStudent() {
       console.log(e.responseText);
     }
   });
+
+  $("#saveStu").submit();
 }
 
 function saveAssistant() {
@@ -36,7 +40,7 @@ function saveAssistant() {
 		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
     dataType: 'text',
     success: function (responseText) {
-      console.log(responseText);
+    	window.location.href = "/php/setting.php";
     },
     error: function (e) {
       console.log(e.responseText);
