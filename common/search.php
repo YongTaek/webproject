@@ -1,5 +1,6 @@
-<?php include("pusher.php"); ?>
-
+<?php include("pusher.php"); 
+$keyword = $_POST["search"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +32,7 @@
 		</div>
 		<div class= "qlist-wapper">
 
-			<p class="text">Notice</p>
+			<p class="search-text">Notice</p>
 			<?php
 				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
 				$rows = $db->query("SELECT n.id, title, time, name FROM notice n JOIN user u ON n.u_id = u.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
@@ -59,9 +60,9 @@
 				</div>
 			</div>
 			<?php } ?>
-			<p class="text">Question</p>
+			<p class="search-text">Question</p>
 			<?php
-				$rows = $db->query("SELECT distinct q.id, q.title, time, u.name FROM question q JOIN user u ON q.u_id = u.id JOIN tag t JOIN tag_question tq ON t.id = tq.t_id WHERE title like \"%$keyword%\" or t.name like \"%$keyword%\" ORDER BY time DESC");
+				$rows = $db->query("SELECT DISTINCT q.id, q.title, time, u.name FROM question q JOIN user u ON q.u_id = u.id WHERE title like \"%$keyword%\") UNION (SELECT DISTINCT q.id, q.title, time, u.name FROM question q JOIN user u ON q.u_id = u.id WHERE t.name like \"%$keyword%\") order by time DESC");
 				foreach ($rows as $row) {
 					?>
 			<div class= "question">
@@ -96,7 +97,7 @@
 				</div>
 			</div>
 			<?php } ?>
-			<p class="text">Board</p>
+			<p class="search-text">Board</p>
 			<?php
 				$rows = $db->query("SELECT b.id, title, time, name FROM board b JOIN user u ON b.u_id = u.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
 
@@ -124,7 +125,7 @@
 				</div>
 			</div>
 			<?php } ?>
-			<p class="text">Lecture</p>
+			<p class="search-text">Lecture</p>
 			<?php
 				$rows = $db->query("SELECT id, name FROM lecture WHERE name like \"%$keyword%\"");
 				foreach ($rows as $row) {

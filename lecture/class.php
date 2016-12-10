@@ -42,7 +42,7 @@ if (isset($_GET["id"])) {
 	if($status != 0) { ?>
 		<a class="closedrawer" id="side"></a>
 <?php }
-	if($fileType === "pdf" || $fileType === "pps"){
+	if($fileType === "pdf"){
 ?>
 	<embed src = "<?= $lectureFile ?>"></embed>
 	<?php }else if( $fileType === "html"){ ?>

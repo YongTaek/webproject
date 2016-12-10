@@ -1,11 +1,11 @@
-<?php include("./common/pusher.php"); ?>
+<?php include("../../common/pusher.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Question</title>
 	<link rel="shortcut icon" href="icon/SelabFavicon.png" type="image/png">
-	<link rel="stylesheet" href="../public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="/public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="/public/css/main.css" type="text/css">
 	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
 	<link rel="stylesheet" href="/public/css/jquery.tag-editor.css">
@@ -16,7 +16,7 @@
 	<script src="/public/js/jquery-3.1.1.min.js"></script>
 	<script src="/public/js/jquery-ui-1.12.1.min.js"></script>
 	<script src="/public/js/base.js"></script>
-	<?php include("./common/script.php"); ?>
+	<?php include("../../common/script.php"); ?>
 
 
 	<script type="text/javascript" src="/public/js/showdown.js"></script>
@@ -29,7 +29,7 @@
 	<title>답변 수</title>
 </head>
 <body>
-	<?php include("./common/header.php"); ?>
+	<?php include("../../common/header.php"); ?>
 
 	<?php
 		$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");

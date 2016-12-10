@@ -1,6 +1,6 @@
 <?php
   session_start();
-  // header("Content-type: application/json; charset=UTF-8");
+  header("Content-type: application/json;");
   date_default_timezone_set('Asia/Seoul');
   require('../library/Pusher.php');
   require('../library/push-setting.php');
