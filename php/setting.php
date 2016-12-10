@@ -128,7 +128,7 @@
             <td><?= $i ?></td>
             <td><?= $row["id"] ?></td>
             <td><?= $row["name"]?></td>
-            <td><a href="remove_student.php" class="remove-student">remove</a></td>
+            <td><a href="remove_student.php?id=<?= $row["id"] ?>" class="remove-student">remove</a></td>
           </tr>
           <?php $i++; } ?>
         </tbody>
