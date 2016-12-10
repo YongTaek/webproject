@@ -59,7 +59,7 @@ function lectureReady(){
         console.log('!');
         event.preventDefault();
         // $("form").submit();
-        $(".class").submit();
+        $("#lecture").submit();
     }
   });
 };
