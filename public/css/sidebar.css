@@ -7,9 +7,9 @@
     right: 0;
     background: rgba(0, 0, 0, 0.7);
     overflow-x: hidden;
+    display: none;
     overflow-y: auto;
     padding-top: 60px;
-    transition: 0.5s;
 }
 
 .sidenav a {
