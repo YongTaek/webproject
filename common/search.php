@@ -151,7 +151,7 @@ $keyword = $_POST["search"];
 				</div>
 			</div>
 			<?php }
-			if(str_len($keyword) == 0){
+			if(strlen($keyword) == 0){
 				print "keyworkd";
 			} else{
 				print "aksdlsfjalskdjflasdjflasjl;";} ?>
