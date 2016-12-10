@@ -160,3 +160,12 @@ body{
 .tag:hover{
 	text-decoration: none;
 }
+
+.not-question-title {
+	margin: 0;
+	margin-top: 20px;
+	margin-bottom: 5px;
+}
+.not-question-title > a{
+	font-size: 24px;
+}
