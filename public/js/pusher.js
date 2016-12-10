@@ -12,7 +12,7 @@ for (var i = 0; i < questionArray.length; i++) {
 		// https://github.com/CodeSeven/toastr#escape-html-characters
 		// http://codeseven.github.io/toastr/demo.html
 		$("#notification").text(parseInt($("#notification").text()) + 1);
-		var a = $(makeNotification(notification));
+		var a = $(makeNotification(data));
 		$("#notifications").append(a);
 		var link = document.location.href;
 		toastr.options = {
