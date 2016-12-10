@@ -6,10 +6,10 @@
       </a>
     </div>
     <ul id="menu" class="inline-list pull-left">
-      <li class="pull-left"><a href="/php/noticelist.php" class="menu-item" >NOTICE</a></li>
-      <li class="pull-left"><a href="/php/questionlist.php" class="menu-item">QUESTION</a></li>
-      <li class="pull-left"><a href="/php/freelist.php" class="menu-item">BOARD</a></li>
-      <li class="pull-left"><a href="/php/lecture-list.php" class="menu-item">LECTURE</a></li>
+      <li class="pull-left"><a href="/board/notice/list.php" class="menu-item" >NOTICE</a></li>
+      <li class="pull-left"><a href="/board/question/list.php" class="menu-item">QUESTION</a></li>
+      <li class="pull-left"><a href="/board/free/list.php" class="menu-item">BOARD</a></li>
+      <li class="pull-left"><a href="/lecture/list.php" class="menu-item">LECTURE</a></li>
     </ul>
 
     <div role="login" class="pull-right">
@@ -20,7 +20,7 @@
 
       <?php if ($logged_in) { ?>
 
-        <a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
+        <a id="login" href="/user/logout.php" class='pull-right'>LOGOUT</a>
         <div class="pull-right vr"></div>
       <?php
         if ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant") {
