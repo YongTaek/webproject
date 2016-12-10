@@ -31,17 +31,16 @@ function lectureReady(){
         type: "POST",
         data: params,
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        // dataType: "json"
+        dataType: "json"
       }).done(function(da){
-        // if(da.error == "true"){
-        //   alert("로드 에러! ;(");
-        // }
-        // else{
-        //   for(var i = 0; i<da.length;i++){
-        //     prependComment(da[i]);
-        //   }
-        // }
-        console.log("hello:"+da);
+        if(da.error == "true"){
+          alert("로드 에러! ;(");
+        }
+        else{
+          for(var i = 0; i<da.length;i++){
+            prependComment(da[i]);
+          }
+        }
       });
     };
   });
@@ -122,7 +121,9 @@ function prependComment(da){
   div.append($("<br>"));
   div.append(spandate);
   div.addClass("thread");
-  $(".threads").prepend(div);
+  div.hide().prependTo(".threads").fadeIn();
+  $(".threads").animate({scrollTop: $(".threads").height()});
+  // $(".threads").prepend(div));
   $("#input").val("");
 };
 
