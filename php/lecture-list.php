@@ -88,7 +88,7 @@
         <?php foreach ($rows as $row) { ?>
           <tr>
             <td><?= $row["id"] ?></td>
-            <td><a href="<?= $row["url"] ?>"><?= $row["name"] ?></a></td>
+            <td><a href="/php/lecture-page.php?id=<?= $row["id"] ?>"><?= $row["name"] ?></a></td>
             <?php if($row["open"] == 1){
                 $open = "OPEN";
               }else{ 

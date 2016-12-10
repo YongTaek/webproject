@@ -99,6 +99,27 @@ tr{
 	padding : 5px;
 }
 
+.reset-student {
+	border-radius: 2px;
+	border: solid 1px #5bc0de;
+	color: #5bc0de;
+	padding : 5px;
+}
+
+.remove-assistant {
+	border-radius: 2px;
+	border: solid 1px #d9534f;
+	color: #d9534f;
+	padding : 5px;
+}
+
+.reset-assistant {
+	border-radius: 2px;
+	border: solid 1px #5bc0de;
+	color: #5bc0de;
+	padding : 5px;
+}
+
 .lecture-change {
 	border-radius: 2px;
 	border: solid 1px #5bc0de;
