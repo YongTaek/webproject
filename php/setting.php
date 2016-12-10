@@ -129,13 +129,11 @@
         $rows = $db->query("SELECT id, name FROM user WHERE authority = 'student'");
         foreach ($rows as $row) { ?>
           <tr>
-
             <td><?= $i ?></td>
             <td><?= $row["id"] ?></td>
             <td><?= $row["name"]?></td>
-            <td><a href="remove_student.php" class="remove-student">Remove</a></td>
+            <td><a href="remove_user.php?id=<?= $row["id"] ?>" class="remove-student">Remove</a></td>
             <td><a href="#" class="reset-student">Reset</a></td>
-
           </tr>
           <?php $i++; } ?>
         </tbody>
@@ -168,7 +166,7 @@
             <td><?= $i ?></td>
             <td><?= $row["id"] ?></td>
             <td><?= $row["name"] ?></td>
-            <td><a href="#" class="remove-assistant">Remove</a></td>
+            <td><a href="remove_user.php?id=<?= $row["id"] ?>" class="remove-assistant">Remove</a></td>
             <td><a href="#" class="reset-assistant">Reset</a></td>
           </tr>
         <?php $i++; } ?>
