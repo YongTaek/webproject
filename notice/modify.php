@@ -9,5 +9,5 @@
   $content = str_replace("\n", "<br/>", $content);
   $db->query("UPDATE notice SET title = '$title' WHERE id = $id AND u_id = $u_id");
   $db->query("UPDATE notice SET content = '$content' WHERE id = $id AND u_id = $u_id");
-  header("Location: notice.php?id=$id");
+  header("Location: /board/notice/post.php?id=$id");
   ?>

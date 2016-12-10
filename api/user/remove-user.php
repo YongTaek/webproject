@@ -32,7 +32,7 @@
 		$db->query("DELETE FROM question WHERE u_id = $id");
 		$db->query("DELETE FROM board WHERE u_id = $id");
   		$db->query("DELETE FROM user WHERE id = $id");
-  		header("Location: setting.php");
+  		header("Location: /user/setting.php");
   	} catch(PDOException $e){
   		echo $e -> getMessage();
   	}
