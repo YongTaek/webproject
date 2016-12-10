@@ -12,12 +12,13 @@ function saveStudent() {
 	$("#saveStu").ajaxForm({
 		url: "save_student.php",
 		enctype: "multipart/form-data",
-    dataType: 'text',
-    success: function (responseText) {
-      console.log(responseText);
+    success: function (data) {
+      if (data.error === "false") {
+      	window.location.href = "/php/setting.php";
+      }
     },
     error: function (e) {
-      console.log(e.responseText);
+    	console.log(e.responseText);
     }
   });
 
