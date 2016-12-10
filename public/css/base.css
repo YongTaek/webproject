@@ -119,3 +119,7 @@ button.pull-right{
 .hidden {
 	display: none;
 }
+
+#bell {
+	background: url('/public/img/bell.png');
+}

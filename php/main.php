@@ -38,8 +38,11 @@
 				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">BOARD</a></li>
 				<li class="pull-left"><a href="/php/lecture-list.php" class="menu-item">LECTURE</a></li>
 			</ul>
+
 			<div role="login" class="pull-right">
+
 				<?php if ($logged_in) { ?>
+					<a id="bell" href=""></a>
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
 				<?php
@@ -53,7 +56,9 @@
 				<?php } else { ?>
 					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
+
 			</div>
+
 			<button class="pull-right">
 				<img src="/public/img/search.png" class="search-icon">
 			</button>
