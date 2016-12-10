@@ -3,7 +3,7 @@
   $data = $_POST["data"];
   $id = $_SESSION["id"];
   if (isset($id)) {
-    header("Location: main.php?id=$id");
+    header("Location: /index.php?id=$id");
   }
   $content = $data["content"];
   $time = $data["time"];

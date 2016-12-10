@@ -18,7 +18,7 @@
     $rows = $db->query("SELECT id FROM board WHERE u_id=$id AND title='$title' AND content='$content' AND time='$time'");
     if ($rows->rowCount() > 0) {
       $row = $rows->fetch();
-      header("Location: free.php?id=".$row["id"]);
+      header("Location: /board/free/post.php?id=".$row["id"]);
     }
   } catch (PDOException $e) {
     echo $e->getMessage();

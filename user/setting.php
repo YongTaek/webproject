@@ -73,7 +73,7 @@
   <div class="container">
     <div class = "top-text">
       <h3 class="setting-text">Lecture List</h3>
-      <a id="link" href="/php/lecture-upload.php">강의 파일 업로드</a>
+      <a id="link" href="/lecture/upload.php">강의 파일 업로드</a>
     </div>
     <table class="table table-striped">
       <thead>
@@ -101,9 +101,9 @@
         ?>
         <tr>
           <td><?= $row["id"] ?></td>
-          <td><a href="/php/lecture-page.php?id=<?= $row["id"] ?>"><?= $row["name"] ?></a></td>
+          <td><a href="/lecture/class.php?id=<?= $row["id"] ?>"><?= $row["name"] ?></a></td>
           <td><a href="#" class="<?= $class ?>"><?= $status ?></a></td>
-          <td><a href="lecture-upload.php?id=<?= $row["id"] ?>" class="lecture-change">Change</a></td>
+          <td><a href="/lecture/upload.php?id=<?= $row["id"] ?>" class="lecture-change">Change</a></td>
         </tr>
        <?php } ?>
       </tbody>
@@ -134,7 +134,7 @@
             <td><?= $i ?></td>
             <td><?= $row["id"] ?></td>
             <td><?= $row["name"]?></td>
-            <td><a href="remove_user.php?id=<?= $row["id"] ?>" class="remove-student">Remove</a></td>
+            <td><a href="/api/user/remove-user.php?id=<?= $row["id"] ?>" class="remove-student">Remove</a></td>
             <td><a href="#" class="reset-student">Reset</a></td>
           </tr>
           <?php $i++; } ?>
@@ -168,7 +168,7 @@
             <td><?= $i ?></td>
             <td><?= $row["id"] ?></td>
             <td><?= $row["name"] ?></td>
-            <td><a href="remove_user.php?id=<?= $row["id"] ?>" class="remove-assistant">Remove</a></td>
+            <td><a href="/api/user/remove-user.php?id=<?= $row["id"] ?>" class="remove-assistant">Remove</a></td>
             <td><a href="#" class="reset-assistant">Reset</a></td>
           </tr>
         <?php $i++; } ?>
@@ -177,7 +177,7 @@
     </div>
     <div class="top-text">
       <h3 class="setting-text">Change Password</h3>
-      <a id="change-password" href="/php/changepw.php">비밀번호 변경</a>
+      <a id="change-password" href="/api/user/change-password.php">비밀번호 변경</a>
     </div>
 
     <!-- assistant modal -->
@@ -189,7 +189,7 @@
             <h3 class="modal-title" id="lineModalLabel">조교 추가</h3>
           </div>
           <div class="modal-body">
-            <form id="saveAss" action="save_assistant.php" enctype="multipart/form-data" method="post">
+            <form id="saveAss" action="/api/user/save-assistant.php" enctype="multipart/form-data" method="post">
               <div class="form-group">
                 <label for="AssID">Assistant ID</label>
                 <input type="text" class="form-control" id="dialogAssID" placeholder="Enter Assistant ID...">
@@ -226,7 +226,7 @@
             <h3 class="modal-title" id="lineModalLabel">학생 추가</h3>
           </div>
           <div class="modal-body">
-            <form id="saveStu" action="save_student.php" enctype="multipart/form-data" method="post">
+            <form id="saveStu" action="/api/user/save-student.php" enctype="multipart/form-data" method="post">
               <div class="form-group">
                 <label for="StuID">Student ID</label>
                 <input type="text" class="form-control" id="dialogStuID" name="id" placeholder="Enter Assistant ID...">

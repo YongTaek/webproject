@@ -26,7 +26,7 @@
       }
       $_SESSION["favQuestion"] = $questionArray;
       $_SESSION["openLecture"] = $lectureArray;
-      header("Location: main.php");
+      header("Location: /index.php");
       exit;
     } else {
       echo "Login Failed";
