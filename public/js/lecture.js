@@ -58,7 +58,8 @@ function lectureReady(){
     if (event.which == 13) {
         console.log('!');
         event.preventDefault();
-        $("form").submit();
+        // $("form").submit();
+        $(".class").submit();
     }
   });
 };
