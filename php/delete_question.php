@@ -5,7 +5,8 @@
   	$u_id = $_SESSION["id"];
  
   	$isFavorite = $db->query("SELECT q_id FROM favorite WHERE q_id = $id");
-  	if(!empty($isFavorite)){
+  	$num = $isFavorite->fetch();
+  	if($num != 0){
   		$db->query("DELETE FROM favorite WHERE q_id = $id");
   	}
   	$db->query("DELETE FROM tag_question WHERE q_id = $id");
