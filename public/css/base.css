@@ -5,6 +5,9 @@ body{
 hr {
 	border-color: #ccc;
 }
+form{
+	height: 100%;
+}
 .banner-color{
 	background-color: rgb(0,154,211);
 }
