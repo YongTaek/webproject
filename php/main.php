@@ -42,7 +42,7 @@
 			<div role="login" class="pull-right">
 
 				<?php if ($logged_in) { ?>
-					<a id="bell" href=""></a>
+					<img id="bell" href=""></a>
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
 				<?php
@@ -54,6 +54,7 @@
 				?>
 					<a id="mypage" href="<?= $href ?>" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
 				<?php } else { ?>
+					<img id="bell" href=""></a>
 					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
 
