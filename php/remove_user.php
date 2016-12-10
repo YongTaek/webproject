@@ -13,13 +13,13 @@
 	  			$db->query("DELETE FROM favorite WHERE u_id =".$fav["u_id"]);
 	  		}
 	  	}
-  		$tags = $db->query("SELECT q_id FROM question JOIN tag_question on id = q_id WHERE u_id = $id");
+  		$tags = $db->query("SELECT DISTINCT q_id FROM question JOIN tag_question on id = q_id WHERE u_id = $id");
   		if(!empty($tags) && ($tags->rowCount() > 0)){
 	  		foreach ($tags as $tag) {
 	  			$db->query("DELETE FROM tag_question WHERE q_id = ".$tag[$id]);	
 	  		}
   		}
-		$db->query("DELETE FROM question WHERE id = $id AND u_id = $id");
+		$db->query("DELETE FROM question WHERE u_id = $id");
 		$db->query("DELETE FROM board WHERE u_id = $id");
   		$db->query("DELETE FROM user WHERE id = $id");
   		header("Location: setting.php");
