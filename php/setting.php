@@ -118,12 +118,19 @@
           </tr>
         </thead>
         <tbody>
+        <?php
+        $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $i = 1;
+        $rows = $db->query("SELECT id, name FROM user WHERE authority = 'student'");
+        foreach ($rows as $row) { ?>
           <tr>
-            <td>1</td>
-            <td>2014038111</td>
-            <td>천유정</td>
-            <td><a href="#" class="remove-student">remove</a></td>
+            <td><?= $i ?></td>
+            <td><?= $row["id"] ?></td>
+            <td><?= $row["name"]?></td>
+            <td><a href="remove_student.php" class="remove-student">remove</a></td>
           </tr>
+          <?php $i++; } ?>
         </tbody>
       </table>
     </div>
