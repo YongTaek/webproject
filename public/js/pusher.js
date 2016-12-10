@@ -19,7 +19,7 @@ for (var i = 0; i < questionArray.length; i++) {
 			"progressBar": false,
 			"onclick" : function () {
 				sendReadMessage(data);
-				window.location.href = data.url;
+				// window.location.href = data.url;
 			},
 			"positionClass": "toast-top-right",
 			"preventDuplicates": true,
@@ -43,6 +43,7 @@ for (var i = 0; i < questionArray.length; i++) {
 }
 
 function sendReadMessage(notification) {
+	console.log('asdf');
 	$.ajax({
 		url: '/php/read_notification.php',
 		type : "POST",
