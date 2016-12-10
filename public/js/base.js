@@ -1,4 +1,22 @@
+function activeMenu(){
+	var location = window.location.pathname.split("/");
+	var menuitems = $(".menu-item");
+	if(location[1] === "lecture"){
+		$(menuitems[3]).addClass("active");
+	}
+	else if(location[2] === "notice"){
+		$(menuitems[0]).addClass("active");	
+	}
+	else if(location[2] === "question"){
+		$(menuitems[1]).addClass("active");		
+	}
+	else{
+		$(menuitems[2]).addClass("active");	
+	}
+}
+$(document).load(activeMenu);
 function onclick(){
+
 	$("button.pull-right").click(function(){
 		if($("input.search").val() !== ""){
 			$("form#search-content").submit();
