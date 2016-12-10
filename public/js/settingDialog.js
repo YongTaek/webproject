@@ -5,10 +5,11 @@ $(document).ready(function () {
 });
 
 function passwd_reset() {
-	var sid = $(this).parent().parent().children().contents()[1];
+	var sid = $(this).parent().parent().children().contents()[1].textContent;
+	console.log(sid);
 
 	$.ajax({
-		url: "reset_password.php",
+		url: "/php/reset_password.php",
 		type: "POST",
 		data: {
 			id: sid
@@ -19,7 +20,7 @@ function passwd_reset() {
 			}
 		},
 		error: function (e) {
-			console.log(e.responseText);
+			console.log(e);
 		}
 	});
 }

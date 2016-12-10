@@ -16,17 +16,17 @@
       $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $db->query("INSERT INTO answer(u_id, q_id, content, time) VALUES($u_id, $id, '$content', '$time')");
-      $array = array('content' => "$id 에 답변이 달렸습니다!", "url" => "http://webapp.yongtech.kr/php/question.php?id=$id");
+      header("Location: question.php?id=$id");
       $pusher->trigger("$id", 'new_comment', $array);
     }
     else{
       echo "<script language=javascript>
       alert(\"한 질문에 답변 여러개 달 수 없어요!\");
-      location=\"question.php\";
+      location=\"question.php?id=$id\";
       </script>";
       // 한 질문에 답변 여러개 못단다고 알려줘야댐
     }
-    //header("Location: question.php?id=$id");
+    
   } catch(PDOException $e){
     echo $e->getMessage();
     }

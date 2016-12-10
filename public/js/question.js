@@ -30,23 +30,49 @@ function questionReady(){
 		contentInput.setAttribute("name", "content");
 		contentInput.setAttribute("class", "comment-write");
 		var idInput = document.createElement("input");
+		var questionIdInput = document.createElement("input");
 		idInput.setAttribute("name", "id");
 		var idSpan = div.find("span.hidden");
 		var commentId = idSpan[0].innerHTML;
 		idInput.setAttribute("value", commentId);
 		idInput.setAttribute("type","hidden");
+		var questionId = idSpan[1].innerHTML;
+		questionIdInput.setAttribute("name", "questionId");
+		questionIdInput.setAttribute("value",questionId);
+		questionIdInput.setAttribute("type", "hidden");
 		var submitInput = document.createElement("input");
 		submitInput.setAttribute("class", "btn commentModify submit");
 		submitInput.setAttribute("value", "수정");
-		submitInput.setAttribute("type", "button");
+		submitInput.setAttribute("type", "submit");
 		form.append(contentInput);
 		form.append(idInput);
+		form.append(questionIdInput);
 		form.append(submitInput);
 		div.empty();
 		div.append(form);
 	});
 
-	$(".commentModify").on("click", modifyAjax);
+	$(".comment_delete").on("click", function (event) {
+		var url = window.location;
+		var parameter = url.search.split("?")[1];
+		var questionId = parameter.split("=")[1];
+		var commentId = $(this).parent().parent().find("span.hidden")[0].innerHTML;
+		var query = "id=" + commentId + "&questionId=" + questionId;
+		console.log(query);
+		$.ajax({
+			url: "delete_comment.php",
+			type: "POST",
+			data: query,
+			dataType: 'json'
+		}).done(function (data) {
+			console.log(data);
+			if(data.error === "true") {
+				alert("삭제 오류");
+			} else {
+				window.location.href = document.location.href;
+			}
+		});
+	});
 
 };
 
