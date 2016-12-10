@@ -4,22 +4,22 @@ $(window).on("load" ,function(){
 	if(location[1] === "lecture"){
 		$(menuitems[3]).addClass("active");
 		$("h1.align-center").text("Lecture");
-		$("p.align-center").text("Let's study hard!\\(>_<)/");
+		$("p.align-center").text("Let's study hard!");
 	}
 	else if(location[2] === "notice"){
 		$(menuitems[0]).addClass("active");
 		$("h1.align-center").text("Notice");
-		$("p.align-center").text("It is notice page!~(^_^)~");
+		$("p.align-center").text("It is notice page!");
 	}
 	else if(location[2] === "question"){
 		$(menuitems[1]).addClass("active");	
 		$("h1.align-center").text("Question");
-		$("p.align-center").text("Let's ask a lot of questions!d(ㅇㅅㅇ)b");	
+		$("p.align-center").text("Let's ask a lot of questions!");	
 	}
 	else if(location[2] === "free"){
 		$(menuitems[2]).addClass("active");	
 		$("h1.align-center").text("Freeboard");
-		$("p.align-center").text("Let's talk freely!(/* 3 *)/");
+		$("p.align-center").text("Let's talk freely!");
 	}
 });
 
