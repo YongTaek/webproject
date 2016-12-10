@@ -56,7 +56,7 @@ function questionReady(){
 		var url = window.location;
 		var parameter = url.search.split("?")[1];
 		var questionId = parameter.split("=")[1];
-		var commentId = $(this).parent().parent().find("span.hidden")[1].innerHTML;
+		var commentId = $(this).parent().parent().find("span.hidden")[0].innerHTML;
 		var query = "id=" + commentId + "&questionId=" + questionId;
 		console.log(query);
 		$.ajax({
