@@ -89,7 +89,26 @@ function questionReady(){
 			}
 		});
 	});
-
+	$( "#commentBtn" ).keypress(function() {
+		var input = $(this).siblings().not($(this));
+		var form = $(this).parent().parent();
+		var forminput = form.serialize();
+		console.log(forminput);
+		$.ajax({
+			url: "/comment/create.php",
+			type : "POST",
+			data : forminput,
+			dataType : "json"
+		}).done(function (da) {
+			if(da.error == "true"){
+				alert("등록 에러! X(");
+			}
+			else{
+				// appendComment(da,$(form.parent()).siblings().not(form.parent()));
+				window.location.href = document.location.href;
+			}
+		});
+	});
 };
 
 $(document).ready(questionReady);
