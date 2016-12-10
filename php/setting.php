@@ -57,8 +57,11 @@
         <a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
         <?php } ?>
       </div>
-      <img src="/public/img/search.png" class="pull-right search-icon">
+      <form>
+      <input type="image" src="/public/img/search.png" class="pull-right search-icon">
+      <!-- <a href="/view/question/search"><img src="/public/img/search.png" class="pull-right search-icon"></a> -->
       <input type="text" class="pull-right search" name="search">
+      </form>
     </nav>
     <div class = "jumbotron banner-color">
       <h1 class="align-center">Setting</h1>
@@ -126,13 +129,11 @@
         $rows = $db->query("SELECT id, name FROM user WHERE authority = 'student'");
         foreach ($rows as $row) { ?>
           <tr>
-
             <td><?= $i ?></td>
             <td><?= $row["id"] ?></td>
             <td><?= $row["name"]?></td>
-            <td><a href="remove_student.php" class="remove-student">Remove</a></td>
+            <td><a href="remove_user.php?id=<?= $row["id"] ?>" class="remove-student">Remove</a></td>
             <td><a href="#" class="reset-student">Reset</a></td>
-
           </tr>
           <?php $i++; } ?>
         </tbody>
@@ -165,7 +166,7 @@
             <td><?= $i ?></td>
             <td><?= $row["id"] ?></td>
             <td><?= $row["name"] ?></td>
-            <td><a href="#" class="remove-assistant">Remove</a></td>
+            <td><a href="remove_user.php?id=<?= $row["id"] ?>" class="remove-assistant">Remove</a></td>
             <td><a href="#" class="reset-assistant">Reset</a></td>
           </tr>
         <?php $i++; } ?>
