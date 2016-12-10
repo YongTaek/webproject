@@ -45,7 +45,7 @@
       $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
       $id = $_GET["id"];
       $u_id = $_SESSION["id"];
-      $rows = $db->query("SELECT title, content FROM question WHERE u_id = $u_id AND id = $id");
+      $rows = $db->query("SELECT title, content FROM question WHERE id = $id");
       $tags = $db->query("SELECT DISTINCT name FROM tag JOIN tag_question on q_id = $id AND t_id=id");
       $row = $rows->fetch();
       $name = "";
