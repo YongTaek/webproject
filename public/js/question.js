@@ -38,7 +38,7 @@ function questionReady(){
 		var submitInput = document.createElement("input");
 		submitInput.setAttribute("class", "btn commentModify submit");
 		submitInput.setAttribute("value", "수정");
-		submitInput.setAttribute("type", "submit");
+		submitInput.setAttribute("type", "button");
 		form.append(contentInput);
 		form.append(idInput);
 		form.append(submitInput);
