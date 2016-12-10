@@ -91,7 +91,7 @@
             <td><a href="<?= $row["url"] ?>"><?= $row["name"] ?></a></td>
             <?php if($row["open"] == 0){ ?>
                 <td><p class="open">OPEN</p><td>
-              }else{?>
+              <? }else{ ?>
                 <td><p class="close">CLOSE</p><td>
             <?php }?>
           </tr>
