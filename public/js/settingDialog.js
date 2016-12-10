@@ -1,7 +1,25 @@
 $(document).ready(function () {
 	$("#saveDialogStudent").on('click', saveStudent);
 	$("#saveDialogAssistant").on('click', saveAssistant);
+	$(".reset-student, .reset-assistant").on('click', passwd_reset);
 });
+
+function passwd_reset() {
+	var sid = $(this).parent().parent().children().contents()[1];
+
+	$.ajax({
+		url: "reset_password.php",
+		type: "POST",
+		data: {
+			id: sid
+		},
+		success: function (data) {
+			if (data.error === "false") {
+				alert("비밀번호를 초기화했습니다.");
+			}
+		}
+	})
+}
 
 function saveStudent() {
 	var sid = $("#dialogStuID").val();
@@ -39,9 +57,10 @@ function saveAssistant() {
 			name: aname
 		},
 		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-    dataType: 'text',
-    success: function (responseText) {
-    	window.location.href = "/php/setting.php";
+    success: function (data) {
+    	if (data.error === "false") {
+    		window.location.href = "/php/setting.php";
+    	}
     },
     error: function (e) {
       console.log(e.responseText);
