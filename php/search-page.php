@@ -4,6 +4,7 @@
 	if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
 		$logged_in = true;
 	}
+	$keyword = $_POST["search"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +61,7 @@
 			<button class="pull-right">
 				<img src="/public/img/search.png" class="search-icon">
 			</button>
-			<form id = "search-content" action="../php/search-page.php">
+			<form method="post" id = "search-content" action="php/search-page.php">
 			<input type="text" class="pull-right search" name="search">
 			</form>
 		</nav>
@@ -77,8 +78,8 @@
 			
 			<p class="bg-info">Notice</p>
 			<?php
-				// $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-				// $rows = $db->query("SELECT n.id, title, time, name FROM notice n JOIN user u ON n.u_id = u.id WHERE title = $search ORDER BY pinned DESC, time DESC");
+				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+				$rows = $db->query("SELECT n.id, title, time, name FROM notice n JOIN user u ON n.u_id = u.id WHERE title = $keyword ORDER BY pinned DESC, time DESC");
 				
 				foreach ($rows as $row) {
 			?>
