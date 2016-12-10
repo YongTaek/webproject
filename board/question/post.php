@@ -126,7 +126,7 @@
 							<?php } ?>
 						</div>
 						<div class="comment">
-							<form class="create-comment" action="/comment/create.php" method="POST">
+							<form action="/comment/create.php" method="POST">
 								<label>Comment:</label>
 								<div>
 									<input class="comment-write" type="text" name="content" />
@@ -203,7 +203,7 @@
 										<?php } ?>
 									</div>
 									<div class="comment">
-										<form class="create-comment" action="/comment/create.php" method="POST">
+										<form action="/comment/create.php" method="POST">
 											<label>Comment:</label>
 											<div>
 												<input class="comment-write" type="text" name="content" required/>
