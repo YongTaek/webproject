@@ -62,7 +62,7 @@ function makeNotification(notification) {
 }
 function sendReadMessage(notification) {
 	$.ajax({
-		url: '/php/read_notification.php',
+		url: '/api/read-notification.php',
 		type : "POST",
 		data : { data : notification },
 		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
