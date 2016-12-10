@@ -129,7 +129,7 @@ body{
 }
 
 .title > a {
-	font-size: 20px;
+	font-size: 24px;
 
 }
 
@@ -153,6 +153,7 @@ body{
 	border-radius: 2px;
 	color: white;
 	margin-bottom: 5px;
+	font-size: 12pt;
 	padding: 3px;
 }
 
