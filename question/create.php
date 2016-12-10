@@ -34,7 +34,6 @@
 
     header("Location: /board/question/post.php?id=".$q["id"]);
   } catch (PDOException $e) {
-    echo $tag;
-    echo $e->getMessage();
+    header("Location: /error.php");
   }
 ?>

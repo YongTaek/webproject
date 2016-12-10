@@ -10,6 +10,13 @@
   	$tags = explode(",", $t);
     $c_count = count($tags);
   	$i=0;
+
+    $check_auth = $db->query("SELECT u_id FROM question WHERE id = $id");
+    $auth = $db->fetch();
+    if(!($_SESSION["auth"] === 'professor' || $_SESSION["auth"] === 'assistant' || $u_id == $auth["u_id"])){
+        header("Location: /error.php");
+    }
+
     try{
         if($tags[0] == NULL){
             $db->query("DELETE FROM tag_question WHERE q_id = $id");
@@ -34,7 +41,6 @@
         header("Location: /board/question/post.php?id=$id");
 
     } catch(PDOException $e){
-        echo $find;
-        echo $e -> getMessage();
+        header("Location: /error.php");
     }
 ?>
