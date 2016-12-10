@@ -2,7 +2,7 @@
   session_start();
   date_default_timezone_set('Asia/Seoul');
   require('../library/Pusher.php');
-  require('../library/push_setting.php');
+  require('../library/push-setting.php');
 
   $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
   $u_id = $_SESSION["id"];
@@ -24,11 +24,7 @@
       header("Location: /board/question/post.php?id=$id");
     }
     else{
-      echo "<script language=javascript>
-      alert(\"한 질문에 답변 여러개 달 수 없어요!\");
-      location=\"/board/question/post.php\";
-      </script>";
-      // 한 질문에 답변 여러개 못단다고 알려줘야댐
+      
     }
 
   } catch(PDOException $e){
