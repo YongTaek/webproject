@@ -1,4 +1,4 @@
-$(window).load(function(){
+$(window).on("load" ,function(){
 	var location = window.location.pathname.split("/");
 	var menuitems = $(".menu-item");
 	if(location[1] === "lecture"){
