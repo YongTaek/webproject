@@ -4,7 +4,7 @@
   require('./library/Pusher.php');
   require('./library/push_setting.php');
 
-  $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
+  $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
   $u_id = $_SESSION["id"];
   $id = $_POST["id"];
   $content = $_POST["answer"];
@@ -13,7 +13,7 @@
   $count = $num->rowCount();
   try{
     if($count == 0){
-      $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
+      $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $db->query("INSERT INTO answer(u_id, q_id, content, time) VALUES($u_id, $id, '$content', '$time')");
       $array = array('content' => "$id 에 답변이 달렸습니다!", "url" => "http://webapp.yongtech.kr/php/question.php?id=$id", 'time' => "$time");
