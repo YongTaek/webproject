@@ -126,7 +126,7 @@
 							foreach ($list as $item) {
 								$option = explode(",", $item);
 						?>
-						<li><input type="radio" name="item"/><?= $option ?></li>
+						<li><input type="radio" name="item"/><?= $option[0] ?></li>
 						<?php } ?>
 					</ul>
 				</div>
@@ -139,7 +139,7 @@
 							foreach ($list as $item) {
 								$option = explode(",", $item);
 						?>
-						<li><input type="checkbox" name="item"/><?= $option ?></li>
+						<li><input type="checkbox" name="item"/><?= $option[0] ?></li>
 						<?php } ?>
 					</ul>
 				</div>
