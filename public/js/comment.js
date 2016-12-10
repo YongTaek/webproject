@@ -111,6 +111,7 @@ function questionReady(){
 					window.location.href = document.location.href;
 				}
 			});
+			e.preventDefault();
 		}
 	});
 };

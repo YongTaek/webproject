@@ -1,5 +1,8 @@
 <?php include("pusher.php"); 
 $keyword = $_POST["search"];
+if($keyword === ""){
+	header("Location: /error.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
