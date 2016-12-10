@@ -8,10 +8,6 @@
     header("Location: /error.php");
   }
 
-  if (!preg_match("/^[0-9]+$/", $_GET["id"])) {
-    header("Location: /error.php");
-  }
-
   $id = $_GET["id"];
   $u_id = $_SESSION["id"];
   $db->query("DELETE FROM board WHERE id = $id AND u_id = $u_id");

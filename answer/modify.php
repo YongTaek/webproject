@@ -9,10 +9,6 @@
     header("Location: /error.php");
   }
 
-  if (!isset($_POST["title"]) || !isset($_POST["content"]) || empty(trim($_POST["content"])) === "" || !preg_match("/^[0-9]+$/", $_POST["id"])) {
-    header("Location: /error.php");
-  }
-
 	$id = $_POST["id"];
   	$u_id = $_SESSION["id"];
   	$content = $_POST["content"];
