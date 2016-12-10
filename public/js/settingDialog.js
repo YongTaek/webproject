@@ -5,7 +5,7 @@ $(document).ready(function () {
 });
 
 function passwd_reset() {
-	var sid = $(this).parent().parent().children().contents()[1];
+	var sid = $(this).parent().parent().children().contents()[1].textContent;
 	console.log(sid);
 
 	$.ajax({
