@@ -9,10 +9,10 @@
   $id = $_POST["id"];
   $content = $_POST["answer"];
 
-  $content = str_replace("\n", "&#10;", $content);
-  $content = str_replace("\t", "&#9;", $content);
-  $content = str_replace("\'", "&#39;", $content);
-  $content = str_replace("\"", "&#34;", $content);
+  $content = str_replace("\n", "&#13;&#10;", $content);
+  $content = str_replace("\t", "&#13;&#9;", $content);
+  $content = str_replace("\'", "&#13;&#39;", $content);
+  $content = str_replace("\"", "&#13;&#34;", $content);
 
   $time = date("Y-m-d H:i:s");
   $num = $db->query("SELECT id FROM answer WHERE q_id = $id AND u_id = $u_id");

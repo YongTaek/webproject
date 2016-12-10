@@ -16,7 +16,6 @@ function onclick(){
 		});
 	});
 
-
 	$(".closebtn").click(function(){
 
 		var effect = 'slide';
