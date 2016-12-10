@@ -46,6 +46,7 @@ for (var i = 0; i < lectureArray.length; i++) {
 		// http://codeseven.github.io/toastr/demo.html
 		var link = document.location.href;
 		if (link === data.url) {
+			console.log("adsf");
 			appendComment(data);
 		} else {
 			toastr.options = {
