@@ -76,6 +76,7 @@
 					<span class=""><?= $comment["time"] ?></span>
 					<span class="hidden"><?= $comment["c_id"] ?></span>
 					<span class="hidden"><?= $_GET["id"] ?></span>
+					<span class="hidden">notice</span>
 					<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
 					<div class="comment_btn">
 						<a class="btn comment_modify" >수정</a>
