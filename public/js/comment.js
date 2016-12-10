@@ -23,14 +23,13 @@ function questionReady(){
 	$(".comment_modify").on("click", function (event) {
 		var div = $(this).parent().parent();
 		var content = div.find("span")[0].innerHTML;
-		div.empty();
 
 		var form = document.createElement("form");
 		form.setAttribute("class", "width100");
 		form.setAttribute("action", "/comment/modify.php");
 		form.setAttribute("method", "post");
 		var contentInput = document.createElement("input");
-		contentInput.text(content);
+		contentInput.setAttribute("value", content);
 		contentInput.setAttribute("name", "content");
 		contentInput.setAttribute("class", "comment-write");
 		var idInput = document.createElement("input");
@@ -65,6 +64,7 @@ function questionReady(){
 		form.append(typeInput);
 		form.append(submitInput);
 
+		div.empty();
 		div.append(form);
 	});
 
@@ -89,7 +89,26 @@ function questionReady(){
 			}
 		});
 	});
-
+	$( "#commentBtn" ).keypress(function() {
+		var input = $(this).siblings().not($(this));
+		var form = $(this).parent().parent();
+		var forminput = form.serialize();
+		console.log(forminput);
+		$.ajax({
+			url: "/comment/create.php",
+			type : "POST",
+			data : forminput,
+			dataType : "json"
+		}).done(function (da) {
+			if(da.error == "true"){
+				alert("등록 에러! X(");
+			}
+			else{
+				// appendComment(da,$(form.parent()).siblings().not(form.parent()));
+				window.location.href = document.location.href;
+			}
+		});
+	});
 };
 
 $(document).ready(questionReady);
