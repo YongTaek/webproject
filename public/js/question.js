@@ -58,12 +58,14 @@ function questionReady(){
 		var questionId = parameter.split("=")[1];
 		var commentId = $(this).parent().parent().find("span.hidden")[1].innerHTML;
 		var query = "id=" + commentId + "&questionId=" + questionId;
+		console.log(query);
 		$.ajax({
 			url: "delete_comment.php",
 			type: "POST",
 			data: query,
 			dataType: 'json'
 		}).done(function (data) {
+			console.log(data);
 			if(data.error === "true") {
 				alert("삭제 오류");
 			} else {
