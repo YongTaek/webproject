@@ -24,7 +24,7 @@ function questionReady(){
 		var div = $(this).parent().parent();
 		div.empty();
 		var form = document.createElement("form");
-		from.setAttribute("class", "width100");
+		form.setAttribute("class", "width100");
 		form.setAttribute("action", "modify_comment.php");
 		var contentInput = document.createElement("input");
 		contentInput.setAttribute("name", "content");
