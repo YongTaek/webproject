@@ -50,6 +50,7 @@ function makeNotification(notification) {
 	var a = document.createElement("a");
 	a.setAttribute("class", "notification");
 	var div = document.createElement("div");
+	div.setAttribute("class", "notification-thread");
 	var contentP = document.createElement("p");
 	var timeP = document.createElement("p");
 
