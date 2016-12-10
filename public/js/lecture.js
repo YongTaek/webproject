@@ -54,7 +54,9 @@ function lectureReady(){
   });
 
   $("textarea").keypress(function(event) {
+    console.log('*');
     if (event.which == 13) {
+        console.log('!');
         event.preventDefault();
         $("form").submit();
     }
