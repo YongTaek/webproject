@@ -52,7 +52,7 @@
 		</nav>
 		<div class = "jumbotron banner-color">
 			<h1 class="align-center">Question</h1>
-			<p class="lead align-center">Ask Question!</p>
+			<p class="lead align-center">Modify Question!</p>
 		</div>
 	</header>
 	<div class='container'>
@@ -69,7 +69,7 @@
       	$name = $name."\"".$tag["name"]."\",";
       }
     ?>
-		<form action='submit_question_modify.php' method="post">
+		<form action='/question/modify.php' method="post">
 			<h2>Title</h2>
 			<div class="title">
 				<input name="title" type="text" value="<?= $row["title"] ?>">

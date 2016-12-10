@@ -71,37 +71,37 @@
 	<div class= "content">
 		<div class="subheader">
 			<?php if ($logged_in) { ?>
-			<a type="button" class="createBtn btn btn-primary" href="/php/create-question.php">Ask Question</a>
+			<a type="button" class="createBtn btn btn-primary" href="/board/question/create.php">Ask Question</a>
 			<?php } ?>
 			<h2>ALL QUESTION</h2>
 			<ul class="nav nav-tabs">
 				<?php
 					if (isset($_GET["type"])) {
 						if ($_GET["type"] == "recommend") { ?>
-				<li class="question-tab"><a href = "/php/questionlist.php">recent</a></li>
-				<li class="question-tab active"><a href = "/php/questionlist.php?type=recommend">recommend</a></li>
-				<li class="question-tab"><a href = "/php/questionlist.php?type=my">My QnA</a></li>
-				<li class="question-tab"><a href = "/php/questionlist.php?type=favorite">Favorite</a></li>
+				<li class="question-tab"><a href = "/board/question/list.php">recent</a></li>
+				<li class="question-tab active"><a href = "/board/question/list.php?type=recommend">recommend</a></li>
+				<li class="question-tab"><a href = "/board/question/list.php?type=my">My QnA</a></li>
+				<li class="question-tab"><a href = "/board/question/list.php?type=favorite">Favorite</a></li>
 						<?php } elseif ($_GET["type"] == "my") { ?>
-				<li class="question-tab"><a href = "/php/questionlist.php">recent</a></li>
-				<li class="question-tab"><a href = "/php/questionlist.php?type=recommend">recommend</a></li>
-				<li class="question-tab active"><a href = "/php/questionlist.php?type=my">My QnA</a></li>
-				<li class="question-tab"><a href = "/php/questionlist.php?type=favorite">Favorite</a></li>
+				<li class="question-tab"><a href = "/board/question/list.php">recent</a></li>
+				<li class="question-tab"><a href = "/board/question/list.php?type=recommend">recommend</a></li>
+				<li class="question-tab active"><a href = "/board/question/list.php?type=my">My QnA</a></li>
+				<li class="question-tab"><a href = "/board/question/list.php?type=favorite">Favorite</a></li>
 						<?php } elseif ($_GET["type"] == "favorite") { ?>
-				<li class="question-tab"><a href = "/php/questionlist.php">recent</a></li>
-				<li class="question-tab"><a href = "/php/questionlist.php?type=recommend">recommend</a></li>
-				<li class="question-tab"><a href = "/php/questionlist.php?type=my">My QnA</a></li>
-				<li class="question-tab active"><a href = "/php/questionlist.php?type=favorite">Favorite</a></li>
+				<li class="question-tab"><a href = "/board/question/list.php">recent</a></li>
+				<li class="question-tab"><a href = "/board/question/list.php?type=recommend">recommend</a></li>
+				<li class="question-tab"><a href = "/board/question/list.php?type=my">My QnA</a></li>
+				<li class="question-tab active"><a href = "/board/question/list.php?type=favorite">Favorite</a></li>
 						<?php } else { ?>
-				<li class="question-tab active"><a href = "/php/questionlist.php">recent</a></li>
-				<li class="question-tab"><a href = "/php/questionlist.php?type=recommend">recommend</a></li>
-				<li class="question-tab"><a href = "/php/questionlist.php?type=my">My QnA</a></li>
-				<li class="question-tab"><a href = "/php/questionlist.php?type=favorite">Favorite</a></li>
+				<li class="question-tab active"><a href = "/board/question/list.php">recent</a></li>
+				<li class="question-tab"><a href = "/board/question/list.php?type=recommend">recommend</a></li>
+				<li class="question-tab"><a href = "/board/question/list.php?type=my">My QnA</a></li>
+				<li class="question-tab"><a href = "/board/question/list.php?type=favorite">Favorite</a></li>
 						<?php } } else { ?>
-				<li class="question-tab active"><a href = "/php/questionlist.php">recent</a></li>
-				<li class="question-tab"><a href = "/php/questionlist.php?type=recommend">recommend</a></li>
-				<li class="question-tab"><a href = "/php/questionlist.php?type=my">My QnA</a></li>
-				<li class="question-tab"><a href = "/php/questionlist.php?type=favorite">Favorite</a></li>
+				<li class="question-tab active"><a href = "/board/question/list.php">recent</a></li>
+				<li class="question-tab"><a href = "/board/question/list.php?type=recommend">recommend</a></li>
+				<li class="question-tab"><a href = "/board/question/list.php?type=my">My QnA</a></li>
+				<li class="question-tab"><a href = "/board/question/list.php?type=favorite">Favorite</a></li>
 					<?php } ?>
 			</ul>
 		</div>
@@ -147,14 +147,14 @@
 				</div>
 				<div class="question-list-left">
 					<h3 class="title">
-						<a href= <?= "/php/question.php?id=".$row["id"] ?> ><?= $row["title"] ?></a>
+						<a href= <?= "/board/question/post.php?id=".$row["id"] ?> ><?= $row["title"] ?></a>
 					</h3>
 					<div class= "tags">
 						<?php
 							$tags = $db->query("SELECT distinct name, t.id FROM tag_question tq JOIN tag t WHERE t_id = id AND q_id = ".$row["id"]);
 							foreach ($tags as $tag) {
 						?>
-						<a href="tag_questionlist.php?id=<?= $tag["id"] ?>" class= "tag"><?= $tag["name"] ?></a>
+						<a href="/board/question/list-tag.php?id=<?= $tag["id"] ?>" class= "tag"><?= $tag["name"] ?></a>
 						<?php
 							}
 						?>

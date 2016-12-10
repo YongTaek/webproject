@@ -71,21 +71,21 @@
 	<div class= "content">
 		<div class="subheader">
 			<?php if ($logged_in) { ?>
-			<a type="button" class="createBtn btn btn-primary" href="create-freepost.php">Post Free</a>
+			<a type="button" class="createBtn btn btn-primary" href="/board/free/create.php">Post Free</a>
 			<?php } ?>
 			<h2>ALL FREE</h2>
 			<ul class="nav nav-tabs">
 				<?php
 					if (isset($_GET["type"])) {
 						if ($_GET["type"] == "my") { ?>
-				<li class="question-tab"><a href = "/php/freelist.php">recent</a></li>
-				<li class="question-tab active"><a href = "/php/freelist.php?type=my">My Free</a></li>
+				<li class="question-tab"><a href = "/board/free/list.php">recent</a></li>
+				<li class="question-tab active"><a href = "/board/free/list.php?type=my">My Free</a></li>
 						<?php } else { ?>
-				<li class="question-tab active"><a href = "/php/freelist.php">recent</a></li>
-				<li class="question-tab"><a href = "/php/freelist.php?type=my">My Free</a></li>
+				<li class="question-tab active"><a href = "/board/free/list.php">recent</a></li>
+				<li class="question-tab"><a href = "/board/free/list.php?type=my">My Free</a></li>
 						<?php } } else { ?>
-				<li class="question-tab active"><a href = "/php/freelist.php">recent</a></li>
-				<li class="question-tab"><a href = "/php/freelist.php?type=my">My Free</a></li>
+				<li class="question-tab active"><a href = "/board/free/list.php">recent</a></li>
+				<li class="question-tab"><a href = "/board/free/list.php?type=my">My Free</a></li>
 					<?php } ?>
 			</ul>
 		</div>
@@ -123,7 +123,7 @@
 				</div>
 				<div class="question-list-left">
 					<h3 class="title">
-						<a href="/php/free.php?id=<?= $row["id"] ?>"><?= $row["title"] ?></a> <!-- 제목 -->
+						<a href="/board/free/post.php?id=<?= $row["id"] ?>"><?= $row["title"] ?></a> <!-- 제목 -->
 					</h3>
 				</div>
 				<div class="question-list-right">
