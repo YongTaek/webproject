@@ -8,7 +8,7 @@
   $u_id = $_SESSION["id"];
   $id = $_POST["id"];
   $answer = $_POST["answer"];
-  $content = mb_convert_encoding($answer,"UTF-8");
+  $content = mb_internal_encoding($answer,"UTF-8");
   $time = date("Y-m-d H:i:s");
   $num = $db->query("SELECT id FROM answer WHERE q_id = $id AND u_id = $u_id");
   $count = $num->rowCount();
