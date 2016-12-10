@@ -10,11 +10,11 @@ function lectureReady(){
       dataType: "json"
     }).done(function (da) {
       // var da = $.parseJSON(data);
-      if(da.error == "true"){
+      if(da.error == "false"){
         alert("등록 에러! X(");
       }
       else{
-        // appendComment(da);
+        appendComment(da);
       }
     });
   });
@@ -70,12 +70,12 @@ function changeDrawerClass(event) {
 
 function appendComment(da){
   // var da = $.parseJSON(data);
-  var content = da.content;
-  // var content = "hello";
-  var time = da.time;
-  // var time = "2016.12.08 6:45pm";
-  var name = da.name;
-  // var name = "익명";
+  // var content = da.content;
+  var content = "hello";
+  // var time = da.time;
+  var time = "2016.12.08 6:45pm";
+  // var name = da.name;
+  var name = "익명";
 
   var div = $("<div></div>");
 
