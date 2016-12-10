@@ -32,8 +32,10 @@ function onclick(){
 			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 			dataType: 'json',
 			success : function (result) {
-				$("#notification").text("0");
-				$("#notifications").empty();
+				if (result.error === "false") {
+					$("#notifications").empty();
+					$("#notification").text("0");
+				}
 			},
 			error : function (result) {
 				console.log(result);
