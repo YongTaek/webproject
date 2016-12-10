@@ -107,7 +107,7 @@
 		</div>
 		<div class= "qlist-wapper">
 			<?php
-				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+				$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
 				if (isset($_GET["type"])) {
 					if ($_GET["type"] == "recommend") {
 						$rows = $db->query("SELECT q.id, title, time, score, name, pinned FROM question q JOIN user u ON q.u_id = u.id ORDER BY pinned DESC, score DESC");

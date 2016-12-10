@@ -76,7 +76,7 @@
         </li>
       </ul> -->
       <?php
-      $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+      $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $rows = $db->query("SELECT id, name, url, open FROM lecture");
       ?>
@@ -95,12 +95,12 @@
             <td><a href="/php/lecture-page.php?id=<?= $row["id"] ?>"><?= $row["name"] ?></a></td>
             <?php if($row["open"] == 1){
                 $open = "OPEN";
-              }else{ 
+              }else{
                 $open = "CLOSE";
             }?>
             <td><span class="<?= $open?>"><?= $open ?></p></td>
         <?php } ?>
-            
+
           </tr>
         </tbody>
       </table>

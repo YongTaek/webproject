@@ -43,7 +43,6 @@ for (var i = 0; i < questionArray.length; i++) {
 }
 
 function sendReadMessage(notification) {
-	console.log(notification);
 	$.ajax({
 		url: '/php/read_notification.php',
 		type : "POST",

@@ -58,7 +58,7 @@
 	<div class='container'>
 		<!-- action php  -->
 		<?php
-      $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+      $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
       $id = $_GET["id"];
       $u_id = $_SESSION["id"];
       $rows = $db->query("SELECT title, content FROM question WHERE u_id = $u_id AND id = $id");
@@ -101,7 +101,7 @@
 		<script>
 			$(function() {
 				$('#tag').tagEditor({
-					autocomplete: { delay: 0,position: { collision: 'flip' }, source: ['ActionScript', 'AppleScript', 'Asp', 'BASIC', 'C', 'C++', 'CSS', 'Clojure', 'COBOL', 'ColdFusion', 'Erlang', 'Fortran', 'Groovy', 'Haskell', 'HTML', 'Java', 'JavaScript', 'Lisp', 'Perl', 'PHP', 'Python', 'Ruby', 'Scala', 'Scheme'] }, 
+					autocomplete: { delay: 0,position: { collision: 'flip' }, source: ['ActionScript', 'AppleScript', 'Asp', 'BASIC', 'C', 'C++', 'CSS', 'Clojure', 'COBOL', 'ColdFusion', 'Erlang', 'Fortran', 'Groovy', 'Haskell', 'HTML', 'Java', 'JavaScript', 'Lisp', 'Perl', 'PHP', 'Python', 'Ruby', 'Scala', 'Scheme'] },
 					initialTags: [<?= $name ?>],
 					placeholder: 'Programming languages ...'
 				});

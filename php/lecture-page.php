@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_GET["id"])) {
-  $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+  $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
   $id = $_GET["id"];
   $rows = $db->query("SELECT l.id, l.name, l.url from lecture l where l.id = $id");
 	$rows = $rows -> fetch();

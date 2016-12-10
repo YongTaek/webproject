@@ -10,14 +10,14 @@
   $tags = explode(",", $tag);
   $num = count($tag);
   try {
-    $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+    $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->query("INSERT INTO question(u_id, title, content, time) VALUES($id, '$title', '$content', '$time')");
 
     $questionId = $db->query("SELECT id from question where title='$title' and content='$content' and time='$time'");
     $q = $questionId->fetch();
     if($tags[0] != ""){
-      foreach ($tags as $tag) { 
+      foreach ($tags as $tag) {
         $tagId = $db->query("SELECT id from tag where name='$tag'");
         $t = $tagId->fetch();
         if(!isset($t["id"])) {

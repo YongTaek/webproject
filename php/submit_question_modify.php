@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+	$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
   	$id = $_POST["id"];
   	$u_id = $_SESSION["id"];
   	$title = $_POST["title"];
@@ -18,7 +18,7 @@
             for($i=0;$i<$c_count;$i++){
                 $find = $db->query("SELECT id FROM tag WHERE name = ".$tags[$i]);
                 if(empty($find)){
-                    $db->query("INSERT INTO tag(name) values('$tags[$i]')"); 
+                    $db->query("INSERT INTO tag(name) values('$tags[$i]')");
                     $newtag = $db->query("SELECT id FROM tag WHERE name = '$tags[$i]'");
                     $tid = $newtag->fetch();
                     $db->query("INSERT INTO tag_question(t_id, q_id) values(".$tid["id"].", $id)");
@@ -26,7 +26,7 @@
                 else{
                     $db->query("INSERT INTO tag_question(t_id, q_id) values(".$find["id"].", $id)");
                 }
-            }   
+            }
         }
         $db->query("UPDATE question SET title = '$title' WHERE id = $id AND u_id = $u_id");
         $db->query("UPDATE question SET content = '$content' WHERE id = $id AND u_id = $u_id");

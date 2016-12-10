@@ -4,7 +4,7 @@
   $id = $_POST["id"];
   $passwd = $_POST["password"];
 
-  $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+  $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
   $rows = $db->query("SELECT * FROM user WHERE id = $id");
   if ($rows->rowCount() > 0) {
     $row = $rows->fetch();
