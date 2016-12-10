@@ -66,13 +66,15 @@
     <div class="comment">
         <hr>
         <?php
-          $comments = $db->query("SELECT content, name, time, u.id FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'board' AND reference_id = ".$row[0]);
+          $comments = $db->query("SELECT c.id as c_id, content, name, time, u.id FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'board' AND reference_id = ".$row[0]);
           foreach ($comments as $comment) {
         ?>
         <div>
           <span><?= $comment["content"] ?></span>
           <span><?= $comment["name"] ?></span>
           <span class=""><?= $comment["time"] ?></span>
+          <span class="hidden"><?= $comment["c_id"] ?></span>
+          <span class="hidden"><?= $_GET["id"] ?></span>
           <?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
           <div class="comment_btn">
             <a class="btn comment_modify" name="comment_modify" >수정</a>
