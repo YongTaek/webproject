@@ -13,7 +13,7 @@ for (var i = 0; i < questionArray.length; i++) {
 		// http://codeseven.github.io/toastr/demo.html
 		$("#notification").text(parseInt($("#notification").text()) + 1);
 		var a = $(makeNotification(notification));
-		("#notifications").append(a);
+		$("#notifications").append(a);
 		var link = document.location.href;
 		toastr.options = {
 			"closeButton": true,
