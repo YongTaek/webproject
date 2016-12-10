@@ -4,8 +4,8 @@
   date_default_timezone_set('Asia/Seoul');
 
   $id = $_SESSION["id"];
-  $title = $_POST["title"];
-  $content = $_POST["content"];
+  $title = iconv("ISO-8859-1", "UTF-8", $_POST["title"]);
+  $content = iconv("ISO-8859-1", "UTF-8", $_POST["content"]);
   $time = date("Y-m-d H:i:s");
 
   try {
