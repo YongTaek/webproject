@@ -91,7 +91,7 @@
 		</div>
 		<div class= "qlist-wapper">
 		<?php
-			$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+			$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
 			if (isset($_GET["type"])) {
 				if ($_GET["type"] == "my") {
 					$b_rows = $db->query("SELECT b.id, b.title, time, u.name, pinned FROM board b JOIN user u on b.u_id = u.id WHERE b.u_id = ".$_SESSION["id"]." ORDER BY time DESC");

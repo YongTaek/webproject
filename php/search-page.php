@@ -75,10 +75,10 @@
 			<h2>ALL SEARCH</h2>
 		</div>
 		<div class= "qlist-wapper">
-			
+
 			<p class="bg-info">Notice</p>
 			<?php
-				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+				$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
 				$rows = $db->query("SELECT n.id, title, time, name FROM notice n JOIN user u ON n.u_id = u.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
 				foreach ($rows as $row) {
 			?>
@@ -134,7 +134,7 @@
 			<p class="bg-info">Free Board</p>
 			<?php
 				$rows = $db->query("SELECT b.id, title, time, name FROM board b JOIN user u ON b.u_id = u.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
-				
+
 				foreach ($rows as $row) {
 			?>
 			<div class= "question">
@@ -180,7 +180,7 @@
 				</div>
 				<div class="question-list-right">
 					<div>
-						
+
 						<h5 class="name">by. <?= "professor" ?></h5> <!--작성자 -->
 					</div>
 				</div>

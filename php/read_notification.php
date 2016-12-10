@@ -1,6 +1,5 @@
 <?php
-session_start();
-
+  session_start();
   $data = $_POST["data"];
   $id = $_SESSION["id"];
   if (isset($id)) {
@@ -9,13 +8,9 @@ session_start();
   $content = $data["content"];
   $time = $data["time"];
   $url = $data["url"];
-
-  print $content;
-  print $time;
-  print $url;
-
+  header("Content-type: application/json");
   try {
-    $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+    $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $db->query("UPDATE notification SET isread=1 where u_id=$id and message=\"$content\" and url=\"$url\" and time=\"$time\" ");

@@ -42,7 +42,7 @@
 			<div role="login" class="pull-right">
 				<img id="bell" src="/public/img/bell.png"></img>
 				<?php if ($logged_in) { ?>
-					
+
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
 					<div class="pull-right vr"></div>
 				<?php
@@ -54,7 +54,7 @@
 				?>
 					<a id="mypage" href="<?= $href ?>" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
 				<?php } else { ?>
-					
+
 					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
 
@@ -79,7 +79,7 @@
 				<hr/>
 				<ul>
 					<?php
-						$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+						$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
 						$rows = $db->query("SELECT id, title, DATE_FORMAT(time, '%Y-%m-%d') FROM notice ORDER BY DATE_FORMAT(time, '%Y-%m-%d') DESC");
 						foreach ($rows as $row) {
 					?>

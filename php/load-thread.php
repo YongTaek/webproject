@@ -9,7 +9,7 @@
   // print $time;
   header("Content-type: application/json");
   try {
-    $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+    $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $comments = $db->query("SELECT c.id, c.content, c.time, u.name from comment c join lecture l on c.type='lecture' and l.id=c.reference_id join user u on u.id=c.u_id where c.reference_id=$r_id and c.time < \"$time\" order by time desc limit 10 ");
       $arrays = array();

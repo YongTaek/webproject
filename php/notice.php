@@ -74,7 +74,7 @@
 
 	<?php
 		if (isset($_GET["id"])) {
-			$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+			$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
 			$rows = $db->query("SELECT n.id, name, title, content, time, pinned FROM notice n JOIN user u ON n.u_id = u.id WHERE n.id = ".$_GET["id"]);
 			foreach ($rows as $row) {
   ?>

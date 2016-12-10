@@ -81,7 +81,7 @@
 		<div class= "qlist-wapper">
 
 			<?php
-				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+				$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
 				$rows = $db->query("SELECT n.id, title, time, name, pinned FROM notice n JOIN user u ON n.u_id = u.id ORDER BY pinned DESC, time DESC");
 				foreach ($rows as $row) {
 			?>
