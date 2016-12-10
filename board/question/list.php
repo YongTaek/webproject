@@ -1,4 +1,4 @@
-<?php include("../common/pusher.php"); ?>
+<?php include("../../common/pusher.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
