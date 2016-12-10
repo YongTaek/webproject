@@ -8,10 +8,10 @@
   $content = str_replace("\n", "<br/>", $content);
   $time = date("Y-m-d H:i:s");
   $type = $_POST["type"];
-  $redirectId = $_POST["questionId"];
+  $redirectId = $_POST["reference"];
   $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+  print 'asdf';
   try {
     $db->query("UPDATE comment set content=\"$content\" where id=$id and type=\"$type\"");
     $db->query("UPDATE comment set time=\"$time\" where id=$id and type=\"$type\"");
