@@ -1,4 +1,5 @@
 <?php
+session_start();
 
   $data = $_POST["data"];
   $id = $_SESSION["id"];
