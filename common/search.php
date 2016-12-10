@@ -152,9 +152,9 @@ $keyword = $_POST["search"];
 			</div>
 			<?php }
 			if(str_len($keyword) == 0){
-				var_dump("keyworkd");
+				print "keyworkd";
 			} else{
-				var_dump("aksdlsfjalskdjflasdjflasjl;");}?>
+				print "aksdlsfjalskdjflasdjflasjl;";} ?>
 		</div>
 	</div>
 </body>
