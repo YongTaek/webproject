@@ -56,7 +56,7 @@
 		<form action='/question/modify.php' method="post">
 			<h2>Title</h2>
 			<div class="title">
-				<input name="title" type="text" value="<?= $row["title"] ?>">
+				<input name="title" type="text" value="<?= $row["title"] ?>" required>
 			</div>
 			<h2>Content</h2>
 			<div class="content" id="wmd-editor">
