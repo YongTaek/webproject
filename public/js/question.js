@@ -69,7 +69,7 @@ function questionReady(){
 			if(data.error === "true") {
 				alert("삭제 오류");
 			} else {
-				// window.location.href = document.location.href;
+				window.location.href = document.location.href;
 			}
 		});
 	});
