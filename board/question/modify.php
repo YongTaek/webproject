@@ -1,6 +1,5 @@
-<?php
-	session_start();
-?>
+<?php include("../../common/pusher.php"); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,50 +10,26 @@
 	<link rel="stylesheet" href="/public/css/main.css" type="text/css">
 	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
 	<link rel="stylesheet" href="/public/css/jquery.tag-editor.css">
-    <link rel="stylesheet" type="text/css" href="/public/css/create-post.css" />
+  <link rel="stylesheet" type="text/css" href="/public/css/create-post.css" />
 	<link rel="stylesheet" type="text/css" href="/public/css/wmd.css" />
 	<link rel="stylesheet" type="text/css" href="/public/css/create-post.css" />
+
+	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+	<script src="/public/js/jquery-ui-1.12.1.min.js"></script>
+	<script src="/public/js/base.js"></script>
+
+	<?php include("../../common/script.php"); ?>
+
 	<script type="text/javascript" src="../public/js/showdown.js"></script>
 	<link rel="stylesheet" href="/public/css/pusher.css" type="text/css">
 	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="/public/js/push.js"></script>
-	<script src="/public/js/base.js"></script>
 	<title></title>
 </head>
 <body>
-	<header role = "banner" class="banner-color">
-		<nav role="navigation">
-			<div id="logo" class="pull-left"><a href="/"><img class="logo" src="/public/img/selab_logo_S.png"/></a></div>
-			<ul id="menu" class="inline-list pull-left">
-				<li class="pull-left"><a href="/php/noticelist.php" class="menu-item" >NOTICE</a></li>
-				<li class="pull-left"><a href="/php/questionlist.php" class="menu-item active">QUESTION</a></li>
-				<li class="pull-left"><a href="/php/freelist.php" class="menu-item">BOARD</a></li>
-				<li class="pull-left"><a href="/view/lecture-list.php" class="menu-item">LECTURE</a></li>
-			</ul>
-			<div role="login" class="pull-right">
-				<?php if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) { ?>
-					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
-					<div class="pull-right vr"></div>
-					<a id="mypage" href="/php/changepw.php" class='pull-right'><?= $_SESSION["name"] ?> (<?= $_SESSION["auth"] ?>)</a>
-				<?php } else { ?>
-					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
-				<?php } ?>
-			</div>
-			<button class="pull-right">
-				<img src="/public/img/search.png" class="search-icon">
-			</button>
-			<form method="post" id = "search-content" action="/php/search-page.php">
-			<input type="text" class="pull-right search" name="search">
-			</form>
-
-		</nav>
-		<div class = "jumbotron banner-color">
-			<h1 class="align-center">Question</h1>
-			<p class="lead align-center">Modify Question!</p>
-		</div>
-	</header>
+	<?php include("../../common/header.php"); ?>
 	<div class='container'>
 		<!-- action php  -->
 		<?php
@@ -94,8 +69,7 @@
 
 		</div>
 		<!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
-		<script src="/public/js/jquery-3.1.1.min.js"></script>
-		<script src="/public/js/jquery-ui-1.12.1.min.js"></script>
+
 		<script src="/public/js/jquery.caret.min.js"></script>
 		<script src="/public/js/jquery.tag-editor.min.js"></script>
 		<script>
