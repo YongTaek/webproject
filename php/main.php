@@ -95,7 +95,7 @@
 					<li class= "list">
 						<!-- $id is contents id of notice -->
 						<!--title is the content title -->
-						<a href= <?= "/php/question.php/?id=".$row["id"] ?> ><span class="title"><?= $row["title"] ?></span></a>
+						<a href= <?= "/php/question.php?id=".$row["id"] ?> ><span class="title"><?= $row["title"] ?></span></a>
 						<!-- date is when the content writes -->
 						<span class="date"><?= $row["DATE_FORMAT(time, '%Y-%m-%d')"] ?></span>
 					</li>
