@@ -30,6 +30,7 @@
   <script src="/public/js/lec-open-close.js"></script>
   <script src="/public/js/pusher.js"></script>
   <script src="/public/js/settingDialog.js" type="text/javascript"></script>
+  <script src="/public/js/base.js"></script>
 </head>
 <body>
   <header role = "banner" class="banner-color">
@@ -57,9 +58,10 @@
         <a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
         <?php } ?>
       </div>
-      <form action="../php/search-page.php">
-      <input type="image" src="/public/img/search.png" class="pull-right search-icon">
-      <!-- <a href="/view/question/search"><img src="/public/img/search.png" class="pull-right search-icon"></a> -->
+      <button class="pull-right">
+        <img src="/public/img/search.png" class="search-icon">
+      </button>
+      <form id = "search-content" action="../php/search-page.php">
       <input type="text" class="pull-right search" name="search">
       </form>
     </nav>

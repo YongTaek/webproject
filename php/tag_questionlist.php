@@ -24,7 +24,7 @@
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="/public/js/push.js"></script>
 	<script src="/public/js/pusher.js"></script>
-
+	<script src="/public/js/base.js"></script>
 	<meta charset="utf-8">
 	<title>질문 게시판</title>
 </head>
@@ -49,9 +49,10 @@
 					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
 			</div>
-			<form action="../php/search-page.php">
-			<input type="image" src="/public/img/search.png" class="pull-right search-icon">
-			<!-- <a href="/view/question/search"><img src="/public/img/search.png" class="pull-right search-icon"></a> -->
+			<button class="pull-right">
+				<img src="/public/img/search.png" class="search-icon">
+			</button>
+			<form id = "search-content" action="../php/search-page.php">
 			<input type="text" class="pull-right search" name="search">
 			</form>
 		</nav>
