@@ -101,7 +101,7 @@ function addTextNoNotification(){
 	span.setAttribute("class","no-notification");
 	span.innerHTML = "받지 않은 알림이 없습니다!";
 	$("#notifications").empty();
-	$("#notifications").append("<span class=\"no-notification\">받지 않은 알림이 없습니다!</span>");
+	$("#notifications").append(span);
 }
 
 

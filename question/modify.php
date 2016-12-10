@@ -37,8 +37,8 @@
                 }
             }
         }
-        $db->query("UPDATE question SET title = '$title' WHERE id = $id AND u_id = $u_id");
-        $db->query("UPDATE question SET content = '$content' WHERE id = $id AND u_id = $u_id");
+        $db->query("UPDATE question SET title = '$title' WHERE id = $id");
+        $db->query("UPDATE question SET content = '$content' WHERE id = $id");
         header("Location: /board/question/post.php?id=$id");
 
     } catch(PDOException $e){

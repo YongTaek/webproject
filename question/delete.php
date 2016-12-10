@@ -31,7 +31,7 @@
         if ($_SESSION["auth"] === "professor" || $_SESSION["auth"] === "assistant") {
           $db->query("DELETE FROM question WHERE id = $id");
         } else {
-          $db->query("DELETE FROM question WHERE id = $id AND u_id = $u_id");
+          $db->query("DELETE FROM question WHERE id = $id");
         }
   	  	$db->query("DELETE FROM comment WHERE reference_id = $id");
    	    header("Location: /board/question/list.php");
