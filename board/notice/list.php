@@ -23,11 +23,6 @@
 </head>
 <body>
 	<?php include("../../common/header.php"); ?>
-
-	<div class = "jumbotron banner-color">
-		<h1 class="align-center">NOTICE</h1>
-		<p class="lead align-center">Wed 3:30 ~ & Thu 10:30 ~ </p>
-	</div>
 	<div class= "content">
 		<div class="subheader">
 			<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant")) { ?>
