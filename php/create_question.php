@@ -13,7 +13,7 @@
     $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->query("INSERT INTO question(u_id, title, content, time) VALUES($id, '$title', '$content', '$time')");
-    if($num > 0){
+    if($tags[0] != ""){
       $questionId = $db->query("SELECT id from question where title='$title' and content='$content' and time='$time'");
       $q = $questionId->fetch();
       foreach ($tags as $tag) { 
