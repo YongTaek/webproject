@@ -11,10 +11,12 @@ for (var i = 0; i < questionArray.length; i++) {
 		// http://codeseven.github.io/toastr/demo.html
 		var_dump(parseInt($("#notification").text()));
 
-		if(parseInt($("#notification").text()) === 0){
+		if(parseInt($("#notification").text()) == 0){
 			$("#notifications").empty();
 		}
+
 		$("#notification").text(parseInt($("#notification").text()) + 1);
+		
 		var a = $(makeNotification(data));
 		$("#notifications").append(a);
 		var link = document.location.href;
