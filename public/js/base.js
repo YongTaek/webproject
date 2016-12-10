@@ -25,6 +25,22 @@ function onclick(){
 		});
 	});
 
+	$("#all-delete").click(function() {
+		$.ajax({
+			url: '/api/read-allnotification.php',
+			type : "POST",
+			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+			dataType: 'json',
+			success : function (result) {
+				$("#notification").text("0");
+				$("#notifications").empty();
+			},
+			error : function (result) {
+				console.log(result);
+			}
+		});
+	});
+
 };
 
 
