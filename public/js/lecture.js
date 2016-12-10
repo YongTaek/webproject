@@ -13,11 +13,9 @@ function lectureReady(){
       if(da.error == "true"){
         alert("등록 에러! X(");
       }
-      else{
-        // appendComment(da);
-      }
     });
   });
+
   $(".threads").scroll(function(){
 
     if($(this).scrollTop() == 0){
@@ -37,7 +35,7 @@ function lectureReady(){
           alert("로드 에러! ;(");
         }
         else{
-          prependComment(da);
+          prependComments(da);
         }
       });
     };
@@ -95,7 +93,8 @@ function appendComment(da){
 
   $(".threads").animate({scrollTop: $(".threads").prop("scrollHeight")});
 };
-function prependComment(data){
+
+function prependComments(data){
   var originScrollHeight = $(".threads").prop("scrollHeight");
   for(var i = 0; i<data.length;i++){
     var da = data[i];
@@ -127,8 +126,6 @@ function prependComment(data){
   var afterScrollHeight = $(".threads").prop("scrollHeight");
   var originScrollHeight = afterScrollHeight - originScrollHeight;
   $(".threads").scrollTop(originScrollHeight);
-    // div.hide().prependTo(".threads").fadeIn();
-    // $(".threads").animate({scrollTop: $(".threads").height()});
 };
 
 $(document).ready(lectureReady);
