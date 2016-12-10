@@ -3,10 +3,6 @@
 	$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    if (!isset($_POST["title"]) || !isset($_POST["content"]) || trim($_POST["title"]) === "" || trim($_POST["content"]) === "" || !preg_match("/^[0-9]$/", $_POST["id"])) {
-        header("Location: /error.php");
-    }
-
   	$id = $_POST["id"];
   	$u_id = $_SESSION["id"];
   	$title = htmlspecialchars($_POST["title"]);

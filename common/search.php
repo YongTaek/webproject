@@ -1,6 +1,5 @@
 <?php include("pusher.php"); 
 $keyword = $_POST["search"];
-$test = "hello!!!!!!";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -151,9 +150,11 @@ $test = "hello!!!!!!";
 					</div>
 				</div>
 			</div>
-			<?php } if($keyword === ""){
-			var_dump($test);
-}?>
+			<?php }
+			if(str_len($keyword) == 0){
+				print "keyworkd";
+			} else{
+				print "aksdlsfjalskdjflasdjflasjl;";} ?>
 		</div>
 	</div>
 </body>
