@@ -16,7 +16,7 @@
       $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $db->query("INSERT INTO answer(u_id, q_id, content, time) VALUES($u_id, $id, '$content', '$time')");
-      $array = array('content' => "$id 에 답변이 달렸습니다!"" );
+      $array = array('content' => "$id 에 답변이 달렸습니다!" );
       $pusher->trigger("$id", 'new_comment', $array);
     }
     else{
