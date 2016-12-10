@@ -4,7 +4,8 @@
   	$u_id = $_SESSION["id"];
   	$id = $_GET["id"];  	
   	try{
-  		$db->query("DELETE FROM comment where u_id=$id");
+      $db->query("DELETE FROM notification WHERE u_id = $id");
+  		$db->query("DELETE FROM comment WHERE u_id = $id");
   		$db->query("DELETE FROM answer WHERE u_id = $id");
   		$db->query("DELETE FROM favorite WHERE u_id = $id");
   		$favorite = $db->query("SELECT f.u_id FROM favorite f JOIN question q on id = q_id WHERE q.u_id = $id");
@@ -15,7 +16,7 @@
 	  	}
 
   		$tags = $db->query("SELECT DISTINCT q_id FROM question JOIN tag_question on id = q_id WHERE u_id = $id");
-  		if(!empty($tags) && ($tags->rowCount() > 0)){ // 삭제
+  		if(!empty($tags) && ($tags->rowCount() > 0)){ 
 	  		foreach ($tags as $tag) {
 	  			$db->query("DELETE FROM tag_question WHERE q_id =".$tag["q_id"]);	
 	  		}
