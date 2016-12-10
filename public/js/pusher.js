@@ -1,6 +1,6 @@
 console.log(questionArray);
 console.log(lectureArray);
-Pusher.logToConsole = false;
+Pusher.logToConsole = true;
 
 var pusher = new Pusher('dc9f3fc01f0f63f45083', {
 	encrypted: true
