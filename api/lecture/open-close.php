@@ -10,6 +10,10 @@
   $status = $_GET["status"];
 
   try{
+    if (!($_SESSION["auth"] === "professor" || $_SESSION["auth"] === "assistant")) {
+      throw new PDOException("No Auth", 1);
+    }
+
   	$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
