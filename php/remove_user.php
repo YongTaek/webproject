@@ -9,7 +9,7 @@
   		$db->query("DELETE FROM favorite WHERE u_id = $id");
   		$favorite = $db->query("SELECT q.id FROM question q JOIN favorite f on q.id = f.u_id WHERE id = $id");
   		$fav_num = $favorite->fetch();
-  		if($fav_num > 0){
+  		if($fav_num != 0){
 	  		foreach ($favorite as $fav) {
 	  			$db->query("DELETE FROM favorite WHERE u_id =".$fav["id"]);
 	  		}
