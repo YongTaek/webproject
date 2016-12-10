@@ -34,16 +34,16 @@ function questionReady(){
 		var typeInput = document.createElement("input");
 
 
-		idInput.setAttribute("name", "id");
 		var idSpan = div.find("span.hidden");
 
 		var commentId = idSpan[0].innerHTML;
+		idInput.setAttribute("name", "id");
 		idInput.setAttribute("value", commentId);
 		idInput.setAttribute("type","hidden");
 
-		var questionId = idSpan[1].innerHTML;
-		IdInput.setAttribute("name", "questionId");
-		IdInput.setAttribute("value",questionId);
+		var reference = idSpan[1].innerHTML;
+		IdInput.setAttribute("name", "reference");
+		IdInput.setAttribute("value",reference);
 		IdInput.setAttribute("type", "hidden");
 
 		var type = idSpan[2].innerHTML;
@@ -57,7 +57,7 @@ function questionReady(){
 		submitInput.setAttribute("type", "submit");
 		form.append(contentInput);
 		form.append(idInput);
-		form.append(questionIdInput);
+		form.append(IdInput);
 		form.append(submitInput);
 		div.empty();
 		div.append(form);
