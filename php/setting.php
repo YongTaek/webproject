@@ -22,6 +22,7 @@
     <?php } ?>
   </script>
   <script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+  <script src="/public/js/jquery.form.js" type="text/javascript"></script>
   <script src="/public/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="//js.pusher.com/3.2/pusher.min.js"></script>
@@ -162,13 +163,13 @@
             <h3 class="modal-title" id="lineModalLabel">조교 추가</h3>
           </div>
           <div class="modal-body">
-            <form>
+            <form id="saveAss" action="save_assistant.php" enctype="multipart/form-data" method="post">
               <div class="form-group">
-                <label for="exampleInputEmail1">Assistant ID</label>
+                <label for="AssID">Assistant ID</label>
                 <input type="text" class="form-control" id="dialogAssID" placeholder="Enter Assistant ID...">
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Assistant Name</label>
+                <label for="AssName">Assistant Name</label>
                 <input type="text" class="form-control" id="dialogAssName" placeholder="Enter Assistant Name...">
               </div>
             </form>
@@ -199,18 +200,18 @@
             <h3 class="modal-title" id="lineModalLabel">학생 추가</h3>
           </div>
           <div class="modal-body">
-            <form>
+            <form id="saveStu" action="save_student.php" enctype="multipart/form-data" method="post">
               <div class="form-group">
-                <label for="exampleInputEmail1">Student ID</label>
+                <label for="StuID">Student ID</label>
                 <input type="text" class="form-control" id="dialogStuID" placeholder="Enter Assistant ID...">
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Student Name</label>
+                <label for="StuName">Student Name</label>
                 <input type="text" class="form-control" id="dialogStuName" placeholder="Enter Assistant Name...">
               </div>
               <div class="form-group">
-                <label for="exampleInputFile">File input</label>
-                <input type="file" id="exampleInputFile">
+                <label for="StuFile">File input</label>
+                <input type="file" id="dialogStuFile">
               </div>
             </form>
           </div>
