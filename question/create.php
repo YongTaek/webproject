@@ -2,6 +2,10 @@
   session_start();
   date_default_timezone_set('Asia/Seoul');
 
+  if (!isset($_SESSION["id"])) {
+    header("Location: /user/login.php");
+  }
+
   $id = $_SESSION["id"];
   $title = htmlspecialchars($_POST["title"]);
   $content = $_POST["content"];
