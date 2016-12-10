@@ -9,7 +9,8 @@ if (isset($_GET["id"])) {
 	$status = $s -> fetch();
 	$lectureName = $rows['name'];
 	$fileType = explode(".",$lectureName);
-	$fileType = $fileType[$fileType.length()-1];
+	$fileType = $fileType[count($fileType)-1];
+	echo $fileType;
   $lectureFile = $rows['url'];
   if ($lectureName === "") {
     header("Location: /error.php");
@@ -49,7 +50,7 @@ if (isset($_GET["id"])) {
 	if($fileType === "pdf"){
 ?>
 	<embed src = "<?= $lectureFile ?>"></embed>
-	<?php }else{ ?>
+	<?php }else if( $fileType === "html" ){ ?>
 	<iframe src = "<?= $lectureFile ?>"></iframe>
 	<?php } ?>
 	<div id="comment">
