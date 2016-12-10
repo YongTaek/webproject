@@ -13,7 +13,7 @@
   <script src="/public/js/jquery.form.js" type="text/javascript"></script>
   <script src="/public/js/base.js"></script>
 
-  <?php include("./common/script.php"); ?>
+  <?php include("../common/script.php"); ?>
   
   <script src="/public/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
@@ -24,7 +24,7 @@
   <script src="/public/js/settingDialog.js" type="text/javascript"></script>
 </head>
 <body>
-  <?php include("./common/header.php"); ?>
+  <?php include("../common/header.php"); ?>
   <div class="container">
     <div class = "top-text">
       <h3 class="setting-text">Lecture List</h3>
