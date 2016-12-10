@@ -9,7 +9,7 @@ for (var i = 0; i < questionArray.length; i++) {
 	channel.bind('new_comment', function(data) {
 		// https://github.com/CodeSeven/toastr#escape-html-characters
 		// http://codeseven.github.io/toastr/demo.html
-		var_dump(parseInt($("#notification").text());
+		var_dump(parseInt($("#notification").text()));
 
 		if(parseInt($("#notification").text()) === 0){
 			$("#notifications").empty();
