@@ -124,7 +124,8 @@ body{
 
 .title {
 	margin: 0;
-	margin-top: 20px;
+	margin-top: 3px;
+	margin-bottom: 5px;
 }
 
 .title > a {
@@ -145,4 +146,16 @@ body{
 	font-size: 20px;
 	background: #d9edf7;
 	padding: 5px;
+}
+
+.tag{
+	background: rgb(0,154,211);
+	border-radius: 2px;
+	color: white;
+	margin-bottom: 5px;
+	padding: 3px;
+}
+
+.tag:hover{
+	text-decoration: none;
 }
