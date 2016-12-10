@@ -119,13 +119,22 @@
           </tr>
         </thead>
         <tbody>
+        <?php
+        $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $i = 1;
+        $rows = $db->query("SELECT id, name FROM user WHERE authority = 'student'");
+        foreach ($rows as $row) { ?>
           <tr>
-            <td>1</td>
-            <td>2014038111</td>
-            <td>천유정</td>
-            <td><a href="#" class="remove-student">Remove</a></td>
+
+            <td><?= $i ?></td>
+            <td><?= $row["id"] ?></td>
+            <td><?= $row["name"]?></td>
+            <td><a href="remove_student.php" class="remove-student">remove</a></td>
             <td><a href="#" class="reset-student">Reset</a></td>
+
           </tr>
+          <?php $i++; } ?>
         </tbody>
       </table>
     </div>
@@ -145,13 +154,21 @@
           </tr>
         </thead>
         <tbody>
+        <?php
+        $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $i = 1;
+        $rows = $db->query("SELECT id, name FROM user WHERE authority = 'assistant'");
+        foreach ($rows as $row) { ?>
           <tr>
-            <td>1</td>
-            <td>2014038111</td>
-            <td>천유정</td>
+
+            <td><?= $i ?></td>
+            <td><?= $row["id"] ?></td>
+            <td><?= $row["name"] ?></td>
             <td><a href="#" class="remove-assistant">Remove</a></td>
             <td><a href="#" class="reset-assistant">Reset</a></td>
           </tr>
+        <?php $i++; } ?>
         </tbody>
       </table>
     </div>
@@ -209,15 +226,15 @@
             <form id="saveStu" action="save_student.php" enctype="multipart/form-data" method="post">
               <div class="form-group">
                 <label for="StuID">Student ID</label>
-                <input type="text" class="form-control" id="dialogStuID" placeholder="Enter Assistant ID...">
+                <input type="text" class="form-control" id="dialogStuID" name="id" placeholder="Enter Assistant ID...">
               </div>
               <div class="form-group">
                 <label for="StuName">Student Name</label>
-                <input type="text" class="form-control" id="dialogStuName" placeholder="Enter Assistant Name...">
+                <input type="text" class="form-control" id="dialogStuName" name="name" placeholder="Enter Assistant Name...">
               </div>
               <div class="form-group">
                 <label for="StuFile">File input</label>
-                <input type="file" id="dialogStuFile">
+                <input type="file" id="dialogStuFile" name="file">
               </div>
             </form>
           </div>

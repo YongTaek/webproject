@@ -22,15 +22,17 @@ function questionReady(){
 
 	$(".comment_modify").on("click", function (event) {
 		var div = $(this).parent().parent();
-		div.empty();
 		var form = document.createElement("form");
-		from.setAttribute("class", "width100");
+		form.setAttribute("class", "width100");
 		form.setAttribute("action", "modify_comment.php");
 		var contentInput = document.createElement("input");
 		contentInput.setAttribute("name", "content");
 		contentInput.setAttribute("class", "comment-write");
 		var idInput = document.createElement("input");
 		idInput.setAttribute("name", "id");
+		var idSpan = div.find("span.hidden");
+		var commentId = idSpan.innerHTML;
+		idInput.setAttribute("value", commentId);
 		idInput.setAttribute("type","hidden");
 		var submitInput = document.createElement("input");
 		submitInput.setAttribute("class", "btn commentModify submit");
@@ -39,6 +41,7 @@ function questionReady(){
 		form.append(contentInput);
 		form.append(idInput);
 		form.append(submitInput);
+		div.empty();
 		div.append(form);
 	});
 };
