@@ -139,7 +139,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 					<div class="comment">
 						<hr>
 						<?php
-						$comments = $db->query("SELECT c.id as c_id, content, name, time, u.id as, score FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'question' AND reference_id = ".$_GET["id"]);
+						$comments = $db->query("SELECT c.id as c_id, content, name, time, u.id, score FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'question' AND reference_id = ".$_GET["id"]);
 						foreach ($comments as $comment) {
 							?>
 							<div>
@@ -192,7 +192,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 								</div>
 								<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $answer["id"])) { ?>
 								<div class="answer_btn">
-									<a class="btn answer_modify" name="answer_modify" href="modify-answer-page.php?id=<?= $_GET["id"] ?>">수정</a>
+									<a class="btn answer_modify" name="answer_modify" href="modify_answer.php?id=<?= $_GET["id"] ?>">수정</a>
 									<a class="btn answer_delete" name="answer_delete" href="delete_answer.php?id=<?= $_GET["id"] ?>">삭제</a>
 								</div>
 								<?php } ?>
