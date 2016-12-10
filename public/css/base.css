@@ -123,5 +123,23 @@ button.pull-right{
 #bell {
 	width: 25px;
 	height: 25px;
+	margin-right: 0px;
+	margin-left: 10px;
+}
 
+.circle {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px; 
+	background: red;
+	margin-left: 5px; 
+	text-align: center;
+	/* width and height can be anything, as long as they're equal */
+}
+
+.notification-num {
+	color: white;
 }
