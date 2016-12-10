@@ -5,6 +5,7 @@
 
   $id = $_POST["id"];
   $content = $_POST["content"];
+  $content = str_replace("\n", "<br/>", $content);
   $time = date("Y-m-d H:i:s");
   $redirectId = $_POST["questionId"];
   $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
