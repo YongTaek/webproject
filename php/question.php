@@ -266,7 +266,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 						if ($logged_in && $num == 0) { ?>
 						<div class="write-answer">
 							<h2>Your Answer</h2>
-							<form action="create_answer.php" method="post">
+							<form action="create_answer.php" method="post" accept-charset="UTF-8">
 								<div id="wmd-editor">
 									<div id="wmd-button-bar"></div>
 									<textarea id="wmd-input" name="answer"></textarea>
