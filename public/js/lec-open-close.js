@@ -9,7 +9,7 @@ function func(){
 		}
 
 		$.ajax({
-			url: "lec-open-close.php",
+			url: "/api/lecture/open-close.php",
 			context: this,
 			data: {
 				id: $(this)[0].parentElement.parentElement.childNodes[1].textContent,
