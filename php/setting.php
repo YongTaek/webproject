@@ -22,6 +22,7 @@
     <?php } ?>
   </script>
   <script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+  <script src="/public/js/jquery.form.js" type="text/javascript"></script>
   <script src="/public/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="//js.pusher.com/3.2/pusher.min.js"></script>
