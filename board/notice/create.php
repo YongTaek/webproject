@@ -1,4 +1,9 @@
-<?php include("../../common/pusher.php"); ?>
+<?php
+  include("../../common/pusher.php");
+  if (!($_SESSION["auth"] === "professor" || $_SESSION["auth"] === "assistant")) {
+    header("Location: /error.php");
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
