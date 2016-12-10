@@ -25,26 +25,51 @@ function questionReady(){
 		var form = document.createElement("form");
 		form.setAttribute("class", "width100");
 		form.setAttribute("action", "modify_comment.php");
+		form.setAttribute("method", "post");
 		var contentInput = document.createElement("input");
 		contentInput.setAttribute("name", "content");
 		contentInput.setAttribute("class", "comment-write");
 		var idInput = document.createElement("input");
 		idInput.setAttribute("name", "id");
 		var idSpan = div.find("span.hidden");
-		var commentId = idSpan.innerText;
+		var commentId = idSpan[0].innerHTML;
 		idInput.setAttribute("value", commentId);
 		idInput.setAttribute("type","hidden");
 		var submitInput = document.createElement("input");
 		submitInput.setAttribute("class", "btn commentModify submit");
 		submitInput.setAttribute("value", "수정");
-		submitInput.setAttribute("type", "submit");
+		submitInput.setAttribute("type", "button");
 		form.append(contentInput);
 		form.append(idInput);
 		form.append(submitInput);
 		div.empty();
 		div.append(form);
 	});
+
+	$(".commentModify").on("click", modifyAjax);
+
 };
+
+function modifyAjax(event) {
+
+	var params = $(this).parent().serialize();
+	console.log(params);
+	$.ajax({
+		url: "modify_comment.php",
+		type : "POST",
+		data: params,
+		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+		dataType: "json"
+	}).done(function (da) {
+		// var da = $.parseJSON(data);
+		if(da.error == "true"){
+			alert("수정 에러! X(");
+		} else {
+			window.location.href = document.location.href;
+		}
+	});
+}
+
 
 function appendComment(da,comment){
 	console.log(comment);
