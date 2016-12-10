@@ -42,11 +42,11 @@ function questionReady(){
 		form.append(contentInput);
 		form.append(idInput);
 		form.append(submitInput);
-		submitInput.onClick = modifyAjax;
 		div.empty();
 		div.append(form);
 	});
 
+	$(".commentModify").on("click", modifyAjax);
 
 };
 
