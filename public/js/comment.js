@@ -30,16 +30,27 @@ function questionReady(){
 		contentInput.setAttribute("name", "content");
 		contentInput.setAttribute("class", "comment-write");
 		var idInput = document.createElement("input");
-		var questionIdInput = document.createElement("input");
+		var IdInput = document.createElement("input");
+		var typeInput = document.createElement("input");
+
+
 		idInput.setAttribute("name", "id");
 		var idSpan = div.find("span.hidden");
+
 		var commentId = idSpan[0].innerHTML;
 		idInput.setAttribute("value", commentId);
 		idInput.setAttribute("type","hidden");
+
 		var questionId = idSpan[1].innerHTML;
-		questionIdInput.setAttribute("name", "questionId");
-		questionIdInput.setAttribute("value",questionId);
-		questionIdInput.setAttribute("type", "hidden");
+		IdInput.setAttribute("name", "questionId");
+		IdInput.setAttribute("value",questionId);
+		IdInput.setAttribute("type", "hidden");
+
+		var type = idSpan[2].innerHTML;
+		typeInput.setAttribute("type", "hidden");
+		typeInput.setAttribute("name", "type");
+		typeInput.setAttribute("value", type);
+
 		var submitInput = document.createElement("input");
 		submitInput.setAttribute("class", "btn commentModify submit");
 		submitInput.setAttribute("value", "수정");
