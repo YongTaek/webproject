@@ -14,6 +14,8 @@ function onclick(){
 
 	});
 
+	
+
 	$(".closebtn").click(function(){
 
 		 document.getElementById("mySidenav").style.width = "0";
