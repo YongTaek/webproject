@@ -5,5 +5,5 @@
   $u_id = $_SESSION["id"];
   $db->query("DELETE FROM notice WHERE id = $id AND u_id = $u_id");
   $db->query("DELETE FROM comment WHERE reference_id = $id");
-  header("Location: noticelist.php");
+  header("Location: /board/notice/list.php");
   ?>
