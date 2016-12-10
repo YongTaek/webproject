@@ -59,7 +59,7 @@
 			<button class="pull-right">
 				<img src="/public/img/search.png" class="search-icon">
 			</button>
-			<form id = "search-content" action="../php/search-page.php">
+			<form meethod="post" id = "search-content" action="php/search-page.php">
 			<input type="text" class="pull-right search" name="search">
 			</form>
 		</nav>
