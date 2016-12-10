@@ -66,11 +66,11 @@ function questionReady(){
 			dataType: 'json'
 		}).done(function (data) {
 			console.log(data);
-			// if(data.error === "true") {
-			// 	alert("삭제 오류");
-			// } else {
-			// 	window.location.href = document.location.href;
-			// }
+			if(data.error === "true") {
+				alert("삭제 오류");
+			} else {
+				window.location.href = document.location.href;
+			}
 		});
 	});
 
