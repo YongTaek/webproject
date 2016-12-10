@@ -21,8 +21,7 @@
 		$time = $row["time"];
 		$count++;
 		$tempArray = array("message" => $message, "url" => $url, "time" => $time);
-		print_r($tempArray);
-		$pushArrayp[] = $tempArray;
+		$pushArray[] = $tempArray;
 	}
 	print_r($pushArray);
 ?>
