@@ -9,10 +9,10 @@
   $u_id = $_SESSION["id"];
   $content = $_POST["content"];
 
-  $content = str_replace("\n", "&#10;", $content);
-  $content = str_replace("\t", "&#9;", $content);
-  $content = str_replace("\'", "&#39;", $content);
-  $content = str_replace("\"", "&#34;", $content);
+  $content = str_replace("\n", "&#13;&#10;", $content);
+  $content = str_replace("\t", "&#13;&#9;", $content);
+  $content = str_replace("\'", "&#13;&#39;", $content);
+  $content = str_replace("\"", "&#13;&#34;", $content);
   
   console.log($content);
   $time = date("Y-m-d H:i:s");
