@@ -12,7 +12,7 @@
       <?php } ?>
 
     <?php
-      $comments = $db->query("SELECT c.id, c.content, c.time, u.name from comment c join lecture l on c.type='lecture' and l.id=c.reference_id join user u on u.id=c.u_id where c.reference_id=$id order by time desc limit 20 ");
+      $comments = $db->query("SELECT c.id, c.content, c.time, u.name from comment c join lecture l on c.type='lecture' and l.id=c.reference_id join user u on u.id=c.u_id where c.reference_id=$id order by time desc limit 20");
       $arrays = array();
       foreach ($comments as $comment ) {
           $userName = $comment['name'];
@@ -40,7 +40,7 @@
 
   <?php
       if($row["open"] == 1){ ?>
-        <form class="lecture" action="create_comment.php" method="POST">
+        <form class="lecture" action="/comment/create.php" method="POST">
           <textarea id="input" name="content" cols="23" rows="8"></textarea>
           <input type="hidden" name="id" value="<?= $row["id"] ?>"/>
           <input type="hidden" name="type" value="lecture" />

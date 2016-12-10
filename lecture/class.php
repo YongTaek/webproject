@@ -8,12 +8,14 @@ if (isset($_GET["id"])) {
 	$s = $db->query("SELECT open from lecture where id = $id");
 	$status = $s -> fetch();
 	$lectureName = $rows['name'];
+	$fileType = explode(".",$lectureName);
+	$fileType = $fileType[$fileType.length()-1];
   $lectureFile = $rows['url'];
   if ($lectureName === "") {
-    header("Location: /view/error.php");
+    header("Location: /error.php");
   }
 } else {
-  header("Location: /view/error.php");
+  header("Location: /error.php");
 }
 ?>
 <!DOCTYPE html>
@@ -38,17 +40,20 @@ if (isset($_GET["id"])) {
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="/public/js/lecture.js" type="text/javascript"></script>
-
 </head>
 <body>
 <?php
 	if($status != 0) { ?>
 		<a class="closedrawer" id="side"></a>
 <?php }
+	if($fileType === "pdf"){
 ?>
 	<embed src = "<?= $lectureFile ?>"></embed>
+	<?php }else{ ?>
+	<iframe src = "<?= $lectureFile ?>"></iframe>
+	<?php } ?>
 	<div id="comment">
-		<?php include("./lecture-thread.php"); ?>
+		<?php include("thread.php"); ?>
 	</div>
   <script src="/public/js/pusher.js"></script>
 </body>
