@@ -66,7 +66,7 @@
 	</header>
 	<div class="main">
 		<div class="container">
-			<form id = "form" action='/php/upload.php' enctype="multipart/form-data" method="post">
+			<form id = "form" action='/api/lecture/upload.php' enctype="multipart/form-data" method="post">
 				<h2>Title</h2>
 				<div class="title">
 					<input name="title" id="title" type="text">
@@ -89,7 +89,7 @@
 				</form>
 				<div class='buttons'>
 					<input id ='sub-mit' form = "form" class='btn btn-primary' type='submit' value="submit">
-					<a class="btn btn-primary" href="/php/setting.php">cancel</a>
+					<a class="btn btn-primary" href="/user/setting.php">cancel</a>
 				</div>
 			</div>
 		</div>

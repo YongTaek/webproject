@@ -71,7 +71,7 @@
 	<div class= "content">
 		<div class="subheader">
 			<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant")) { ?>
-			<a type="button" class="createBtn btn btn-primary" href="create-notice.php">Register Notice</a>
+			<a type="button" class="createBtn btn btn-primary" href="/board/notice/create.php">Register Notice</a>
 			<?php } ?>
 			<h2>ALL NOTICE</h2>
 			<ul class="nav nav-tabs">
