@@ -23,7 +23,6 @@ function questionReady(){
 	$(".comment_modify").on("click", function (event) {
 		var div = $(this).parent().parent();
 		var content = div.find("span")[0].innerHTML;
-		div.empty();
 
 		var form = document.createElement("form");
 		form.setAttribute("class", "width100");
@@ -65,6 +64,7 @@ function questionReady(){
 		form.append(typeInput);
 		form.append(submitInput);
 
+		div.empty();
 		div.append(form);
 	});
 
