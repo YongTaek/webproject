@@ -14,6 +14,7 @@
   $name = $_SESSION["name"];
   try {
     $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
+    $db->exec("set names utf8");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->query("INSERT INTO comment(u_id, reference_id, content, time, type) VALUES ($u_id, $r_id, \"$content\", \"$time\", \"$type\")");
     $result = array("error" => "false", "r_id" => $r_id, "content" => $content, "time" => $time, "name" => $name , "type" => $type);
