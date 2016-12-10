@@ -5,17 +5,17 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../public/css/bootstrap.min.css" type="text/css">
-  	<link rel="stylesheet" href="../public/css/base.css" type="text/css">
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css" type="text/css">
+  	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
   	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" type="text/css" href="../public/css/wmd.css" />
-    <link rel="stylesheet" type="text/css" href="../public/css/create-post.css" />
+    <link rel="stylesheet" type="text/css" href="/public/css/wmd.css" />
+    <link rel="stylesheet" type="text/css" href="/public/css/create-post.css" />
     <link rel="stylesheet" href="../public/css/pusher.css" type="text/css">
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="//js.pusher.com/3.2/pusher.min.js"></script>
-    <script src="../public/js/push.js"></script>
-  	<script type="text/javascript" src="../public/js/showdown.js"></script>
+    <script src="/public/js/push.js"></script>
+  	<script type="text/javascript" src="/public/js/showdown.js"></script>
     <script src="/public/js/base.js"></script>
     <title>글쓰기</title>
   </head>
