@@ -91,7 +91,7 @@
 			<form id="form" action="/comment/create.php" method="POST">
 				<label>Comment:</label>
 				<div>
-					<input class="comment-write" type="text" name="content" />
+					<input class="comment-write" type="text" name="content" required/>
 
 					<input class="btn commentBtn submit"  type="button" value="등록"/>
 				</div>
