@@ -29,7 +29,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="/public/js/push.js"></script>
-	<script src="../public/js/question.js"></script>
+	<script src="/public/js/question.js"></script>
 	<script src="/public/js/modify-answer.js"></script>
 	<script src="/public/js/pusher.js"></script>
 	<script src="/public/js/base.js"></script>
@@ -99,7 +99,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 					<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $row["id"])) { ?>
 					<div class="question_btn">
 						<a class="btn question_modify" name="question_modify" href="/board/question/modify?id=<?= $_GET["id"] ?>">수정</a>
-						<a class="btn question_delete" name="question_delete" href="/board/question/delete.php?id=<?= $_GET["id"] ?>">삭제</a>
+						<a class="btn question_delete" name="question_delete" href="/question/delete.php?id=<?= $_GET["id"] ?>">삭제</a>
 					</div>
 					<?php } ?>
 					<hr>

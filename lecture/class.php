@@ -8,10 +8,9 @@ if (isset($_GET["id"])) {
 	$s = $db->query("SELECT open from lecture where id = $id");
 	$status = $s -> fetch();
 	$lectureName = $rows['name'];
-	$fileType = explode(".",$lectureName);
-	$fileType = $fileType[count($fileType)-1];
-	echo $fileType;
   $lectureFile = $rows['url'];
+  $fileType = explode(".",$lectureFile);
+	$fileType = $fileType[count($fileType)-1];
   if ($lectureName === "") {
     header("Location: /error.php");
   }

@@ -130,7 +130,7 @@
 				<?php } ?>
 		</div>
 		<div id="comment" class="comment">
-			<form id="form" action="comment/create.php" method="POST">
+			<form id="form" action="/comment/create.php" method="POST">
 				<label>Comment:</label>
 				<div>
 					<input id="comment-write" type="text" name="content" />
