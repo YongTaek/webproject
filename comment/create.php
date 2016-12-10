@@ -23,7 +23,6 @@
       $url = "http://webapp.yongtech.kr/board/question/post.php?id=$r_id";
     }
     $result = array("error" => "false", "r_id" => $r_id, "content" => $content, "time" => $time, "name" => $name , "type" => $type, "url" => $url);
-    print $url;
     $db->query("INSERT INTO notification(u_id, message, url, time) values (\"$u_id\", \"$content\", \"$url\",\"$time\")");
     $pusher->trigger("$r_id", 'new_comment', $result);
   } catch (PDOException $e) {
