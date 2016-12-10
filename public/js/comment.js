@@ -30,7 +30,7 @@ function questionReady(){
 		form.setAttribute("action", "/comment/modify.php");
 		form.setAttribute("method", "post");
 		var contentInput = document.createElement("input");
-		contentInput.text(content);
+		contentInput.interHTML= content;
 		contentInput.setAttribute("name", "content");
 		contentInput.setAttribute("class", "comment-write");
 		var idInput = document.createElement("input");
