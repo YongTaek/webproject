@@ -5,7 +5,6 @@
     $logged_in = true;
 		$userId = $_SESSION["id"];
   }
-	print($userId);
 	$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
 	$db->exec("set names utf8");
 	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -22,6 +21,7 @@
 		$time = $row["time"];
 		$count++;
 		$tempArray = array("message" => $message, "url" => $url, "time" => $time);
+		print_r($tempArray);
 		$pushArrayp[] = $tempArray;
 	}
 	print_r($pushArray);
