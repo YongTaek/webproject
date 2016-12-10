@@ -42,7 +42,7 @@ function questionReady(){
 		form.append(contentInput);
 		form.append(idInput);
 		form.append(submitInput);
-		submitInput.on("click", modifyAjax);
+		submitInput.onClick = modifyAjax;
 		div.empty();
 		div.append(form);
 	});
@@ -52,24 +52,22 @@ function questionReady(){
 
 function modifyAjax(event) {
 
-	$("#submitInput").click(function (event){
-    var params = $(this).parent().serialize();
-    console.log(params);
-    $.ajax({
-      url: "modify_comment.php",
-      type : "POST",
-      data: params,
-      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-      dataType: "json"
-    }).done(function (da) {
-      // var da = $.parseJSON(data);
-      if(da.error == "true"){
-        alert("수정 에러! X(");
-      } else {
-				window.location.href = document.location.href;
-			}
-    });
-  });
+	var params = $(this).parent().serialize();
+	console.log(params);
+	$.ajax({
+		url: "modify_comment.php",
+		type : "POST",
+		data: params,
+		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+		dataType: "json"
+	}).done(function (da) {
+		// var da = $.parseJSON(data);
+		if(da.error == "true"){
+			alert("수정 에러! X(");
+		} else {
+			window.location.href = document.location.href;
+		}
+	});
 }
 
 
