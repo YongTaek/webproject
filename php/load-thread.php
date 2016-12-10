@@ -5,6 +5,7 @@
   $time = $_POST["date"];
   // print $time;
   $time = strtotime($time);
+  $time = date("Y-m-d H:i:s",$time);
   // print $time;
   header("Content-type: application/json");
   try {
