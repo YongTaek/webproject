@@ -10,7 +10,7 @@
 		if(isset($_FILES['upload']['name']) && $_POST['url'] !== "") {
 			$result = array("error" => "true");
 		} else if(isset($_FILES['upload']['name'])) {
-			$uploaddir = "../files/";
+			$uploaddir = "../../files/";
 			$fileUrl = $uploaddir . basename($_FILES['upload']['name']);
 			if(move_uploaded_file($_FILES['upload']['tmp_name'],$fileUrl)){
 				$dbUrl = $fileUrl;
