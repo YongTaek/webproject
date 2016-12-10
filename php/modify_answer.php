@@ -51,6 +51,15 @@
 			<p class="lead align-center">Modify Answer!</p>
 		</div>
 	</header>
+	<?php
+		$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+      	$id = $_GET["id"];
+      	$u_id = $_SESSION["id"];
+      	$rows = $db->query("SELECT content FROM answer WHERE u_id = $u_id AND q_id = $id");
+      	if($rows->rowCount() > 0){
+      		$row = $rows->fetch();
+      	}
+	?>
 	<div class='container'>
 	<form action='submit_answer_modify.php' method="post">
 		<h2>Your Answer</h2>
