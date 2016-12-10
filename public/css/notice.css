@@ -74,7 +74,7 @@
 	color: rgb(0, 154, 211);
 }
 
-#comment-write {
+.comment-write {
 	float: left;
 	width: 95%;
 }
@@ -86,69 +86,3 @@
 	background-color: rgb(92, 187, 230);
 }
 
-.vote {
-	margin-left: 50px;
-	border: 2px solid #ccc;
-	border-radius: 5px;
-	padding: 10px;
-	width: 60%;
-
-}
-
-.vote-name {
-	font-size: 20px;
-	display: inline-block;
-	margin-left: 10px;
-}
-
-.vote-period {
-	color: #aaa;
-	display: inline-block;
-	float: right;
-	vertical-align: baseline;
-}
-
-.divider {
-	height: 1px;
-	width: 100%;
-	background: #ccc;
-	margin-top: 5px;
-	margin-bottom : 10px;
-}
-
-.vote-item-single > ul > li {
-	margin-bottom: 5px;
-	list-style-type : none;
-}
-
-.vote-item-multi > ul > li {
-	margin-bottom: 5px;
-	list-style-type: none;
-}
-
-.vote-item > li > input {
-	margin-right: 10px;
-}
-
-
-.votebtn {
-	background-color: white;
-	border: 1px solid #337ab7;
-	border-radius: 5px;
-	padding: 8px;
-	text-decoration: none;
-	color: #337ab7;
-	line-height: initial;
-}
-
-.votebtn:hover {
-	text-decoration: none;
-}
-
-.formargin {
-	margin-left: 250px;
-}
-
-#chart {
-	display: none;
-}
