@@ -4,21 +4,22 @@
   if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"])) {
     $logged_in = true;
 		$userId = $_SESSION["id"];
+		$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
+		$db->exec("set names utf8");
+		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$rows = $db->query("SELECT message, url, time from notification where u_id=$userId and isread=0");
+		$count = 0;
+		$pushArray = array();
+		foreach ($rows as $row) {
+			$message = $row["message"];
+			$url = $row["url"];
+			$time = $row["time"];
+			$count++;
+			$tempArray = array("message" => $message, "url" => $url, "time" => $time);
+			$pushArray[] = $tempArray;
+		}
   }
-	$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
-	$db->exec("set names utf8");
-	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	$rows = $db->query("SELECT message, url, time from notification where u_id=$userId and isread=0");
-	$count = 0;
-	$pushArray = array();
-	foreach ($rows as $row) {
-		$message = $row["message"];
-		$url = $row["url"];
-		$time = $row["time"];
-		$count++;
-		$tempArray = array("message" => $message, "url" => $url, "time" => $time);
-		$pushArrayp[] = $tempArray;
-	}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -61,7 +62,7 @@
 
 			<div role="login" class="pull-right">
 				<div class="pull-right circle side-bar">
-					<span id="notification" class="notification-num">0</span>
+					<span id="notification" class="notification-num"><?=$count?></span>
 				</div>
 				<img id="bell" class="pull-right side-bar" src="/public/img/bell.png"></img>
 

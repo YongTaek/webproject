@@ -7,11 +7,8 @@
 
   $r_id = $_POST["id"];
   $u_id = $_SESSION["id"];
-  $content = $_POST["content"];
+  $content = htmlspecialchars($_POST["content"]);
 
-  $content = str_replace("\n", "<br/>", $content);
-
-  console.log($content);
   $time = date("Y-m-d H:i:s");
   $type = $_POST["type"];
   $name = $_SESSION["name"];
