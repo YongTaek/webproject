@@ -128,7 +128,16 @@ body{
 }
 
 .title > a {
-	font-size: 30px;
+	font-size: 20px;
+
+}
+
+.title > a:hover {
+	text-decoration: none;
+}
+
+.date {
+	margin-right: 10px;
 }
 
 .text {
