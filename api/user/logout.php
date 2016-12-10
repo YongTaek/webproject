@@ -5,6 +5,6 @@
   unset($_SESSION["name"]);
   unset($_SESSION["auth"]);
 
-  header("Location: main.php");
+  header("Location: /index.php");
   exit;
 ?>
