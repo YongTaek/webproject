@@ -89,13 +89,14 @@
           <tr>
             <td><?= $row["id"] ?></td>
             <td><a href="<?= $row["url"] ?>"><?= $row["name"] ?></a></td>
-            <?php if($row["open"] == 1){ ?>
-                <td><p class="open">OPEN</p><td>
-              <?php }else{ ?>
-                <td><p class="close">CLOSE</p><td>
-            <?php }?>
+            <?php if($row["open"] == 1){
+                $open = "OPEN";
+              }else{ 
+                $open = "CLOSE";
+            }?>
+
+            <td><p class="<?= $open?>"><?= $open?></p><td>
           </tr>
-        <?php }?>
         </tbody>
       </table>
     </div>
