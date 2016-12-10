@@ -26,7 +26,7 @@
 	<div class="main">
 		<div class="container">
 			<div class = "col-lg-6">
-				<a class="h2" href="/php/noticelist.php"><h2>Notice</h2></a>
+				<a class="h2" href="/notice/list.php"><h2>Notice</h2></a>
 				<hr/>
 				<ul>
 					<?php
