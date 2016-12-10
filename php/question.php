@@ -139,7 +139,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["auth"
 					<div class="comment">
 						<hr>
 						<?php
-						$comments = $db->query("SELECT c.id as c_id, content, name, time, u.id as, score FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'question' AND reference_id = ".$_GET["id"]);
+						$comments = $db->query("SELECT c.id as c_id, content, name, time, u.id, score FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'question' AND reference_id = ".$_GET["id"]);
 						foreach ($comments as $comment) {
 							?>
 							<div>
