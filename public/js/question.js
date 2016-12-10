@@ -31,7 +31,7 @@ function questionReady(){
 		var idInput = document.createElement("input");
 		idInput.setAttribute("name", "id");
 		var idSpan = div.find("span.hidden");
-		var commentId = idSpan.innerText;
+		var commentId = idSpan[0].innerHTML;
 		idInput.setAttribute("value", commentId);
 		idInput.setAttribute("type","hidden");
 		var submitInput = document.createElement("input");
