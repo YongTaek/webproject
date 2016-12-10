@@ -10,7 +10,7 @@ for (var i = 0; i < questionArray.length; i++) {
 		// https://github.com/CodeSeven/toastr#escape-html-characters
 		// http://codeseven.github.io/toastr/demo.html
 		if(parseInt($("#notification").text()) == 0){
-			$("#notifications").clear();
+			$("#notifications").empty();
 		}
 		$("#notification").text(parseInt($("#notification").text()) + 1);
 		var a = $(makeNotification(data));
