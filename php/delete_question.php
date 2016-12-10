@@ -10,6 +10,10 @@
   	$ans_num = $isAnswered->fetch();
   	if($ans_num != 0){
   		// 삭제 못하게 알림 띄움
+      echo "<script language=javascript>
+      alert(\"답변이 달려있는 질문은 지울 수 없어요!\");
+      $command
+      </script>";
   	}
   	else{
 	  	if($fav_num != 0){

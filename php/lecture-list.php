@@ -94,7 +94,7 @@
               }else{ 
                 $open = "CLOSE";
             }?>
-            <td><p class="<?= $open?>"><?= $open ?></p></td>
+            <td><span class="<?= $open?>"><?= $open ?></p></td>
         <?php } ?>
             
           </tr>
