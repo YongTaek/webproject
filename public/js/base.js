@@ -3,15 +3,23 @@ $(window).on("load" ,function(){
 	var menuitems = $(".menu-item");
 	if(location[1] === "lecture"){
 		$(menuitems[3]).addClass("active");
+		$("h1.align-center").val("Lecture");
+		$("p.align-center").val("Let's study hard!\\(>_<)/");
 	}
 	else if(location[2] === "notice"){
-		$(menuitems[0]).addClass("active");	
+		$(menuitems[0]).addClass("active");
+		$("h1.align-center").val("Notice");
+		$("p.align-center").val("It is notice page!~(^_^)~");
 	}
 	else if(location[2] === "question"){
-		$(menuitems[1]).addClass("active");		
+		$(menuitems[1]).addClass("active");	
+		$("h1.align-center").val("Question");
+		$("p.align-center").val("Let's ask a lot of questions!d(ㅇㅅㅇ)b");	
 	}
 	else if(location[2] === "free"){
 		$(menuitems[2]).addClass("active");	
+		$("h1.align-center").val("Freeboard");
+		$("p.align-center").val("Let's talk freely!(/* 3 *)/");
 	}
 });
 

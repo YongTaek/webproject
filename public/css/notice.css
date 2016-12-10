@@ -78,7 +78,7 @@
 	float: left;
 	width: 95%;
 }
-#submit {
+.submit {
 	float: right;
 	padding: 3px;
 	width: 5%;

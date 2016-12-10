@@ -1,5 +1,10 @@
 <?php
 	session_start();
+
+  if (!isset($_SESSION["id"])) {
+    header("Location: /error.php");
+  }
+
 	$id = $_GET["id"];
   $u_id = $_SESSION["id"];
   $status = $_GET["status"];
