@@ -75,8 +75,8 @@
           <span class=""><?= $comment["time"] ?></span>
           <?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
           <div class="comment_btn">
-            <a class="btn comment_modify" name="comment_modify" href="">수정</a>
-            <a class="btn comment_delete" name="comment_delete" href="">삭제</a>
+            <a class="btn comment_modify" name="comment_modify" >수정</a>
+            <a class="btn comment_delete" name="comment_delete" >삭제</a>
           </div>
           <?php } ?>
         </div>
