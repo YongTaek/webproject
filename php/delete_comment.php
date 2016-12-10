@@ -5,10 +5,11 @@
 
   $id = $_POST["id"];
 	$type = $_POST["type"];
-
+	print $id;
 	$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
 	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	try {
+
 		$db->query("DELETE from comment where id=$id");
 
 		$array = array("error" => "false");
