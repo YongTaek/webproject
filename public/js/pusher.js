@@ -18,6 +18,8 @@ for (var i = 0; i < questionArray.length; i++) {
 			"newestOnTop": false,
 			"progressBar": false,
 			"onclick" : function () {
+				$("#notification").text(parseInt($("#notification").text()) + 1);
+				
 				sendReadMessage(data);
 				// window.location.href = data.url;
 			},
