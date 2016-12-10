@@ -121,7 +121,8 @@ function prependComment(da){
   div.append($("<br>"));
   div.append(spandate);
   div.addClass("thread");
-  $(".threads").prepend(div);
+  div.hide().prependTo(".threads").fadeIn();
+  // $(".threads").prepend(div));
   $("#input").val("");
 };
 
