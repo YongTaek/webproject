@@ -9,7 +9,7 @@ session_start();
   <link rel="stylesheet" href="../public/css/base.css" type="text/css">
   <script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
   <link rel="stylesheet" type="text/css" href="../public/css/wmd.css" />
-  <link rel="stylesheet" type="text/css" href="../public/css/create-post.css" />  
+  <link rel="stylesheet" type="text/css" href="../public/css/create-post.css" />
   <link rel="stylesheet" type="text/css" href="../public/css/create-vote.css" />
 
   <script type="text/javascript" src="../public/js/showdown.js"></script>
@@ -73,7 +73,7 @@ session_start();
       <div id="wmd-preview" class="wmd-preview"></div>
       <hr>
       <div class='buttons'>
-        <input class='btn btn-primary' type='submit' value="submit">
+        <input class='btn btn-primary' type='submit' value="submit" />
         <button class='btn btn-primary'>cancel</button>
       </div>
     </form>
