@@ -1,6 +1,6 @@
 <?php include("pusher.php"); 
 $keyword = $_POST["search"];
-if($keyword === ""){
+if(empty($keyword)){
 	header("Location: /error.php");
 }
 ?>
