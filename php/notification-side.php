@@ -2,7 +2,7 @@
   $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
   $db->exec("set names utf8");
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $rows = $db->query("SELECT message, url, time from notification where u_id=$userId");
+  $rows = $db->query("SELECT message, url, time from notification where u_id=$userId and isread=0");
   $count = 0;
 ?>
 
