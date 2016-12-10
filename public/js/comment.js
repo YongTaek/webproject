@@ -90,7 +90,7 @@ function questionReady(){
 		});
 	});
 
-	$(".commentBtn").keypress(function(e) {
+	$(".create-comment").keypress(function(e) {
 		var key = e.which;
 		if (key == 13) {
 			var input = $(this).siblings().not($(this));
