@@ -1,5 +1,3 @@
-console.log(questionArray);
-console.log(lectureArray);
 Pusher.logToConsole = false;
 
 var pusher = new Pusher('dc9f3fc01f0f63f45083', {

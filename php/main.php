@@ -42,7 +42,7 @@
 
 			<div role="login" class="pull-right">
 				<div class="pull-right circle side-bar">
-					<span id="notification" class="notification-num">1</span>
+					<span id="notification" class="notification-num">0</span>
 				</div>
 				<img id="bell" class="pull-right side-bar" src="/public/img/bell.png"></img>
 
