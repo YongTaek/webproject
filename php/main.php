@@ -42,10 +42,10 @@
 
 			<div role="login" class="pull-right">
 				<div class="pull-right circle side-bar">
-					<span class="notification-num">1</span>
+					<span id="notification" class="notification-num">1</span>
 				</div>
 				<img id="bell" class="pull-right side-bar" src="/public/img/bell.png"></img>
-				
+
 				<?php if ($logged_in) { ?>
 
 					<a id="login" href="logout.php" class='pull-right'>LOGOUT</a>
@@ -62,7 +62,7 @@
 
 					<a id="login" href="dologin.php" class='pull-right'>LOGIN</a>
 				<?php } ?>
-				
+
 			</div>
 
 			<button class="pull-right">

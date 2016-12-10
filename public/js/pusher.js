@@ -11,6 +11,9 @@ for (var i = 0; i < questionArray.length; i++) {
 	channel.bind('new_comment', function(data) {
 		// https://github.com/CodeSeven/toastr#escape-html-characters
 		// http://codeseven.github.io/toastr/demo.html
+		$("#notification").text(parseInt($("#notification").text()) + 1);
+		var a = $(makeNotification(notification));
+		("#notifications").append(a);
 		var link = document.location.href;
 		toastr.options = {
 			"closeButton": true,
@@ -18,6 +21,8 @@ for (var i = 0; i < questionArray.length; i++) {
 			"newestOnTop": false,
 			"progressBar": false,
 			"onclick" : function () {
+				a.remove();
+				$("#notification").text(parseInt($("#notification").text()) - 1);
 				sendReadMessage(data);
 				// window.location.href = data.url;
 			},
@@ -41,7 +46,20 @@ for (var i = 0; i < questionArray.length; i++) {
 		// 골라서 쓰기
 	});
 }
+function makeNotification(notification) {
+	var a = document.createElement("a");
+	a.setAttribute("class", "notification");
+	var div = document.createElement("div");
+	var contentP = document.createElement("p");
+	var timeP = document.createElement("p");
 
+	contentP.innerHTML = notification.content;
+	timeP.innerHTML = notification.content;
+	div.append(contentP);
+	div.append(timeP);
+	a.append(div);
+	return a;
+}
 function sendReadMessage(notification) {
 	$.ajax({
 		url: '/php/read_notification.php',
