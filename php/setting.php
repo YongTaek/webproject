@@ -145,7 +145,7 @@
         $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $i = 1;
-        $rows = $db->query("SELECT id, name FROM user WHERE $authority = 'assistant'");
+        $rows = $db->query("SELECT id, name FROM user WHERE authority = 'assistant'");
         foreach ($rows as $row) { ?>
           <tr>
             <td><?= $i ?></td>
