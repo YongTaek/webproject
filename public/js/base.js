@@ -1,4 +1,4 @@
-function activeMenu(){
+$(window).load(function(){
 	var location = window.location.pathname.split("/");
 	var menuitems = $(".menu-item");
 	if(location[1] === "lecture"){
@@ -13,8 +13,7 @@ function activeMenu(){
 	else{
 		$(menuitems[2]).addClass("active");	
 	}
-}
-$(window).load(activeMenu);
+});
 
 function onclick(){
 
