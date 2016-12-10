@@ -14,7 +14,7 @@
   try {
     $db->query("UPDATE comment set content=\"$content\" where id=$id");
     $db->query("UPDATE comment set time=\"$time\" where id=$id");
-    header("Location: question.php?id=$redirectId");
+    header("Location: /board/question/post.php?id=$redirectId");
   } catch (Exception $e) {
     echo $e -> getMessage();
   }

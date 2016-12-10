@@ -15,7 +15,7 @@
 			<h1>LOGIN</h1>
 		</header>
 		<content>
-			<form method="post" action="login.php">
+			<form method="post" action="/api/user/login.php">
 				<input id="idform" class="textfield" type="text" name="id" placeholder="Username"/>
 				<div class="login_icon" id="usericon"></div>
 				<input class="textfield" type="password" name="password" placeholder="Password"/>
