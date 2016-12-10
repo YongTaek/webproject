@@ -12,6 +12,8 @@
 
   try {
     $db->query("UPDATE comment set content=\"$content\" and time=\"$time\" where id=$id");
+    $array = array("error" => "false");
+    print json_encode($array);
   } catch (Exception $e) {
     echo $e -> getMessage();
   }
