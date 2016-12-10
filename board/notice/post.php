@@ -6,11 +6,11 @@
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="icon/SelabFavicon.png" type="image/png">
 	<link rel="stylesheet" href="/public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	
+
 	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
-    <script src="/public/js/jquery-ui-1.12.1.min.js"></script>
-    <script src="/public/js/base.js"></script>
-    <?php include("../../common/script.php"); ?>
+  <script src="/public/js/jquery-ui-1.12.1.min.js"></script>
+  <script src="/public/js/base.js"></script>
+  <?php include("../../common/script.php"); ?>
 
 	<link rel="stylesheet" href="/public/css/base.css" type="text/css">
 	<link rel="stylesheet" href="/public/css/notice.css" type="text/css">
@@ -19,7 +19,7 @@
 	<link rel="stylesheet" type="text/css" href="/public/css/Nwagon.css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
-	<script src="/public/js/push.js"></script>
+	<script src="/public/js/comment.js"></script>
 	<script src="/public/js/Nwagon.js"></script>
 	<script src="/public/js/notice-chart.js"></script>
 	<script src="/public/js/notice.js"></script>
@@ -90,7 +90,7 @@
 				<label>Comment:</label>
 				<div>
 					<input id="comment-write" type="text" name="content" />
-					<input class="btn" id="submit" type="button" value="등록"/>
+					<input class="btn commentBtn" id="submit" type="button" value="등록"/>
 				</div>
 				<input type="hidden" name="id" value="<?= $row["id"] ?>" />
 				<input type="hidden" name="type" value="notice">

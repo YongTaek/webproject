@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="/public/css/free.css" type="text/css">
   <link rel="stylesheet" href="/public/css/pusher.css" type="text/css">
   <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
-  
+
   <script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
   <script src="/public/js/jquery-ui-1.12.1.min.js"></script>
   <script src="/public/js/base.js"></script>
@@ -18,9 +18,9 @@
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="//js.pusher.com/3.2/pusher.min.js"></script>
-  <script src="/public/js/push.js"></script>
+  <script src="/public/js/comment.js"></script>
   <script src="/public/js/pusher.js"></script>
-  
+
 </head>
 <body>
   <?php include("../../common/header.php"); ?>
@@ -87,8 +87,8 @@
       <form action="/comment/create.php" method="POST">
         <label>Comment:</label>
         <div>
-          <input id="comment-write" type="text" name="comment" />
-          <input class="btn" id="submit" type="submit" value="등록"/>
+          <input id="comment-write" type="text" name="content" />
+          <input class="btn commentBtn" id="submit" type="button" value="등록"/>
         </div>
         <input type="hidden" name="id" value="<?= $row[0] ?>" />
         <input type="hidden" name="type" value="board">
