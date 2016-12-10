@@ -90,7 +90,7 @@
         <?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $row["id"])) { ?>
         <div class="free_btn">
           <a class="btn free_modify" href="/board/free/modify.php?id=<?= $row[0] ?>">수정</a>
-          <a class="btn free_delete" href="/board/free/delete.php?id=<?= $row[0] ?>">삭제</a>
+          <a class="btn free_delete" href="/free/delete.php?id=<?= $row[0] ?>">삭제</a>
         </div>
         <?php } ?>
       </div>
