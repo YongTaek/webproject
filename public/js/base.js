@@ -25,6 +25,10 @@ $(window).on("load" ,function(){
 		$("h1.align-center").text("Setting");
 		$("p.align-center").text("It is setting page.");
 	}
+	else if(location[2] === "search.php"){
+		$("h1.align-center").text("Search");
+		$("p.align-center").text("Here is the result about your searching");
+	}
 });
 
 function onclick(){
