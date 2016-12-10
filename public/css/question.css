@@ -150,3 +150,15 @@ h2 {
   height: 28px;
   line-height: initial;
 }
+
+.commentModify {
+  background-color: #5bc0de;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid #5bc0de;
+  width: 5%;
+  margin: 0px;
+  float: right;
+  height: 28px;
+  line-height: initial;
+}
