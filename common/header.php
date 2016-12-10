@@ -20,7 +20,7 @@
 
       <?php if ($logged_in) { ?>
 
-        <a id="login" href="/user/logout.php" class='pull-right'>LOGOUT</a>
+        <a id="login" href="/api/user/logout.php" class='pull-right'>LOGOUT</a>
         <div class="pull-right vr"></div>
       <?php
         if ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant") {

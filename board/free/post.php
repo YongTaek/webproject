@@ -36,7 +36,6 @@
     <div class="notice">
       <div class="title">
 
-        <a class="star-off" href="#" ></a>
         <h1 id="title_id">
           <span><?= $row["title"] ?></span>
         </h1>

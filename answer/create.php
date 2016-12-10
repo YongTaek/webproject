@@ -1,8 +1,8 @@
 <?php
   session_start();
   date_default_timezone_set('Asia/Seoul');
-  require('./library/Pusher.php');
-  require('./library/push_setting.php');
+  require('../library/Pusher.php');
+  require('../library/push-setting.php');
 
   $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
   $u_id = $_SESSION["id"];
@@ -19,16 +19,12 @@
       $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $db->query("INSERT INTO answer(u_id, q_id, content, time) VALUES($u_id, $id, '$content', '$time')");
-      $array = array('content' => "$id 에 답변이 달렸습니다!", "url" => "http://webapp.yongtech.kr/php/question.php?id=$id", 'time' => "$time");
+      $array = array('content' => "$id 에 답변이 달렸습니다!", "url" => "http://webapp.yongtech.kr/board/question/post.php?id=$id", 'time' => "$time");
       $pusher->trigger("$id", 'new_comment', $array);
       header("Location: /board/question/post.php?id=$id");
     }
     else{
-      echo "<script language=javascript>
-      alert(\"한 질문에 답변 여러개 달 수 없어요!\");
-      location=\"/board/question/post.php\";
-      </script>";
-      // 한 질문에 답변 여러개 못단다고 알려줘야댐
+
     }
 
   } catch(PDOException $e){

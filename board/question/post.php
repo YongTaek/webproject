@@ -23,7 +23,6 @@
 	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
-	<script src="/public/js/push.js"></script>
 	<script src="/public/js/question.js"></script>
 	<script src="/public/js/modify-answer.js"></script>
 	<script src="/public/js/pusher.js"></script>
@@ -58,7 +57,7 @@
 					<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $row["id"])) { ?>
 					<div class="question_btn">
 						<a class="btn question_modify" name="question_modify" href="/board/question/modify.php?id=<?= $_GET["id"] ?>">수정</a>
-						<a class="btn question_delete" name="question_delete" href="/board/question/delete.php?id=<?= $_GET["id"] ?>">삭제</a>
+						<a class="btn question_delete" name="question_delete" href="/question/delete.php?id=<?= $_GET["id"] ?>">삭제</a>
 					</div>
 					<?php } ?>
 					<hr>
@@ -158,7 +157,7 @@
 								<?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $answer["id"])) { ?>
 								<div class="answer_btn">
 									<a class="btn answer_modify" name="answer_modify" href="/board/answer/modify.php?id=<?= $_GET["id"] ?>">수정</a>
-									<a class="btn answer_delete" name="answer_delete" href="/board/answer/delete.php?id=<?= $_GET["id"] ?>">삭제</a>
+									<a class="btn answer_delete" name="answer_delete" href="/answer/delete.php?id=<?= $_GET["id"] ?>">삭제</a>
 								</div>
 								<?php } ?>
 								<hr>
@@ -225,7 +224,7 @@
 						if ($logged_in && $num == 0) { ?>
 						<div class="write-answer">
 							<h2>Your Answer</h2>
-							<form action="/board/answer/create.php" method="post">
+							<form action="/answer/create.php" method="post">
 								<div id="wmd-editor">
 									<div id="wmd-button-bar"></div>
 									<textarea id="wmd-input" name="answer"></textarea>
