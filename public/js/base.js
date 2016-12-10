@@ -21,6 +21,10 @@ $(window).on("load" ,function(){
 		$("h1.align-center").text("Freeboard");
 		$("p.align-center").text("Let's talk freely!");
 	}
+	else if(location[2] === "setting.php"){
+		$("h1.align-center").text("Setting");
+		$("p.align-center").text("It is setting page.");
+	}
 });
 
 function onclick(){
