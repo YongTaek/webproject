@@ -87,7 +87,7 @@
       <form action="/comment/create.php" method="POST">
         <label>Comment:</label>
         <div>
-          <input id="comment-write" type="text" name="comment" />
+          <input id="comment-write" type="text" name="content" />
           <input class="btn commentBtn" id="submit" type="button" value="등록"/>
         </div>
         <input type="hidden" name="id" value="<?= $row[0] ?>" />
