@@ -106,27 +106,48 @@
 			<div class="content">
 				<p><?= $row["content"] ?></p>
 			</div>
+			<?php
+				$votes = $db->query("SELECT id, title, content, start_time, end_time, type FROM vote WHERE n_id = ".$_GET["id"]);
+				foreach ($votes as $vote) {
+					$list = explode(";", $vote["content"]);
+			?>
 			<form class="vote" action="notice_vote_submit" accept-charset="utf-8">
 
-				<div class="vote-name">펑펑펑</div>
-				<div class="vote-period">2016-11-23 ~ 2016-12-2</div>
+				<div class="vote-name"><?= $vote["title"] ?></div>
+				<div class="vote-period"><?= $vote["start_time"] ?> ~ <?= $vote["end_time"] ?></div>
 				<div class="divider"></div>
+				<?php
+					if ($vote["type"] === "single") {
+				?>
 				<div class="vote-item-single"> <!-- 선택 갯수가 한개일 때! -->
 					<ul class="vote-item">
-						<li><input type="radio" name="item" checked = "checked"/>펑펑</li>
-						<li><input type="radio" name="item"/>펑펑펑</li>
+						<?php
+							foreach ($list as $item) {
+								$option = explode(",", $item);
+						?>
+						<li><input type="radio" name="item"/><?= $option ?></li>
+						<?php } ?>
 					</ul>
 				</div>
+				<?php
+					} else {
+				?>
 				<div class="vote-item-multi"> <!-- 선택 갯수가 여려개일 때 -->
 					<ul class="vote-item">
-						<li><input type="checkbox" name="item"/>펑펑</li>
-						<li><input type="checkbox" name="item"/>펑펑펑</li>
+						<?php
+							foreach ($list as $item) {
+								$option = explode(",", $item);
+						?>
+						<li><input type="checkbox" name="item"/><?= $option ?></li>
+						<?php } ?>
 					</ul>
 				</div>
+				<?php } ?>
 				<input class="votebtn formargin" type="submit" name="submitVoteBtn" value="투표">
 				<a class="votebtn" id="vote-result">결과 보기</a>
 				<div id="chart"></div>
 			</form>
+			<?php } ?>
 		</div>
 		<!-- comment iterative-->
 		<div id="comment-list" class="comment">
