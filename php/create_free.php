@@ -8,6 +8,9 @@
   $content = iconv("ISO-8859-1", "UTF-8", $_POST["content"]);
   $time = date("Y-m-d H:i:s");
 
+  echo $title."\n";
+  echo $content."\n";
+
   try {
     $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
