@@ -29,7 +29,7 @@
       }
    }
 
-    header("Location: question.php?id=".$qid);
+    header("Location: question.php?id=".$q["id"]);
   } catch (PDOException $e) {
     echo $tag;
     echo $e->getMessage();
