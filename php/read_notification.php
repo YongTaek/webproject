@@ -1,6 +1,6 @@
 <?php
 
-  $data = json_decode($_POST["data"]);
+  $data = $_POST["data"];
   $id = $_SESSION["id"];
   if (isset($id)) {
     header("Location: main.php?id=$id");
