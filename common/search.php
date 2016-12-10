@@ -106,7 +106,7 @@
 			<?php } ?>
 			<p class="text">Question</p>
 			<?php
-				$rows = $db->query("SELECT distinct q.id, q.title, time, u.name FROM question q JOIN user u ON q.u_id = u.id JOIN tag t JOIN tag_question tq ON t.id = tq.t_id WHERE title like \"%$keyword%\" or t.name like \"%$keyword%\" ORDER BY time DESC");
+				$rows = $db->query("SELECT DISTINCT q.id, q.title, time, u.name FROM question q JOIN user u ON q.u_id = u.id WHERE title like \"%$keyword%\" UNION SELECT DISTINCT q.id, q.title, time, u.name FROM question q JOIN user u ON q.u_id = u.id WHERE t.name like \"%$keyword%\" order by time DESC");
 				foreach ($rows as $row) {
 					?>
 			<div class= "question">
