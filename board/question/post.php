@@ -207,7 +207,7 @@
 											<label>Comment:</label>
 											<div>
 												<input class="comment-write" type="text" name="content" required/>
-												<input class="commentBtn" id="submit" type="button" value="등록"/>
+												<input class="commentBtn" id="submit" type="text" value="등록"/>
 											</div>
 											<input type="hidden" name="id" value="<?= $answer[0] ?>" />
 											<input type="hidden" name="type" value="answer">
