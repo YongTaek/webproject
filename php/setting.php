@@ -96,7 +96,7 @@
         ?>
         <tr>
           <td><?= $row["id"] ?></td>
-          <td><a href="<?= $row["url"] ?>"><?= $row["name"] ?></a></td>
+          <td><a href="/php/lecture-page.php?id=<?= $row["id"] ?>"><?= $row["name"] ?></a></td>
           <td><a href="#" class="<?= $class ?>"><?= $status ?></a></td>
           <td><a href="lecture-upload.php?id=<?= $row["id"] ?>" class="lecture-change">Change</a></td>
         </tr>
@@ -203,15 +203,15 @@
             <form id="saveStu" action="save_student.php" enctype="multipart/form-data" method="post">
               <div class="form-group">
                 <label for="StuID">Student ID</label>
-                <input type="text" class="form-control" id="dialogStuID" placeholder="Enter Assistant ID...">
+                <input type="text" class="form-control" id="dialogStuID" name="id" placeholder="Enter Assistant ID...">
               </div>
               <div class="form-group">
                 <label for="StuName">Student Name</label>
-                <input type="text" class="form-control" id="dialogStuName" placeholder="Enter Assistant Name...">
+                <input type="text" class="form-control" id="dialogStuName" name="name" placeholder="Enter Assistant Name...">
               </div>
               <div class="form-group">
                 <label for="StuFile">File input</label>
-                <input type="file" id="dialogStuFile">
+                <input type="file" id="dialogStuFile" name="file">
               </div>
             </form>
           </div>
