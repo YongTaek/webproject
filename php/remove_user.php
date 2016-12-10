@@ -11,7 +11,6 @@
   		$fav_num = $favorite->rowCount();
   		if($fav_num != 0){
 	  		foreach ($favorite as $fav) {
-
 	  			$db->query("DELETE FROM favorite WHERE u_id =".$fav["u_id"]);
 	  		}
 	  	}
