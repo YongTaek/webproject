@@ -1,5 +1,16 @@
 <div id="sidebar">
-  <div class="threads full-height" >
+<?php
+      $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $rows = $db->query("SELECT id, open FROM lecture WHERE id = $id");
+      $row = $rows->fetch();
+      if($row["open"] == 0){ ?>
+        <div class="threads full-height" >
+      <?php } 
+      else{ ?>
+        <div class="threads" >
+      <?php } ?>
+  
     <?php
       $comments = $db->query("SELECT c.id, c.content, c.time, u.name from comment c join lecture l on c.type='lecture' and l.id=c.reference_id join user u on u.id=c.u_id where c.reference_id=$id order by time desc limit 20 ");
       $arrays = array();
@@ -28,10 +39,6 @@
   </div>
 
   <?php
-      $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $rows = $db->query("SELECT id, open FROM lecture WHERE id = $id");
-      $row = $rows->fetch();
       if($row["open"] == 1){ ?>
         <form class="lecture" action="create_comment.php" method="POST">
           <textarea id="input" name="content" cols="23" rows="8"></textarea>
