@@ -16,8 +16,6 @@
           $userName = $array['userName'];
           $time = $array['time'];
           $content = $array['content'];
-          print $userName;
-          print $time;
     ?>
     <div class="thread">
           <span class="content"><?= $content ?></span>

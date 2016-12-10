@@ -70,12 +70,12 @@ function changeDrawerClass(event) {
 
 function appendComment(da){
   // var da = $.parseJSON(data);
-  // var content = da.content;
-  var content = "hello";
-  // var time = da.time;
-  var time = "2016.12.08 6:45pm";
-  // var name = da.name;
-  var name = "익명";
+  var content = da.content;
+  // var content = "hello";
+  var time = da.time;
+  // var time = "2016.12.08 6:45pm";
+  var name = da.name;
+  // var name = "익명";
 
   var div = $("<div></div>");
 
@@ -122,6 +122,7 @@ function prependComment(da){
   div.append(spandate);
   div.addClass("thread");
   div.hide().prependTo(".threads").fadeIn();
+  $(".threads").animate({scrollTop: $(".threads").height()});
   // $(".threads").prepend(div));
   $("#input").val("");
 };
