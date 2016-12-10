@@ -7,7 +7,8 @@
   $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
   $u_id = $_SESSION["id"];
   $id = $_POST["id"];
-  $content = mb_convert_encoding($_POST["answer"],"utf-8");
+  $answer = $_POST["answer"];
+  $content = mb_convert_encoding($answer,"UTF-8");
   $time = date("Y-m-d H:i:s");
   $num = $db->query("SELECT id FROM answer WHERE q_id = $id AND u_id = $u_id");
   $count = $num->rowCount();
