@@ -8,7 +8,7 @@
     background: rgba(0, 0, 0, 0.7);
     overflow-x: hidden;
     display: none;
-    overflow-y: hidden;
+    overflow-y: auto;
     padding-top: 60px;
 
 }

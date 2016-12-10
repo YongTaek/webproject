@@ -1,4 +1,12 @@
-<?php include("../../common/pusher.php"); ?>
+<?php
+	include("../../common/pusher.php");
+	$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
+	$check_auth = $db->query("SELECT u_id FROM question WHERE id = $id");
+  $auth = $check_auth->fetch();
+  if(!($_SESSION["auth"] === 'professor' || $_SESSION["auth"] === 'assistant' || $u_id == $auth["u_id"])){
+    header("Location: /error.php");
+  }
+?>
 
 <!DOCTYPE html>
 <html>
@@ -84,4 +92,3 @@
 		<script type="text/javascript" src="/public/js/wmd.js"></script>
 	</body>
 	</html>
-?>
