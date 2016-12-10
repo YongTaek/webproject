@@ -153,7 +153,8 @@ $test = "hello!!!!!!";
 			</div>
 			<?php } if($keyword === ""){
 			var_dump($test);
-}?>
+}else{ var_dump("hello")}?>
+
 		</div>
 	</div>
 </body>
