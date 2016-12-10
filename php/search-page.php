@@ -78,7 +78,6 @@
 			
 			<p class="bg-info">Notice</p>
 			<?php
-			echo $keyword;
 				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
 				$rows = $db->query("SELECT n.id, title, time, name FROM notice n JOIN user u ON n.u_id = u.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
 				foreach ($rows as $row) {
@@ -107,7 +106,7 @@
 			<?php } ?>
 			<p class="bg-info">Question</p>
 			<?php
-				$rows = $db->query("SELECT q.id, title, time, name FROM question q JOIN user u ON q.u_id = q.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
+				$rows = $db->query("SELECT q.id, title, time, name FROM question q JOIN user u ON q.u_id = u.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
 				foreach ($rows as $row) {
 			?>
 			<div class= "question">
@@ -121,7 +120,7 @@
 				</div>
 				<div class="question-list-left">
 					<h3 class="title">
-						<a href= <?= "/php/notice.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
+						<a href= <?= "/php/question.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
 					</h3>
 				</div>
 				<div class="question-list-right">
@@ -149,7 +148,7 @@
 				</div>
 				<div class="question-list-left">
 					<h3 class="title">
-						<a href= <?= "/php/notice.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
+						<a href= <?= "/php/free.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
 					</h3>
 				</div>
 				<div class="question-list-right">
@@ -162,7 +161,7 @@
 			<?php } ?>
 			<p class="bg-info">Lecture</p>
 			<?php
-				$rows = $db->query("SELECT l.id, name, time FROM lecture l WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
+				$rows = $db->query("SELECT id, name, time FROM lecture WHERE name like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
 				foreach ($rows as $row) {
 			?>
 			<div class= "question">
@@ -176,7 +175,7 @@
 				</div>
 				<div class="question-list-left">
 					<h3 class="title">
-						<a href= <?= "/php/notice.php?id=".$row["id"] ?> ><?= $row["name"] ?></a> <!-- 제목 -->
+						<a href= <?= "/php/lecture-page.php?id=".$row["id"] ?> ><?= $row["name"] ?></a> <!-- 제목 -->
 					</h3>
 				</div>
 				<div class="question-list-right">
