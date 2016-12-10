@@ -46,7 +46,7 @@
 
   </nav>
   <div>
-    <?php include("/common/sidebar.php"); ?>
+    <?php include("./common/sidebar.php"); ?>
   </div>
   <div class = "jumbotron banner-color">
     <h1 class="align-center">Home</h1>
