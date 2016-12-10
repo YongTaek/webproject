@@ -62,7 +62,7 @@
 				<img src="/public/img/search.png" class="search-icon">
 			</button>
 			<form method="post" id = "search-content" action="/php/search-page.php">
-			<input type="text" class="pull-right search" name="search">
+			<input type="text" class="pull-right search" name="search" value=<?= $keyword?>>
 			</form>
 		</nav>
 	</header><!-- /header -->
@@ -106,7 +106,7 @@
 			<?php } ?>
 			<p class="bg-info">Question</p>
 			<?php
-				$rows = $db->query("SELECT q.id, title, time, name FROM question q JOIN user u ON q.u_id = u.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
+				$rows = $db->query("SELECT q.id, q.title, time, u.name FROM question q JOIN user u JOIN tag t JOIN tag_question tq ON q.u_id = u.id and t.id = tq.t_id and q.id = tq.q_id WHERE title like \"%$keyword%\" or t.name like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
 				foreach ($rows as $row) {
 			?>
 			<div class= "question">
