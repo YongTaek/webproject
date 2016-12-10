@@ -43,11 +43,11 @@ for (var i = 0; i < questionArray.length; i++) {
 }
 
 function sendReadMessage(notification) {
-	console.log('asdf');
+	console.log(notification);
 	$.ajax({
 		url: '/php/read_notification.php',
 		type : "POST",
-		data : { data : notification},
+		data : { data : notification },
 		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 		dataType: 'json',
 		success : function (result) {

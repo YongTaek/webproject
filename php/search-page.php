@@ -80,10 +80,8 @@
 			<?php
 				$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
 				$rows = $db->query("SELECT n.id, title, time, name FROM notice n JOIN user u ON n.u_id = u.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
-				
 				foreach ($rows as $row) {
 			?>
-			
 			<div class= "question">
 				<div class= "question-num-summary">
 					<div class= "question-number">
@@ -105,11 +103,90 @@
 					</div>
 				</div>
 			</div>
-			
 			<?php } ?>
 			<p class="bg-info">Question</p>
+			<?php
+				$rows = $db->query("SELECT q.id, title, time, name FROM question q JOIN user u ON q.u_id = q.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
+				
+				foreach ($rows as $row) {
+			?>
+			<div class= "question">
+				<div class= "question-num-summary">
+					<div class= "question-number">
+						<div class= "mini-count">
+							<span><?= $row["id"] ?></span> <!-- 문제 번호 -->
+						</div>
+						<div>indexs</div>
+					</div>
+				</div>
+				<div class="question-list-left">
+					<h3 class="title">
+						<a href= <?= "/php/notice.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
+					</h3>
+				</div>
+				<div class="question-list-right">
+					<div>
+						<h5 class="date"><?= $row["time"] ?></h5> <!-- 날짜 -->
+						<h5 class="name">by. <?= $row["name"] ?></h5> <!--작성자 -->
+					</div>
+				</div>
+			</div>
+			<?php } ?>
 			<p class="bg-info">Free Board</p>
+			<?php
+				$rows = $db->query("SELECT b.id, title, time, name FROM board b JOIN user u ON b.u_id = u.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
+				
+				foreach ($rows as $row) {
+			?>
+			<div class= "question">
+				<div class= "question-num-summary">
+					<div class= "question-number">
+						<div class= "mini-count">
+							<span><?= $row["id"] ?></span> <!-- 문제 번호 -->
+						</div>
+						<div>indexs</div>
+					</div>
+				</div>
+				<div class="question-list-left">
+					<h3 class="title">
+						<a href= <?= "/php/notice.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
+					</h3>
+				</div>
+				<div class="question-list-right">
+					<div>
+						<h5 class="date"><?= $row["time"] ?></h5> <!-- 날짜 -->
+						<h5 class="name">by. <?= $row["name"] ?></h5> <!--작성자 -->
+					</div>
+				</div>
+			</div>
+			<?php } ?>
 			<p class="bg-info">Lecture</p>
+			<?php
+				$rows = $db->query("SELECT l.id, title, time, name FROM lecture l JOIN user u ON l.u_id = u.id WHERE title like \"%$keyword%\" ORDER BY pinned DESC, time DESC");
+				foreach ($rows as $row) {
+			?>
+			<div class= "question">
+				<div class= "question-num-summary">
+					<div class= "question-number">
+						<div class= "mini-count">
+							<span><?= $row["id"] ?></span> <!-- 문제 번호 -->
+						</div>
+						<div>indexs</div>
+					</div>
+				</div>
+				<div class="question-list-left">
+					<h3 class="title">
+						<a href= <?= "/php/notice.php?id=".$row["id"] ?> ><?= $row["title"] ?></a> <!-- 제목 -->
+					</h3>
+				</div>
+				<div class="question-list-right">
+					<div>
+						<h5 class="date"><?= $row["time"] ?></h5> <!-- 날짜 -->
+						<h5 class="name">by. <?= $row["name"] ?></h5> <!--작성자 -->
+					</div>
+				</div>
+			</div>
+			<?php } ?>
 		</div>
 	</div>
 </body>
