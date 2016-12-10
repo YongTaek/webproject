@@ -7,6 +7,7 @@
       $db->query("DELETE FROM notification WHERE u_id = $id");
   		$db->query("DELETE FROM comment WHERE u_id = $id");
   		$db->query("DELETE FROM answer WHERE u_id = $id");
+      $db->query("DELETE FROM notice WHERE u_id = $id");
   		$db->query("DELETE FROM favorite WHERE u_id = $id");
   		$favorite = $db->query("SELECT f.u_id FROM favorite f JOIN question q on id = q_id WHERE q.u_id = $id");
   		if(!empty($favorite) && ($favorite->rowCount() > 0)){

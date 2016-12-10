@@ -9,7 +9,7 @@ function passwd_reset() {
 	console.log(sid);
 
 	$.ajax({
-		url: "/php/reset_password.php",
+		url: "/api/user/reset-password.php",
 		type: "POST",
 		data: {
 			id: sid
@@ -32,11 +32,11 @@ function saveStudent() {
 	console.log(sid);
 
 	$("#saveStu").ajaxForm({
-		url: "save_student.php",
+		url: "/api/user/save-student.php",
 		enctype: "multipart/form-data",
     success: function (data) {
       if (data.error === "false") {
-      	window.location.href = "/php/setting.php";
+      	window.location.href = "/user/setting.php";
       }
     },
     error: function (e) {
@@ -54,7 +54,7 @@ function saveAssistant() {
 	console.log(aid);
 
 	$.ajax({
-		url: "save_assistant.php",
+		url: "/api/user/save-assistant.php",
 		type: "POST",
 		data: {
 			id: aid,
@@ -63,7 +63,7 @@ function saveAssistant() {
 		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
     success: function (data) {
     	if (data.error === "false") {
-    		window.location.href = "/php/setting.php";
+    		window.location.href = "/user/setting.php";
     	}
     },
     error: function (e) {
