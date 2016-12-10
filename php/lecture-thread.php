@@ -29,14 +29,14 @@
   <?php
       $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $rows = $db->query("SELECT open FROM lecture WHERE id = $id");
+      $rows = $db->query("SELECT id, open FROM lecture WHERE id = $id");
       $row = $rows->fetch();
       if($row["open"] == 1){ ?>
-  <form class="lecture" action="create_comment.php" method="POST">
-    <textarea id="input" name="content" cols="23" rows="8"></textarea>
-    <input type="hidden" name="id" value="<?= $rows["id"] ?>"/>
-    <input type="hidden" name="type" value="lecture" />
-    <input type="button" class="btn btn-primary" id="submit" value="등록"/>
-  </form>
+        <form class="lecture" action="create_comment.php" method="POST">
+          <textarea id="input" name="content" cols="23" rows="8"></textarea>
+          <input type="hidden" name="id" value="<?= $row["id"] ?>"/>
+          <input type="hidden" name="type" value="lecture" />
+          <input type="button" class="btn btn-primary" id="submit" value="등록"/>
+        </form>
   <?php } ?>
 </div>
