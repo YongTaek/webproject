@@ -40,6 +40,7 @@ for (var i = 0; i < questionArray.length; i++) {
 	});
 }
 for (var i = 0; i < lectureArray.length; i++) {
+	console.log("lecture : " + lectureArray[i]);
 	var channel = pusher.subscribe(lectureArray[i]);
 	channel.bind('new_comment', function(data) {
 		// https://github.com/CodeSeven/toastr#escape-html-characters
