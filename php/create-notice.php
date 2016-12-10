@@ -9,7 +9,7 @@ session_start();
   <link rel="stylesheet" href="../public/css/base.css" type="text/css">
   <script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
   <link rel="stylesheet" type="text/css" href="../public/css/wmd.css" />
-  <link rel="stylesheet" type="text/css" href="../public/css/create-post.css" />  
+  <link rel="stylesheet" type="text/css" href="../public/css/create-post.css" />
   <link rel="stylesheet" type="text/css" href="../public/css/create-vote.css" />
 
   <script type="text/javascript" src="../public/js/showdown.js"></script>
@@ -45,9 +45,9 @@ session_start();
       <?php } ?>
     </div>
     <button class="pull-right">
-      <img src="/public/img/search.png" class="search-icon">
-    </button>
-    <form id = "search-content" action="../php/search-page.php">
+        <img src="/public/img/search.png" class="search-icon">
+      </button>
+      <form method = "post" id = "search-content" action="/php/search-page.php">
       <input type="text" class="pull-right search" name="search">
     </form>
   </nav>
@@ -73,7 +73,7 @@ session_start();
       <div id="wmd-preview" class="wmd-preview"></div>
       <hr>
       <div class='buttons'>
-        <input class='btn btn-primary' type='submit' value="submit">
+        <input class='btn btn-primary' type='submit' value="submit" />
         <button class='btn btn-primary'>cancel</button>
       </div>
     </form>
