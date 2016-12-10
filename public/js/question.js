@@ -31,7 +31,7 @@ function questionReady(){
 		var idInput = document.createElement("input");
 		idInput.setAttribute("name", "id");
 		var commentId = div.find("span.hidden").innerHTML;
-		idInput.val(commentId);
+		idInput.innerHTML = commentId;
 		idInput.setAttribute("type","hidden");
 		var submitInput = document.createElement("input");
 		submitInput.setAttribute("class", "btn commentModify submit");
