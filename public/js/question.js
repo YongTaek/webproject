@@ -25,13 +25,14 @@ function questionReady(){
 		var form = document.createElement("form");
 		form.setAttribute("class", "width100");
 		form.setAttribute("action", "modify_comment.php");
+		form.setAttribute("method", "post");
 		var contentInput = document.createElement("input");
 		contentInput.setAttribute("name", "content");
 		contentInput.setAttribute("class", "comment-write");
 		var idInput = document.createElement("input");
 		idInput.setAttribute("name", "id");
 		var idSpan = div.find("span.hidden");
-		var commentId = idSpan.innerHTML;
+		var commentId = idSpan[0].innerHTML;
 		idInput.setAttribute("value", commentId);
 		idInput.setAttribute("type","hidden");
 		var submitInput = document.createElement("input");
