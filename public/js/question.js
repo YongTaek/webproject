@@ -5,7 +5,7 @@ function questionReady(){
 		var forminput = form.serialize();
 		console.log(forminput);
 		$.ajax({
-			url: "../php/create_comment.php",
+			url: "/comment/create.php",
 			type : "POST",
 			data : forminput,
 			dataType : "json"
@@ -60,7 +60,7 @@ function questionReady(){
 		var query = "id=" + commentId + "&questionId=" + questionId;
 		console.log(query);
 		$.ajax({
-			url: "delete_comment.php",
+			url: "/comment/delete.php",
 			type: "POST",
 			data: query,
 			dataType: 'json'
@@ -81,7 +81,7 @@ function modifyAjax(event) {
 	var params = $(this).parent().serialize();
 	console.log(params);
 	$.ajax({
-		url: "modify_comment.php",
+		url: "/comment/modify.php",
 		type : "POST",
 		data: params,
 		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',

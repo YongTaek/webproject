@@ -45,7 +45,7 @@ if (isset($_GET["id"])) {
 	if($fileType === "pdf"){
 ?>
 	<embed src = "<?= $lectureFile ?>"></embed>
-	<?php }else if( $fileType === "html" ){ ?>
+	<?php }else if( $fileType === "html"|| $fileType === "pps" ){ ?>
 	<iframe src = "<?= $lectureFile ?>"></iframe>
 	<?php } ?>
 	<div id="comment">
