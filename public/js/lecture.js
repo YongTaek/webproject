@@ -1,6 +1,7 @@
 function lectureReady(){
   $("#submit").click(function (event){
     var params = $(this).parent().serialize();
+    $("#input").val("");
     console.log(params);
     $.ajax({
       url: "../php/create_comment.php",
@@ -89,7 +90,6 @@ function appendComment(da){
   div.append(spandate);
   div.addClass("thread");
   $(".threads").append(div);
-  $("#input").val("");
 
   $(".threads").animate({scrollTop: $(".threads").prop("scrollHeight")});
 };
