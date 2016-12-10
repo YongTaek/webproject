@@ -1,6 +1,6 @@
 <?php
 
-  print $_POST["data"];
+  print_r($_POST["data"]);
   $data = json_decode($_POST["data"]);
   $id = $_SESSION["id"];
   if (isset($id)) {
