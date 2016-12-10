@@ -8,7 +8,12 @@
 }
 
 .pin-on {
-	background-image: url("../img/pin-icon-on.png");	
+	background-image: url("../img/pin-icon-on.png");
+	height: 24px;
+	width: 24px;
+	display: inline-block ;
+	overflow: hidden;
+	margin-left: 5px;
 }
 
 .star-off {
