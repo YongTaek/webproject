@@ -90,7 +90,7 @@
 				<label>Comment:</label>
 				<div>
 					<input id="comment-write" type="text" name="content" />
-					<input class="btn" id="submit" type="button" value="등록"/>
+					<input class="btn commentBtn" id="submit" type="button" value="등록"/>
 				</div>
 				<input type="hidden" name="id" value="<?= $row["id"] ?>" />
 				<input type="hidden" name="type" value="notice">

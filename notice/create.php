@@ -14,6 +14,13 @@
   try {
     $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $auth_check = $db->query("SELECT u_id FROM notice WHERE id = $id");
+    $auth = $auth_check->fetch();
+    if($id != $auth["u_id"]){
+        header("Location: /error");
+    }
+
     $db->query("INSERT INTO notice(u_id, title, content, time) VALUES($id, '$title', '$content', '$time')");
     $rows = $db->query("SELECT id FROM notice WHERE u_id=$id AND title='$title' AND content='$content' AND time='$time'");
     if ($rows->rowCount() > 0) {
