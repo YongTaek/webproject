@@ -6,7 +6,7 @@
     header("Location: /user/login.php");
   }
 
-  if (!isset($_POST["title"]) || !isset($_POST["content"]) || empty($_POST["title"]) === "" || empty($_POST["content"]) === "") {
+  if (!isset($_POST["title"]) || !isset($_POST["content"]) || empty(trim($_POST["title"])) === "" || empty(trim($_POST["content"])) === "") {
     header("Location: /error.php"); 
   }
 

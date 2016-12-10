@@ -3,7 +3,7 @@
 	$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    if (!isset($_POST["title"]) || !isset($_POST["content"]) || empty($_POST["title"]) === "" || empty($_POST["content"]) === "" || !preg_match("/^[0-9]+$/", $_POST["id"])) {
+    if (!isset($_POST["title"]) || !isset($_POST["content"]) || empty(trim($_POST["title"])) === "" || empty(trim($_POST["content"])) === "" || !preg_match("/^[0-9]+$/", $_POST["id"])) {
         header("Location: /error.php");
     }
 

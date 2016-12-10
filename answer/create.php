@@ -8,7 +8,7 @@
     header("Location: /user/login.php");
   }
 
-  if (!isset($_POST["answer"]) || empty($_POST["answer"]) === "") {
+  if (!isset($_POST["answer"]) || empty(trim($_POST["answer"])) === "") {
     header("Location: /error.php");
   }
 
