@@ -8,17 +8,22 @@ function onclick(){
 		}
 	});
 
-	$(".side-bar").click(function(){
-
-    	document.getElementById("mySidenav").style.width = "250px";
-
+	$('.side-bar').click(function (event) {
+		var effect = 'slide';
+		var options = { direction: "right"};
+		var duration = 500;
+		$('#mySidenav').toggle("slide", { direction : "right" }, 500, function () {
+		});
 	});
 
-	
 
 	$(".closebtn").click(function(){
 
-		 document.getElementById("mySidenav").style.width = "0";
+		var effect = 'slide';
+		var options = { direction: "right"};
+		var duration = 500;
+		$('#mySidenav').toggle("slide", { direction : "right" }, 500, function () {
+		});
 	});
 
 };

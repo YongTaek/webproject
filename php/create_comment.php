@@ -13,7 +13,7 @@
   $content = str_replace("\t", "&#9;", $content);
   $content = str_replace("\'", "&#39;", $content);
   $content = str_replace("\"", "&#34;", $content);
-  
+
   console.log($content);
   $time = date("Y-m-d H:i:s");
   $type = $_POST["type"];
