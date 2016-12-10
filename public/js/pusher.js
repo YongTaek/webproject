@@ -49,6 +49,7 @@ for (var i = 0; i < questionArray.length; i++) {
 function makeNotification(notification) {
 	var a = document.createElement("a");
 	a.setAttribute("class", "notification");
+	a.setAttribute("href", notification.url);
 	var div = document.createElement("div");
 	div.setAttribute("class", "notification-thread");
 	var contentP = document.createElement("p");
