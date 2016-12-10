@@ -1,7 +1,6 @@
 function lectureReady(){
   $("#submit").click(function (event){
     var params = $(this).parent().serialize();
-    $("#input").val("");
     console.log(params);
     $.ajax({
       url: "../php/create_comment.php",
@@ -10,6 +9,7 @@ function lectureReady(){
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
       dataType: "json"
     }).done(function (da) {
+      $("#input").val("");
       // var da = $.parseJSON(data);
       if(da.error == "true"){
         alert("등록 에러! X(");
