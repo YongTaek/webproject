@@ -52,15 +52,6 @@
 		</div>
 	</header>
 	<div class='container'>
-	<?php
-		$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-		$id = $_GET["id"];
-		$u_id = $_SESSION["id"];
-		$rows = $db->query("SELECT title, content FROM question WHERE u_id = $u_id AND id = $id");
-		
-		//$row = $rows->fetch();
-	}
-	?>
 	<form action='submit_answer_modify.php' method="post">
 		<h2>Your Answer</h2>
 		<div class="content" id="wmd-editor">
@@ -79,7 +70,6 @@
 	</form>
 
 </div>
-<!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
 <script src="../public/js/jquery-3.1.1.min.js"></script>
 <script src="../public/js/jquery-ui-1.12.1.min.js"></script>
 <script src="../public/js/jquery.caret.min.js"></script>
