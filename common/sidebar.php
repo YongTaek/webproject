@@ -3,8 +3,7 @@
   <a href="javascript:void(0)" class="closebtn">&times;</a>
   <a id="all-delete" class="all-notification-delete">모든 알림 삭제</a>
   <hr>
-  <?php var_dump($pushArray)?>
-  <?php if($pushArray === undefined){ ?>
+  <?php if(count($pushArray) == 0){ ?>
   
     <span class="no-notification">받지 않은 알림이 없습니다!</span>
   
