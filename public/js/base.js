@@ -41,6 +41,16 @@ function onclick(){
 			alert("키워드를 입력해주세요 >:(");
 		}
 	});
+	$("input.search").keypress(function(e){
+		if(e.which == 13){
+			if($(this).val() !== ""){
+				$("form#search-content").submit();
+			}
+			else{
+				alert("키워드를 입력해주세요 >:(");
+			}
+		}
+	});
 
 	$('.side-bar').click(function (event) {
 		var effect = 'slide';
