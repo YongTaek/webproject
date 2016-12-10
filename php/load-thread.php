@@ -4,7 +4,7 @@
   $r_id = $_POST["id"];
   $time = $_POST["date"];
   // print $time;
-  $time = DateTime::createFromFormat('Y-m-d H:i:s', $time)->format('Y-m-d H:i:s');
+  $time = new DateTime($time);
   // $time = strtotime($time);
   // $time = date("Y-m-d H:i:s",$time);
   // print $time;
