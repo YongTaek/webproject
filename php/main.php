@@ -8,11 +8,7 @@
 	$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
 	$db->exec("set names utf8");
 	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	try{
 	$rows = $db->query("SELECT message, url, time from notification where u_id=$userId and isread=0");
-	} catch(PDOException $e) {
-		print $e->getMessage();
-	}
 	$count = 0;
 	$pushArray = array();
 	foreach ($rows as $row) {
@@ -23,7 +19,6 @@
 		$tempArray = array("message" => $message, "url" => $url, "time" => $time);
 		$pushArray[] = $tempArray;
 	}
-	print_r($pushArray);
 ?>
 <!DOCTYPE html>
 <html>
