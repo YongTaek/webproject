@@ -1,8 +1,7 @@
 $(window).on("load" ,function(){
 	var pageError = window.location.pathname.split("php");
 	if(pageError.length>2){
-		console.log("? 이거 떠야하는데?");
-		window.locastion = "/error.php";
+		window.location.replace("/error.php");
 	}
 	var location = window.location.pathname.split("/");
 	var menuitems = $(".menu-item");
