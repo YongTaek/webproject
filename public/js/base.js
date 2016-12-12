@@ -97,7 +97,7 @@ function onclick(){
 };
 
 function addTextNoNotification(){
-	var child = document.getElementById("#notifications").childNodes;
+	var child = document.getElementById("notifications").childNodes;
 	console.log('---------------');
 	for(var i = 0 ; i < child.length; i++){
 		console.log(child[i].tagName);
