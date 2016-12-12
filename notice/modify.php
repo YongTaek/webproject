@@ -25,7 +25,7 @@
       $result = array("error" => "false", "message"=>"업로드 됐던 기존 파일이 삭제됩니다.");
 
     }else if(isset($_FILES['upload']['name'])){
-
+      print $_FILES['upload']['name'];
       unlink($url["url"]);
       $uploaddir = "../files/";
       $fileUrl = $uploaddir . basename($_FILES['upload']['name']);
