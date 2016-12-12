@@ -51,9 +51,9 @@
       <hr>
       <div class='buttons'>
         <input class='btn btn-primary' type='submit' value="submit" />
-        <button class='btn btn-primary'>cancel</button>
-      </div>
-    </form>
+      </form>
+      å<button class='btn btn-primary'>cancel</button>
+    </div>      
   </div>
 </div>
 <script type="text/javascript" src="/public/js/wmd.js"></script>
