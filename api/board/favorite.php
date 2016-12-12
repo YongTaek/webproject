@@ -25,7 +25,7 @@
         $newArray = array_diff($_SESSION["favQuestion"], array($id));
         $_SESSION["favQuestion"] = array();
         foreach ($newArray as $array ) {
-          $_SESSION["favQuestion"][] = $array;
+          $_SESSION["favQuestion"][] = "q" . $array;
         }
     }
 

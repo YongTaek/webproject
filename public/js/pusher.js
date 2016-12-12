@@ -5,7 +5,7 @@ var pusher = new Pusher('dc9f3fc01f0f63f45083', {
 });
 
 for (var i = 0; i < questionArray.length; i++) {
-	var channel = pusher.subscribe(questionArray[i]);
+	var channel = pusher.subscribe("q" + questionArray[i]);
 	channel.bind('new_comment', function(data) {
 		// https://github.com/CodeSeven/toastr#escape-html-characters
 		// http://codeseven.github.io/toastr/demo.html
