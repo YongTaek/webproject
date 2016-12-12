@@ -29,4 +29,11 @@ form {
   border-radius: 5px;
   border-color: #337ab7;
   padding: 5px;
+  font-size: 10px;
+  width: 40px;
+  margin-left: 10px;
+}
+
+.origin-file {
+  margin-left: 10px;
 }
