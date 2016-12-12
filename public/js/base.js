@@ -47,7 +47,7 @@ function onclick(){
 	});
 	$("input.search").keypress(function(e){
 		if(e.which == 13){
-			if($(this).val() !== ""){
+			if($(this).val().trim() !== ""){
 				$("form#search-content").submit();
 			}
 			else{
