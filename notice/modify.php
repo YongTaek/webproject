@@ -28,7 +28,7 @@
       print $_FILES['upload']['name'];
       unlink($url["url"]);
       $uploaddir = "../files/";
-      $fileUrl = $uploaddir . basename($_FILES['upload']['name']);
+      $fileUrl = $uploaddir . basename($_FILES['upload']['name']){
       if(move_uploaded_file($_FILES['upload']['tmp_name'],$fileUrl)){
         $dbUrl = $fileUrl;
         $db->query("UPDATE notice SET url = '$dbUrl' WHERE id = $id");
@@ -42,7 +42,7 @@
     }else{
       $db->query("UPDATE notice SET title = '$title' WHERE id = $id");
       $db->query("UPDATE notice SET content = '$content' WHERE id = $id");
-      header("Location: /board/notice/post.php?id=$id");
+      // header("Location: /board/notice/post.php?id=$id");
     }
   } catch (PDOException $e) {
     header("Location: /error.php");
