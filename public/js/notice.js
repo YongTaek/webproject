@@ -32,10 +32,20 @@ function submitData() {
   });
 }  
 function modifySubmitData() {
-
   var location = window.location.search.split("=")[1];
-
   $("#notice-modify-form").ajaxForm({
+    dataType: 'text', 
+    success: function(responseText, statusText){
+      if(result["error"] !== "false"){
+        alert(result["message"]);
+      }else{
+        onsole.log("hello");
+        window.location.href = "/board/notice/list.php?id="+locatioin;
+      }
+    }
+  });
+}
+  
     dataType: 'text',
     success: function(responseText, statusText){
       console.log(responseText);
