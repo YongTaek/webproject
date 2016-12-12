@@ -63,7 +63,6 @@
 				<?= $row["content"] ?>
 			</div>
 			<?php if($row["url"] != NULL ){ ?>
-			<h2>Attatchment</h2>
   			<a href="<?= $row["url"] ?>"> <?=basename($row["url"]) ?> </a>
   			<?php } ?>
 		</div>
