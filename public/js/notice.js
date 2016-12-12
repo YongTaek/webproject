@@ -1,15 +1,15 @@
 function ready () {
-   $("button").click( function(){
-    window.location.href = "/board/notice/list.php";
-   });
-  $("input.delete").click(function(){
-    $("#is-click").val(1);
-    $("p.origin-file").remove();
-  });
+ $("button").click( function(){
+  window.location.href = "/board/notice/list.php";
+});
+ $("input.delete").click(function(){
+  $("#is-click").val(1);
+  $("p.origin-file").remove();
+});
 
-  $("input.modify").click(modifySubmitData);
+ $("input.modify").click(modifySubmitData);
 
-  $("input.create").click(submitData);
+ $("input.create").click(submitData);
 }
 
 $(document).ready(ready);
@@ -21,15 +21,14 @@ function submitData() {
       console.log(responseText);
       var result = JSON.parse(responseText);
       if(result["error"] !== "false"){
-      alert(result["message"]);
-    }else{
-      window.location.href = "/board/notice/list.php";
-    }
-  };
+        alert(result["message"]);
+      } else{
+        window.location.href = "/board/notice/list.php";
+      }};
   });
 }
-  function modifySubmitData() {
-    var location = window.location.search.split("=")[1];
+function modifySubmitData() {
+  var location = window.location.search.split("=")[1];
 
   $("#notice-modify-form").ajaxForm({
     dataType: 'text',
@@ -38,9 +37,9 @@ function submitData() {
       var result = JSON.parse(responseText);
       if(result["error"] !== "false"){
         alert(result["message"]);
-    }else{
-      console.log("hello");
-      window.location.href = "/board/notice/list.php?id="+locatioin;
-    }};
-  });
+      }else{
+        console.log("hello");
+        window.location.href = "/board/notice/list.php?id="+locatioin;
+      }};
+    });
 }
