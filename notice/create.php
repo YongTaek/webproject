@@ -15,7 +15,6 @@ else{
   $fileUrl = $uploaddir . basename($_FILES['upload']['name']);
   if(move_uploaded_file($_FILES['upload']['tmp_name'],$fileUrl)){
     $dbUrl = $fileUrl;
-    $content = str_replace("\n", "<br/>", $content);
 
     $time = date("Y-m-d H:i:s");
 

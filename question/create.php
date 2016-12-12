@@ -9,8 +9,6 @@
   $id = $_SESSION["id"];
   $title = htmlspecialchars($_POST["title"], ENT_QUOTES);  
   $content = $_POST["content"];
-
-  $content = str_replace("\n", "<br/>", $content);
   
   $tag = $_POST["tags"];
   $time = date("Y-m-d H:i:s");
