@@ -47,6 +47,6 @@
         </form>
       </div>
     </div>
-    <script type="text/javascript" src="../public/js/wmd.js"></script>
+    <script type="text/javascript" src="/public/js/wmd.js"></script>
   </body>
 </html>

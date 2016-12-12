@@ -1,8 +1,8 @@
-<?php include("../common/pusher.php"); 
+<?php include("../common/pusher.php");
   session_start();
   $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  if(!($_SESSION["auth"] === 'professor' || $_SESSION["auth"] === 'assistant')){ 
+  if(!($_SESSION["auth"] === 'professor' || $_SESSION["auth"] === 'assistant')){
     header("Location: /error.php");
   } ?>
 <!DOCTYPE html>
@@ -20,7 +20,7 @@
   <script src="/public/js/base.js"></script>
 
   <?php include("../common/script.php"); ?>
-  
+
   <script src="/public/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="//js.pusher.com/3.2/pusher.min.js"></script>
@@ -138,7 +138,7 @@
     </div>
     <div class="top-text">
       <h3 class="setting-text">Change Password</h3>
-      <a id="change-password" href="/api/user/change-password.php">비밀번호 변경</a>
+      <a id="change-password" href="/user/change-password.php">비밀번호 변경</a>
     </div>
 
     <!-- assistant modal -->

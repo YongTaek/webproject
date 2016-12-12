@@ -81,11 +81,9 @@ function onclick(){
 			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 			dataType: 'json',
 			success : function (result) {
-				console.log(result);
 				if (result.error === "false") {
 					addTextNoNotification();
 					$("#notification").text("0");
-					//addTextNoNotification();
 				}
 			},
 			error : function (result) {
@@ -98,8 +96,7 @@ function onclick(){
 
 function addTextNoNotification(){
 	var currentLength = document.getElementById("notifications").childNodes.length;
-	console.log(currentLength);
-	if(currentLength == 0 || currentLength == 1){
+	if(currentLength != 1){
 		var span = document.createElement("span");
 		span.setAttribute("class","no-notification");
 		span.innerHTML = "받지 않은 알림이 없습니다!";
