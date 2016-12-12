@@ -66,6 +66,8 @@
 		</div>
 		<?php if($row["url"] != NULL ){ ?>
 			<div class="file">
+			<span>첨부 파일 : </span>
+			<img src="/public/img/folder.png" alt="folder">
   			<a class="file" href="http://webapp.yongtech.kr/files/<?= basename($row["url"]) ?>" download> <?=basename($row["url"]) ?> </a>
   			</div>
   		<?php } ?>

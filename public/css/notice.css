@@ -93,3 +93,7 @@
 	display: block;
 	text-align: right;
 }
+
+.file > *{
+	display: inline-block;
+}
