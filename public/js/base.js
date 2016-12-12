@@ -97,11 +97,12 @@ function onclick(){
 };
 
 function addTextNoNotification(){
-	var child = $("#notifications").childNodes;
+	var child = document.getElementById("#notifications").childNodes;
 	console.log('---------------');
 	for(var i = 0 ; i < child.length; i++){
 		console.log(child[i].tagName);
 	}
+
 	//if(document.getElementById("notifications").childNodes.length == 0){
 		var span = document.createElement("span");
 		span.setAttribute("class","no-notification");
