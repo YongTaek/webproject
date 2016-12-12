@@ -5,6 +5,7 @@ if (!isset($_SESSION["id"])) {
   header("Location: /user/login.php");
 }
 
+header("Content-Type:application/json");
 $id = $_SESSION["id"];
 $title = htmlspecialchars($_POST["title"], ENT_QUOTES);
 $content = $_POST["content"];
@@ -16,15 +17,13 @@ else{
   $uploaddir = "../files/";
   $fileUrl = $uploaddir . basename($_FILES['upload']['name']);
   if(!move_uploaded_file($_FILES['upload']['tmp_name'],$fileUrl)){
-    header("Content-Type:application/json");
     $result = array("error" => "true", "message"=>"파일 업로드에 실패했습니다! :(");
     print json_encode($result);
   }else{
     $dbUrl = $fileUrl;
-
     $time = date("Y-m-d H:i:s");
     if (!($_SESSION["auth"] === "professor" || $_SESSION["auth"] === "assistant")) {
-      header("Location: /error.php");
+      $result = array("error" => "true", "message"=>"권한이 없습니다!");
     }
   }
 }
@@ -36,10 +35,10 @@ if(!isset($result)){
     $rows = $db->query("SELECT id FROM notice WHERE u_id=$id AND title='$title' AND content='$content' AND time='$time'");
     if ($rows->rowCount() > 0) {
       $row = $rows->fetch();
-      header("Location: /board/notice/post.php?id=".$row["id"]);
+      $result = array("error" => "false", "message"=>"");
     }
   } catch (PDOException $e) {
-    header("Location: /error.php");
+    $result = array("error" => "true", "message"=>"파일 업로드에 실패했습니다! :(");
   }
 }
 ?>

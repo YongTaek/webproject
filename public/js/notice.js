@@ -8,6 +8,7 @@ function ready () {
   });
 
   $("input.modify").click(modifySubmitData);
+
   $("input.create").click(submitData);
 }
 
@@ -21,24 +22,20 @@ function submitData() {
       var result = JSON.parse(responseText);
       if(result["error"] !== "false"){
       alert(result["message"]);
-    }},error: function(e){
-      console.log(e.responseText);
-      alert(result["message"]);
+    }else{
+      window.location.href = "/board/notice/list.php";
     }
+  };
   });
 }
   function modifySubmitData() {
-    console.log("hello!");
   $("#notice-modify-form").ajaxForm({
     dataType: 'text',
     success: function(responseText, statusText){
       console.log(responseText);
       var result = JSON.parse(responseText);
       if(result["error"] !== "false"){
-      alert(result["message"]);
-    }},error: function(e){
-      console.log(e.responseText);
-      alert(result["message"]);
-    }
+        alert(result["message"]);
+    }};
   });
 }

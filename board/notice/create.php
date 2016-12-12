@@ -27,6 +27,7 @@
   <script src="//js.pusher.com/3.2/pusher.min.js"></script>
   <script src="/public/js/create-vote-item.js" type="text/javascript" charset="utf-8" async defer></script>
   <script src="/public/js/push.js"></script>
+  <script type="text/javascript" src="/public/js/jquery.form.js"></script>
   <script type="text/javascript" src="/public/js/notice.js"></script>
   <title>Create Notice</title>
 </head>
