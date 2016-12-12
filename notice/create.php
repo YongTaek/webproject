@@ -37,6 +37,7 @@ else{
   } else{
     header("Content-Type:application/json");
     $result = array("error" => "true", "message"=>"파일 업로드에 실패했습니다! :(");
+    print json_encode($result);
   }
 }
 ?>
