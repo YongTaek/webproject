@@ -89,9 +89,28 @@ for (var i = 0; i < lectureArray.length; i++) {
 		var link = document.location.href;
 		if (link === data.url) {
 			if ($('#sidebar').css("display") === "none") {
-				console.log("adfs");
+				toastr.options = {
+					"closeButton": true,
+					"debug": false,
+					"newestOnTop": false,
+					"progressBar": false,
+					"onclick" : function () {
+						appendComment(data);
+						$("#sidebar").css("display", "blcok");
+					},
+					"positionClass": "toast-top-right",
+					"preventDuplicates": true,
+					"showDuration": "300",
+					"hideDuration": "1000",
+					"timeOut": "10000",
+					"extendedTimeOut": "1000",
+					"showEasing": "swing",
+					"hideEasing": "linear",
+					"showMethod": "fadeIn",
+					"hideMethod": "fadeOut"
+				};
+				Command: toastr["info"](data.content);
 			}
-			appendComment(data);
 		} else {
 			toastr.options = {
 				"closeButton": true,
