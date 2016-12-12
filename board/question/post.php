@@ -211,6 +211,7 @@
 											</div>
 											<input type="hidden" name="id" value="<?= $answer[0] ?>" />
 											<input type="hidden" name="type" value="answer">
+											<input type="hidden" name="q_id" value="<?= $_GET["id"] ?>">
 										</form>
 									</div>
 								</div>
