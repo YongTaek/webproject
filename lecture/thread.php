@@ -31,7 +31,6 @@
           <br>
           <?php
               if ($_SESSION["auth"] === "student")
-                
                 $userName = "anonymous";
             ?>
           <span class="writer"><?= $userName ?></span>

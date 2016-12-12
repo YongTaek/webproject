@@ -3,7 +3,7 @@ function questionReady(){
 		var input = $(this).siblings().not($(this));
 		var form = $(this).parent().parent();
 		var forminput = form.serialize();
-		console.log(forminput);
+		// console.log(forminput);
 		$.ajax({
 			url: "/comment/create.php",
 			type : "POST",

@@ -11,11 +11,12 @@
 
     if ($type == "favorite") {
       $rows = $db->query("SELECT * FROM favorite WHERE u_id = $u_id AND q_id = $id");
-      if ($rows->rowCount() > 0)
+      if ($rows->rowCount() > 0) {
         throw new PDOException("Already Favorite", 1);
-      else
+      } else {
         $db->query("INSERT INTO favorite VALUES($u_id, $id)");
         $_SESSION["favQuestion"][] = $id;
+      }
     } else {
       $rows = $db->query("SELECT * FROM favorite WHERE u_id = $u_id AND q_id = $id");
       if ($rows->rowCount() == 0)
@@ -25,7 +26,7 @@
         $newArray = array_diff($_SESSION["favQuestion"], array($id));
         $_SESSION["favQuestion"] = array();
         foreach ($newArray as $array ) {
-          $_SESSION["favQuestion"][] = "q" . $array;
+          $_SESSION["favQuestion"][] = $array;
         }
     }
 
