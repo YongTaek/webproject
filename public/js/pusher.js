@@ -96,7 +96,9 @@ for (var i = 0; i < lectureArray.length; i++) {
 					"progressBar": false,
 					"onclick" : function () {
 						appendComment(data);
-						$("#sidebar").css("display", "blcok");
+						$('#sidebar').toggle("slide", { direction : "right" }, 500, function () {
+							changeDrawerClass(event);
+						});
 					},
 					"positionClass": "toast-top-right",
 					"preventDuplicates": true,
