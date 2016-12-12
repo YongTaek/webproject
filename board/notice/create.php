@@ -53,7 +53,7 @@
         <input class='btn btn-primary' type='submit' value="submit" />
       </form>
       <button class='btn btn-primary'>cancel</button>
-    </div>      
+    </div>
   </div>
 </div>
 <script type="text/javascript" src="/public/js/wmd.js"></script>
