@@ -23,7 +23,7 @@
         else{
             $db->query("DELETE FROM tag_question WHERE q_id = $id");
             for($i=0;$i<$c_count;$i++){
-                $find = $db->query("SELECT id FROM tag WHERE name = ".$tags[$i]);
+                $find = $db->query("SELECT id FROM tag WHERE name = '$tags[$i]'");
                 if(empty($find)){
                     $db->query("INSERT INTO tag(name) values('".$tags[$i]."')");
                     $newtag = $db->query("SELECT id FROM tag WHERE name = '$tags[$i]'");
