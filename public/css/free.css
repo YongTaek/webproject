@@ -41,9 +41,9 @@
 	font-weight: bold;
 }
 
-.title {
+/* .title {
 	margin-left: 50px;
-}
+} */
 .notice {
 	min-height: 200px;
 	margin-left: 50px;
@@ -57,7 +57,7 @@
 .content {
 
 	font-size: 20px;
-	margin-left: 40px;
+	/* margin-left: 40px; */
 }
 
 .content > p {
