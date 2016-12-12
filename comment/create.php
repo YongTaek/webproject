@@ -25,9 +25,13 @@
     if ($type === "lecture") {
       $url = "http://webapp.yongtech.kr/lecture/class.php?id=$r_id";
       $reference = "l".$r_id;
-    }else if ($type === "question"  || $type === "answer") {
+    }else if ($type === "question" ) {
       $url = "http://webapp.yongtech.kr/board/question/post.php?id=$r_id";
       $reference = "q".$r_id;
+    } else if ($type === "answer") {
+      $q_id = $_POST["q_id"];
+      $url = "http://webapp.yongtech.kr/board/question/post.php?id=$q_id";
+      $reference = "q".$q_id;
     }
     $result = array("error" => "false", "r_id" => $r_id, "content" => $content, "time" => $time, "name" => $name , "type" => $type, "url" => $url);
     if ($type === "question") {

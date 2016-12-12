@@ -54,6 +54,7 @@
         <a class='btn btn-primary' href="/board/notice/list.php">cancel</button>
       </div> 
     </form>     
+
   </div>
 </div>
 <script type="text/javascript" src="/public/js/wmd.js"></script>
