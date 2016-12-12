@@ -41,10 +41,11 @@ try{
   }else{
     $db->query("UPDATE notice SET title = '$title' WHERE id = $id");
     $db->query("UPDATE notice SET content = '$content' WHERE id = $id");
-    // header("Location: /board/notice/post.php?id=$id");
+    $result = array("error" => "false", "message"=>"성공");
+
   }
 }catch (PDOException $e) {
-  header("Location: /error.php");
+  print $e-> getMessage();
 }
 if(isset($result)){
   print json_encode($result);
