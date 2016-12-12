@@ -29,7 +29,7 @@
 
 	<?php include("../../common/script.php"); ?>
 
-	<script type="text/javascript" src="../public/js/showdown.js"></script>
+	<script type="text/javascript" src="/public/js/showdown.js"></script>
 	<link rel="stylesheet" href="/public/css/pusher.css" type="text/css">
 	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>

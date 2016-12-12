@@ -7,7 +7,7 @@
   }
 
   $id = $_SESSION["id"];
-  $title = htmlspecialchars($_POST["title"]);  
+  $title = htmlspecialchars($_POST["title"], ENT_QUOTES);  
   $content = $_POST["content"];
 
   $content = str_replace("\n", "<br/>", $content);
@@ -38,6 +38,6 @@
 
     header("Location: /board/question/post.php?id=".$q["id"]);
   } catch (PDOException $e) {
-    header("Location: /error.php");
+    echo $e->getMessage();
   }
 ?>

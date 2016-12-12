@@ -34,9 +34,13 @@ ul.pull-left{
 .pull-left {
 	margin-left: 0px;
 }
+
+.pull-right {
+	font-size: 20px;
+}
 .pull-right > a{
 	color: white;
-	font-size: 20px;
+	/* font-size: 20px; */
 	text-decoration: none;
 }
 #menu, #login {
@@ -145,4 +149,8 @@ button.pull-right{
 	position: absolute;
 	right: 6px;
 	font-size: 15px;
+}
+
+.container {
+	margin-bottom: 40px;
 }

@@ -1,18 +1,16 @@
 <?php
-	session_start();
-	$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
+    session_start();
+    $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-  	$id = $_POST["id"];
-  	$u_id = $_SESSION["id"];
-  	$title = htmlspecialchars($_POST["title"]);
-  	$content = $_POST["content"];
+    $id = $_POST["id"];
+    $u_id = $_SESSION["id"];
+    $title = htmlspecialchars($_POST["title"]);
+    $content = $_POST["content"];
     $content = str_replace("\n", "<br/>", $content);
-  	$t = $_POST["tags"];
-  	$tags = explode(",", $t);
+    $t = $_POST["tags"];
+    $tags = explode(",", $t);
     $c_count = count($tags);
-  	$i=0;
-
+    $i=0;
     try{
         $check_auth = $db->query("SELECT u_id FROM question WHERE id = $id");
         $auth = $check_auth->fetch();
@@ -40,7 +38,6 @@
         $db->query("UPDATE question SET title = '$title' WHERE id = $id");
         $db->query("UPDATE question SET content = '$content' WHERE id = $id");
         header("Location: /board/question/post.php?id=$id");
-
     } catch(PDOException $e){
         header("Location: /error.php");
     }

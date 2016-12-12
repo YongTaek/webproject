@@ -26,82 +26,82 @@
   <?php include("../../common/header.php"); ?>
 
   <?php
-    if (isset($_GET["id"])) {
-      $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
-      $rows = $db->query("SELECT b.id, name, title, content, time, u.id, pinned FROM board b JOIN user u ON b.u_id = u.id WHERE b.id = ".$_GET["id"]);
-      foreach ($rows as $row) {
-  ?>
+  if (isset($_GET["id"])) {
+    $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
+    $rows = $db->query("SELECT b.id, name, title, content, time, u.id, pinned FROM board b JOIN user u ON b.u_id = u.id WHERE b.id = ".$_GET["id"]);
+    foreach ($rows as $row) {
+      ?>
 
-  <div class="container">
-    <div class="notice">
-      <div class="title">
+      <div class="container">
+        <div class="notice">
+          <div class="title">
 
-        <h1 id="title_id">
-          <span><?= $row["title"] ?></span>
-        </h1>
-        <div class="notice_info">
-          <span><?= $row["name"] ?></span>
-          <span><?= $row["time"] ?></span>
+            <h1 id="title_id">
+              <span><?= $row["title"] ?></span>
+            </h1>
+            <div class="notice_info">
+              <span><?= $row["name"] ?></span>
+              <span><?= $row["time"] ?></span>
+            </div>
+            <?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $row["id"])) { ?>
+            <div class="free_btn">
+              <a class="btn free_modify" href="/board/free/modify.php?id=<?= $row[0] ?>">수정</a>
+              <a class="btn free_delete" href="/free/delete.php?id=<?= $row[0] ?>">삭제</a>
+            </div>
+            <?php } ?>
+          </div>
+          <div class="content">
+            <?php
+            if ($row["pinned"]) {
+              $pin = "pin-on";
+            } else {
+              $pin = "pin-off";
+            }
+            ?>
+            <a class="<?= $pin ?>"></a>
+            <?= $row["content"] ?>
+          </div>
         </div>
-        <?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $row["id"])) { ?>
-        <div class="free_btn">
-          <a class="btn free_modify" href="/board/free/modify.php?id=<?= $row[0] ?>">수정</a>
-          <a class="btn free_delete" href="/free/delete.php?id=<?= $row[0] ?>">삭제</a>
-        </div>
-        <?php } ?>
-      </div>
-      <div class="content">
-        <?php
-          if ($row["pinned"]) {
-            $pin = "pin-on";
-          } else {
-            $pin = "pin-off";
-          }
-        ?>
-        <a class="<?= $pin ?>"></a>
-        <?= $row["content"] ?>
-      </div>
-    </div>
-    <!-- comment iterative-->
-    <div class="comment">
-        <hr>
-        <?php
+        <!-- comment iterative-->
+        <div class="comment">
+          <hr>
+          <?php
           $comments = $db->query("SELECT c.id as c_id, content, name, time, u.id FROM comment c JOIN user u ON c.u_id = u.id WHERE type = 'board' AND reference_id = ".$row[0]);
           foreach ($comments as $comment) {
-        ?>
-        <div>
-          <span><?= $comment["content"] ?></span>
-          <span><?= $comment["name"] ?></span>
-          <span class=""><?= $comment["time"] ?></span>
-          <span class="hidden"><?= $comment["c_id"] ?></span>
-          <span class="hidden"><?= $_GET["id"] ?></span>
-          <span class="hidden">board</span>
-          <?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
-          <div class="comment_btn">
-            <a class="btn comment_modify" name="comment_modify" >수정</a>
-            <a class="btn comment_delete" name="comment_delete" >삭제</a>
+            ?>
+            <div>
+              <span><?= $comment["content"] ?></span>
+              <span><?= $comment["name"] ?></span>
+              <span class=""><?= $comment["time"] ?></span>
+              <span class="hidden"><?= $comment["c_id"] ?></span>
+              <span class="hidden"><?= $_GET["id"] ?></span>
+              <span class="hidden">board</span>
+              <?php if ($logged_in && ($_SESSION["auth"] == "professor" || $_SESSION["auth"] == "assistant" || $_SESSION["id"] == $comment["id"])) { ?>
+              <div class="comment_btn">
+                <a class="btn comment_modify" name="comment_modify" >수정</a>
+                <a class="btn comment_delete" name="comment_delete" >삭제</a>
+              </div>
+              <?php } ?>
+            </div>
+            <hr>
+            <?php } ?>
           </div>
-          <?php } ?>
+          <div class="comment">
+            <form action="/comment/create.php" method="POST">
+              <label>Comment:</label>
+              <div>
+                <input class="comment-write" type="text" name="content" required/>
+                <input class="btn commentBtn submit" type="button" value="등록"/>
+              </div>
+              <input type="hidden" name="id" value="<?= $row[0] ?>" />
+              <input type="hidden" name="type" value="board">
+            </form>
+          </div>
         </div>
-        <hr>
-        <?php } ?>
-    </div>
-    <div class="comment">
-      <form action="/comment/create.php" method="POST">
-        <label>Comment:</label>
-        <div>
-          <input class="comment-write" type="text" name="content" required/>
-          <input class="btn commentBtn submit" type="button" value="등록"/>
-        </div>
-        <input type="hidden" name="id" value="<?= $row[0] ?>" />
-        <input type="hidden" name="type" value="board">
-      </form>
-    </div>
-  </div>
-  <?php
+        <?php
       }
     }
-  ?>
-  <script src="/public/js/star_on_off.js" type="text/javascript"></script>
-</body>
-</html>
+    ?>
+    <script src="/public/js/star_on_off.js" type="text/javascript"></script>
+  </body>
+  </html>
