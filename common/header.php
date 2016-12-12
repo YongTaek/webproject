@@ -13,11 +13,11 @@
     </ul>
 
     <div role="login" class="pull-right">
-      <?php if($count != 0){ ?>
+      <?php var_dump($count); ?>
         <div class="pull-right circle side-bar">
           <span id="notification" class="notification-num"><?=$count?></span>
         </div>
-      <? } ?>
+      
       <img id="bell" class="pull-right side-bar" src="/public/img/bell.png"></img>
 
       <?php if ($logged_in) { ?>
