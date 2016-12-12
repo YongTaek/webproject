@@ -51,9 +51,9 @@
       <hr>
       <div class='buttons'>
         <input class='btn btn-primary' type='submit' value="submit" />
-      </form>
-      <button class='btn btn-primary'>cancel</button>
-    </div>      
+        <a class='btn btn-primary' href="/board/notice/list.php">cancel</button>
+      </div> 
+    </form>     
   </div>
 </div>
 <script type="text/javascript" src="/public/js/wmd.js"></script>
