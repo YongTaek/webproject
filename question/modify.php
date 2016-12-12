@@ -42,6 +42,6 @@
         header("Location: /board/question/post.php?id=$id");
 
     } catch(PDOException $e){
-        header("Location: /error.php");
+        echo $e->getMessage();
     }
 ?>
