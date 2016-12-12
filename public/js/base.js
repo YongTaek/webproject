@@ -98,7 +98,7 @@ function onclick(){
 
 function addTextNoNotification(){
 	var child = document.getElementById("notifications").childNodes;
-	console.log('---------------');
+	console.log(child.length);
 	for(var i = 0 ; i < child.length; i++){
 		console.log(child[i].tagName);
 	}
