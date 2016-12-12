@@ -62,10 +62,11 @@
 			<div class="content">
 				<?= $row["content"] ?>
 			</div>
-			<?php if($row["url"] != NULL ){ ?>
-  			<a class="file" href="http://webapp.yongtech.kr/files/<?= basename($row["url"]) ?>" download> <?=basename($row["url"]) ?> </a>
-  			<?php } ?>
+			
 		</div>
+		<?php if($row["url"] != NULL ){ ?>
+  			<a class="file" href="http://webapp.yongtech.kr/files/<?= basename($row["url"]) ?>" download> <?=basename($row["url"]) ?> </a>
+  		<?php } ?>
 		<!-- comment iterative-->
 		<div id="comment-list" class="comment">
 				<hr>
