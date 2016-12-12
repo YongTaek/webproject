@@ -49,7 +49,7 @@ function lectureReady(){
     var options = { direction: "right"};
     var duration = 500;
     $('#sidebar').toggle("slide", { direction : "right" }, 500, function () {
-      changeDrawerClass(event);
+      changeDrawerClass();
     });
   });
 
@@ -64,13 +64,13 @@ function lectureReady(){
   });
 };
 
-function changeDrawerClass(event) {
-  if($(event.target).hasClass('opendrawer')) {
-    $(event.target).removeClass('opendrawer');
-    $(event.target).addClass('closedrawer');
+function changeDrawerClass() {
+  if($('#side').hasClass('opendrawer')) {
+    $('#side').removeClass('opendrawer');
+    $('#side').addClass('closedrawer');
   } else {
-    $(event.target).addClass('opendrawer');
-    $(event.target).removeClass('closedrawer');
+    $('#side').addClass('opendrawer');
+    $('#side').removeClass('closedrawer');
     $(".threads").scrollTop($(".threads").prop("scrollHeight"));
   };
 };

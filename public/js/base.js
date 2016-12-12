@@ -85,7 +85,7 @@ function onclick(){
 				if (result.error === "false") {
 					$("#notifications").empty();
 					$("#notification").text("0");
-					addTextNoNotification();
+					//addTextNoNotification();
 				}
 			},
 			error : function (result) {
@@ -97,11 +97,14 @@ function onclick(){
 };
 
 function addTextNoNotification(){
-	var span = document.createElement("span");
-	span.setAttribute("class","no-notification");
-	span.innerHTML = "받지 않은 알림이 없습니다!";
-	$("#notifications").empty();
-	$("#notifications").append(span);
+	if(document.getElementById("notifications").childNodes.length == 0){
+		var span = document.createElement("span");
+		span.setAttribute("class","no-notification");
+		span.innerHTML = "받지 않은 알림이 없습니다!";
+		//$("#notifications").empty();
+		$("#notifications").append(span);
+	}
+	
 }
 
 
