@@ -14,6 +14,9 @@
   $content = $_POST["answer"];
 
   $content = str_replace("\n", "<br/>", $content);
+  $content = str_replace("'", "&#39;", $content);
+  $content = str_replace("\"", "&#34;", $content);
+  $content = str_replace("#", "&#35;", $content);
 
   $time = date("Y-m-d H:i:s");
   $num = $db->query("SELECT id FROM answer WHERE q_id = $id AND u_id = $u_id");

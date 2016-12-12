@@ -34,11 +34,13 @@
 
 <div class="container">
   <div class="write-answer">
-    <form action="/notice/create.php" method="POST">
+    <form action="/notice/create.php" method="POST" enctype="multipart/form-data">
       <h2>Title</h2>
       <div class="title">
         <input name="title" type="text" required>
       </div>
+      <h2>Attatchment</h2>
+      <input type="file" id ="upload" name="upload">
       <h2>Content</h2>
       <div class="content" id="wmd-editor">
         <div id="wmd-button-bar"></div>
