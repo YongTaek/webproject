@@ -41,7 +41,7 @@
           <h2>Attatchment</h2>
           	<input type="file" id ="upload" name="upload">
           	<?php if ($row["url"] !== NULL){ ?>
-          		<p><?= basename($row["url"]) ?> <input class="delete btn btn-primary" type = "button" value = "삭제">
+          		<p class="origin-file"><?= basename($row["url"]) ?> <input class="delete btn btn-primary" type = "button" value = "삭제">
           	<?php } ?>
           <h2>Content</h2>
           <div class="content" id="wmd-editor">

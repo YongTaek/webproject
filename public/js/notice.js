@@ -4,6 +4,7 @@ function ready () {
    });
   $("input.delete").onclick(function(){
     $("#is-click").val(1);
+    $("p.origin-file").remove();
   });
 }
 $(document).ready(ready);
