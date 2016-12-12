@@ -48,9 +48,9 @@
   display: block;
   padding: initial;
   margin: initial;
-  font-size: initial;
+  font-size: inherit;
   line-height: initial;
-  color: initial;
+  color: inherit;
   word-break: initial;
   word-wrap: initial;
   background-color: initial;

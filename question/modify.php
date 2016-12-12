@@ -5,7 +5,7 @@
 
   	$id = $_POST["id"];
   	$u_id = $_SESSION["id"];
-  	$title = htmlspecialchars($_POST["title"]);
+  	$title = htmlspecialchars($_POST["title"], ENT_QUOTES);
   	$content = $_POST["content"];
     $content = str_replace("\n", "<br/>", $content);
   	$t = $_POST["tags"];
@@ -19,7 +19,7 @@
         if(!($_SESSION["auth"] === 'professor' || $_SESSION["auth"] === 'assistant' || $u_id == $auth["u_id"])){
             header("Location: /error.php");
         }
-        if($tags[0] == NULL){
+        if(($tags[0]) == NULL){
             $db->query("DELETE FROM tag_question WHERE q_id = $id");
         }
         else{
