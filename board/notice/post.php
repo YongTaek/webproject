@@ -63,7 +63,7 @@
 				<?= $row["content"] ?>
 			</div>
 			<?php if($row["url"] != NULL ){ ?>
-  			<a href="<?= $row["url"] ?>"> <?=basename($row["url"]) ?> </a>
+  			<a class="file" href="http://webapp.yongtech.kr<?= $row["url"] ?>"> <?=basename($row["url"]) ?> </a>
   			<?php } ?>
 		</div>
 		<!-- comment iterative-->
