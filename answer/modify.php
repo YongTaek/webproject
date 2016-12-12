@@ -9,10 +9,6 @@
     header("Location: /error.php");
   }
 
-  if (strlen(trim($_POST["content"])) == 0) {
-    header("Location: /error.php");
-  }
-
 	$id = $_POST["id"];
   	$u_id = $_SESSION["id"];
   	$content = $_POST["content"];

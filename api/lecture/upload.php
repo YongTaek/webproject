@@ -25,9 +25,6 @@
 		if(isset($result)) {
 			print json_encode($result);
 		} else {
-			if (strlen(trim($_POST["title"])) == 0) {
-				$result = array("error" => "true");
-			}
 			else {
 				$name = $_POST["title"];
 				$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
