@@ -19,7 +19,7 @@
 	<script src="/public/js/push.js"></script>
 	<script src="/public/js/pusher.js"></script>
 	<meta charset="utf-8">
-	<title>공지 게시판</title>
+	<title>Notice List</title>
 </head>
 <body>
 	<?php include("../../common/header.php"); ?>

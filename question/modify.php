@@ -4,7 +4,7 @@
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $id = $_POST["id"];
     $u_id = $_SESSION["id"];
-    $title = htmlspecialchars($_POST["title"]);
+    $title = htmlspecialchars($_POST["title"], ENT_QUOTES);
     $content = $_POST["content"];
     $content = str_replace("\n", "<br/>", $content);
     $t = $_POST["tags"];

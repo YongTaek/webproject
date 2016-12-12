@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="/public/css/wmd.css" />
     <link rel="stylesheet" type="text/css" href="/public/css/create-post.css" />
   	<script type="text/javascript" src="/public/js/showdown.js"></script>
-    <title>글쓰기</title>
+    <title>Modify Notice</title>
   </head>
   <body>
     <?php include("../../common/header.php"); ?>
