@@ -12,8 +12,6 @@
   
   $content = $_POST["content"];
 
-  $content = str_replace("\n", "<br/>", $content);
-
   $time = date("Y-m-d H:i:s");
 
   try {
