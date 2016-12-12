@@ -1,8 +1,8 @@
 function ready () {
-   $("button").onclick( function(){
+   $("button").click( function(){
     window.location.href = "/board/notice/list.php";
    });
-  $("input.delete").onclick(function(){
+  $("input.delete").click(function(){
     $("#is-click").val(1);
     $("p.origin-file").remove();
   });
