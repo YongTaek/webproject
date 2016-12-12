@@ -65,7 +65,9 @@
 			
 		</div>
 		<?php if($row["url"] != NULL ){ ?>
+			<div class="file">
   			<a class="file" href="http://webapp.yongtech.kr/files/<?= basename($row["url"]) ?>" download> <?=basename($row["url"]) ?> </a>
+  			</div>
   		<?php } ?>
 		<!-- comment iterative-->
 		<div id="comment-list" class="comment">
