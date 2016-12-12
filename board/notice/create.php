@@ -27,7 +27,7 @@
   <script src="//js.pusher.com/3.2/pusher.min.js"></script>
   <script src="/public/js/create-vote-item.js" type="text/javascript" charset="utf-8" async defer></script>
   <script src="/public/js/push.js"></script>
-  <title>글쓰기</title>
+  <title>Create Notice</title>
 </head>
 <body>
   <?php include("../../common/header.php"); ?>

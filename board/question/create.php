@@ -25,7 +25,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="//js.pusher.com/3.2/pusher.min.js"></script>
 	<script src="/public/js/push.js"></script>
-	<title>question create</title>
+	<title>Create Question</title>
 </head>
 <body>
 	<?php include("../../common/header.php"); ?>

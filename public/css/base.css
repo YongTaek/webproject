@@ -150,3 +150,11 @@ button.pull-right{
 	right: 6px;
 	font-size: 15px;
 }
+
+.container {
+	margin-bottom: 40px;
+}
+
+.content {
+	margin-bottom: 40px;
+}

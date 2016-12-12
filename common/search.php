@@ -24,7 +24,7 @@ if(strlen($keyword) == 0){
 	<script src="/public/js/push.js"></script>
 	<script src="/public/js/pusher.js"></script>
 	<meta charset="utf-8">
-	<title>검색</title>
+	<title>Search</title>
 </head>
 <body>
 	<?php include("header.php"); ?>
