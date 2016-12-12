@@ -1,5 +1,5 @@
 <?php include("pusher.php"); 
-$keyword = $_POST["search"];
+$keyword = trim($_POST["search"]);
 if(strlen($keyword) == 0){
 	header("Location: /error.php");
 }?>
