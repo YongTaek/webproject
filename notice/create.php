@@ -7,7 +7,6 @@ if (!isset($_SESSION["id"])) {
 $id = $_SESSION["id"];
 $title = htmlspecialchars($_POST["title"], ENT_QUOTES);
 $content = $_POST["content"];
-$url;
 if(!isset($_FILES['upload']['name'])){
   $dbUrl = NULL;
 }
