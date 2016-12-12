@@ -81,6 +81,7 @@ function onclick(){
 			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 			dataType: 'json',
 			success : function (result) {
+				console.log(result);
 				if (result.error === "false") {
 					addTextNoNotification();
 					$("#notification").text("0");
