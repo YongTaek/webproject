@@ -20,8 +20,9 @@ function submitData() {
       console.log(responseText);
       var result = JSON.parse(responseText);
       if(result["error"] !== "false"){
-      alert(result["message"]);
-    }},error: function(e){
+        alert(result["message"]);
+      }
+    },error: function(e){
       console.log(e.responseText);
       alert(result["message"]);
     }
