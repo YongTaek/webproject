@@ -12,7 +12,6 @@
 	$id = $_POST["id"];
   	$u_id = $_SESSION["id"];
   	$content = $_POST["content"];
-    $content = str_replace("\n", "<br/>", $content);
   	try{
   		$db->query("UPDATE answer SET content = '$content' WHERE q_id = $id");
   		header("Location: /board/question/post.php?id=$id");
