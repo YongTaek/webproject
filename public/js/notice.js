@@ -6,9 +6,11 @@ function ready () {
     $("#is-click").val(1);
     $("p.origin-file").remove();
   });
+
   $("input.modify").click(modifySubmitData);
   $("input.create").click(submitData);
 }
+
 $(document).ready(ready);
 
 function submitData() {
@@ -26,6 +28,7 @@ function submitData() {
   });
 }
   function modifySubmitData() {
+    console.log("hello!");
   $("#notice-modify-form").ajaxForm({
     dataType: 'text',
     success: function(responseText, statusText){
