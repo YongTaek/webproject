@@ -81,11 +81,9 @@ function onclick(){
 			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 			dataType: 'json',
 			success : function (result) {
-				console.log(result);
 				if (result.error === "false") {
 					addTextNoNotification();
 					$("#notification").text("0");
-					//addTextNoNotification();
 				}
 			},
 			error : function (result) {
@@ -98,7 +96,6 @@ function onclick(){
 
 function addTextNoNotification(){
 	var currentLength = document.getElementById("notifications").childNodes.length;
-	console.log(currentLength);
 	if(currentLength != 1){
 		var span = document.createElement("span");
 		span.setAttribute("class","no-notification");

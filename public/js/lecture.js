@@ -57,6 +57,9 @@ function lectureReady(){
     console.log('*');
     if (event.which == 13) {
         console.log('!');
+        if(event.shiftKey){
+          console.log('&');
+        }
         event.preventDefault();
         // $("form").submit();
         $('#submit').click();
