@@ -30,7 +30,7 @@
 	<?php
 		if (isset($_GET["id"])) {
 			$db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
-			$rows = $db->query("SELECT n.id, name, title, content, time, pinned FROM notice n JOIN user u ON n.u_id = u.id WHERE n.id = ".$_GET["id"]);
+			$rows = $db->query("SELECT n.id, name, title, content, time, pinned, url FROM notice n JOIN user u ON n.u_id = u.id WHERE n.id = ".$_GET["id"]);
 			foreach ($rows as $row) {
   ?>
 
@@ -62,6 +62,10 @@
 			<div class="content">
 				<?= $row["content"] ?>
 			</div>
+			<?php if($row["url"] != NULL ){ ?>
+			<h2>Attatchment</h2>
+  			<a href="<?= $row["url"] ?>"> <?=basename($row["url"]) ?> </a>
+  			<?php } ?>
 		</div>
 		<!-- comment iterative-->
 		<div id="comment-list" class="comment">

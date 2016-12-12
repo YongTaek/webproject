@@ -27,3 +27,21 @@ function addComment(data) {
   $("#comment-list").append(document.createElement("hr"));
 }
 $(document).ready(ready);
+
+function submitData() {
+  $("#notice-form").ajaxForm({
+    dataType: 'text',
+    success: function(responseText, statusText){
+      console.log(responseText);
+      var result = JSON.parse(responseText);
+      if(result["error"] !== "false"){
+      alert(result["message"]);
+      window.location.href = "/user/setting.php";
+    }else{
+      alert(result["message"]);
+    }},error: function(e){
+      console.log(e.responseText);
+      alert(result["message"]);
+    }
+  });
+}
