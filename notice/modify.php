@@ -8,6 +8,11 @@
   $id = $_POST["id"];
   $u_id = $_SESSION["id"];
   $title = htmlspecialchars($_POST["title"]);
+
+  if (strlen(trim($_POST["content"])) == 0) {
+    header("Location: /error.php");
+  }
+  
   $content = $_POST["content"];
   $content = str_replace("\n", "<br/>", $content);
 
