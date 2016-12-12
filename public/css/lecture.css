@@ -43,6 +43,21 @@
   opacity:1;
 }
 
+
+.thread > span{
+  display: block;
+  padding: initial;
+  margin: initial;
+  font-size: initial;
+  line-height: initial;
+  color: initial;
+  word-break: initial;
+  word-wrap: initial;
+  background-color: initial;
+  border: initial;
+  border-radius: initial;
+}
+
 .thread:nth-child(2n) {
   border-radius: 5px;
   padding: 8px;
