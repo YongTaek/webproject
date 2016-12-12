@@ -22,7 +22,7 @@
         if(!($_SESSION["auth"] === 'professor' || $_SESSION["auth"] === 'assistant' || $u_id == $auth["u_id"])){
             header("Location: /error.php");
         }
-        if(strlen($tags[0]) == 0){
+        if(($tags[0]) == NULL){
             $db->query("DELETE FROM tag_question WHERE q_id = $id");
         }
         else{
