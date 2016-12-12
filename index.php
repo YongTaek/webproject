@@ -30,7 +30,7 @@
 				<hr/>
 				<ul>
 					<?php
-						$rows = $db->query("SELECT id, title, DATE_FORMAT(time, '%Y-%m-%d') FROM notice ORDER BY DATE_FORMAT(time, '%Y-%m-%d') DESC");
+						$rows = $db->query("SELECT id, title, DATE_FORMAT(time, '%Y-%m-%d') FROM notice ORDER BY DATE_FORMAT(time, '%Y-%m-%d') DESC LIMIT 10");
 						foreach ($rows as $row) {
 					?>
 					<li class= "list">
@@ -49,7 +49,7 @@
 				<ul>
 					<?php
 						$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
-						$rows = $db->query("SELECT id, title, DATE_FORMAT(time, '%Y-%m-%d') FROM question ORDER BY DATE_FORMAT(time, '%Y-%m-%d') DESC");
+						$rows = $db->query("SELECT id, title, DATE_FORMAT(time, '%Y-%m-%d') FROM question ORDER BY DATE_FORMAT(time, '%Y-%m-%d') DESC LIMIT 10");
 						foreach ($rows as $row) {
 					?>
 					<li class= "list">
