@@ -25,6 +25,6 @@
       header("Location: /board/free/post.php?id=".$row["id"]);
     }
   } catch (PDOException $e) {
-    echo $e->getMessage();
+    header("Location: /error.php");
   }
 ?>
