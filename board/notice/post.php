@@ -95,7 +95,7 @@
 
 					<input class="btn commentBtn submit"  type="button" value="등록"/>
 				</div>
-				<input type="hidden" name="id" value="<?= $row["id"] ?>" />
+				<input type="hidden" name="id" value="<?= $_GET["id"] ?>" />
 				<input type="hidden" name="type" value="notice">
 			</form>
 		</div>
