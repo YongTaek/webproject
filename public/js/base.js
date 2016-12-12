@@ -1,4 +1,8 @@
 $(window).on("load" ,function(){
+	var pageError = window.location.pathname.split("php");
+	if(pageError.length>2){
+		window.location.replace("/error.php");
+	}
 	var location = window.location.pathname.split("/");
 	var menuitems = $(".menu-item");
 	if(location[1] === "lecture"){
@@ -71,6 +75,7 @@ function onclick(){
 	});
 
 	$("#all-delete").click(function() {
+		addTextNoNotification();
 		$.ajax({
 			url: '/api/read-allnotification.php',
 			type : "POST",
@@ -96,7 +101,7 @@ function addTextNoNotification(){
 	span.setAttribute("class","no-notification");
 	span.innerHTML = "받지 않은 알림이 없습니다!";
 	$("#notifications").empty();
-	$("#notifications").append("<span class=\"no-notification\">받지 않은 알림이 없습니다!</span>");
+	$("#notifications").append(span);
 }
 
 

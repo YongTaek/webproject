@@ -28,7 +28,7 @@
       $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
       $id = $_GET["id"];
       $u_id = $_SESSION["id"];
-      $rows = $db->query("SELECT title, content FROM board WHERE u_id = $u_id AND id = $id");
+      $rows = $db->query("SELECT title, content FROM board WHERE id = $id");
       if ($rows->rowCount() > 0) {
         $row = $rows->fetch();
     ?>

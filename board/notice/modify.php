@@ -26,7 +26,7 @@
       $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
       $id = $_GET["id"];
       $u_id = $_SESSION["id"];
-      $rows = $db->query("SELECT title, content FROM notice WHERE u_id = $u_id AND id = $id");
+      $rows = $db->query("SELECT title, content FROM notice WHERE id = $id");
       if ($rows->rowCount() > 0) {
         $row = $rows->fetch();
     ?>

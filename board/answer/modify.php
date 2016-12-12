@@ -35,7 +35,7 @@
 		$db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
       	$id = $_GET["id"];
       	$u_id = $_SESSION["id"];
-      	$rows = $db->query("SELECT content FROM answer WHERE u_id = $u_id AND q_id = $id");
+      	$rows = $db->query("SELECT content FROM answer WHERE q_id = $id");
       	if($rows->rowCount() > 0){
       		$row = $rows->fetch();
       	}
@@ -50,12 +50,12 @@
 		<hr>
 		<div id="wmd-preview" class="wmd-preview"></div>
 		<hr>
-		
+		<input type="hidden" name="id" value="<?= $id ?>">
 		<div class='buttons'>
 			<input class='btn btn-primary' type='submit' value="submit">
 			<button class='btn btn-primary'>cancel</button>
 		</div>
-		<input type="hidden" name="id" value="<?= $id ?>">
+		
 	</form>
 
 </div>

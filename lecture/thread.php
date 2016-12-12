@@ -38,7 +38,7 @@
 
   <?php
       if($row["open"] == 1){ ?>
-        <form class="lecture" action="/comment/create.php" method="POST">
+        <form id="lecture" class="lecture" action="/comment/create.php" method="POST">
           <textarea id="input" name="content" cols="23" rows="8"></textarea>
           <input type="hidden" name="id" value="<?= $row["id"] ?>"/>
           <input type="hidden" name="type" value="lecture" />

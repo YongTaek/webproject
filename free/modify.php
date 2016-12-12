@@ -3,14 +3,10 @@
 
   $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
 
-  $check_auth = $db->query("SELECT u_id FROM question WHERE id = $id");
+  $check_auth = $db->query("SELECT u_id FROM board WHERE id = ".$_POST["id"]);
   $auth = $check_auth->fetch();
 
   if (!($_SESSION["auth"] === "professor" || $_SESSION["auth"] === "assistant" || $_SESSION["id"] === $auth["u_id"])) {
-    header("Location: /error.php");
-  }
-
-  if (trim($_POST["title"]) === "" || trim($_POST["content"]) === "" || !preg_match("/^[0-9]$/", $_POST["id"])) {
     header("Location: /error.php");
   }
 
@@ -19,7 +15,7 @@
   $title = htmlspecialchars($_POST["title"]);
   $content = $_POST["content"];
   $content = str_replace("\n", "<br/>", $content);
-  $db->query("UPDATE board SET title = '$title' WHERE id = $id AND u_id = $u_id");
-  $db->query("UPDATE board SET content = '$content' WHERE id = $id AND u_id = $u_id");
+  $db->query("UPDATE board SET title = '$title' WHERE id = $id");
+  $db->query("UPDATE board SET content = '$content' WHERE id = $id");
   header("Location: /board/free/post.php?id=$id");
   ?>
