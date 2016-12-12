@@ -52,7 +52,7 @@
       <hr>
     </form>
     <div class='buttons'>
-        <input class='btn btn-primary' type='submit' value="submit" form="notice-form"/>
+        <input class='create btn btn-primary' type='submit' value="submit" form="notice-form"/>
         <button class='btn btn-primary'>cancel</button>
   	</div>
   </div>

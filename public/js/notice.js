@@ -7,7 +7,7 @@ function ready () {
     $("p.origin-file").remove();
   });
   $("input.modify").click(modifySubmitData);
-  $("input.modify").click(submitData);
+  $("input.create").click(submitData);
 }
 $(document).ready(ready);
 
