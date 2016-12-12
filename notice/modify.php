@@ -10,7 +10,6 @@
   $title = htmlspecialchars($_POST["title"], ENT_QUOTES);
   
   $content = $_POST["content"];
-  $content = str_replace("\n", "<br/>", $content);
 
   try{
     $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");

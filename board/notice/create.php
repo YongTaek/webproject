@@ -27,6 +27,7 @@
   <script src="//js.pusher.com/3.2/pusher.min.js"></script>
   <script src="/public/js/create-vote-item.js" type="text/javascript" charset="utf-8" async defer></script>
   <script src="/public/js/push.js"></script>
+  <script type="text/javascript" src="/public/js/notice.js"></script>
   <title>Create Notice</title>
 </head>
 <body>
@@ -34,7 +35,7 @@
 
 <div class="container">
   <div class="write-answer">
-    <form action="/notice/create.php" method="POST" enctype="multipart/form-data">
+    <form id ="notice-form" action="/notice/create.php" method="POST" enctype="multipart/form-data">
       <h2>Title</h2>
       <div class="title">
         <input name="title" type="text" required>
@@ -49,11 +50,11 @@
       <hr>
       <div id="wmd-preview" class="wmd-preview"></div>
       <hr>
-      <div class='buttons'>
-        <input class='btn btn-primary' type='submit' value="submit" />
-      </form>
-      <button class='btn btn-primary'>cancel</button>
-    </div>
+    </form>
+    <div class='buttons'>
+        <input class='btn btn-primary' type='submit' value="submit" form="notice-form"/>
+        <button class='btn btn-primary'>cancel</button>
+  	</div>
   </div>
 </div>
 <script type="text/javascript" src="/public/js/wmd.js"></script>
