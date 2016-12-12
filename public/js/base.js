@@ -97,7 +97,7 @@ function onclick(){
 };
 
 function addTextNoNotification(){
-	if($("#notifications").childNodes.length == 0){
+	if(document.getElementById("notifications").childNodes.length == 0){
 		var span = document.createElement("span");
 		span.setAttribute("class","no-notification");
 		span.innerHTML = "받지 않은 알림이 없습니다!";
