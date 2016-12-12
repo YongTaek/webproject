@@ -7,10 +7,6 @@
     header("Location: /user/login.php");
   }
 
-  if (!isset($_POST["title"]) || !isset($_POST["content"]) || empty($_POST["title"]) === "" || empty($_POST["content"]) === "") {
-    header("Location: /error.php");
-  }
-
   $id = $_SESSION["id"];
   $title = htmlspecialchars($_POST["title"]);
   $content = $_POST["content"];

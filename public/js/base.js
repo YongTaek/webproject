@@ -1,4 +1,8 @@
 $(window).on("load" ,function(){
+	var pageError = window.location.pathname.split("php");
+	if(pageError.length>2){
+		window.location.replace("/error.php");
+	}
 	var location = window.location.pathname.split("/");
 	var menuitems = $(".menu-item");
 	if(location[1] === "lecture"){
@@ -47,7 +51,7 @@ function onclick(){
 				$("form#search-content").submit();
 			}
 			else{
-				alert("키워드를 입력해주세요 >:(");
+				alert("키워드를 입력해주세요 3:(");
 				e.preventDefault();
 			}
 		}
@@ -77,10 +81,11 @@ function onclick(){
 			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 			dataType: 'json',
 			success : function (result) {
+				console.log(result);
 				if (result.error === "false") {
-					$("#notifications").empty();
-					$("#notification").text("0");
 					addTextNoNotification();
+					$("#notification").text("0");
+					//addTextNoNotification();
 				}
 			},
 			error : function (result) {
@@ -92,11 +97,15 @@ function onclick(){
 };
 
 function addTextNoNotification(){
-	var span = document.createElement("span");
-	span.setAttribute("class","no-notification");
-	span.innerHTML = "받지 않은 알림이 없습니다!";
-	$("#notifications").empty();
-	$("#notifications").append("<span class=\"no-notification\">받지 않은 알림이 없습니다!</span>");
+	//if(document.getElementById("notifications").childNodes.length == 0){
+		var span = document.createElement("span");
+		span.setAttribute("class","no-notification");
+		span.innerHTML = "받지 않은 알림이 없습니다!";
+		$("#notifications").empty();
+		$("#notifications").append(span);
+
+	//}
+	
 }
 
 

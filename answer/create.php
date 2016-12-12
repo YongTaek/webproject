@@ -8,14 +8,6 @@
     header("Location: /user/login.php");
   }
 
-  if (!isset($_POST["answer"]) || empty($_POST["answer"]) === "") {
-    header("Location: /error.php");
-  }
-
-  if (!preg_match("/^[0-9]$/", $_POST["id"])) {
-    header("Location: /error.php");
-  }
-
   $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
   $u_id = $_SESSION["id"];
   $id = $_POST["id"];
@@ -40,7 +32,7 @@
     }
 
   } catch(PDOException $e){
-    echo $e->getMessage();
-    }
+    header("Location: /error.php");
+  }
 
 ?>

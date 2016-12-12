@@ -16,7 +16,7 @@
       $favorites = $db->query("SELECT q_id from favorite where u_id=$userId");
       $questionArray = array();
       foreach ($favorites as $row) {
-        $questionArray[] = $row["q_id"];
+        $questionArray[] = "q".$row["q_id"];
       }
       //TODO: 내가 쓴 질문에 대해 subscribe 필요!
       $lectureArray = array();

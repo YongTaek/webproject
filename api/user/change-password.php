@@ -25,12 +25,12 @@
         header("Location: /index.php");
         exit;
       } else {
-        echo "Change Failed";
+        header("Location: /error.php");
       }
     } else {
-      echo "Change Failed";
+      header("Location: /error.php");
     }
   } else {
-    echo "Login First";
+    header("Location: /error.php");
   }
 ?>
