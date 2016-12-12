@@ -21,6 +21,7 @@ function submitData() {
       alert(result["message"]);
     }
   });
+}
 
   function submitData() {
   $("#notice-modify-form").ajaxForm({
