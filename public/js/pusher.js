@@ -112,6 +112,8 @@ for (var i = 0; i < lectureArray.length; i++) {
 					"hideMethod": "fadeOut"
 				};
 				Command: toastr["info"](data.content);
+			} else {
+				appendComment(data);
 			}
 		} else {
 			toastr.options = {
