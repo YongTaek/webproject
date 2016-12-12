@@ -31,7 +31,9 @@
 
     }
     $result = array("error" => "false", "r_id" => $r_id, "content" => $content, "time" => $time, "name" => $name , "type" => $type, "url" => $url);
-    $db->query("INSERT INTO notification(u_id, message, url, time) values (\"$u_id\", \"$content\", \"$url\",\"$time\")");
+    if ($type === "question") {
+      $db->query("INSERT INTO notification(u_id, message, url, time) values (\"$u_id\", \"$content\", \"$url\",\"$time\")");
+    }
     $pusher->trigger("$reference", 'new_comment', $result);
   } catch (PDOException $e) {
     $result = array("error" => "true", "r_id" => $r_id, "content" => $content, "type" => $type);
