@@ -52,7 +52,7 @@
       <div class='buttons'>
         <input class='btn btn-primary' type='submit' value="submit" />
       </form>
-      å<button class='btn btn-primary'>cancel</button>
+      <button class='btn btn-primary'>cancel</button>
     </div>      
   </div>
 </div>
