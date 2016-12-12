@@ -9,7 +9,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>설정</title>
+  <title>Setting</title>
   <link rel="stylesheet" href="/public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="/public/css/setting.css" type="text/css">
   <link rel="stylesheet" href="/public/css/base.css" type="text/css">
