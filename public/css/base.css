@@ -163,11 +163,11 @@ button.pull-right{
 	border-color: #FF9047;
 } */
 
-.stylebar-hr {
+hr.sidebar-hr {
     border: 0;
     height: 0; 
     box-shadow: 0 0 10px 1px #FF9047;
 }
-.style-five:after {  
+hr.sidebar-hr:after {  
     content: "\00a0";  
 }
