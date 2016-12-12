@@ -88,7 +88,31 @@ for (var i = 0; i < lectureArray.length; i++) {
 		// http://codeseven.github.io/toastr/demo.html
 		var link = document.location.href;
 		if (link === data.url) {
-			appendComment(data);
+			if ($('#sidebar').css("display") === "none") {
+				toastr.options = {
+					"closeButton": true,
+					"debug": false,
+					"newestOnTop": false,
+					"progressBar": false,
+					"onclick" : function () {
+						appendComment(data);
+						$('#sidebar').toggle("slide", { direction : "right" }, 500, function () {
+							changeDrawerClass();
+						});
+					},
+					"positionClass": "toast-top-right",
+					"preventDuplicates": true,
+					"showDuration": "300",
+					"hideDuration": "1000",
+					"timeOut": "10000",
+					"extendedTimeOut": "1000",
+					"showEasing": "swing",
+					"hideEasing": "linear",
+					"showMethod": "fadeIn",
+					"hideMethod": "fadeOut"
+				};
+				Command: toastr["info"](data.content);
+			}
 		} else {
 			toastr.options = {
 				"closeButton": true,

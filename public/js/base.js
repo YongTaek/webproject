@@ -1,4 +1,8 @@
 $(window).on("load" ,function(){
+	var pageError = window.location.pathname.split("php");
+	if(pageError.length>2){
+		window.location.replace("/error.php");
+	}
 	var location = window.location.pathname.split("/");
 	var menuitems = $(".menu-item");
 	if(location[1] === "lecture"){
