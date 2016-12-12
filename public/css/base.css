@@ -164,7 +164,7 @@ button.pull-right{
 } */
 
 hr.sidebar-hr {
-    border: 0;
+	border-color: #FF9047;
     height: 0; 
     box-shadow: 0 0 10px 1px #FF9047;
 }
