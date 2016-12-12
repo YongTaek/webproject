@@ -82,7 +82,7 @@ function sendReadMessage(notification) {
 }
 
 for (var i = 0; i < lectureArray.length; i++) {
-	var channel = pusher.subscribe(lectureArray[i]);
+	var channel = pusher.subscribe("l" + lectureArray[i]);
 	channel.bind('new_comment', function(data) {
 		// https://github.com/CodeSeven/toastr#escape-html-characters
 		// http://codeseven.github.io/toastr/demo.html
@@ -122,7 +122,7 @@ for (var i = 0; i < lectureArray.length; i++) {
 				"newestOnTop": false,
 				"progressBar": false,
 				"onclick" : function () {
-					window.location.href = data.url;
+					window.open(data.url,"_blank");
 				},
 				"positionClass": "toast-top-right",
 				"preventDuplicates": true,
