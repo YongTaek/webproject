@@ -88,6 +88,9 @@ for (var i = 0; i < lectureArray.length; i++) {
 		// http://codeseven.github.io/toastr/demo.html
 		var link = document.location.href;
 		if (link === data.url) {
+			if ($('#sidebar').css("display") === "none") {
+				console.log("adfs");
+			}
 			appendComment(data);
 		} else {
 			toastr.options = {
