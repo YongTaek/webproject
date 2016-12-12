@@ -95,6 +95,10 @@
 	margin-right: 40px;
 }
 
+.file > img {
+	width: 15px;
+	margin-bottom: 3px;
+}
 .file > *{
 	display: inline-block;
 
