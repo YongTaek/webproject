@@ -97,12 +97,19 @@ function onclick(){
 };
 
 function addTextNoNotification(){
-	//if(document.getElementById("notifications").childNodes.length == 0){
+	// var child = document.getElementById("notifications").childNodes;
+	// console.log(child.length);
+	// for(var i = 0 ; i < child.length; i++){
+	// 	console.log(child[i].tagName);
+	// }
+	var currentLength = document.getElementById("notifications").childNodes.length;
+	if(currentLength == 0 || currentLength == 1){
 		var span = document.createElement("span");
 		span.setAttribute("class","no-notification");
 		span.innerHTML = "받지 않은 알림이 없습니다!";
 		$("#notifications").empty();
 		$("#notifications").append(span);
+
 	//}
 	
 }

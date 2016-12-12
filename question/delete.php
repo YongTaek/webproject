@@ -33,7 +33,7 @@
         } else {
           $db->query("DELETE FROM question WHERE id = $id");
         }
-  	  	$db->query("DELETE FROM comment WHERE reference_id = $id");
+  	  	$db->query("DELETE FROM comment WHERE reference_id = $id AND type = 'question'");
    	    header("Location: /board/question/list.php");
   	}
   } catch(PDOException $e){

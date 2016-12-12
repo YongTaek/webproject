@@ -7,7 +7,7 @@
   }
 
   $id = $_SESSION["id"];
-  $title = htmlspecialchars($_POST["title"]);
+  $title = htmlspecialchars($_POST["title"]);  
   $content = $_POST["content"];
 
   $content = str_replace("\n", "<br/>", $content);

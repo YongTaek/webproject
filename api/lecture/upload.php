@@ -43,7 +43,6 @@ if(!isset($result)) {
 			}
 			else{
 				$db->query("INSERT INTO lecture(name, url) VALUES ('$name', '$dbUrl')");
-
 			}
 			$result = array("error" => "false");
 		}
