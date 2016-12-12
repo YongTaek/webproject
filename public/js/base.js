@@ -98,6 +98,7 @@ function onclick(){
 
 function addTextNoNotification(){
 	var currentLength = document.getElementById("notifications").childNodes.length;
+	console.log(currentLength);
 	if(currentLength == 0 || currentLength == 1){
 		var span = document.createElement("span");
 		span.setAttribute("class","no-notification");
