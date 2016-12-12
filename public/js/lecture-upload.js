@@ -28,12 +28,12 @@ function submitData() {
       console.log(responseText);
       var result = JSON.parse(responseText);
       if(result["error"] == "false"){
+        console.log("?");
       alert("파일을 업로드했습니다! :)");
       window.location.href = "/user/setting.php";
     }else{
       alert("파일 업로드에 실패했습니다! :(");
-    }
-    ,error: function(e){
+    }},error: function(e){
       console.log(e.responseText);
       alert("파일 업로드에 실패했습니다! :(");
     }

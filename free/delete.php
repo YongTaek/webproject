@@ -11,6 +11,6 @@
   $id = $_GET["id"];
   $u_id = $_SESSION["id"];
   $db->query("DELETE FROM board WHERE id = $id");
-  $db->query("DELETE FROM comment WHERE reference_id = $id");
+  $db->query("DELETE FROM comment WHERE reference_id = $id AND type = 'board'");
   header("Location: /board/free/list.php");
   ?>
