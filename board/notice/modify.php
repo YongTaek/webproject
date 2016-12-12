@@ -13,12 +13,12 @@
   	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
     <script src="/public/js/jquery-ui-1.12.1.min.js"></script>
     <script src="/public/js/base.js"></script>
-    <script src="/public/js/notice.js"></script>
     <?php include("../../common/script.php"); ?>
 
     <link rel="stylesheet" type="text/css" href="/public/css/wmd.css" />
     <link rel="stylesheet" type="text/css" href="/public/css/create-post.css" />
   	<script type="text/javascript" src="/public/js/showdown.js"></script>
+  	<script src="/public/js/notice.js"></script>
     <title>Modify Notice</title>
   </head>
   <body>
@@ -55,7 +55,7 @@
         <input id = "is-click" type="hidden" name="isclick" value=0>
         </form>
         <div class='buttons'>
-        <input class='btn btn-primary' type='submit' value="submit" form="notice-modify-form"/>
+        <input class='modify btn btn-primary' type='submit' value="submit" form="notice-modify-form"/>
         <button class='btn btn-primary'>cancel</button>
   		</div>
       </div>

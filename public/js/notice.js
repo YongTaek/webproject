@@ -6,6 +6,8 @@ function ready () {
     $("#is-click").val(1);
     $("p.origin-file").remove();
   });
+  $("input.modify").click(modifySubmitData);
+  $("input.modify").click(submitData);
 }
 $(document).ready(ready);
 
@@ -23,8 +25,7 @@ function submitData() {
     }
   });
 }
-
-  function submitData() {
+  function modifySubmitData() {
   $("#notice-modify-form").ajaxForm({
     dataType: 'text',
     success: function(responseText, statusText){
