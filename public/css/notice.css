@@ -90,5 +90,6 @@
 }
 
 .file {
-	
+	display: block;
+	text-align: right;
 }
