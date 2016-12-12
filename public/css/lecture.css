@@ -32,7 +32,7 @@
 }
 
 .thread:nth-child(odd) {
-  border: 1px solid #337ab7;
+  /* border: 1px solid #337ab7; */
   border-radius: 5px;
   padding: 8px;
   color: white;
@@ -41,6 +41,21 @@
   margin-bottom: 10px;
   overflow: hidden;
   opacity:1;
+}
+
+
+.thread > pre{
+  display: block;
+  padding: initial;
+  margin: initial;
+  font-size: initial;
+  line-height: initial;
+  color: initial;
+  word-break: initial;
+  word-wrap: initial;
+  background-color: initial;
+  border: initial;
+  border-radius: initial;
 }
 
 .thread:nth-child(2n) {
