@@ -11,9 +11,6 @@
   
   $content = $_POST["content"];
   $content = str_replace("\n", "<br/>", $content);
-  $content = str_replace("'", "&#39;", $content);
-  $content = str_replace("\"", "&#34;", $content);
-  $content = str_replace("#", "&#35;", $content);
 
   try{
     $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
