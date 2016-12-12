@@ -13,10 +13,6 @@
   $id = $_POST["id"];
   $content = $_POST["answer"];
 
-  if (strlen(trim($content)) == 0) {
-    header("Location: /error.php");
-  }
-
   $content = str_replace("\n", "<br/>", $content);
 
   $time = date("Y-m-d H:i:s");

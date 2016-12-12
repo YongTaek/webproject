@@ -9,11 +9,6 @@
 
   $id = $_SESSION["id"];
   $title = htmlspecialchars($_POST["title"]);
-
-  if (strlen(trim($_POST["content"])) == 0) {
-    header("Location: /error.php");
-  }
-  
   $content = $_POST["content"];
 
   $content = str_replace("\n", "<br/>", $content);
@@ -32,7 +27,7 @@
     $rows = $db->query("SELECT id FROM notice WHERE u_id=$id AND title='$title' AND content='$content' AND time='$time'");
     if ($rows->rowCount() > 0) {
         $row = $rows->fetch();
-        header("Location: /board/notice/post.php?id=".$row["id"]."&test=".strlen(trim($_POST["content"])));
+        header("Location: /board/notice/post.php?id=".$row["id"]);
     }
   } catch (PDOException $e) {
     header("Location: /error.php");
