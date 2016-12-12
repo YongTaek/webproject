@@ -26,7 +26,7 @@
                 $find = $db->query("SELECT id FROM tag WHERE name = ".$tags[$i]);
                 if(empty($find)){
                     $db->query("INSERT INTO tag(name) values('".$tags[$i]."')");
-                    $newtag = $db->query("SELECT id FROM tag WHERE name = '$tags[$i]'");
+                    $newtag = $db->query("SELECT id FROM tag WHERE name = '".$tags[$i]."'");
                     $tid = $newtag->fetch();
                     $db->query("INSERT INTO tag_question(t_id, q_id) values(".$tid["id"].", $id)");
                 }
