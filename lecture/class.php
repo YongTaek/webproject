@@ -30,7 +30,7 @@ if (isset($_GET["id"])) {
 	<script src="/public/js/jquery-ui-1.12.1.min.js"></script>
   <script src="/public/js/base.js"></script>
 
-  	<?php include("../common/script.php"); ?>
+  <?php include("../common/script.php"); ?>
 
   <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>

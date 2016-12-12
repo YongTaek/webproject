@@ -97,7 +97,7 @@ for (var i = 0; i < lectureArray.length; i++) {
 					"onclick" : function () {
 						appendComment(data);
 						$('#sidebar').toggle("slide", { direction : "right" }, 500, function () {
-							changeDrawerClass(event);
+							changeDrawerClass();
 						});
 					},
 					"positionClass": "toast-top-right",
