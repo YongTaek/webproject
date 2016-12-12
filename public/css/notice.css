@@ -92,8 +92,10 @@
 .file {
 	display: block;
 	text-align: right;
+	margin-right: 40px;
 }
 
 .file > *{
 	display: inline-block;
+
 }
