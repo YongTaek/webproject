@@ -12,7 +12,7 @@
     header("Location: /error.php");
   }
 
-  $content = htmlspecialchars($_POST["content"]);
+  $content = htmlspecialchars($_POST["content"], ENT_QUOTES);
 
   $time = date("Y-m-d H:i:s");
   $type = $_POST["type"];

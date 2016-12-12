@@ -16,9 +16,6 @@
   
   $content = $_POST["content"];
   $content = str_replace("\n", "<br/>", $content);
-  $content = str_replace("'", "&#39;", $content);
-  $content = str_replace("\"", "&#34;", $content);
-  $content = str_replace("#", "&#35;", $content);
   $db->query("UPDATE board SET title = '$title' WHERE id = $id");
   $db->query("UPDATE board SET content = '$content' WHERE id = $id");
   header("Location: /board/free/post.php?id=$id");

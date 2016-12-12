@@ -9,8 +9,7 @@
     header("Location: /error.php");
   }
 
-  $content = $_POST["content"];
-  $content = str_replace("\n", "<br/>", $content);
+  $content = htmlspecialchars($_POST["content"], ENT_QUOTES);
   $time = date("Y-m-d H:i:s");
   $type = $_POST["type"];
   $redirectId = $_POST["reference"];

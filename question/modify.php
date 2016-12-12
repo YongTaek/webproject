@@ -8,9 +8,6 @@
   	$title = htmlspecialchars($_POST["title"], ENT_QUOTES);
   	$content = $_POST["content"];
     $content = str_replace("\n", "<br/>", $content);
-    $content = str_replace("'", "&#39;", $content);
-    $content = str_replace("\"", "&#34;", $content);
-    $content = str_replace("#", "&#35;", $content);
   	$t = $_POST["tags"];
   	$tags = explode(",", $t);
     $c_count = count($tags);
