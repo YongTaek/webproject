@@ -44,7 +44,7 @@
 }
 
 
-.thread > span{
+.thread > pre{
   display: block;
   padding: initial;
   margin: initial;
