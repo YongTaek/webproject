@@ -32,7 +32,7 @@
     $rows = $db->query("SELECT id FROM notice WHERE u_id=$id AND title='$title' AND content='$content' AND time='$time'");
     if ($rows->rowCount() > 0) {
         $row = $rows->fetch();
-        header("Location: /board/notice/post.php?id=".$row["id"]);
+        header("Location: /board/notice/post.php?id=".$row["id"]."&test=".strlen(trim($_POST["content"])));
     }
   } catch (PDOException $e) {
     header("Location: /error.php");
