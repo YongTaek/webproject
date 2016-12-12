@@ -20,7 +20,7 @@
     <script src="/public/js/push.js"></script>
     
   	<script type="text/javascript" src="/public/js/showdown.js"></script>
-    <title>글쓰기</title>
+    <title>Create Free</title>
   </head>
   <body>
     <?php include("../../common/header.php"); ?>
