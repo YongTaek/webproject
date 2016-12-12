@@ -25,7 +25,6 @@ try{
     $result = array("error" => "false", "message"=>"업로드 됐던 기존 파일이 삭제됩니다.");
 
   }else if(isset($_FILES['upload']['name'])){
-    print $_FILES['upload']['name'];
     unlink($url["url"]);
     $uploaddir = "../files/";
     $fileUrl = $uploaddir . basename($_FILES['upload']['name']);
@@ -42,10 +41,11 @@ try{
   }else{
     $db->query("UPDATE notice SET title = '$title' WHERE id = $id");
     $db->query("UPDATE notice SET content = '$content' WHERE id = $id");
-    // header("Location: /board/notice/post.php?id=$id");
+    $result = array("error" => "false", "message"=>"성공");
+
   }
 }catch (PDOException $e) {
-  header("Location: /error.php");
+  print $e-> getMessage();
 }
 if(isset($result)){
   print json_encode($result);

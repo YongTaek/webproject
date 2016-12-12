@@ -20,15 +20,16 @@ function submitData() {
     success: function(responseText, statusText){
       console.log(responseText);
       var result = JSON.parse(responseText);
-      if(result["error"] !== "false"){
+      if(result["error"] !== "false");
       alert(result["message"]);
     }else{
       window.location.href = "/board/notice/list.php";
     }
-  };
   });
 }
   function modifySubmitData() {
+    var location = window.location.search.split("=")[1];
+
   $("#notice-modify-form").ajaxForm({
     dataType: 'text',
     success: function(responseText, statusText){
@@ -36,6 +37,8 @@ function submitData() {
       var result = JSON.parse(responseText);
       if(result["error"] !== "false"){
         alert(result["message"]);
+    }else{
+      window.location.href = "/board/notice/list.php?id="+locatioin;
     }};
   });
 }
