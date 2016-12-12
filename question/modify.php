@@ -23,15 +23,16 @@
         else{
             $db->query("DELETE FROM tag_question WHERE q_id = $id");
             for($i=0;$i<$c_count;$i++){
-                $find = $db->query("SELECT id FROM tag WHERE name = ".$tags[$i]);
+                $find = $db->query("SELECT id FROM tag WHERE name = '$tags[$i]'");
                 if(empty($find)){
-                    // $db->query("INSERT INTO tag(name) values('$tags[$i]')");
-                    // $newtag = $db->query("SELECT id FROM tag WHERE name = '$tags[$i]'");
-                    // $tid = $newtag->fetch();
-                    // $db->query("INSERT INTO tag_question(t_id, q_id) values(".$tid["id"].", $id)");
+                    $db->query("INSERT INTO tag(name) values('".$tags[$i]."')");
+                    $newtag = $db->query("SELECT id FROM tag WHERE name = '".$tags[$i]."'");
+                    $tid = $newtag->fetch();
+                    $db->query("INSERT INTO tag_question(t_id, q_id) values(".$tid["id"].", $id)");
                 }
                 else{
-                    $db->query("INSERT INTO tag_question(t_id, q_id) values(".$find["id"].", $id)");
+                    $found = $find->fetch();
+                    $db->query("INSERT INTO tag_question(t_id, q_id) values(".$found["id"].", $id)");
                 }
             }
         }
@@ -39,6 +40,6 @@
         $db->query("UPDATE question SET content = '$content' WHERE id = $id");
         header("Location: /board/question/post.php?id=$id");
     } catch(PDOException $e){
-        header("Location: /error.php");
+        echo $e->getmessage();
     }
 ?>
