@@ -54,15 +54,16 @@ function lectureReady(){
   });
 
   $("textarea").keypress(function(event) {
-    console.log('*');
+    
     if (event.which == 13) {
-        console.log('!');
+        console.log(event.shiftKey);
         if(event.shiftKey){
-          console.log('&');
+          
+        }else{
+          event.preventDefault();
+          $('#submit').click();
         }
-        event.preventDefault();
-        // $("form").submit();
-        $('#submit').click();
+        
     }
   });
 };
