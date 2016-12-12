@@ -13,6 +13,7 @@
   	<script src="/public/js/jquery-3.1.1.min.js" type="text/javascript"></script>
     <script src="/public/js/jquery-ui-1.12.1.min.js"></script>
     <script src="/public/js/base.js"></script>
+    <script src="/public/js/notice.js"></script>
     <?php include("../../common/script.php"); ?>
 
     <link rel="stylesheet" type="text/css" href="/public/css/wmd.css" />
@@ -26,17 +27,22 @@
       $db = new PDO("mysql:dbname=qna;host=localhost", "root", "root");
       $id = $_GET["id"];
       $u_id = $_SESSION["id"];
-      $rows = $db->query("SELECT title, content FROM notice WHERE id = $id");
+      $rows = $db->query("SELECT title, content,url FROM notice WHERE id = $id");
       if ($rows->rowCount() > 0) {
         $row = $rows->fetch();
     ?>
     <div class="container">
       <div class="write-answer">
-        <form action="/notice/modify.php" method="POST">
+        <form id ="notice-modify-form" action="/notice/modify.php" method="POST" enctype="multipart/form-data">
           <h2>Title</h2>
           <div class="title">
             <input name="title" type="text" value="<?= $row["title"] ?>" required>
           </div>
+          <h2>Attatchment</h2>
+          	<input type="file" id ="upload" name="upload">
+          	<?php if ($row["url"] !== NULL){ ?>
+          		<p><?= basename($row["url"]) ?> <input class="delete btn btn-primary" type = "button" value = "삭제">
+          	<?php } ?>
           <h2>Content</h2>
           <div class="content" id="wmd-editor">
             <div id="wmd-button-bar"></div>
@@ -45,9 +51,13 @@
           <hr>
           <div id="wmd-preview" class="wmd-preview"></div>
           <hr>
-        <input class="btn btn-primary" type="submit" value="submit"/>
         <input type="hidden" name="id" value="<?= $id ?>">
+        <input id = "is-click" type="hidden" name="isclick" value=0>
         </form>
+        <div class='buttons'>
+        <input class='btn btn-primary' type='submit' value="submit" form="notice-form"/>
+        <button class='btn btn-primary'>cancel</button>
+  		</div>
       </div>
     </div>
     <?php } ?>
