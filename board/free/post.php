@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Free Board</title>
+  <title>Free</title>
   <meta charset="utf-8">
   <link rel="shortcut icon" href="icon/SelabFavicon.png" type="image/png">
   <link rel="stylesheet" href="/public/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">

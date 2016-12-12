@@ -29,6 +29,11 @@
     <div class="thread">
           <pre class="content"><?= $content ?></pre>
           <br>
+          <?php
+              if ($_SESSION["auth"] === "student")
+                
+                $userName = "anonymous";
+            ?>
           <span class="writer"><?= $userName ?></span>
           <br>
           <span class="date"><?= $time ?></span>
