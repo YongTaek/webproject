@@ -32,7 +32,7 @@
     }
 
   } catch(PDOException $e){
-    echo $e->getMessage();
-    }
+    header("Location: /error.php");
+  }
 
 ?>
