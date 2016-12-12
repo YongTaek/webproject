@@ -54,15 +54,11 @@ function lectureReady(){
   });
 
   $("textarea").keypress(function(event) {
-    console.log('*');
-    if (event.which == 13) {
-        console.log('!');
-        if(event.shiftKey){
-          console.log('&');
-        }
-        event.preventDefault();
-        // $("form").submit();
-        $('#submit').click();
+    
+    if (event.which == 13 && !event.shiftKey) {
+        
+      event.preventDefault();
+      $('#submit').click();
     }
   });
 };

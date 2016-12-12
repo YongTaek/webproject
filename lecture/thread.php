@@ -27,7 +27,7 @@
           $content = $array['content'];
     ?>
     <div class="thread">
-          <span class="content"><?= $content ?></span>
+          <pre class="content"><?= $content ?></pre>
           <br>
           <span class="writer"><?= $userName ?></span>
           <br>
