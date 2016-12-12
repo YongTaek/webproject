@@ -55,7 +55,7 @@
         <input id = "is-click" type="hidden" name="isclick" value=0>
         </form>
         <div class='buttons'>
-        <input class='btn btn-primary' type='submit' value="submit" form="notice-form"/>
+        <input class='btn btn-primary' type='submit' value="submit" form="notice-modify-form"/>
         <button class='btn btn-primary'>cancel</button>
   		</div>
       </div>
