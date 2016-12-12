@@ -122,7 +122,7 @@ for (var i = 0; i < lectureArray.length; i++) {
 				"newestOnTop": false,
 				"progressBar": false,
 				"onclick" : function () {
-					window.open = data.url;
+					window.open(data.url,"_blank");
 				},
 				"positionClass": "toast-top-right",
 				"preventDuplicates": true,
