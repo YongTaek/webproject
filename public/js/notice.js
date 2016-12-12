@@ -25,7 +25,7 @@ function submitData() {
     }else{
       window.location.href = "/board/notice/list.php";
     }
-  }
+  };
   });
 }
   function modifySubmitData() {
