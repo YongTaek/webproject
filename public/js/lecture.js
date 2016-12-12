@@ -55,15 +55,10 @@ function lectureReady(){
 
   $("textarea").keypress(function(event) {
     
-    if (event.which == 13) {
-        console.log(event.shiftKey);
-        if(event.shiftKey){
-          
-        }else{
-          event.preventDefault();
-          $('#submit').click();
-        }
+    if (event.which == 13 && !event.shiftKey) {
         
+      event.preventDefault();
+      $('#submit').click();
     }
   });
 };
