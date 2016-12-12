@@ -103,6 +103,7 @@ function addTextNoNotification(){
 		span.innerHTML = "받지 않은 알림이 없습니다!";
 		$("#notifications").empty();
 		$("#notifications").append(span);
+
 	//}
 	
 }
