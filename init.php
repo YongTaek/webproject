@@ -17,7 +17,7 @@ try {
   ];
   $pass = password_hash($id, PASSWORD_DEFAULT, $options);
 
-  $db->query("INSERT INTO user VALUES ($id, $name, $pass, $auth)");
+  $db->query("INSERT INTO user VALUES ($id, '$name', '$pass', '$auth')");
 
   print "Successfully inserted\n";
 } catch (PDOException $e) {
