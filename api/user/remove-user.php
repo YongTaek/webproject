@@ -38,7 +38,7 @@
   		$db->query("DELETE FROM user WHERE id = $id");
   		header("Location: /user/setting.php");
   	} catch(PDOException $e){
-  		echo $e -> getMessage();
+      header("Location: /error.php");
   	}
 
 ?>
