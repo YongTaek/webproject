@@ -24,7 +24,8 @@
             $db->query("DELETE FROM tag_question WHERE q_id = $id");
             for($i=0;$i<$c_count;$i++){
                 $find = $db->query("SELECT id FROM tag WHERE name = '$tags[$i]'");
-                if(empty($find)){
+                $find_num = $find->rowCount();
+                if($find_num == 0){
                     $db->query("INSERT INTO tag(name) values('".$tags[$i]."')");
                     $newtag = $db->query("SELECT id FROM tag WHERE name = '".$tags[$i]."'");
                     $tid = $newtag->fetch();
