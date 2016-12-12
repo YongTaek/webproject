@@ -51,7 +51,7 @@ function onclick(){
 				$("form#search-content").submit();
 			}
 			else{
-				alert("키워드를 입력해주세요 >:(");
+				alert("키워드를 입력해주세요 3:(");
 				e.preventDefault();
 			}
 		}
