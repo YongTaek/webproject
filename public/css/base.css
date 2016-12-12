@@ -158,3 +158,16 @@ button.pull-right{
 .content {
 	margin-bottom: 40px;
 }
+
+/* .sidebar-hr {
+	border-color: #FF9047;
+} */
+
+hr.sidebar-hr {
+    border: 0;
+    height: 0; 
+    box-shadow: 0 0 10px 1px #FF9047;
+}
+hr.sidebar-hr:after {  
+    content: "\00a0";  
+}
