@@ -18,8 +18,11 @@ default-character-set = utf8
 
 [mysql]
 default-character-set = utf8
+```
 
-[apache server]
+##Apache Setting
+
+```
 <Directory /var/www/html>
   Options -Indexes
 </Directory>
@@ -90,4 +93,14 @@ default-character-set = utf8
   Order allow,deny
   Deny from all
 </Files>
+```
+
+##CSV Format
+
+```
+2014000001,학생1
+2014000002,학생2
+2014000003,학생3
+2014000004,학생4
+2014000005,학생5
 ```
