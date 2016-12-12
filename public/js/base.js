@@ -51,7 +51,7 @@ function onclick(){
 				$("form#search-content").submit();
 			}
 			else{
-				alert("키워드를 입력해주세요 >:(");
+				alert("키워드를 입력해주세요 3:(");
 				e.preventDefault();
 			}
 		}
@@ -75,7 +75,6 @@ function onclick(){
 	});
 
 	$("#all-delete").click(function() {
-		addTextNoNotification();
 		$.ajax({
 			url: '/api/read-allnotification.php',
 			type : "POST",
@@ -83,9 +82,8 @@ function onclick(){
 			dataType: 'json',
 			success : function (result) {
 				if (result.error === "false") {
-					$("#notifications").empty();
+					addTextNoNotification();
 					$("#notification").text("0");
-					//addTextNoNotification();
 				}
 			},
 			error : function (result) {
@@ -97,14 +95,15 @@ function onclick(){
 };
 
 function addTextNoNotification(){
-	if($("#notifications").childNodes.length == 0){
+	var currentLength = document.getElementById("notifications").childNodes.length;
+	if(currentLength != 1){
 		var span = document.createElement("span");
 		span.setAttribute("class","no-notification");
 		span.innerHTML = "받지 않은 알림이 없습니다!";
-		//$("#notifications").empty();
+		$("#notifications").empty();
 		$("#notifications").append(span);
-	}
-	
+
+	}	
 }
 
 

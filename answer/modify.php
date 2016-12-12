@@ -17,6 +17,6 @@
   		$db->query("UPDATE answer SET content = '$content' WHERE q_id = $id");
   		header("Location: /board/question/post.php?id=$id");
     } catch(PDOException $e){
-        echo $e -> getMessage();
+      header("Location: /error.php");
     }
 ?>

@@ -4,6 +4,11 @@
   date_default_timezone_set('Asia/Seoul');
 
   $id = $_POST["id"];
+
+  if (strlen(trim($_POST["content"])) == 0) {
+    header("Location: /error.php");
+  }
+
   $content = $_POST["content"];
   $content = str_replace("\n", "<br/>", $content);
   $time = date("Y-m-d H:i:s");

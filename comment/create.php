@@ -7,6 +7,11 @@
 
   $r_id = $_POST["id"];
   $u_id = $_SESSION["id"];
+
+  if (strlen(trim($_POST["content"])) == 0) {
+    header("Location: /error.php");
+  }
+
   $content = htmlspecialchars($_POST["content"]);
 
   $time = date("Y-m-d H:i:s");

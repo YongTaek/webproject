@@ -37,7 +37,7 @@
 			<form id = "form" action='/api/lecture/upload.php' enctype="multipart/form-data" method="post">
 				<h2>Title</h2>
 				<div class="title">
-					<input name="title" id="title" type="text">
+					<input name="title" id="title" type="text" required>
 				</div>
 				<div>
 					<ul class="nav nav-tabs">

@@ -12,6 +12,6 @@
   	$u_id = $_SESSION["id"];
 
   	$db->query("DELETE FROM answer WHERE q_id = $id");
-    $db->query("DELETE FROM comment WHERE reference_id = $id");
+    $db->query("DELETE FROM comment WHERE reference_id = $id AND type = 'answer'");
   	header("Location: /board/question/post.php?id=$id");
 ?>

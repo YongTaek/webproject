@@ -9,6 +9,7 @@
 
   $id = $_SESSION["id"];
   $title = htmlspecialchars($_POST["title"]);
+  
   $content = $_POST["content"];
 
   $content = str_replace("\n", "<br/>", $content);
@@ -25,6 +26,6 @@
       header("Location: /board/free/post.php?id=".$row["id"]);
     }
   } catch (PDOException $e) {
-    echo $e->getMessage();
+    header("Location: /error.php");
   }
 ?>
