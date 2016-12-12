@@ -85,7 +85,7 @@ function onclick(){
 				if (result.error === "false") {
 					$("#notifications").empty();
 					$("#notification").text("0");
-					addTextNoNotification();
+					//addTextNoNotification();
 				}
 			},
 			error : function (result) {
