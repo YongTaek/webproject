@@ -20,7 +20,7 @@
 	<script src="/public/js/push.js"></script>
 	<script src="/public/js/pusher.js"></script>
 	<meta charset="utf-8">
-	<title>질문 게시판</title>
+	<title>Question List</title>
 </head>
 <body>
 	<?php include("../../common/header.php"); ?>

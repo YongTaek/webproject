@@ -4,7 +4,7 @@
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $id = $_POST["id"];
     $u_id = $_SESSION["id"];
-    $title = htmlspecialchars($_POST["title"]);
+    $title = htmlspecialchars($_POST["title"], ENT_QUOTES);
     $content = $_POST["content"];
     $content = str_replace("\n", "<br/>", $content);
     $t = $_POST["tags"];
@@ -24,7 +24,8 @@
             $db->query("DELETE FROM tag_question WHERE q_id = $id");
             for($i=0;$i<$c_count;$i++){
                 $find = $db->query("SELECT id FROM tag WHERE name = '$tags[$i]'");
-                if(empty($find)){
+                $find_num = $find->rowCount();
+                if($find_num == 0){
                     $db->query("INSERT INTO tag(name) values('".$tags[$i]."')");
                     $newtag = $db->query("SELECT id FROM tag WHERE name = '".$tags[$i]."'");
                     $tid = $newtag->fetch();
