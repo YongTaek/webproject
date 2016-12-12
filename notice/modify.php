@@ -8,8 +8,7 @@
   $id = $_POST["id"];
   $u_id = $_SESSION["id"];
   $title = htmlspecialchars($_POST["title"], ENT_QUOTES);
-  $
-  
+
   $content = $_POST["content"];
   $isclick = $_POST["isclick"];
 
@@ -32,7 +31,7 @@
       $fileUrl = $uploaddir . basename($_FILES['upload']['name']);
       if(move_uploaded_file($_FILES['upload']['tmp_name'],$fileUrl)){
         $dbUrl = $fileUrl;
-        $db->query("UPDATE notice SET url = '$dbUrl' WHERE id = $id");         
+        $db->query("UPDATE notice SET url = '$dbUrl' WHERE id = $id");
         $db->query("UPDATE notice SET title = '$title' WHERE id = $id");
         $db->query("UPDATE notice SET content = '$content' WHERE id = $id");
         $result = array("error" => "false", "message"=>"업로드 됐던 기존 파일이 대체됩니다.");
