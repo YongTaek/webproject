@@ -24,7 +24,7 @@
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $db->query("INSERT INTO answer(u_id, q_id, content, time) VALUES($u_id, $id, '$content', '$time')");
       $array = array('content' => "$id 에 답변이 달렸습니다!", "url" => "http://webapp.yongtech.kr/board/question/post.php?id=$id", 'time' => "$time");
-      $pusher->trigger("$id", 'new_comment', $array);
+      $pusher->trigger("q"."$id", 'new_comment', $array);
       header("Location: /board/question/post.php?id=$id");
     }
     else{
