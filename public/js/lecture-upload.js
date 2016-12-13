@@ -33,6 +33,7 @@ function submitData() {
       window.location.href = "/user/setting.php";
     }else{
       alert(result["message"]);
-    }};
+    }
+  };
   });
 }

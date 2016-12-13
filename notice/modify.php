@@ -36,7 +36,13 @@
         $db->query("UPDATE notice SET url = '$dbUrl' WHERE id = $id");         
         $db->query("UPDATE notice SET title = '$title' WHERE id = $id");
         $db->query("UPDATE notice SET content = '$content' WHERE id = $id");
-        $result = array("error" => "false", "message"=>"업로드 됐던 기존 파일이 대체됩니다.");
+        if($url["url"]!=NULL){
+          $result = array("error" => "false", "message"=>"업로드 됐던 기존 파일이 대체됩니다.");  
+        }
+        else{
+          $result = array("error" => "false", "message"=>"");  
+        }
+        
       }
       else{
         $result = array("error" => "true", "message"=>"파일 업로드에 실패했습니다! :(");
