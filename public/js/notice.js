@@ -45,16 +45,3 @@ function modifySubmitData() {
     }
   });
 }
-  
-    dataType: 'text',
-    success: function(responseText, statusText){
-      console.log(responseText);
-      var result = JSON.parse(responseText);
-      if(result["error"] !== "false"){
-        alert(result["message"]);
-      }else{
-        console.log("hello");
-        window.location.href = "/board/notice/list.php?id="+locatioin;
-      }};
-    });
-}
