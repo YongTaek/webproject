@@ -40,7 +40,7 @@
           $result = array("error" => "false", "message"=>"업로드 됐던 기존 파일이 대체됩니다.");  
         }
         else{
-          $result = array("error" => "false", "message"=>"");  
+          $result = array("error" => "false", "message"=>"파일이 등록되었습니다.");  
         }
         
       }
@@ -50,7 +50,7 @@
     }else{
       $db->query("UPDATE notice SET title = '$title' WHERE id = $id");
       $db->query("UPDATE notice SET content = '$content' WHERE id = $id");
-      header("Location: /board/notice/post.php?id=$id");
+      $result = array("error" => "false", "message"=>"수정이 완료되었습니다.");
     }
   } catch (PDOException $e) {
     header("Location: /error.php");
