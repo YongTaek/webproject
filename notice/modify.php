@@ -40,7 +40,7 @@
           $result = array("error" => "false", "message"=>"업로드 됐던 기존 파일이 대체됩니다.");  
         }
         else{
-          $result = array("error" => "false", "message"=>"파일이 등록되었습니다.");  
+          $result = array("error" => "false", "message"=>"수정이 완료되었습니다.");  
         }
         
       }

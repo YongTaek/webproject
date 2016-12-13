@@ -18,7 +18,6 @@ else{
   $fileUrl = $uploaddir . basename($_FILES['upload']['name']);
   if(!move_uploaded_file($_FILES['upload']['tmp_name'],$fileUrl)){
     $result = array("error" => "true", "message"=>"파일 업로드에 실패했습니다! :(");
-    print json_encode($result);
   }else{
     $dbUrl = $fileUrl;
     $time = date("Y-m-d H:i:s");
@@ -41,4 +40,5 @@ if(!isset($result)){
     $result = array("error" => "true", "message"=>"파일 업로드에 실패했습니다! :(");
   }
 }
+print json_encode($result);
 ?>
