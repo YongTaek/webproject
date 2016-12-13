@@ -32,7 +32,7 @@ if(!isset($result)){
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     if($dbUrl == NULL){
       $result = array("error" => "true", "message"=>"null!");
-      $db->query("INSERT INTO notice(u_id, title, content, time, url) VALUES($id, '$title', '$content', '$time', NULL)");  
+      $db->query("INSERT INTO notice(u_id, title, content, time, url) VALUES($id, '$title', '$content', '$time', 'NULL')");  
     }
     else{
       $result = array("error" => "true", "message"=>"file?");
@@ -40,7 +40,6 @@ if(!isset($result)){
     }
     $rows = $db->query("SELECT id FROM notice WHERE u_id=$id AND title='$title' AND content='$content' AND time='$time'");
     if ($rows->rowCount() > 0) {
-      $result = array("error" => "true", "message"=>"else?!");
       $row = $rows->fetch();
       $result = array("error" => "false", "message"=>"","id"=>$row["id"]);
     }
