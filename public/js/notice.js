@@ -29,7 +29,7 @@ function submitData() {
         if(result["message"]!==""){
           alert(result["message"]);   
         }
-        window.location.href = "/board/notice/post.php?id="+location;
+        window.location.href = "/board/notice/post.php?id="+result["id"];
       }
     }
   });

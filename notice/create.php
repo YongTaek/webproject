@@ -11,6 +11,7 @@ $title = htmlspecialchars($_POST["title"], ENT_QUOTES);
 $content = $_POST["content"];
 
 if(!isset($_FILES['upload']['name'])){
+  $result = array("error" => "true", "message"=>"null");
   $dbUrl = NULL;
 }
 else{
