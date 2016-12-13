@@ -41,7 +41,7 @@ function modifySubmitData() {
         alert(result["message"]);
       }else{
         console.log("hello");
-        window.location.href = "/board/notice/list.php?id="+locatioin;
+        window.location.href = "/board/notice/list.php?id="+location;
       }
     }
   });
