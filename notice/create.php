@@ -31,13 +31,12 @@ if(!isset($result)){
     $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->query("INSERT INTO notice(u_id, title, content, time, url) VALUES($id, '$title', '$content', '$time','$dbUrl')");
-    $rows = $db->query("SELECT id FROM notice WHERE u_id=$id AND title='$title' AND content='$content' AND time='$time'");
     if ($rows->rowCount() > 0) {
       $row = $rows->fetch();
       $result = array("error" => "false", "message"=>"");
     }
   } catch (PDOException $e) {
-    $result = array("error" => "true", "message"=>"파일 업로드에 실패했습니다! :(");
+    $result = array("error" => "true", "message"=>"파일 업로드에 실패했습니다!! :(");
   }
 }
 print json_encode($result);

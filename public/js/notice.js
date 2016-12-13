@@ -16,7 +16,7 @@ function ready () {
 $(document).ready(ready);
 
 function submitData() {
-
+  var location = window.location.search.split("=")[1];
   $("#notice-form").ajaxForm({
     dataType: 'text',
     success: function(responseText, statusText){
@@ -29,7 +29,7 @@ function submitData() {
         if(result["message"]!==""){
           alert(result["message"]);   
         }
-        window.location.href = "/board/notice/list.php";
+        window.location.href = "/board/notice/post.php?id="+location;
       }
     }
   });
