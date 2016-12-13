@@ -31,7 +31,7 @@ if(!isset($result)){
     $db = new PDO("mysql:dbname=qna;host=localhost;charset=utf8", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     if($dbUrl == NULL){
-      $db->query("INSERT INTO notice(u_id, title, content, time, url) VALUES($id, '$title', '$content', '$time', 'NULL')");  
+      $db->query("INSERT INTO notice(u_id, title, content, time) VALUES($id, '$title', '$content', '$time')");  
     }
     else{
       // $result = array("error" => "true", "message"=>"file?");
