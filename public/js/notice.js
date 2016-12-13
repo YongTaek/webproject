@@ -40,7 +40,9 @@ function modifySubmitData() {
       if(result["error"] !== "false"){
         alert(result["message"]);
       }else{
-        console.log("hello");
+        if(result["message"]!==""){
+          alert(result["message"]);
+        }
         window.location.href = "/board/notice/list.php?id="+location;
       }
     }
