@@ -21,7 +21,7 @@ if(!isset($_FILES['upload']['name'])){
       $result = array("error" => "false", "message"=>"","id"=>$row["id"]);
     }
   }catch(PDOException $e){
-    $result = array("error" => "true", "message"=> e->getMessage());
+    $result = array("error" => "true", "message"=>"1";
   }
   
 }
@@ -47,7 +47,7 @@ else{
           $result = array("error" => "false", "message"=>"","id"=>$row["id"]);
         }
       }catch(PDOException $e){
-        $result = array("error" => "true", "message"=>"파일 업로드에 실패했습니다!!! :(");
+        $result = array("error" => "true", "message"=>"2");
       }
     }
   }
@@ -56,7 +56,7 @@ if(isset($result)){
   print json_encode($result);  
 }
 else{
-  $result = array("error" => "true", "message"=>"파일 업로드에 실패했습니다!!! :(");
+  $result = array("error" => "true", "message"=>"3");
   print json_encode($result);
 }
 ?>
