@@ -36,6 +36,7 @@ function modifySubmitData() {
   $("#notice-modify-form").ajaxForm({
     dataType: 'text', 
     success: function(responseText, statusText){
+      var result = JSON.parse(responseText);
       if(result["error"] !== "false"){
         alert(result["message"]);
       }else{
