@@ -26,6 +26,9 @@ function submitData() {
         alert(result["message"]);
       }
       else{
+        if(result["message"]!==""){
+          alert(result["message"]);   
+        }
         window.location.href = "/board/notice/list.php";
       }
     }
@@ -40,10 +43,8 @@ function modifySubmitData() {
       if(result["error"] !== "false"){
         alert(result["message"]);
       }else{
-        if(result["message"]!==""){
-          alert(result["message"]);
-        }
-        window.location.href = "/board/notice/list.php?id="+location;
+        alert(result["message"]);
+        window.location.href = "/board/notice/post.php?id="+location;
       }
     }
   });
