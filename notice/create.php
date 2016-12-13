@@ -39,7 +39,7 @@ if(!isset($result)){
     $rows = $db->query("SELECT id FROM notice WHERE u_id=$id AND title='$title' AND content='$content' AND time='$time'");
     if ($rows->rowCount() > 0) {
       $row = $rows->fetch();
-      $result = array("error" => "false", "message"=>"");
+      $result = array("error" => "false", "message"=>"","id"=>$row["id"]);
     }
   } catch (PDOException $e) {
     $result = array("error" => "true", "message"=>"파일 업로드에 실패했습니다!!! :(");
