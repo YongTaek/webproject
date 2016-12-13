@@ -1,6 +1,8 @@
 <?php
 session_start();
+
 date_default_timezone_set('Asia/Seoul');
+
 if (!isset($_SESSION["id"])) {
   header("Location: /user/login.php");
 }
@@ -8,6 +10,8 @@ header("Content-Type:application/json");
 $id = $_SESSION["id"];
 $title = htmlspecialchars($_POST["title"], ENT_QUOTES);
 $content = $_POST["content"];
+$time = date("Y-m-d H:i:s");
+
 if(!isset($_FILES['upload']['name'])){
   $dbUrl = NULL;
 }
@@ -18,7 +22,6 @@ else{
     $result = array("error" => "true", "message"=>"파일 업로드에 실패했습니다! :(");
   }else{
     $dbUrl = $fileUrl;
-    $time = date("Y-m-d H:i:s");
     if (!($_SESSION["auth"] === "professor" || $_SESSION["auth"] === "assistant")) {
       $result = array("error" => "true", "message"=>"권한이 없습니다!");
     }
