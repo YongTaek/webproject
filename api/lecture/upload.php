@@ -44,7 +44,7 @@ if(!isset($result)) {
 			else{
 				$db->query("INSERT INTO lecture(name, url) VALUES ('$name', '$dbUrl')");
 			}
-			$result = array("error" => "false");
+			$result = array("error" => "false","message"=>"파일을 업로드했습니다");
 		}
 		print json_encode($result);
 	}
