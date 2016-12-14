@@ -126,7 +126,7 @@ function prependComments(data){
     spancontent.addClass("content");
     var spandate = $("<span></span>").text(time);
     spandate.addClass("date");
-    var spanwriter = $("<span></span>").text(name);
+    var spanwriter = $("<span></span>").text("authority");
     spanwriter.addClass("writer");
 
     div.append(spancontent);
