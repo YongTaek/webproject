@@ -27,9 +27,8 @@ function submitData() {
     success: function(responseText, statusText){
       console.log(responseText);
       var result = JSON.parse(responseText);
-      alert(result["message"]);
       if(result["error"] === "false"){
-      alert("파일을 업로드했습니다! :)");
+        alert(result["message"]);
       window.location.href = "/user/setting.php";
     }else{
       alert(result["message"]);
