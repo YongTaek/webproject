@@ -29,11 +29,11 @@
     <div class="thread">
           <pre class="content"><?= $content ?></pre>
           <br>
-          <?php
-              if ($_SESSION["auth"] === "student")
-                $userName = "anonymous";
-            ?>
-          <span class="writer"><?= $userName ?></span>
+          <span class="writer">authority</span>
+          <?php if ($_SESSION["auth"] === "student"){ ?>
+          <span class="auth hidden"><?=$_SESSION["auth"] ?></span>
+          <span class="realname hidden"><?=$userName?></span>
+          <?php } ?>
           <br>
           <span class="date"><?= $time ?></span>
     </div>

@@ -1,4 +1,10 @@
 function lectureReady(){
+  $(".auth").on("click", function (event) {
+    var name = this.parent().find(".realname");
+    var writer = this.parent().find(".writer");
+    wirter.text(name.text());
+    console.log("adsf");
+  })
   $("#submit").click(function (event){
     var params = $(this).parent().serialize();
     console.log(params);
@@ -54,9 +60,9 @@ function lectureReady(){
   });
 
   $("textarea").keypress(function(event) {
-    
+
     if (event.which == 13 && !event.shiftKey) {
-        
+
       event.preventDefault();
       $('#submit').click();
     }
@@ -89,7 +95,7 @@ function appendComment(da){
   spancontent.addClass("content");
   var spandate = $("<span></span>").text(time);
   spandate.addClass("date");
-  var spanwriter = $("<span></span>").text(name);
+  var spanwriter = $("<span></span>").text("authority");
   spanwriter.addClass("writer");
 
   div.append(spancontent);
@@ -98,6 +104,11 @@ function appendComment(da){
   div.append($("<br>"));
   div.append(spandate);
   div.addClass("thread");
+  div.on("click", function () {
+    if (da.authority === "professor") {
+      spanwriter.text(name);
+    }
+  });
   $(".threads").append(div);
 
   $(".threads").animate({scrollTop: $(".threads").prop("scrollHeight")});
@@ -121,7 +132,7 @@ function prependComments(data){
     spancontent.addClass("content");
     var spandate = $("<span></span>").text(time);
     spandate.addClass("date");
-    var spanwriter = $("<span></span>").text(name);
+    var spanwriter = $("<span></span>").text("authority");
     spanwriter.addClass("writer");
 
     div.append(spancontent);
@@ -130,6 +141,11 @@ function prependComments(data){
     div.append($("<br>"));
     div.append(spandate);
     div.addClass("thread");
+    div.on("click", function () {
+      if (data.authority === "professor") {
+        spanwriter.text(name);
+      }
+    });
     $(".threads").prepend(div);
   }
   var afterScrollHeight = $(".threads").prop("scrollHeight");

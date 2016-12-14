@@ -41,10 +41,10 @@
 				</div>
 				<div>
 					<ul class="nav nav-tabs">
-						<li class="question-tab active file"><a>File</a></li>
+						<li class="question-tab active"><a>File</a></li>
 						<li class="question-tab url"><a>URL</a></li>
 					</ul>
-					<div class="tab file">
+					<div class="tab">
 						<input type="file" id ="upload" name="upload">
 					</div>
 					<div class="tab url">
