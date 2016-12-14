@@ -97,7 +97,7 @@ function appendComment(da){
   spancontent.addClass("content");
   var spandate = $("<span></span>").text(time);
   spandate.addClass("date");
-  var spanwriter = $("<span></span>").text("authority");
+  var spanwriter = $("<span></span>").text("anonymous");
   spanwriter.addClass("writer");
 
   div.append(spancontent);
