@@ -18,6 +18,12 @@
 			$tempArray = array("message" => $message, "url" => $url, "time" => $time);
 			$pushArray[] = $tempArray;
 		}
+		$lectureArray = array();
+		$lectures = $db->query("SELECT id from lecture");
+		foreach ($lectures as $row ) {
+			$lectureArray[] = $row["id"];
+		}
+		$_SESSION["openLecture"] = $lectureArray;
   }
 
 ?>
