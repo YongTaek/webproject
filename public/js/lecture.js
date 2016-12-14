@@ -54,9 +54,9 @@ function lectureReady(){
   });
 
   $("textarea").keypress(function(event) {
-    
+
     if (event.which == 13 && !event.shiftKey) {
-        
+
       event.preventDefault();
       $('#submit').click();
     }
@@ -98,6 +98,9 @@ function appendComment(da){
   div.append($("<br>"));
   div.append(spandate);
   div.addClass("thread");
+  div.on("click", function () {
+    console.log("asdf");
+  });
   $(".threads").append(div);
 
   $(".threads").animate({scrollTop: $(".threads").prop("scrollHeight")});
@@ -130,6 +133,9 @@ function prependComments(data){
     div.append($("<br>"));
     div.append(spandate);
     div.addClass("thread");
+    div.on("click", function () {
+      console.log("asdf");
+    });
     $(".threads").prepend(div);
   }
   var afterScrollHeight = $(".threads").prop("scrollHeight");
