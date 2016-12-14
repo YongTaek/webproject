@@ -30,7 +30,7 @@
           <pre class="content"><?= $content ?></pre>
           <br>
           <span class="writer">authority</span>
-          <?php if ($_SESSION["auth"] === "student"){ ?>
+          <?php if ($_SESSION["auth"] === "professor"){ ?>
           <span class="auth hidden"><?=$_SESSION["auth"] ?></span>
           <span class="realname hidden"><?=$userName?></span>
           <?php } ?>
