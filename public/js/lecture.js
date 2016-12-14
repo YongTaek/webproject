@@ -1,4 +1,9 @@
 function lectureReady(){
+  $(".auth").on("click", function (event) {
+    var name = this.parent().find(".realname");
+    var writer = this.parent().find(".writer");
+    wirter.text(name.text());
+  })
   $("#submit").click(function (event){
     var params = $(this).parent().serialize();
     console.log(params);
