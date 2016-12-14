@@ -5,7 +5,6 @@ function lectureReady(){
       var name = $(this).find(".realname");
       var writer = $(this).find(".writer");
       writer.text(name.text());
-      console.log("adsf");
     })
   }
   $("#submit").click(function (event){

@@ -29,7 +29,7 @@
     <div class="thread">
           <pre class="content"><?= $content ?></pre>
           <br>
-          <span class="writer">authority</span>
+          <span class="writer">anonymous</span>
           <?php if ($_SESSION["auth"] === "professor"){ ?>
           <span class="auth hidden"><?=$_SESSION["auth"] ?></span>
           <span class="realname hidden"><?=$userName?></span>
