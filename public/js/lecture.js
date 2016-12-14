@@ -99,7 +99,7 @@ function appendComment(da){
   div.append(spandate);
   div.addClass("thread");
   div.on("click", function () {
-    if (data.authority === "professor") {
+    if (da.authority === "professor") {
       spanwriter.text(name);
     }
   });
