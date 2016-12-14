@@ -4,7 +4,7 @@ function lectureReady(){
     $(auths[i]).parent().on("click", function (event) {
       var name = $(this).parent().find(".realname");
       var writer = $(this).parent().find(".writer");
-      wirter.text(name.text());
+      writer.text(name.text());
       console.log("adsf");
     })
   }
