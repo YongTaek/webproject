@@ -3,6 +3,7 @@ function lectureReady(){
     var name = this.parent().find(".realname");
     var writer = this.parent().find(".writer");
     wirter.text(name.text());
+    console.log("adsf");
   })
   $("#submit").click(function (event){
     var params = $(this).parent().serialize();
