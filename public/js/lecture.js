@@ -1,7 +1,7 @@
 function lectureReady(){
   var auths = $(".auth");
   for(var i = 0; i < auths.length; i++) {
-    auths[i].parent().on("click", function (event) {
+    $(auths[i]).parent().on("click", function (event) {
       var name = this.parent().find(".realname");
       var writer = this.parent().find(".writer");
       wirter.text(name.text());
