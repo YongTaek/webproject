@@ -57,8 +57,6 @@
 				$b_rows = $db->query("SELECT b.id, b.title, time, u.name, pinned FROM board b JOIN user u on b.u_id = u.id ORDER BY pinned DESC, time DESC");
 			}
 			foreach ($b_rows as $row) {
-				$c_rows = $db->query("SELECT distinct c.u_id, c.content, c.time FROM board b JOIN comment c on b.u_id = c.u_id WHERE c.type = 'board' AND c.reference_id = ".$row["id"]);
-				$count = $c_rows->rowCount();
 		?>
 			<div class= "question">
 				<div class= "question-num-summary">
@@ -70,7 +68,7 @@
 					</div>
 					<div class= "comment-number">
 						<div class= "mini-count">
-							<span><?= $count ?></span> <!-- 댓글 -->
+							<span><?= ($db->query("SELECT distinct id FROM comment WHERE type = 'board' AND reference_id = ".$row["id"]))->rowCount() ?></span> <!-- 댓글 -->
 						</div>
 						<div>comments</div>
 					</div>
