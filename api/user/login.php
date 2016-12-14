@@ -19,13 +19,8 @@
         $questionArray[] = $row["q_id"];
       }
       //TODO: 내가 쓴 질문에 대해 subscribe 필요!
-      $lectureArray = array();
-      $lectures = $db->query("SELECT id from lecture");
-      foreach ($lectures as $row ) {
-        $lectureArray[] = $row["id"];
-      }
+
       $_SESSION["favQuestion"] = $questionArray;
-      $_SESSION["openLecture"] = $lectureArray;
       header("Location: /index.php");
       exit;
     } else {

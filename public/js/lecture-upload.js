@@ -34,6 +34,6 @@ function submitData() {
     }else{
       alert(result["message"]);
     }
-  };
+  }
   });
 }
