@@ -99,7 +99,9 @@ function appendComment(da){
   div.append(spandate);
   div.addClass("thread");
   div.on("click", function () {
-    console.log("asdf");
+    if (data.authority === "professor") {
+      spanwriter.text(name);
+    }
   });
   $(".threads").append(div);
 
@@ -134,7 +136,9 @@ function prependComments(data){
     div.append(spandate);
     div.addClass("thread");
     div.on("click", function () {
-      console.log("asdf");
+      if (data.authority === "professor") {
+        spanwriter.text(name);
+      }
     });
     $(".threads").prepend(div);
   }
