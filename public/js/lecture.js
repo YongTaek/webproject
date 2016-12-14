@@ -93,7 +93,7 @@ function appendComment(da){
 
   var div = $("<div></div>");
 
-  var spancontent = $("<span></span>").text(content);
+  var spancontent = $("<pre></pre>").text(content);
   spancontent.addClass("content");
   var spandate = $("<span></span>").text(time);
   spandate.addClass("date");
